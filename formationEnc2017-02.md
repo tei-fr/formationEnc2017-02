@@ -1,4 +1,4 @@
-# Programme détaillé
+# Programme
 
 La production d’une édition électronique exige la mobilisation de techniques spécifiques pour l’établissement des textes, l’enregistrement des annotations scientifiques et la publication. La Text Encoding Initiative (TEI) offre à la fois une infrastructure et un cadre conceptuel pour accompagner la production d’édition critique numérique. Le travail de modélisation d’une édition avec la TEI permet à la fois de documenter son édition en déclarant formellement son utilisation de la TEI mais aussi personnaliser la TEI pour l’adapter finement aux objectifs scientifiques de son projet.
 
