@@ -6,17 +6,29 @@
 
 Renseignements sur les participants
 
+Profils
+
+- Quel est votre statut professionel ?
+- Vous considerez-vous plutot comme chercheur ou comme ingenieur ?
+- Quel est votre domaine de recherche ou d’activité ?
+
+Compétences techniques
+
+- Comment qualifieriez-vous vos maîtrise de XML ? (parfaite, pas mal, assez bonne)
 - Comment qualifieriez-vous votre niveau d’utilisation de la TEI ?
+- Depuis quand utilisez-vous la TEI ?
+- À quelles formations TEI avez-vous déjà participé précédemment, à quelle époque ?
+- Quels outils utilisez-vous habituellement pour travailler avec TEI ?
+- Avez-vous déjà utilisé ODD directement ou avec Roma ? Donnez des précisions (oui, non, un peu, autre : réponse libre)
+- Quel est votre élément TEI préféré, et pourquoi ?
+- Vous êtes piégé/piégée dans l’ascenseur avec le président de votre université. Vous avez deux minutes pour le/la convaincre de l’importance de la TEI. Que lui dites-vous ?
 
-- Depuis quelle époque utilisez-vous la TEI ?
+Quels projets
 
-- À quelles formations TEI avez-vous déjà participé précédemment ?
-
-- Avez-vous déjà utilisé ODD ? (oui, non, un peu, autre : réponse libre)
-
+- Décrivez le projet de recherche sur lequel vous travaillez en quelques phrases. Précisez le genre de sources ou de documents sur lesquels vous travaillez, le genre d’analyse que vous voulez conduire, l’ampleur du corpus, etc.
 - Quels enjeux de modélisation identifiez-vous dans ce projet ?
-
 - Quelles sont les difficultés que vous rencontrez ?
+
 
 - **Texte libre**
 
@@ -24,19 +36,28 @@ Renseignements sur les participants
 
 ## Couriel d’envoi
 
-Merci de votre intérêt pour la formation TEI de niveau avancé de l’École des chartes. 
+Merci de votre intérêt pour la formation TEI de niveau avancé offerte par l’École des chartes. 
 
-Afin de mieux cibler vos besoins au cours de cette formation, nous vous remercions de bien vouloir prendre le temps de répondre au formulaire suivant : [http://goo.gl/forms/ejih6tRRPO](http://goo.gl/forms/ejih6tRRPO)
+Afin de mieux cibler vos besoins de formation, nous vous remercions de bien vouloir prendre le temps de répondre au formulaire suivant : [url Google Forms](url)
 
-Pour ceux qui le souhaitent, nous voudrions vous proposer de travailler directement sur vos propres corpus au cours d’ateliers. À cet effet, pouvez-vous simplement nous communiquer par mail un petit échantillon de votre travail :
+Au cours de cette formation, et pour que le formation vous soit le plus profitable possible, nous souhaitons vous proposer de travailler dans un format laboratoire. Grâce à votre collaboration, la formation sera autant que possible organisée autour d’ateliers au cours desquels nous pourrons travailler directement sur les cas réels de vos sources et documents.
 
-\- description rapide du projet
+À cet effet, pouvez-vous simplement nous communiquer par courriel un petit échantillon de votre travail :
 
-\- facsimile de quelques pages significatives
+- description rapide du projet et de son avancement
+- facsimile de quelques pages significatives
+- extrait de transcription
+- extrait d’encodage
 
-\- extrait de transcription
+Merci d’envoyer vos documents aux deux adresses suivantes : emmanuel.chateau.dutier@umontreal.ca, et lou.burnard@gmail.com
 
-\- extrait d’encodage
+Afin de vous rafraichir la mémoire sur la TEI d’ici le mois prochain, nous vous conseillons de prendre le temps de lire (ou relire) l’introduction à la Text Encoding Initiative publiée par Lou Burnard. Celle-ci est librement consultable à cette adresse : [http://books.openedition.org/oep/1237](http://books.openedition.org/oep/1237)
 
-Dans le cas où vous voudriez profiter du week-end pour vous rafraîchir la mémoire sur la TEI, nous avons le plaisir de vous annoncer que l’introduction à la Text Encoding Initiative publiée par Lou Burnard vient de connaître une traduction française qui est disponible en ligne à cette adresse : [http://books.openedition.org/oep/1237](http://books.openedition.org/oep/1237)
+Nous vous proposons également quelques exercices pour vous mettre en jambe avec TEI.
+
+@todo : traduction des tumoraux de Lou, 
+
+@todo mise en ligne d’un ou plusieurs exercices débutant
+
+@todo choix lectures à proposer avant la formation sur ODD
 
