@@ -55,9 +55,8 @@ Afin de vous rafraichir la mémoire sur la TEI d’ici le mois prochain, nous vo
 
 Nous vous proposons également quelques exercices pour vous mettre en jambe avec TEI.
 
-@todo : traduction des tumoraux de Lou, 
+@todo : traduction des tutoriaux de Lou,
 
 @todo mise en ligne d’un ou plusieurs exercices débutant
 
 @todo choix lectures à proposer avant la formation sur ODD
-
