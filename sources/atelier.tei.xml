@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Atelier modélisation</title>
+        <author>Lou Burnard</author>
+        <author>Emmanuel Chateau</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>MEET</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This is the master version of an original document.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change>
+        <date>2015-11-18</date>
+        <name>Emmanuel Chateau creation</name>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage xml:lang="fr">
+        <titlePart>06- Atelier modélisation</titlePart>
+        <docImprint>Formation TEI | ENC 17-20 novembre 2015</docImprint>
+        <note><ref target="https://github.com/tei-fr/formationEnc2015-11">Répertoire GitHub</ref> |
+            <ref target="00-programme.html">Programme</ref></note>
+      </titlePage>
+    </front>
+    <body>
+      <div rend="slide" xml:lang="fr">
+        <div>
+          <head>Travail en binôme 1</head>
+          <p><hi>Travailler successivement sur le projet de votre binôme. 11h30-12h30</hi></p>
+          <div>
+            <head>Définir les objets d’intérêt de votre édition, qu’est-ce qu’un texte pour vous ?</head>
+          </div>
+          <div>
+            <head>Quelle est l’unité textuelle</head>
+          </div>
+          <div>
+            <head>Quelle est la macrostructure du texte ?</head>
+          </div>
+          <div>
+            <head>Quels sont les parties les plus significatives de vos documents ?</head>
+          </div>
+          <div>
+            <head>Quels sont les objets qui correspondent à des <gi>p</gi> ?</head>
+          </div>
+          <div>
+            <head>Quels sont les sous-composants de <gi>p</gi> ?</head>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div rend="title" xml:lang="fr">
+          <head>...</head>
+          <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
+              >Programme</ref></note>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
