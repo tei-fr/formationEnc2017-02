@@ -244,8 +244,7 @@
             <att>xml:id</att>, <att>xml:lang</att>, <att>type</att>, <att>subtype</att>
           </item>
         </list>
-        <!--<p>You'll do an exercise like this in the next session. For the moment, think about how you
-          might write the <gi>schemaSpec</gi> you'll need.</p>-->
+       
       </div>
       <div xml:lang="en">
         <head>First customization exercise (contd.)</head>

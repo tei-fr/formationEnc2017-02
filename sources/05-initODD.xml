@@ -415,7 +415,7 @@
                 <attDef ident="href">
                   <desc>supplies a URI for the object pointed at</desc>
                   <datatype>
-                    <rng:data xmlns:rng="http://relaxng.org/ns/structure/1.0" type="anyURI"/>
+                    <dataRef name="anyURI"/>
                   </datatype>
                 </attDef>
               </attList>
@@ -436,7 +436,7 @@
                 <attDef ident="href">
                   <desc>qui fournit l’URI de l’objet ciblé</desc>
                   <datatype>
-                    <rng:data xmlns:rng="http://relaxng.org/ns/structure/1.0" type="anyURI"/>
+                    <dataRef name="anyURI"/>
                   </datatype>
                 </attDef>
               </attList>
@@ -460,7 +460,7 @@
               <ident>oddex-1.odd</ident></item>
           <item>Créez une nouvelle version du schéma à partir de cet ODD</item>
           <item>Assurez vous que le fichier test <ident>oddex-1-test.xml</ident> reste valide contre
-            cette nouvelle version du schéma </item>
+            cette nouvelle version du schéma </item><item>Comprenez-vous l'effet des references aux classes?</item>
         </list>
       </div>
       <div xml:lang="en">
@@ -481,7 +481,7 @@
                 <attDef ident="xml:id">
                   <desc>provides a unique identifier for an element</desc>
                   <datatype>
-                    <data xmlns="http://relaxng.org/ns/structure/1.0" type="ID"/>
+                    <dataRef name="ID"/>
                   </datatype>
                 </attDef>
                 <attDef ident="status">
@@ -513,7 +513,7 @@
                 <attDef ident="xml:id">
                   <desc>fournit un identifiant unique pour le composant</desc>
                   <datatype>
-                    <data xmlns="http://relaxng.org/ns/structure/1.0" type="ID"/>
+                    <dataRef name="ID"/>
                   </datatype>
                 </attDef>
                 <attDef ident="status">
@@ -578,38 +578,9 @@
               </list></item>
           </list></p>
         <p rend="box">Et comme dans tout projet de documentation : indication de version,
-          référencements extérieurs, mappings ontologiques…</p>
+          référencements extérieurs et intérieures, mappings ontologiques…</p>
       </div>
-      <!-- <div xml:lang="en">
-        <head>Descriptions and glosses</head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <elementSpec ident="para">
-            <gloss>paragraph</gloss>
-            <desc>marks paragraphs in prose.</desc>
-            <desc xml:lang="zh-tw">標記散文的段落。</desc>
-            <desc xml:lang="ja"> 散文の段落を示す． </desc>
-            <desc xml:lang="fr">marque les paragraphes dans un texte en prose.</desc>
-            <desc xml:lang="es">marca párrafos en prosa.</desc>
-            <desc xml:lang="it">indica i paragrafi in prosa</desc>
-            <!-\- ... -\->
-          </elementSpec>
-        </egXML>
-      </div>
-      <div xml:lang="fr">
-        <head>Descriptions et gloses</head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <elementSpec ident="para">
-            <gloss>paragraph</gloss>
-            <desc>marks paragraphs in prose.</desc>
-            <desc xml:lang="zh-tw">標記散文的段落。</desc>
-            <desc xml:lang="ja"> 散文の段落を示す． </desc>
-            <desc xml:lang="fr">marque les paragraphes dans un texte en prose.</desc>
-            <desc xml:lang="es">marca párrafos en prosa.</desc>
-            <desc xml:lang="it">indica i paragrafi in prosa</desc>
-            <!-\- ... -\->
-          </elementSpec>
-        </egXML>
-      </div>
+      
       <div xml:lang="en">
         <head>Usage examples</head>
         <p>Documenting an XML schema requires the inclusion of examples in XML. If your
@@ -657,47 +628,25 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> &lt;egXML
           xmlns="http://www.tei-c.org/ns/Examples"> <p>un paragraphe</p> &lt;/egXML></egXML>
       </div>
- -->
+
       <div xml:lang="en">
-        <head>More sophisticated constraints</head>
+        <head>Defining a content model </head>
+        <p> The <gi>content</gi> of an element might be composed of</p>
         <list>
-          <item>We can define the legal content of an element using <soCalled>pure ODD</soCalled>
-            constructs</item>
-          <item>Alternatively we can use RELAX NG directly </item>
-          <item>Content can be further constrained by means of a <gi>valList</gi> element ... </item>
-          <item>... or by means of a <gi>datatype</gi> element (which uses RELAX NG) </item>
-          <item>Contextual dependencies can be expressed by means of <gi>constraint</gi> elements
-            (which use e.g. ISO Schematron) </item>
-        </list>
-        <p rend="box">We will introduce these possibilities gradually !</p>
-      </div>
-      <div xml:lang="fr">
-        <head>Des contraintes plus sophistiquées </head>
-        <list>
-          <item>Les modèles de contenu peuvent être exprimés en <soCalled>pure ODD</soCalled>,
-            indépendamment du langage de schéma RelaxNG</item>
-          <item>Les valeurs d’attribut peuvent être controllés avec l’élément <gi>valList</gi> ou
-              <gi>datatype</gi>, à plusieurs niveaux de généralité</item>
-          <item>Les contraintes variables selon le contexte peuvent être exprimées en utilisant
-            l’élément <gi>constraint</gi>
-          </item>
-        </list>
-        <p rend="box">Nous allons introduire tout cela doucement… !</p>
-      </div>
-      <!-- <div>
-        <head>Defining a content model in pure ODD</head>
-        <p> The <gi>content</gi> element can contain</p>
-        <list>
+          <item>Nothing at all</item><item>Just text with no tagging <gi>textNode</gi></item>
           <item>References to other elements <gi>elementRef</gi></item>
           <item>References to classes of element <gi>classRef</gi></item>
           <item>Alternations of the foregoing <gi>alternate</gi></item>
           <item>Sequences of the foregoing <gi>sequence</gi></item>
-          <item>Interleaved instances of the foregoing <gi>interleave</gi> (<hi rend="bold">Warning:
-              this is not yet implemented</hi>)</item>
+          <item>And any of these components might be repeatable ... <att>minOccurs</att> and <att>maxOccurs</att>
+          </item><!--<item>Interleaved instances of the foregoing <gi>interleave</gi> (<hi rend="bold">Warning:
+              this is not yet implemented</hi>)</item>-->
         </list>
-        <p>Attributes <att>minOccurs</att> and <att>maxOccurs</att> can be used to control
-          repetition</p>
-      </div>-->
+        <p>We'll look at the TEI XML constructs available to express all these possibilities in more detail later</p>
+      </div>
+      
+      <!-- traduction a fournir -->
+      
       <div xml:lang="en">
         <head>Is your journey really necessary ?</head>
         <p rend="box">The TEI defines elements very like yours. Why not use the TEI?</p>
@@ -742,9 +691,9 @@
               <ident>oddex-3-test.xml</ident></item>
           <item>Note that a TEI document must use the TEI namespace</item>
           <item>Note also that TEI concepts don't always overlap exactly with our initial model
-            (e.g. a rend="box">> cannot appear between <gi>p</gi> elements)</item>
+            (e.g. a <gi>graphic</gi> cannot appear between <gi>p</gi> elements)</item>
         </list>
-        <p rend="box">We'll look at the TEI use of ODD in more detail this afternoon</p>
+        <p rend="box">We'll look at the TEI use of ODD in more detail later</p>
       </div>
       <div xml:lang="fr">
         <head>Création d’un schéma TEI</head>
@@ -760,7 +709,7 @@
         </list>
         <p rend="box">Plus tard, nous verrons comment la TEI se sert du système ODD…</p>
       </div>
-      <!--<div>
+      <div>
         <head>Notions de namespace 1</head>
         <list>
           <item> Un <term>namespace</term> (espace de noms) fournit une manière d’associer et
@@ -768,7 +717,7 @@
           <item>Jusqu’à présent, tout ce qui a été nommé dans notre schéma appartient à un namespace
             "nul". </item>
           <item>Supposons que nous souhaitions ajouter un nouvel élément <gi>bit</gi> avec un modèle
-            de contenu plus restreint. Ce <gi>bit</gi> ne contiendrait que de texte, mais nous
+            de contenu plus restreint. Ce <gi>bit</gi> ne contiendra que de texte, mais nous
             souhaitons l'appeler un <gi>bit</gi> quand même. Pour le distinguer du <gi>bit</gi>
             existant, il faut l’associer à un autre espace de noms.</item>
           <item>L’attribut <att>ns</att> est disponible sur <gi>elementSpec</gi> pour préciser un
@@ -782,7 +731,9 @@
           xmlns:rng="http://relaxng.org/ns/structure/1.0">
           <elementSpec ident="bit" ns="http://myNamespace.org" prefix="extra">
             <desc>élément textuel du schéma simplissime (sans bob) </desc>
-            <content allowText="true"/>
+            <content>
+              <textNode/>
+            </content>
             <classes><memberOf key="stuffPart"/></classes>
           </elementSpec>
         </egXML>
@@ -804,7 +755,7 @@
         </list>
       </div>
       
-      -->
+
     </body>
   </text>
 </TEI>

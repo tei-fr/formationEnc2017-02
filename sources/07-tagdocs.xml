@@ -618,7 +618,7 @@
         <p>One example is worth a million words... but it's not so easy to embed an XML example in
           an XML document, especially if you want to validate it at the same time. There are several
           possible methods: <list>
-            <item>you can represent the pointy brackets by entity references (&amp;lt; etc) : but
+            <item>you could represent the pointy brackets by entity references (&amp;lt; etc) : but
               the result is hard to read and cannot be validated</item>
             <item>you could wrap everything in a special XML construct called a CDATA marked section
                 <code>&lt;![CDATA[&lt;p>like this &lt;/p> &#93;]></code> : the code is easier to
@@ -633,7 +633,7 @@
         <head>Exemples</head>
         <p>Un exemple vaut un million de mots... mais ce n’est pas évident de savoir comment
           intégrer un exemple XML dans un document XML : surtout si on souhaite le valider en même
-          temps. Plusieurs démarches sont possibles : <list>
+          temps. Comme déjà noté, plusieurs démarches sont possibles : <list>
             <item>on représente les chevrons par des entités (&amp;lt; etc) : mais la source devient
               illisible et pas validable</item>
             <item>on englobe tout dans un CDATA marked section <code>&lt;![CDATA[&lt;p>comme
@@ -642,44 +642,11 @@
                 xmlns="http://www.tei-c.org/ns/Examples"> &lt;p>ça marche !&lt;/p></code>
             </item>
           </list></p>
-        <p>Les expressions du namespace <code>http://www.tei-c.org/ns/Examples</code> sont validées
+        <p>La TEI a adopté la derniere solution... Les expressions du namespace <code>http://www.tei-c.org/ns/Examples</code> sont validées
           par un schéma spécial, qui permet tout élément TEI comme racine, en utilisant le
           validateur onvdl.</p>
       </div>
-      <!-- <div xml:lang="fr">
-        <!-\- no eng equiv -\->
-        <head>Contraintes des contenus</head>
-        <p>Le modèle de contenu n’est que l’une des manières de restreindre ce qui est permis dans
-          un document. On peut aussi exprimer une contrainte ...</p>
-        <list>
-          <item>par référence à un élément <gi>valList</gi>... </item>
-          <item>par reference à un élément <gi>datatype</gi> (s’applique uniquement aux attributs) </item>
-          <item>par inclusion des éléments <gi>constraintSpec</gi> (expression en ISO schématron)
-          </item>
-        </list>
-      </div>
-      <div xml:lang="fr">
-        <!-\- no eng equiv -\->
-        <head>Spécification des listes de valeurs</head>
-        <p>Les valeurs possibles d’un attribut peuvent être spécifiées par un <gi>datatype</gi>
-          et/ou par <gi>valList</gi>. </p>
-        <p>Un besoin assez commun est de spécifier une <term>énumération</term> (une liste – ouverte
-          ou fermée – de valeurs)
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
-            <attDef ident="status">
-              <desc>indique l’état courant du système selon un code de couleur</desc>
-              <defaultVal>green</defaultVal>
-              <valList type="closed">
-                <valItem ident="red"><desc>fermeture complète du système</desc></valItem>
-                <valItem ident="orange"><desc>fermeture imminente du système</desc></valItem>
-                <valItem ident="green"><desc>état normal du système</desc></valItem>
-                <valItem ident="white"><desc>état inconnu du système</desc></valItem>
-              </valList>
-            </attDef>
-          </egXML>
-        </p>
-      </div>
-      -->
+      
       <div xml:lang="en">
         <head>Schematron constraints</head>
         <list>
