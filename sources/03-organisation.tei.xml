@@ -69,7 +69,6 @@
                   <item>On n’abordera pas un ensemble de textes composites ou un corpus de la même
                      manière que des textes isolés.</item>
                </list>
-
                <p>Ces différents cas de figure expliquent assez bien le besoin de métadonnées
                   spécialisées pour décrire les contenus.</p>
                <p>Ce que propose la TEI c’est un ensemble de mécanismes pour les traiter.
@@ -197,8 +196,7 @@
                         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">22
                         modules</ref>
                      <list>
-                        <item>Classement des 555 éléments de la TEI par domaines
-                           d’application</item>
+                        <item>Classement des éléments de la TEI par domaines d’application</item>
                         <item>Chaque module fait l’objet d’un chapitre de la documentation</item>
                      </list></item>
                   <item><ref
@@ -207,7 +205,9 @@
                   <item><ref
                         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html"
                         >Classes d’attribut</ref></item>
-                  <item><ref target="macros tei">Macros et types de données</ref></item>
+                  <item><ref
+                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-MACROS.html"
+                        >Macros et types de données</ref></item>
                </list>
             </div>
             <div rend="notes">
@@ -372,9 +372,23 @@
                </list>
             </div>
             <div rend="notes">
-               <p>The body of this edition of the Guidelines proper contains 23 chapters arranged in increasing order of specialist interest. The first five chapters discuss in depth matters likely to be of importance to anyone intending to apply the TEI scheme to virtually any kind of text. The next seven focus on particular kinds of text: verse, drama, spoken text, dictionaries, and manuscript materials. The next nine chapters deal with a wide range of topics, one or more of which are likely to be of interest in specialist applications of various kinds. The last two chapters deal with the XML encoding used to represent the TEI scheme itself, and provide technical information about its implementation. The last chapter also defines the notion of TEI conformance and its implications for interchange of materials produced according to these Guidelines.</p>
+               <p>The body of this edition of the Guidelines proper contains 23 chapters arranged in
+                  increasing order of specialist interest. The first five chapters discuss in depth
+                  matters likely to be of importance to anyone intending to apply the TEI scheme to
+                  virtually any kind of text. The next seven focus on particular kinds of text:
+                  verse, drama, spoken text, dictionaries, and manuscript materials. The next nine
+                  chapters deal with a wide range of topics, one or more of which are likely to be
+                  of interest in specialist applications of various kinds. The last two chapters
+                  deal with the XML encoding used to represent the TEI scheme itself, and provide
+                  technical information about its implementation. The last chapter also defines the
+                  notion of TEI conformance and its implications for interchange of materials
+                  produced according to these Guidelines.</p>
                <p>Pas fait pour être lu de bout en bout, mais une documentation de référence.</p>
-               <p>Généralement, les chapitres suivent une organisation similaire. Ils débutent par des considérations générales sur le sujet traité. Repérer les navigations hypertextuelles (renvois), les tables de descriptions d’éléments et d’attributs, les exemples, et à la fin des chapitres le récapitulatif des éléments contenus dans les modules décrits par les chapitres.</p>
+               <p>Généralement, les chapitres suivent une organisation similaire. Ils débutent par
+                  des considérations générales sur le sujet traité. Repérer les navigations
+                  hypertextuelles (renvois), les tables de descriptions d’éléments et d’attributs,
+                  les exemples, et à la fin des chapitres le récapitulatif des éléments contenus
+                  dans les modules décrits par les chapitres.</p>
             </div>
          </div>
          <div rend="slide">
@@ -387,8 +401,14 @@
                </div>
                <div>
                   <head>Référence aux attributs</head>
-                  <p>prennent la forme <ident>@attname</ident>, où "attname" est le nom de l’attribut</p>
-                  <p>ex : <code>&lt;name&gt;</code> correspond à <ident>name</ident></p> <!-- ??????? -->
+                  <p>prennent la forme <ident>@attname</ident>, où "attname" est le nom de
+                     l’attribut</p>
+                  <p>ex : <code>@name</code> correspond à <ident>name</ident></p>
+                  <!-- ??????? -->
+               </div>
+               <div>
+                  <p>Les noms TEI ressemblent à des mots anglais ... mais on peut les modifier</p>
+                  <p>Par convention, on se sert du <q>camelCase</q></p>
                </div>
             </div>
          </div>
@@ -403,43 +423,59 @@
                <div>
                   <head>Macros et types de données</head>
                   <p>de la forme <ident>macro.paraContent</ident> pour les macros</p>
-                  <p>de la forme <ident>data.pointer</ident> pour les types de données.</p>
+                  <p>de la forme <ident>teidata.pointer</ident> pour les types de données.</p>
                </div>
                <div>
                   <p>suffixes <ident>Part</ident>, <ident>Like</ident></p>
-                  <p>racine <ident>global</ident> pour indiquer que les membres de la classe sont permis n’importe où dans un document TEI</p>
+                  <p>racine <ident>global</ident> pour indiquer que les membres de la classe sont
+                     permis n’importe où dans un document TEI</p>
                   <p>suffixes additionnels préfixés par <ident>.</ident></p>
                   <p>ex : <ident>model.divPart</ident>, <ident>model.divPart.spoken</ident></p>
                </div>
             </div>
             <div rend="notes">
-               <p>Introduire la notion d’héritage à partir des conventions de nommage des classes :</p>
-               <p>Le premier suffixe "Part" si les membres de la classe sont tous fils de l’élément racine, ou "Like" les membres de la classe sont tous enfant de l’élément racine.</p>
-               <p>La racine de nom "global" est utilisée pour indiquer que les membres de la classe sont permis partout dans un document TEI</p>
-               <p>Il est possible d’ajouter des suffixes additionnels, préfixés par un "." pour distinguer des sous-classes sémantiques ou structurelles.</p>
-               <p>Par exemple la classe des éléments qui font partie de div est appellée <ident>model.divPart</ident>. Cette classe inclue dans une sous-classe 
-                  les éléments qui peuvent faire partie d’une division dans un texte oral, qui est alors nommée <ident>model.divPart.spoken</ident></p>
+               <p>Introduire la notion d’héritage à partir des conventions de nommage des
+                  classes :</p>
+               <p>Le premier suffixe "Part" si les membres de la classe sont tous fils de l’élément
+                  racine, ou "Like" les membres de la classe sont tous enfant de l’élément
+                  racine.</p>
+               <p>La racine de nom "global" est utilisée pour indiquer que les membres de la classe
+                  sont permis partout dans un document TEI</p>
+               <p>Il est possible d’ajouter des suffixes additionnels, préfixés par un "." pour
+                  distinguer des sous-classes sémantiques ou structurelles.</p>
+               <p>Par exemple la classe des éléments qui font partie de div est appellée
+                     <ident>model.divPart</ident>. Cette classe inclue dans une sous-classe les
+                  éléments qui peuvent faire partie d’une division dans un texte oral, qui est alors
+                  nommée <ident>model.divPart.spoken</ident></p>
             </div>
          </div>
-         <div rend="slide"><!-- seriously NON ... on utilise pure ODD! -->
-            <div>
-               <head>Déclaration d’élément</head>
+         <div rend="slide">
+             <div>
+               <head>Déclaration du contenu d’un élément</head>
                <list>
-                  <item><ident>,</ident> Indique une séquence</item>
-                  <item><ident>|</ident> Indique un choix</item>
-                  <item><ident>?</ident> Indique un élément optionnel et qui ne peut pas être répété</item>
-                  <item><ident>*</ident> Indique un élément qui est optionnel mais qui peut être répété</item>
-                  <item><ident>+</ident> Indique un élément obligatoire et qui peut être répété</item>
+                  <item><code>&lt;sequence&gt;</code> Indique une séquence</item>
+                  <item><code>&lt;alternate&gt;</code> Indique un choix</item>
+                  <item><code>@minOccurs</code> Indique le nombre minimal de 
+                     répétitions (1 par defaut)</item>
+                  <item><code>@maxOccurs</code>Indique le nombre maximal de 
+                     répétitions (1 par defaut)</item>
+                  <item><code>&lt;elementRef&gt;</code> Indique la presence d'un élément</item>
+                  <item><code>&lt;classRef&gt;</code> Indique la presence d'un ou de plusieurs éléments d'une classe spécifique</item>
                </list>
             </div>
             <div rend="notes">
                <head>Déclaration d’élément</head>
                <list>
-                  <item><ident>,</ident> Indique une séquence, c’est-à-dire que l’élément à gauche de la virgule doit précéder l’élément à droite.</item>
-                  <item><ident>|</ident>Indique un choix, c’est-à-dire que l’on choisit soit l’élément à gauche de la barre verticale, soit l’élément à droite.</item>
-                  <item><ident>?</ident> Indique un élément optionnel et qui ne peut pas être répété. Autrement dit, il a une cardinalité de 0 ou 1.</item>
-                  <item><ident>*</ident> Indique un élément qui est optionnel mais qui peut être répété. Autrement dit, il a une cardinalité de 0 ou plusieurs, sans limite.</item>
-                  <item><ident>+</ident> Indique un élément obligatoire et qui peut être répété.  Il a donc une cardinalité de 1 ou plusieurs, sans limite.</item>
+                  <item><ident>sequence</ident> Indique une séquence, c’est-à-dire que les composants 
+                     sont présentés dans l'ordre où il faut les trouver.</item>
+                  <item><ident>alternate</ident>Indique un choix, c’est-à-dire que l’on choisit entre tous
+                     les composants.</item>
+                  <item><ident>@minOccurs</ident> et <ident>@maxOccurs</ident> sont d'habitude utilisés ensemble pour indiquer la cardinalité d'un composant. 
+                     Si absent, ils ont tout les deux une valeur de 1.</item>
+                  <item><ident>elementRef</ident> Indique un élément par son attribut @key</item>
+                  <item><ident>classRef</ident> Indique une classe d'éléments par son attribut @key. La signification varie selon la valeur de son attribut @expand. 
+                  Par défaut, il correspond à un élément (n'importe lequel) de la classe indiquée.</item>
+        
                </list>
             </div>
          </div>

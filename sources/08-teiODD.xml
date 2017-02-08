@@ -5,11 +5,10 @@
       <titleStmt>
         <title xml:lang="en">ODD for customization</title>
         <title xml:lang="fr">Personnalisation avec ODD</title>
-
         <author xml:id="LB">Lou Burnard Consulting</author>
       </titleStmt>
       <publicationStmt>
-           <p xml:lang="fr">Préparé pour ENC niv2 2017</p>
+        <p xml:lang="fr">Préparé pour ENC niv2 2017</p>
       </publicationStmt>
       <sourceDesc>
         <p>Translated from ODD MuteC 2014 which was majoritairement nouveau!</p>
@@ -21,43 +20,58 @@
       <change who="#LB" when="2014-02-21">1er jet</change>
     </revisionDesc>
   </teiHeader>
-<text>
-    
-    
-    <body> <div xml:lang="en">
-      <head>ODD is also a customization language </head>
-      <p>It is used both to specify your choices from the TEI framework, and to specify the
-        framework itself</p>
-      <p>A customization ODD specifies a selection or modification of the objects provided by
-        another ODD, typically (but not necessarily) some release of the whole TEI framework by <list>
-          <item>selecting some modules</item>
-          <item>selecting or deleting some of the objects defined by those modules (éléments,
-            classes, datatypes, macros) </item>
-          <item>selecting or deleting some attributes </item>
-          <item>modifying or replacing some parts of the original specification (e.g. a valList or
-            an example)</item>
-          <item>possibly adding entirely new objects</item>
-        </list></p>
-      <p>A customization ODD will often contain multiple specifications for the same object: one
-        original, and one modified. ODD processing must unify these, following rules we will
-        explain later. </p>
-    </div>
+  <text>
+    <body>
+      <div xml:lang="en">
+        <head>ODD is also a customization language </head>
+        <p>It is used both to specify your choices from the TEI framework, and to specify the
+          framework itself</p>
+        <p>A customization ODD specifies a selection or modification of the objects provided by
+          another ODD, typically (but not necessarily) some release of the whole TEI framework by <list>
+            <item>selecting some modules</item>
+            <item>selecting or deleting some of the objects defined by those modules (éléments,
+              classes, datatypes, macros) </item>
+            <item>selecting or deleting some attributes </item>
+            <item>modifying or replacing some parts of the original specification (e.g. a valList or
+              an example)</item>
+            <item>possibly adding entirely new objects</item>
+          </list></p>
+        <p>A customization ODD will often contain multiple specifications for the same object: one
+          original, and one modified. ODD processing must unify these, following rules we will
+          explain later. </p>
+      </div>
       <div xml:lang="fr">
         <head>ODD est aussi une langage de personnalisation </head>
         <p>On se sert du même système pour spécifier ses choix dans le grand bazar de la TEI et pour
           spécifier le bazar lui-même.</p>
         <p>Un ODD de personnalisation est specifié par rapport au système complet <list>
-          <item>en sélectionnant des modules</item>
-          <item>en sélectionnant parmi les objets (éléments, classes, datatypes, macros) fournis
-            par ces modules</item>
-          <item>en supprimant quelques uns des attributs fournis par ces objets</item>
-          <item>en modifiant ou remplaçant quelques parties de ces spécifications (par ex. les
-            valList)</item>
-          <item>éventuellement en ajoutant des spécifications d’objets nouveaux</item>
-        </list></p>
+            <item>en sélectionnant des modules</item>
+            <item>en sélectionnant parmi les objets (éléments, classes, datatypes, macros) fournis
+              par ces modules</item>
+            <item>en supprimant quelques uns des attributs fournis par ces objets</item>
+            <item>en modifiant ou remplaçant quelques parties de ces spécifications (par ex. les
+              valList)</item>
+            <item>éventuellement en ajoutant des spécifications d’objets nouveaux</item>
+          </list></p>
         <p>Le traitement d’un ODD implique la résolution de spécifications multiples pour un même
           objet</p>
       </div>
+      <div xml:lang="en">
+        <head>How to make an ODD</head>
+        <p>An ODD is just a TEI document, so you can make it anyway you like. But the following
+          three ways are the most usual: <list>
+            <item>Simple but limited web interface : http://www.tei-c.org/Roma</item>
+            <item>Create automatically from your corpus : oddByExample stylesheet</item>
+            <item>Manually edit</item>
+          </list></p>
+        <p>Each has advantages and drawbacks: we'll explore all three.</p>
+      </div>
+      
+      <div xml:lang="fr">
+        <!-- a traduire -->
+      </div>
+      
+      
       <div xml:lang="en">
         <head>A simple customization example</head>
         <p>As you've already seen, we use the <gi>schemaSpec</gi> element to specify a schema,
@@ -179,7 +193,7 @@
             </schemaSpec></egXML>
         </p>
         <p rend="box">Take care ! a module can define classes or macros as well as elements.
-          <att>include</att> and <att>except</att> apply <emph>only</emph> to elements!</p>
+            <att>include</att> and <att>except</att> apply <emph>only</emph> to elements!</p>
       </div>
       <div xml:lang="fr">
         <head>Sélection par inclusion</head>
@@ -216,11 +230,11 @@
             <gi>publicationStmt</gi>
             <gi>sourceDesc</gi> and <gi>title</gi>) </item>
           <item>The <gi>text</gi> element will contain just a <gi>body</gi>, composed of
-            <gi>div</gi>s containing <gi>ab</gi>s </item>
+              <gi>div</gi>s containing <gi>ab</gi>s </item>
           <item>The <gi>ab</gi> elements will contain <gi>s</gi> elements composed of <gi>w</gi> or
-            <gi>pc</gi> elements. </item>
+              <gi>pc</gi> elements. </item>
           <item>The only attributes we want are <att>xml:id</att>, <att>xml:lang</att>,
-            <att>type</att>, and <att>subtype</att></item>
+              <att>type</att>, and <att>subtype</att></item>
         </list>
         <p>You'll do an exercise like this in the next session. For the moment, think about how you
           might write the <gi>schemaSpec</gi> you'll need.</p>
@@ -231,20 +245,19 @@
           de corpus langagier. </p>
         <list>
           <item>L’entête TEI ne possédera que les composants essentiels à sa conformité (à savoir :
-            <gi>teiHeader </gi><gi>fileDesc</gi>
+              <gi>teiHeader </gi><gi>fileDesc</gi>
             <gi>titleStmt</gi>
             <gi>publicationStmt</gi>
             <gi>sourceDesc</gi> et <gi>title</gi>) </item>
           <item>L’élément <gi>text</gi> est composé d’un seul <gi>body</gi> contenant des
-            <gi>div</gi>s contenant un ou plus d’éléments <gi>ab</gi>
+              <gi>div</gi>s contenant un ou plus d’éléments <gi>ab</gi>
           </item>
           <item>Chaque <gi>ab</gi> ne permet qu'une séquence d’éléments <gi>s</gi></item>
           <item>Chaque <gi>s</gi> est composé d’éléments <gi>w</gi> et <gi>pc</gi> elements. </item>
           <item>et nous souhaitons supprimer la majorité des attributs, en gardant notamment
-            <att>xml:id</att>, <att>xml:lang</att>, <att>type</att>, <att>subtype</att>
+              <att>xml:id</att>, <att>xml:lang</att>, <att>type</att>, <att>subtype</att>
           </item>
         </list>
-       
       </div>
       <div xml:lang="en">
         <head>First customization exercise (contd.)</head>
@@ -292,11 +305,11 @@
             exactly what modifications you made in your TEI customization</item>
         </list>
         <p>More formally... <list>
-          <item>Elements from the TEI namespace must be valid with respect to the TEI-ALL
-            schema</item>
-          <item>Any extension of an existing TEI element should therefore be placed in a different
-            namespace</item>
-        </list></p>
+            <item>Elements from the TEI namespace must be valid with respect to the TEI-ALL
+              schema</item>
+            <item>Any extension of an existing TEI element should therefore be placed in a different
+              namespace</item>
+          </list></p>
         <p rend="box">These rules are intended to simplify the "blind interchange" of documents. But
           they don’t guarantee it. .</p>
       </div>
@@ -309,14 +322,13 @@
             conseillé, parce que cela mettra en évidence toutes les modifications effectuées.</item>
         </list>
         <p>Plus formellement dans un document TEI <list>
-          <item>Tout élément appartenant à l’espace de nommage TEI doit être valide par rapport au
-            schéma TEI-ALL.</item>
-          <item>Toute autre élément présent doit donc appartenir à un autre namespace</item>
-        </list></p>
+            <item>Tout élément appartenant à l’espace de nommage TEI doit être valide par rapport au
+              schéma TEI-ALL.</item>
+            <item>Toute autre élément présent doit donc appartenir à un autre namespace</item>
+          </list></p>
         <p rend="box">L’objet de ces règles est de faciliter le "blind interchange" des
           documents.</p>
       </div>
     </body>
   </text>
-  </TEI>
-  
+</TEI>
