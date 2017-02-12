@@ -60,3 +60,7 @@ Nous vous proposons également quelques exercices pour vous mettre en jambe avec
 @todo mise en ligne d’un ou plusieurs exercices débutant
 
 @todo choix lectures à proposer avant la formation sur ODD
+
+## Se rafraîchir les idées
+
+Lou Burnard. Qu’est-ce que la TEI ? Encyclopédie numérique. OpenEdition Press, 2015. http://books.openedition.org/oep/1237 DOI : 10.4000/books.oep.1237
