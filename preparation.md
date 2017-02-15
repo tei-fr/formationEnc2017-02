@@ -6,16 +6,16 @@
 
 Renseignements sur les participants
 
-Profils
+### Votre profil
 
-- Quel est votre statut professionel ?
-- Vous considerez-vous plutot comme chercheur ou comme ingenieur ?
+- Quel est votre statut professionnel ?
+- Vous considérez-vous plutôt comme un chercheur ou comme un ingénieur ?
 - Quel est votre domaine de recherche ou d’activité ?
 
-Compétences techniques
+### Vos compétences techniques
 
-- Comment qualifieriez-vous vos maîtrise de XML ? (parfaite, pas mal, assez bonne)
-- Comment qualifieriez-vous votre niveau d’utilisation de la TEI ?
+- Comment qualifieriez-vous vos maîtrise de XML ? (excellente, bonne, assez-bonne, mauvaise)
+- Comment qualifieriez-vous votre niveau d’utilisation de la TEI ? (excellent, bon, assez-bon, mauvais)
 - Depuis quand utilisez-vous la TEI ?
 - À quelles formations TEI avez-vous déjà participé précédemment, à quelle époque ?
 - Quels outils utilisez-vous habituellement pour travailler avec TEI ?
@@ -23,7 +23,7 @@ Compétences techniques
 - Quel est votre élément TEI préféré, et pourquoi ?
 - Vous êtes piégé/piégée dans l’ascenseur avec le président de votre université. Vous avez deux minutes pour le/la convaincre de l’importance de la TEI. Que lui dites-vous ?
 
-Quels projets
+### Les projets sur lesquels vous travaillez
 
 - Décrivez le projet de recherche sur lequel vous travaillez en quelques phrases. Précisez le genre de sources ou de documents sur lesquels vous travaillez, le genre d’analyse que vous voulez conduire, l’ampleur du corpus, etc.
 - Quels enjeux de modélisation identifiez-vous dans ce projet ?
@@ -34,7 +34,7 @@ Quels projets
 
   N’hésitez pas à nous faire part de besoins particuliers dont vous voudriez que nous tenions compte au cours de la formation
 
-## Couriel d’envoi
+## courriel d’envoi
 
 Merci de votre intérêt pour la formation TEI de niveau avancé offerte par l’École des chartes. 
 
@@ -55,8 +55,12 @@ Afin de vous rafraichir la mémoire sur la TEI d’ici le mois prochain, nous vo
 
 Nous vous proposons également quelques exercices pour vous mettre en jambe avec TEI.
 
-@todo : traduction des tutoriaux de Lou,
+@todo : traduction des tutoriaux de Lou
 
 @todo mise en ligne d’un ou plusieurs exercices débutant
 
 @todo choix lectures à proposer avant la formation sur ODD
+
+## Se rafraîchir les idées
+
+Lou Burnard. Qu’est-ce que la TEI ? Encyclopédie numérique. OpenEdition Press, 2015. http://books.openedition.org/oep/1237 DOI : 10.4000/books.oep.1237
