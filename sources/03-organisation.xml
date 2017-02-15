@@ -34,8 +34,8 @@
       <front>
          <titlePage xml:lang="fr">
             <titlePart>03-L’organisation de la TEI</titlePart>
-            <docImprint>Formation TEI | ENC 17-20 novembre 2015</docImprint>
-            <note><ref target="https://github.com/tei-fr/formationEnc2015-11">Répertoire
+            <docImprint>Formation TEI | ENC 27 fev - 2 mars 2017</docImprint>
+            <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
                   GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
          </titlePage>
          <div rend="title" xml:lang="fr" xml:id="index">
@@ -404,7 +404,7 @@
                   <p>prennent la forme <ident>@attname</ident>, où "attname" est le nom de
                      l’attribut</p>
                   <p>ex : <code>@name</code> correspond à <ident>name</ident></p>
-                  <!-- ??????? -->
+                 
                </div>
                <div>
                   <p>Les noms TEI ressemblent à des mots anglais ... mais on peut les modifier</p>
