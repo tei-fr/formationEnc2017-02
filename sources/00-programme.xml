@@ -78,7 +78,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>pause dejeuner</item>
             <label>13h30-14h00</label>
             <item><ref target="03-organisation.html">Savoir manipuler les Guidelines et les
-              spécifications</ref></item><!-- besoin de mise a jour -->
+              spécifications</ref></item>
             <label>14h00-14h30</label>
             <item><ref target="04-personnalisation.html">Personnaliser la TEI</ref></item>
             <label>14h30-15h00</label>
@@ -111,8 +111,8 @@ Le programme laisse une large place au travail sur les projets des participants 
             <label>12h30-13h30</label>
             <item>Pause déjeuner</item>
             <label>14h-15h30</label>
-            <item><ref target="06-cartes.xml">Un cas d’étude de définition d’un schéma pour les cartes postales</ref></item>
-            <label>16h00-16h00</label>
+            <item><ref target="06-cartes.xml">Un cas d’étude : définition d’un schéma pour les cartes postales</ref></item>
+            <label>15h30-16h00</label>
             <item>Pause</item>
             <label>16h00-17h00</label>
             <item><ref target="07-tagdocs.xml">TEI sous le capot</ref></item>
@@ -206,7 +206,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             TEI (exemples groupe).</note>
         </div>
       </div>
-      <!--<div rend="slide">
+     <div rend="slide">
         <div>
           <div>
             <head>S’assurer d’avoir git</head>
@@ -283,7 +283,7 @@ Le programme laisse une large place au travail sur les projets des participants 
           <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
               >Programme</ref></note>
         </div>
-      </div>-->
+      </div>
     </body>
   </text>
 </TEI>
