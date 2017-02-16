@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-  xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:tei="http://www.tei-c.org/ns/1.0"
-  exclude-result-prefixes="tei teix xsl" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+  xmlns:teix="http://www.tei-c.org/ns/Examples" 
+  xmlns:tei="http://www.tei-c.org/ns/1.0"
+  exclude-result-prefixes="tei teix xsl" 
+  xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 
   <xsl:import
-    href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/markdown/tei-to-markdown.xsl"/>
+    href="/usr/share/xml/tei/stylesheet/markdown/tei-to-markdown.xsl"/>
 
   <xsl:output method="html" version="5" indent="yes"/>
 
@@ -77,7 +79,9 @@
     <xsl:text>![test](images/logo-ecole-nationale-des-chartes.png)</xsl:text>
     <xsl:call-template name="newline"/>
   </xsl:template>
-
+  
+<xsl:template match="div[@xml:lang='en']"/>
+  
   <xsl:template match="div[@rend = 'part' and not(div[@rend = 'title'])] | div[@type = 'part' and not(div[@type = 'title'])]">
     <xsl:call-template name="newline"/>
     <xsl:text>---</xsl:text>
@@ -144,7 +148,7 @@
     <xsl:text>
 ```xml
 </xsl:text>
-    <xsl:copy-of select="./*"/>
+    <xsl:copy-of select="./*" copy-namespaces="no" exclude-result-prefixes="#all" />
     <xsl:text>
 ```
 </xsl:text>
