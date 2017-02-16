@@ -1,0 +1,34 @@
+default namespace = ""
+namespace sch = "http://purl.oclc.org/dsdl/schematron"
+namespace tei = "http://www.tei-c.org/ns/1.0"
+namespace teix = "http://www.tei-c.org/ns/Examples"
+namespace xlink = "http://www.w3.org/1999/xlink"
+
+# Schema generated from ODD source 2017-02-16T14:10:26Z. .
+# TEI Edition: Version 3.1.1a. Last updated on
+#	24th January 2017, revision dbb9151
+# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.1.1a./
+#
+
+#
+
+sch:ns [ prefix = "tei" uri = "http://www.tei-c.org/ns/1.0" ]
+book =
+  
+  ## Elément racine d'un schéma simplissime pour encoder les livres
+  element book { (para | image)+ }
+para =
+  
+  ## une paragraph de text 
+  element para { text }
+image =
+  
+  ## un élément vide qui pointe sur un fichier graphique
+  element image {
+    empty,
+    
+    ## fournit l' URI de l'objet ciblé
+    attribute href { xsd:anyURI }?,
+    empty
+  }
+start = book

@@ -232,12 +232,12 @@
  <attDef ident="href">
    <desc>supplies the URI of the object pointed at</desc>
    <datatype>
-     <rng:data xmlns:rng="http://relaxng.org/ns/structure/1.0" type="anyURI"/>
+     <dataRef name="anyURI"/>
    </datatype>
  </attDef>
-   </attList>
+ </attList>
  </elementSpec>
-        </egXML>
+ </egXML>
       </div>
       <div rend="slide" xml:lang="fr">
         <head>Un exemple simplissime (suite)</head>
@@ -258,7 +258,7 @@
    <attDef ident="href">
      <desc>fournit l’URI de l'objet ciblé</desc>
      <datatype>
-       <rng:data xmlns:rng="http://relaxng.org/ns/structure/1.0" type="anyURI"/>
+       <dataRef name="anyURI"/>
      </datatype>
    </attDef>
  </attList>
@@ -337,12 +337,10 @@
  <item>Insérez le contenu du fichier <ident>oddex-1-doc.xml </ident>
    <emph>avant</emph> le nouveau <gi>schemaSpec</gi></item>
  <item>Enregistrez votre ODD sous le nom <ident>oddex-1.odd</ident></item>
- <item>Sélectionnez les Scénario de Transformation <ident>TEI ODD to RELAX NG XML</ident>
-   et <ident>TEI ODD to HTML</ident> pour générer un schéma et sa documentation a partir de
-   cet ODD</item>
- <item>Enregistrer le schéma obtenu sous le nom <ident>oddex-1.rng</ident></item>
- <item>Associez votre schéma avec le fichier test <ident>oddex-1-test.xml</ident> et
-   validez le fichier</item>
+ <item>Sélectionnez les Scénario de Transformation <ident>TEI ODD to RELAX NG Compact</ident>
+   et <ident>TEI ODD to HTML</ident> pour générer un schéma et sa documentation à partir de
+   cet ODD</item><item>Lire la documentation</item>
+  <item>Validez le fichier test <ident>oddex-1-test.xml</ident> contre le schéma <ident>out/oddex-1.rnc</ident> que vous venez de générer</item>
         </list>
       </div>
       <div xml:lang="en">
@@ -446,9 +444,8 @@
         <p> ODD nous permet de dire que tous les éléments ayant en commun un ensemble d’attributs
  constituent une classe <term>attribute class</term> que nous définissons ainsi <egXML
    xmlns="http://www.tei-c.org/ns/Examples">
-   <classSpec ident="pointing" type="atts">
- <desc>les membres de cette classe ont tous un attribut <att>href</att>
- </desc>
+<classSpec ident="pointing" type="atts">
+ <desc>les membres de cette classe ont tous un attribut <att>href</att></desc>
  <attList>
    <attDef ident="href">
      <desc>qui fournit l’URI de l’objet ciblé</desc>
@@ -457,8 +454,7 @@
      </datatype>
    </attDef>
  </attList>
-   </classSpec>
- </egXML></p>
+   </classSpec></egXML></p>
       </div>
       <div xml:lang="en">
         <head>Test your understanding</head>
@@ -477,7 +473,7 @@
  <ident>oddex-1.odd</ident></item>
  <item>Créez une nouvelle version du schéma à partir de cet ODD</item>
  <item>Assurez vous que le fichier test <ident>oddex-1-test.xml</ident> reste valide contre
-   cette nouvelle version du schéma </item><item>Comprenez-vous l'effet des references aux classes?</item>
+   cette nouvelle version du schéma </item><item>Comprenez-vous l'effet des références aux classes?</item>
         </list>
       </div>
       <div xml:lang="en">
