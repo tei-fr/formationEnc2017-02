@@ -44,6 +44,7 @@
             <textNode/>
         </content>
     </elementSpec>
+         
     <elementSpec ident="image">
         <desc>un élément vide qui pointe sur un fichier graphique</desc>
         <content/>

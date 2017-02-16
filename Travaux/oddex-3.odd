@@ -24,12 +24,30 @@
                <specDesc key="image" atts="href"/>
             </specList></p>
          <schemaSpec ns="" start="book" ident="bookSchema">
-         
             <classSpec ident="bookPart" type="model">
                <desc>éléments qui ont la possibilité de figurer dans un <gi>book</gi></desc>
             </classSpec>
             
-           
+            <classSpec ident="bookAtts" type="atts">
+               <desc>attributs applicables aux objets contenus par des <gi>book</gi></desc>
+               <attList>
+                  <attDef ident="xml:id">
+                     <desc>fournit un identifiant unique pour le composant</desc>
+                     <datatype>
+                        <dataRef name="ID"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="status">
+                     <desc>indique le statut de l'élément </desc>
+                     <valList type="closed">
+                        <valItem ident="red"/>
+                        <valItem ident="green"/>
+                        <valItem ident="unknown"/>
+                     </valList>
+                  </attDef>
+               </attList>
+            </classSpec>
+            
             <elementSpec ident="book">
                <desc>Elément racine d'un schéma simplissime pour encoder les livres</desc>
                <content>
@@ -44,6 +62,19 @@
                </classes>
                <content>
                   <textNode/>
+               </content>
+            </elementSpec>
+            
+            <elementSpec ident="para" ns="http://myNamespace.org" prefix="extra">
+               <desc>une paragraph contenant de text et facultativement des images </desc>
+               <classes>
+                  <memberOf key="bookPart"/>
+               </classes>
+               <content>
+                  <alternate maxOccurs="unbounded" minOccurs="0">
+                     <textNode/>
+                     <elementRef key="image"/>
+                  </alternate>
                </content>
             </elementSpec>
             
