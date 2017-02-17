@@ -107,11 +107,11 @@ Le programme laisse une large place au travail sur les projets des participants 
             <label>11-11h30</label>
             <item>De quoi a-t-on besoin ?</item>
             <label>11h30-12h30</label>
-            <item><ref target="05-initODD.xml">Mon premier schéma ODD </ref>(création schéma simple, complexifier, ODD)</item>
+            <item><ref target="05-initODD.html">Mon premier schéma ODD </ref>(création schéma simple, complexifier, ODD)</item>
             <label>12h30-13h30</label>
             <item>Pause déjeuner</item>
             <label>14h-15h30</label>
-            <item><ref target="06-cartes.xml">Un cas d’étude : définition d’un schéma pour les cartes postales</ref></item>
+            <item><ref target="06-cartes.html">Un cas d’étude : définition automatique d’un schéma pour les cartes postales</ref></item>
             <label>15h30-16h00</label>
             <item>Pause</item>
             <label>16h00-17h00</label>
