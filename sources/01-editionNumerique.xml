@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <fileDesc>
@@ -16,6 +14,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2017-05-24">conversion du fichier en TEI</change>
       <change when="2015-05-24">conversion du fichier en TEI</change>
       <change when="2014-10-30">première rédaction</change>
     </revisionDesc>
@@ -117,7 +116,7 @@
               </cit></p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Critères de scientificité</head>
             <list>
@@ -126,7 +125,7 @@
               <item>Justification des partis-pris</item>
             </list>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>Critères de scientificité</head>
             <p>Même si le domaine de l’édition scientifique a connu de profonds changements au cours
               de ces dernières années avec l’irruption du numérique, les opérations à la base de
@@ -170,7 +169,7 @@
               propres à des manuscrits architecturaux pour la consultation.</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Un investissement important</head>
             <list>
@@ -179,7 +178,7 @@
               <item>Problèmes de pérennité</item>
             </list>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>Un investissement important</head>
             <p>Produire une édition numérique est souvent un travail long et fastidieux qui
               nécessite un investissement important. Parce que le travail peut s’étaler sur
@@ -203,12 +202,12 @@
         </div>
       </div>
       <div type="part">
-        <div rend="title" xml:lang="fr" xml:id="balisageDescriptif">
+        <div type="title" xml:lang="fr" xml:id="balisageDescriptif">
           <div>
             <head>Prise en charge de l’édition critique par le balisage descriptif</head>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Peut-on <hi>(sérieusement)</hi> utiliser un traitement de texte ?</head>
             <head>Plusieurs questions à se poser</head>
@@ -220,7 +219,7 @@
               <item>Pérennité et interopérabilité</item>
             </list>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>Peut-on <hi>(sérieusement)</hi> utiliser un traitement de texte ?</head>
             <p>Ici, les critères de qualité d’une édition critique peuvent guider certains
               choix :</p>
@@ -238,7 +237,7 @@
             </list>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Exemples d’éditions numériques</head>
             <list>
@@ -254,14 +253,14 @@
             </list>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Encodage descriptif</head>
             <head>vs</head>
             <head>encodage présentationnel</head>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Encodage descriptif vs encodage présentationnel</head>
             <p>Parce qu’il détermine tous les traitements informatiques qu’il est possible
@@ -280,7 +279,7 @@
               texte encodé et une meilleure portabilité des artefacts numériques.</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>La production d’un <hi>balisage descriptif</hi></head>
             <p>Identifier explicitement la structure sémantique sous-jacente d’un document,
@@ -291,7 +290,7 @@
               <item>Possibilité de produire des vues distinctes</item>
             </list>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>La production d’un <hi>balisage descriptif</hi></head>
             <p>La production d’un <hi rend="bold">balisage descriptif</hi> consiste à identifier
               explicitement la structure sémantique sous-jacente d’un document, cela indépendamment
@@ -308,7 +307,7 @@
               document ou bien une édition basée sur la structure du texte.</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Procédure mise en œuvre lors du <hi>balisage</hi></head>
             <list>
@@ -317,7 +316,7 @@
               <item>Réalisation du balisage, marquage de l’élément</item>
             </list>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>Procédure mise en œuvre lors du <hi>balisage</hi></head>
             <p>Les trois opérations qui interviennent au cours du balisage sont donc les
               suivantes :</p>
@@ -333,7 +332,7 @@
             <bibl>cf. Coombs, James, et al., <hi rend="italic">op. cit.</hi></bibl>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head><hi>OHCO</hi>, Ordered Hierarchical Content Objects</head>
             <p>L’idée d’un balisage descriptif suggère une représentation du texte qui correspond à
@@ -345,7 +344,7 @@
             </list>
             <p>Une manière de se représenter ce qu’est un texte</p>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head><hi>OHCO</hi>, Ordered Hierarchical Content Objects</head>
             <p>L’idée d’un balisage descriptif qui repose sur le fait de marquer le contenu d’un
               texte par des éléments suggère une représentation du texte qui correspond à ce qu’on a
@@ -358,7 +357,7 @@
             <p>C’est ici l’occasion de souligner qu’il s’agit ici d’une modélisation. C’est une manière de représenter ce qu’est un texte qui impose son expressivité et ses contraintes. Nous verrons que la TEI, tout en étant en grande basée sur le balisage descriptif offre différents mécanismes pour prendre en charge des relations non hiérarchiques comme les chevauchements, etc.</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Avantages d’un balisage descriptif sur un balisage présentationnel</head>
             <list type="ordered">
@@ -368,7 +367,7 @@
               <item>Meilleure portabilité</item>
             </list>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>Avantages sur un balisage présentationnel</head>
             <p>Contrairement aux apparences, les logiciels de traitement de texte qui mettent en
               forme les documents ne simplifient pas la production de documents en éliminant le
@@ -407,12 +406,12 @@
         </div>
       </div>
       <div type="part">
-        <div rend="title" xml:lang="fr" xml:id="presentationEdition">
+        <div type="title" xml:lang="fr" xml:id="presentationEdition">
           <div>
             <head>La présentation de l’édition critique</head>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div type="introduction">
             <head>La Présentation de l’édition critique</head>
             <list>
@@ -422,7 +421,7 @@
               <item>des conventions</item>
             </list>
           </div>
-          <div rend="notes">
+          <div rend="type">
             <p>La méthode d’édition critique bien établie, il convient de régler le problème
               pratique de la présentation de l’édition. Ici, les choix que vous allez formuler
               détermineront les modalités de consultation du texte et sa réception.</p>
@@ -438,7 +437,7 @@
               corpus édité.</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div type="introduction">
             <head>La Présentation de l’apparat critique</head>
             <list>
@@ -447,7 +446,7 @@
               <item>des enjeux identiques (citabilité, commodité, etc.)</item>
             </list>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>La Présentation de l’apparat critique</head>
             <div>
               <p>Dans une édition critique d’un texte ancien, on appelle apparat critique l’ensemble
@@ -493,7 +492,7 @@
                 la plus aisée possible.</p>
             </div>
           </div>
-          <div rend="slide" xml:lang="fr">
+          <div type="slide" xml:lang="fr">
             <div>
               <head>Glossaires et index</head>
               <list>
@@ -512,7 +511,7 @@
                 <item>…</item>
               </list>
             </div>
-            <div rend="notes">
+            <div type="notes">
               <head>Glossaires et index</head>
               <p>Outre cet apparat critique et historique, on peut avoir le désir de fournir un
                 glossaire des termes architecturaux et juridiques. C’est-à-dire une liste
@@ -528,7 +527,7 @@
                 difficile et extrêmement chronophage.</p>
             </div>
           </div>
-          <div rend="slide" xml:lang="fr">
+          <div type="slide" xml:lang="fr">
             <div>
               <head>Recherche et recherche plein texte</head>
               <list>
@@ -536,7 +535,7 @@
                 <item>Recherche plein-texte</item>
               </list>
             </div>
-            <div rend="notes">
+            <div type="notes">
               <head>Recherche et recherche plein texte</head>
               <p>Outre les index qui relèvent en grande partie de l’apparat critique, il s’agissait
                 également de proposer au lecteur une recherche plein texte. La recherche dite plein
@@ -551,7 +550,7 @@
                 Solr, ou ElasticSearch qui fonctionnent généralement en environnement Java.</p>
             </div>
           </div>
-          <div rend="slide" xml:lang="fr">
+          <div type="slide" xml:lang="fr">
             <div>
               <head>Hypertextualité et matérialité</head>
               <list>
@@ -562,7 +561,7 @@
                 <item>Matérialité de l’édition</item>
               </list>
             </div>
-            <div rend="notes">
+            <div type="notes">
               <head>Hypertextualité et matérialité</head>
               <div>
                 <head>L’hypertextualité</head>
@@ -602,7 +601,7 @@
               </div>
             </div>
           </div>
-          <div rend="slide" xml:lang="fr">
+          <div type="slide" xml:lang="fr">
             <div>
               <head>Offrir plus de choix au lecteur</head>
               <list>
@@ -611,10 +610,10 @@
                 <item>quel public</item>
               </list>
             </div>
-            <div rend="notes">
+            <div type="notes">
               <head>Offrir plus de choix au lecteur</head>
               <p>Dans sa présentation de 2013, <bibl>A Bag of Words</bibl>, Edward Vanhotte
-                soulèvait la question de ce que pourrait être une édition numérique par rapport à ce
+                soulevait la question de ce que pourrait être une édition numérique par rapport à ce
                 qu’elle est en définitive aux prises avec diverses contraintes qui pèsent sur sa
                 production. Ce faisant, il déconstruisait à cette occasion plusieurs mythes sur la
                 nature des éditions numériques. Notamment le fait que celles-ci seraient plus
@@ -624,7 +623,7 @@
                 audience clairement ciblée et lorsqu’il s’agit d’une édition scientifique elle
                 adopte le plus souvent des critères explicites. En réalité, et pour reprendre les
                 termes d’Edward Vanhoutte, une édition numérique présente une accessibilité
-                « qualitativement différente ». Le media numérique permet notamment la recherche
+                « qualitativement différente ». Le média numérique permet notamment la recherche
                 plein texte que n’offre pas le support imprimé. Une édition numérique mettra
                 également souvent en place toute une série d’index dont l’utilisation repose
                 entièrement sur l’hypertextualité.</p>
@@ -646,11 +645,11 @@
     </body>
     <back>
       <div type="part">
-        <div rend="slide" xml:lang="fr">
+        <div type="title" xml:lang="fr">
           <div>
             <head>Conclusions</head>
           </div>
-          <div rend="notes">
+          <div type="notes">
             <head>Conclusions</head>
             <p>Dans la perspective de produire une édition critique de qualité, privilégier le
               marquage sémantique plutôt que présentationnel présente plusieurs avantages notables
@@ -675,12 +674,12 @@
         </div>
       </div>
       <div type="part">
-        <div rend="title" xml:lang="fr" xml:id="biblio">
+        <div type="title" xml:lang="fr" xml:id="biblio">
           <div>
             <head>Sources et bibliographie</head>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Orientations bibliographiques</head>
             <list>
@@ -708,7 +707,7 @@
             </list>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Orientations bibliographiques .inverse[(suite)]</head>
             <list>
@@ -737,7 +736,7 @@
         </div>
       </div>
       <div>
-        <div rend="title" xml:lang="fr">
+        <div type="title" xml:lang="fr">
           <head>XML, <ref target="02-teiGeneralites.html">Et la TEI dans tout ça ?</ref></head>
           <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
               >Programme</ref></note>

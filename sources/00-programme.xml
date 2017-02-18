@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
   <teiHeader>
     <fileDesc>
@@ -47,7 +48,7 @@ Elle s’adresse à des participants ayant déjà des notions minimales sur la T
 Le programme laisse une large place au travail sur les projets des participants sous la forme d’ateliers.
 
         -->
-      <div rend="slide" xml:lang="fr" xml:id="index">
+      <div type="slide" xml:lang="fr" xml:id="index">
         <div>
           <head>Programme d’ensemble</head>
           <list>
@@ -62,7 +63,7 @@ Le programme laisse une large place au travail sur les projets des participants 
       </div>
     </front>
     <body>
-      <div rend="slide" xml:lang="fr">
+      <div type="slide" xml:lang="fr">
         <div>
           <head><hi>Première</hi> journée : pourquoi produire un modèle ?</head>
           <list type="gloss">
@@ -92,12 +93,12 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>TP03 : Quiz TEI</item> <!-- ?? -->
           </list>
         </div>
-        <div rend="notes">
+        <div type="notes">
           <note>Objectifs : Mettre à niveau les participants sur la connaissance de l’organisation
             des <title>Guidelines</title> et les enjeux d’une modélisation à l’aide d’un schéma.</note>
         </div>
       </div>
-      <div rend="slide" xml:lang="fr">
+      <div type="slide" xml:lang="fr">
         <div>
           <head><hi>2<hi rend="superscript">ème</hi></hi> journée</head>
           <list>
@@ -121,12 +122,12 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>Pure ODD</item>
           </list>
         </div>
-        <div rend="notes">
+        <div type="notes">
           <note>Objectifs : Connaître les principes d’un langage de spécification de schéma et apprendre les bases de la syntaxe ODD. Avoir vu la manière dont la TEI utilise ODD.</note>
           <note>Le cas d’étude n’est pas forcément nécessaire comme car par la suite dans ce format de formation on traite de la modélisation le lendemain. En revanche la partie d’exercice fonctionnait bien. Par ailleurs l’ODD est simple et lisible. D’autant que les exemples présentaient des problèmes différents qui permettaient d’explorer différentes situations : que fournit le schéma produit avec l’ODD pour l’édition du document (choix des valeurs d’attribut, etc.), élément non autorisé dans le schéma, comment ajouter un élément dans le schéma.</note>
         </div>
       </div>
-      <div rend="slide" xml:lang="fr">
+      <div type="slide" xml:lang="fr">
         <div>
           <head><hi>3<hi rend="superscript">ème</hi></hi> journée</head>
           <list>
@@ -156,7 +157,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>Revue des ODD construits</item>
           </list>
         </div>
-        <div rend="notes">
+        <div type="notes">
           <note><list>
               <item>Présentation de modules (survol sur tout ce qui est disponible, il y a probablement tout ce qu’il faut)</item>
               <item>Création de vos propres schémas (exercice d’analyse à partir de vos propres sources = travail en binôme ou en groupe)</item>
@@ -169,7 +170,7 @@ Le programme laisse une large place au travail sur les projets des participants 
           <note>travail en binôme : (définir quelle est l’unité textuelle, quelle est la macrostructure du texte, quels sont les parties les plus significatives de vos documents, quels sont les objets qui correspondent à des p, quels sont les composants des p) Point de vue sur l’édition, objets d’intérêt.</note>
         </div>
       </div>
-      <div rend="slide" xml:lang="fr">
+      <div type="slide" xml:lang="fr">
         <div>
           <head><hi>4<hi rend="superscript">ème</hi></hi> journée</head>
           <list>
@@ -181,11 +182,11 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>Take away : pérennisation</item>
           </list>
         </div>
-        <div rend="notes">
+        <div type="notes">
           <note>Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver à une liste des éléments nécessaires pour son schéma, identification des éléments disponibles et des lacunes éventuelles de la TEI. Comprendre l’intérêt du schéma pour assurer la pérennisation de ses sources. Identifier la manière dont peut contribuer à la TEI (exemples groupe).</note>
         </div>
       </div>
-     <div rend="slide">
+     <div type="slide">
         <div>
           <div>
             <head>S’assurer d’avoir git</head>
@@ -211,7 +212,7 @@ Le programme laisse une large place au travail sur les projets des participants 
           </div>
         </div>
       </div>
-      <div rend="slide">
+      <div type="slide">
         <div>
           <head>Télécharger les sources</head>
           <list>
@@ -223,7 +224,7 @@ Le programme laisse une large place au travail sur les projets des participants 
           <eg>git clone -\-recursive https://github.com/tei-fr/formationEnc2015-05.git</eg>
         </div>
       </div>
-      <div rend="slide">
+      <div type="slide">
         <div>
           <head>Organisation du répertoire</head>
           <list>
@@ -239,7 +240,7 @@ Le programme laisse une large place au travail sur les projets des participants 
           </list>
         </div>
       </div>
-      <div rend="slide" xml:lang="fr">
+      <div type="slide" xml:lang="fr">
         <div>
           <head>Utiliser ces diapositives</head>
           <list>
@@ -256,7 +257,7 @@ Le programme laisse une large place au travail sur les projets des participants 
         </div>
       </div>
       <div>
-        <div rend="title" xml:lang="fr">
+        <div type="title" xml:lang="fr">
           <head>Pour <ref target="01-editionNumerique.html">commencer</ref></head>
           <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
               >Programme</ref></note>
