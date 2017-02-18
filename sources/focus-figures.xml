@@ -24,11 +24,14 @@
   <text>
     <front>
       <titlePage xml:lang="fr">
-        <titlePart>05- Focus sur les figures</titlePart>
-        <docImprint>Formation TEI | ENC 17-20 novembre 2015</docImprint>
-        <note><ref target="https://github.com/tei-fr/formationEnc2015-11">Répertoire GitHub</ref> |
+        <titlePart> Focus sur les figures</titlePart>
+        <docImprint>Formation TEI | ENC 27 fév - 2 mars 2017</docImprint>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
             <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
+    
+    </front>
+    <body>
       <div rend="slide" xml:lang="fr" xml:id="index">
         <div>
           <head>Les besoins</head>
@@ -43,39 +46,37 @@
           </div>
         </div>
       </div>
-    </front>
-    <body>
       <div rend="slide" xml:lang="fr">
         <div>
           <head>Des composants tirés de différents modules</head>
           <div>
             <head><ident>core</ident></head>
             <p><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CO.html#COGR">3.9
-                Graphics and Other Non-textual Components</ref></p>
+    Graphics and Other Non-textual Components</ref></p>
             <p>Éléments utiles définis <gi>graphic</gi>, <gi>media</gi>, <gi>binaryObject</gi>,
-                <gi>head</gi>, <gi>num</gi>, <gi>desc</gi></p>
+    <gi>head</gi>, <gi>num</gi>, <gi>desc</gi></p>
           </div>
           <div>
             <head><ident>transcr</ident></head>
             <p><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHFAX">11
-                Representation of Primary Sources – 11.1 Digital Facsimiles </ref></p>
+    Representation of Primary Sources – 11.1 Digital Facsimiles </ref></p>
             <p>Éléments utiles définis <gi>surface</gi>, <gi>surfaceGrp</gi>, <gi>zone</gi></p>
           </div>
           <div>
             <head><ident>figure</ident></head>
             <p><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/FT.html#FTGRA">14
-                Tables, Formulæ, Graphics and Notated Music</ref> – 14.4 Specific Elements for
-              Graphic Images</p>
+    Tables, Formulæ, Graphics and Notated Music</ref> – 14.4 Specific Elements for
+  Graphic Images</p>
             <p>Éléments utiles définis <gi>figDesc</gi>, <gi>figure</gi></p>
           </div>
-        </div>
+        </div></div>
         <div rend="slide" xml:lang="fr">
           <div>
             <head>Exemple de figure simple</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              du texte <figure xml:id="c2Pl0001" type="plate">
-                <head>Titre de figure</head>
-              </figure> du texte
+  du texte <figure xml:id="c2Pl0001" type="plate">
+    <head>Titre de figure</head>
+  </figure> du texte
             </egXML>
           </div>
           <div rend="notes">
@@ -87,29 +88,29 @@
           <div>
             <head>Exemple de figure <hi>assez</hi> simple</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <figure xml:id="c2Pl0001" type="plate">
-                <head>L'église de Sainte-Sabine à Rome</head>
-                <figDesc>Plan de l'église</figDesc>
-                <graphic url="facs/full/facsC2Pl0001.jpg" mimeType="image/png"/>
-              </figure>
+  <figure xml:id="c2Pl0001" type="plate">
+    <head>L'église de Sainte-Sabine à Rome</head>
+    <figDesc>Plan de l'église</figDesc>
+    <graphic url="facs/full/facsC2Pl0001.jpg" mimeType="image/png"/>
+  </figure>
             </egXML>
           </div>
           <div rend="notes">
             <p>(graphic) indique l’emplacement d’une image, d’une illustration ou d’un schéma intégrés.</p>
             <p>Les éléments <gi>graphic</gi>, <gi>media</gi> et <gi>binaryObject</gi> sont membres de la classe <ident>model.graphicLike</ident>.</p>
            <div>
-             <p><ident>att.internet</ident> Media fournit des attributs pour spécifier le type de ressource informatique selon une taxinomie normalisée.</p>
-             <p>
-               <ident>mimeType</ident> (type de média MIME) spécifie le type MIME (multipurpose internet mail extension) applicable.
-             </p>
+ <p><ident>att.internet</ident> Media fournit des attributs pour spécifier le type de ressource informatique selon une taxinomie normalisée.</p>
+ <p>
+   <ident>mimeType</ident> (type de média MIME) spécifie le type MIME (multipurpose internet mail extension) applicable.
+ </p>
            </div>
             <div>
-              <p><ident>att.media</ident> provides attributes for specifying display and related properties of external media.</p>
-             <list>
-               <item><att>width</att>	Where the media are displayed, indicates the display width</item>
-               <item><att>height</att>	Where the media are displayed, indicates the display height</item>
-               <item><att>scale</att>	Where the media are displayed, indicates a scale factor to be applied when generating the desired display size</item>
-             </list>
+  <p><ident>att.media</ident> provides attributes for specifying display and related properties of external media.</p>
+ <list>
+   <item><att>width</att>	Where the media are displayed, indicates the display width</item>
+   <item><att>height</att>	Where the media are displayed, indicates the display height</item>
+   <item><att>scale</att>	Where the media are displayed, indicates a scale factor to be applied when generating the desired display size</item>
+ </list>
            </div>
           </div>
         </div>
@@ -117,21 +118,21 @@
           <div>
             <head>Exemple de figure <hi>Encore moins</hi> simple</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <figure xml:id="c2Pl0001" type="plate">
-                <head>L'église de Sainte-Sabine à Rome</head>
-                <figDesc>
-                  <locus from="#c2F9v" n="p16">p. 16</locus>
-                  <label>
-                    <num n="1">1</num>
-                  </label>
-                  <title>Plan de l’église de Sainte-Sabine à Rome</title>
-                  <desc>plume et encre noire, lavis</desc>
-                  <dimensions>
-                    <height quantity="21" unit="mm"></height>
-                    <width quantity="42" unit="mm"></width>
-                  </dimensions>
-                </figDesc>
-              </figure>
+  <figure xml:id="c2Pl0001" type="plate">
+    <head>L'église de Sainte-Sabine à Rome</head>
+    <figDesc>
+      <locus from="#c2F9v" n="p16">p. 16</locus>
+      <label>
+        <num n="1">1</num>
+      </label>
+      <title>Plan de l’église de Sainte-Sabine à Rome</title>
+      <desc>plume et encre noire, lavis</desc>
+      <dimensions>
+        <height quantity="21" unit="mm"></height>
+        <width quantity="42" unit="mm"></width>
+      </dimensions>
+    </figDesc>
+  </figure>
             </egXML>
           </div>
         </div>
@@ -139,15 +140,15 @@
           <div>
             <head>Utilisation de facsimile</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <teiHeader><!-- ... --></teiHeader>
-              <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
-                  <graphic n="full" mimeType="image/jpg" 
-                    url="facs/full/facsC2Pl0001.jpg"></graphic>
-                <!-- ... -->
-              </facsimile>
-              <text>...
-                du texte <pb facs="#c2Plf0001"/> du texte
-              </text>
+  <teiHeader><!-- ... --></teiHeader>
+  <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
+      <graphic n="full" mimeType="image/jpg" 
+        url="facs/full/facsC2Pl0001.jpg"></graphic>
+    <!-- ... -->
+  </facsimile>
+  <text>...
+    du texte <pb facs="#c2Plf0001"/> du texte
+  </text>
             </egXML>
           </div>
           <div rend="notes">
@@ -163,20 +164,20 @@
           <div>
             <head>Utilisation de <gi>facsimile</gi></head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <figure xml:id="c2Pl0001" type="plate">
-                    <head>L’église de Sainte-Sabine à Rome</head>
-                    <figDesc>Plan de l’église</figDesc>
-                  </figure>
+      <figure xml:id="c2Pl0001" type="plate">
+        <head>L’église de Sainte-Sabine à Rome</head>
+        <figDesc>Plan de l’église</figDesc>
+      </figure>
             </egXML>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <teiHeader><!-- ... --></teiHeader>
-              <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
-                <surface xml:id="c2FacsPl0001">
-                  <graphic n="full" mimeType="image/jpg" 
-                    url="facs/full/facsC2Pl0001.jpg"></graphic>
-                </surface><!-- ... -->
-              </facsimile>
-              <text><!-- ... --></text>
+  <teiHeader><!-- ... --></teiHeader>
+  <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
+    <surface xml:id="c2FacsPl0001">
+      <graphic n="full" mimeType="image/jpg" 
+        url="facs/full/facsC2Pl0001.jpg"></graphic>
+    </surface><!-- ... -->
+  </facsimile>
+  <text><!-- ... --></text>
             </egXML>
           </div>
           <div rend="notes">
@@ -193,22 +194,22 @@
           <div>
             <head>Utilisation des <gi>zone</gi>s</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <teiHeader><!-- ... --></teiHeader>
-              <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
-                <surface xml:id="c2FacsPl0001">
-                  <zone ulx="0" uly="0" lrx="50" lry="321">
-                    <graphic n="full" mimeType="image/jpg" 
-                    url="facs/full/facsC2Pl0001.jpg">
-                    </graphic>
-                  </zone>
-                  <!-- ... -->
-                </surface><!-- ... -->
-              </facsimile>
-              <text><!-- ... --></text>
+  <teiHeader><!-- ... --></teiHeader>
+  <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
+    <surface xml:id="c2FacsPl0001">
+      <zone ulx="0" uly="0" lrx="50" lry="321">
+        <graphic n="full" mimeType="image/jpg" 
+        url="facs/full/facsC2Pl0001.jpg">
+        </graphic>
+      </zone>
+      <!-- ... -->
+    </surface><!-- ... -->
+  </facsimile>
+  <text><!-- ... --></text>
             </egXML>
           </div>
         </div>
-      </div>
+     
       <div rend="slide">
         <head>Quelques outils</head>
         <div><head>Image Markup Tool</head>
@@ -224,7 +225,7 @@
         <div rend="title" xml:lang="fr">
           <head>...</head>
           <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
-              >Programme</ref></note>
+  >Programme</ref></note>
         </div>
       </div>
     </body>

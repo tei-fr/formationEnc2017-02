@@ -441,7 +441,7 @@ sa ou ses classe/s : <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny
         <p>Dans le monde réel, il est très probable que plusieurs éléments différents comportent les
  même attributs : il sera donc très pratique de les définir en une seule fois</p>
         <p> ODD nous permet de dire que tous les éléments ayant en commun un ensemble d’attributs
- constituent une classe <term>attribute class</term> que nous définissons ainsi <egXML
+          constituent une <term>classe attributs</term> que nous définissons ainsi <egXML
    xmlns="http://www.tei-c.org/ns/Examples">
 <classSpec ident="pointing" type="atts">
   <desc>regroupe les éléments comportant l’attribut <att>href</att></desc>

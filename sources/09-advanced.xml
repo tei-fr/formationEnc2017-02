@@ -32,8 +32,21 @@
     </revisionDesc>
   </teiHeader>
   <text>
-    <body>emacs 
-      <div xml:lang="fr">
+    <front>
+      <titlePage xml:lang="fr" rend="slide">
+        <titlePart>09-ODD : sujets avancées</titlePart>
+        <docImprint>Formation TEI | ENC 27 fév - 2 mars 2017</docImprint>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
+          GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
+      </titlePage>
+      <div rend="title" xml:lang="fr"  xml:id="index">
+        <div>
+          <head>Personnalisation avec ODD</head>
+        </div>       
+      </div>
+    </front>
+    <body>
+      <div xml:lang="fr" rend="slide">
         <head>Rappel : ODD est un langage conçu pour faciliter la documentation systématique des systèmes de
           documentation </head>
         <list type="gloss">
@@ -50,7 +63,7 @@
          </egXML> </item>
         </list>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <list>
                 <label><gi>val</gi></label>
           <item>valeur d’attribut <egXML xmlns="http://www.tei-c.org/ns/Examples">Cet attribut porte la valeur <val>unknown</val></egXML></item>
@@ -68,7 +81,7 @@
         </egXML></p>
       <p>Ensuite, dans le <gi>schemaSpec</gi>, on integre ces declarations avec un <gi>specGrpRef</gi></p></div>
       
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Contraintes de données avec Schematron </head>
         <list>
           <item>Une spécification d’élément peut proposer des contraintes supplémentaires sur son
@@ -89,7 +102,7 @@
           </elementSpec>
         </egXML>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>L’élément <gi>constraintSpec</gi>
         </head>
         <p>Il définit une contrainte qui s’applique au sein de l’élément dans lequel il est
@@ -109,7 +122,7 @@
             defined in the TEI for you--></item>
         </list>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Fonctionnement des règles Schematron </head>
         <list>
           <item>Le contenu de l’élément <gi>assert</gi> est affiché si le test est
@@ -124,7 +137,7 @@
         <p rend="box">Un schema RNG intégrant ces règles sera autogénéré si l’on utilise le
           logiciel oXygen pour traiter son ODD </p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Applications typiques des règles Schematron</head>
         <list>
           <item>Contraintes de co-occurrence : <q>si l’attribut X a la valeur A, l’élément qui le
@@ -142,7 +155,7 @@
           </item>
         </list>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Un schematron plus complexe (1) </head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="full">
           <constraintSpec ident="validtarget" scheme="isoschematron">
@@ -173,7 +186,7 @@
             of true/false values</item>
         </list>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Un schematron plus complexe (2) </head>
         <list>
           <item><code>normalize-space(@target)</code>: supprimer les blancs
@@ -200,7 +213,7 @@
           </xsl:template>
         </egXML>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Il n’est pas obligatoire d’utiliser l’approche Schematron</head>
         <p>On pourrait également écrire de l’XSLT pur et simple pour valider son document, en
           utilisant <gi>xsl:message</gi>.</p>
@@ -226,7 +239,7 @@
         <p rend="box">http://tei.it.ox.ac.uk/Byzantium/</p>
         <p rend="box">http://oxgarage.oucs.ox.ac.uk:8080/ege-webclient/</p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Traitement d’un ODD</head>
         <p>Un outil ODD doit</p>
         <list>
@@ -255,7 +268,7 @@
         <head>ODD flow diagram</head>
         <p><graphic url="oddity.png"/></p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Organigramme ODD</head>
         <p><graphic url="oddity.png"/></p>
       </div>
@@ -299,7 +312,7 @@
           <att>source</att> can also be used on <gi>classRef</gi>, <gi>elementRef</gi>,
             <gi>macroRef</gi>, and <gi>moduleRef</gi>.</p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Usage de l’attribut <att>source</att></head>
         <p>L’attribut <att>source</att> sert à specifier la source des déclarations qu’on souhaite
           intégrer</p>
@@ -319,7 +332,7 @@
           <att>source</att> peut être utilisé sur <gi>classRef</gi>, <gi>elementRef</gi>,
             <gi>macroRef</gi>, et <gi>moduleRef</gi>.</p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Enchainement des ODD</head>
         <p>L’opération <q>ODD to RELAX NG</q> comporte deux étapes (<q>odd to odd</q> suivi de
             <q>odd to relax</q>) ; pour crééer son propre base de personnalisation réutilisable il
@@ -371,7 +384,7 @@
           </list>
         </p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>Addition des composants d’une schéma nonTEI</head>
         <p>On souhaite utiliser l’élément TEI <gi>formula</gi> et y insérer du contenu exprimé en
           MathML : il faut donc :<list type="ordered">
@@ -401,7 +414,7 @@
           </schemaSpec>
         </egXML>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>TEI + MathML : le ODD</head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <schemaSpec ident="tei_math" prefix="tei_" start="TEI teiCorpus">
@@ -422,7 +435,7 @@
         <p rend="box">L’attribut <att>prefix</att> nous permet de désambiguïser les identifiants
           ressortant des schémas différentes</p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>TEI + MathML : le document</head>
         <p>Le schéma généré va valider par ex : <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <p>The relevant inequalities and distributions are <formula notation="MathML">
@@ -643,9 +656,9 @@
             target="https://github.com/TEIC/Stylesheets/blob/master/tools/odd-to-csv.xsl"/> on a
           compiled ODD.</p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>D'autre ODD outputs</head>
-        <p>L'outillage actuele peut faiure sortir d'un ODD<list type="gloss">
+        <p>L'outillage actuele peut faire sortir d'un ODD<list type="gloss">
           <label>des schema</label>
           <item>DTD, XSD, RELAX NG (XML and compact), ISO Schematron</item>
           <label>de la documentation</label>
@@ -658,7 +671,7 @@
         </list>
         </p>
       </div>
-      <div xml:lang="fr">
+      <div xml:lang="fr" rend="slide">
         <head>ce qui permet des visualisations...</head>
         <p><graphic url="../images/vis.png"/></p>
       </div>

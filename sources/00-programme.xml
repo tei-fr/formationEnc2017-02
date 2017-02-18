@@ -115,7 +115,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <label>15h30-16h00</label>
             <item>Pause</item>
             <label>16h00-17h00</label>
-            <item><ref target="07-tagdocs.xml">TEI sous le capot</ref></item>
+            <item><ref target="07-tagdocs.html">TEI sous le capot</ref></item>
             <label>17h-17h30</label>
             <item>Pure ODD</item>
           </list>
@@ -138,11 +138,11 @@ Le programme laisse une large place au travail sur les projets des participants 
           <head><hi>3<hi rend="superscript">ème</hi></hi> journée</head>
           <list>
             <label>9h30-11h00</label>
-            <item><ref target="08-teiODD.xml">Construction d'un ODD </ref></item>
+            <item><ref target="08-teiODD.html">Construction d'un ODD </ref></item>
             <label>11h00-11h30</label>
             <item>Pause</item>
             <label>11h30-12h30</label>
-            <item><ref target="atelier.tei.xml">Travail en binôme</ref></item>
+            <item><ref target="atelier.html">Travail en binôme</ref></item>
             <label>12h30-13h30</label>
             <item>Pause déjeuner</item>
             <label>13h30-14h30</label>
@@ -150,11 +150,11 @@ Le programme laisse une large place au travail sur les projets des participants 
             <label>14h30-15h00</label>
             <item>Construction d’un ODD pour votre projet</item>
             <label>15h00-15h15</label>
-            <item><ref target="focus-figures.xml">Focus 1: les figures</ref></item>
+            <item><ref target="focus-figures.html">Focus 1: les figures</ref></item>
             <label>15h15-15h45</label>
             <item>Construction de l’ODD (cont)</item>
             <label>15h45-16h00</label>
-            <item><ref target="focus-pointing.xml">Focus 2: les pointeurs</ref></item>
+            <item><ref target="focus-pointing.html">Focus 2: les pointeurs</ref></item>
             <label>16h00-16h30</label>
             <item>Pause</item>
             <label>16h30-17h00</label>
@@ -190,7 +190,7 @@ Le programme laisse une large place au travail sur les projets des participants 
         <div>
           <head><hi>4<hi rend="superscript">ème</hi></hi> journée</head>
           <list>
-            <item><ref target="09-advanced.xml">ODD : sujets avancées</ref> (documentation, schematron, enchainement, traitement...)</item>
+            <item><ref target="09-advanced.html">ODD : sujets avancées</ref> (documentation, schematron, enchainement, traitement...)</item>
             <item>Poursuite du travail sur les projets</item>
             <item>Produire un ODD avec style</item>
             <item>Comment fournir des exemples</item>
