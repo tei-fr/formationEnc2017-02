@@ -3,12 +3,12 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>TEI pour l’édition critique numérique: niveau deux</title>
+        <title>TEI pour l’édition critique numérique : niveau deux</title>
         <author>Lou Burnard</author>
-        <author>Emmanuel Chateau</author>
+        <author>Emmanuel Château-Dutier</author>
       </titleStmt>
       <publicationStmt>
-        <publisher>Lou Burnard Consulting</publisher>
+        <publisher>École nationale des chartes – Lou Burnard Consulting</publisher>
       </publicationStmt>
       <sourceDesc>
         <p>This is the master version of an original document.</p>
@@ -16,12 +16,14 @@
     </fileDesc>
     <revisionDesc>
       <change>
+        <date>2017-02-18</date>
+        <name>Emmanuel Château</name>, relecture et typos</change>
+      <change>
         <date>2017-02-05</date>
-        <name>Lou Burnard modification</name>
-      </change>
+        <name>Lou Burnard</name>, modification</change>
       <change>
         <date>2017-02-17</date>
-        <name>Emmanuel Chateau creation</name>
+        <name>Emmanuel Château</name>, création
       </change>
     </revisionDesc>
   </teiHeader>
@@ -35,7 +37,6 @@
       </titlePage>
       <!--
         # Programme
-
 La production d’une édition électronique exige la mobilisation de techniques spécifiques pour l’établissement des textes, l’enregistrement des annotations scientifiques et la publication. 
 La Text Encoding Initiative (TEI) offre à la fois une infrastructure et un cadre conceptuel pour accompagner la production d’édition critique numérique. Le travail de 
 modélisation d’une édition avec la TEI permet à la fois de documenter son édition en déclarant formellement son utilisation de la TEI mais aussi personnaliser la TEI 
@@ -75,14 +76,14 @@ Le programme laisse une large place au travail sur les projets des participants 
             <label>11h15-12h</label>
             <item><ref target="02-teiGeneralites.html">Ce que propose la TEI</ref></item>
             <label>12h-13h30</label>
-            <item>pause dejeuner</item>
+            <item>pause déjeuner</item>
             <label>13h30-14h00</label>
-            <item><ref target="03-organisation.html">Savoir manipuler les Guidelines et les
+            <item><ref target="03-organisation.html">Savoir manipuler les <title>Guidelines</title> et les
               spécifications</ref></item>
             <label>14h00-14h30</label>
             <item><ref target="04-personnalisation.html">Personnaliser la TEI</ref></item>
             <label>14h30-15h00</label>
-            <item>TP01 : Verification d'installation correcte d’Oxygen</item> 
+            <item>TP01 : Vérification d’installation correcte d’oXygen</item> 
             <label>15h00-15h30</label>
             <item>TP02 : Premier exercice d’encodage de ses documents</item>
             <label>15h30-16h30</label>
@@ -93,7 +94,7 @@ Le programme laisse une large place au travail sur les projets des participants 
         </div>
         <div rend="notes">
           <note>Objectifs : Mettre à niveau les participants sur la connaissance de l’organisation
-            des Guidelines et les enjeux d’une modélisation à l’aide d’un schéma.</note>
+            des <title>Guidelines</title> et les enjeux d’une modélisation à l’aide d’un schéma.</note>
         </div>
       </div>
       <div rend="slide" xml:lang="fr">
@@ -121,16 +122,8 @@ Le programme laisse une large place au travail sur les projets des participants 
           </list>
         </div>
         <div rend="notes">
-          <note>Objectifs : Connaître les principes d’un langage de spécification de schéma et
-            apprendre les bases de la syntaxe ODD. Avoir vu la manière dont la TEI utilise
-            ODD.</note>
-          <note>Le cas d’étude n’est pas forcément nécessaire comme car par la suite dans ce format
-            de formation on traite de la modélisation le lendemain. En revanche la partie d’exercice
-            fonctionnait bien. Par ailleurs l’ODD est simple et lisible. D’autant que les exemples
-            présentaient des problèmes différents qui permettaient d’explorer différentes
-            situations : que fournit le schéma produit avec l’ODD pour l’édition du document (choix
-            des valeurs d’attribut, etc.), élément non autorisé dans le schéma, comment ajouter un
-            élément dans le schéma.</note>
+          <note>Objectifs : Connaître les principes d’un langage de spécification de schéma et apprendre les bases de la syntaxe ODD. Avoir vu la manière dont la TEI utilise ODD.</note>
+          <note>Le cas d’étude n’est pas forcément nécessaire comme car par la suite dans ce format de formation on traite de la modélisation le lendemain. En revanche la partie d’exercice fonctionnait bien. Par ailleurs l’ODD est simple et lisible. D’autant que les exemples présentaient des problèmes différents qui permettaient d’explorer différentes situations : que fournit le schéma produit avec l’ODD pour l’édition du document (choix des valeurs d’attribut, etc.), élément non autorisé dans le schéma, comment ajouter un élément dans le schéma.</note>
         </div>
       </div>
       <div rend="slide" xml:lang="fr">
@@ -138,7 +131,7 @@ Le programme laisse une large place au travail sur les projets des participants 
           <head><hi>3<hi rend="superscript">ème</hi></hi> journée</head>
           <list>
             <label>9h30-11h00</label>
-            <item><ref target="08-teiODD.html">Construction d'un ODD </ref></item>
+            <item><ref target="08-teiODD.html">Construction d’un ODD </ref></item>
             <label>11h00-11h30</label>
             <item>Pause</item>
             <label>11h30-12h30</label>
@@ -150,11 +143,11 @@ Le programme laisse une large place au travail sur les projets des participants 
             <label>14h30-15h00</label>
             <item>Construction d’un ODD pour votre projet</item>
             <label>15h00-15h15</label>
-            <item><ref target="focus-figures.html">Focus 1: les figures</ref></item>
+            <item><ref target="focus-figures.html">Focus 1 : les figures</ref></item>
             <label>15h15-15h45</label>
             <item>Construction de l’ODD (cont)</item>
             <label>15h45-16h00</label>
-            <item><ref target="focus-pointing.html">Focus 2: les pointeurs</ref></item>
+            <item><ref target="focus-pointing.html">Focus 2 : les pointeurs</ref></item>
             <label>16h00-16h30</label>
             <item>Pause</item>
             <label>16h30-17h00</label>
@@ -165,45 +158,31 @@ Le programme laisse une large place au travail sur les projets des participants 
         </div>
         <div rend="notes">
           <note><list>
-              <item>Présentation de modules (survol sur tout ce qui est disponible, il y a
-                probablement tt ce qu’il faut)</item>
-              <item>Création de vos propres schémas (exercice d’analyse à partir de vos propres
-                sources = travail en binôme ou en groupe)</item>
+              <item>Présentation de modules (survol sur tout ce qui est disponible, il y a probablement tout ce qu’il faut)</item>
+              <item>Création de vos propres schémas (exercice d’analyse à partir de vos propres sources = travail en binôme ou en groupe)</item>
               <item>Travail sur les cas (mise en commun)</item>
               <item>Créer un premier ODD avec Roma</item>
               
             </list></note>
-          <note>Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver
-            à une liste des éléments nécessaires pour son schéma, identification des éléments
-            disponibles et des lacunes éventuelles de la TEI. Sélectionner les éléments utiles pour
-            son projet dans Roma. = un premier schéma personnalisé pour son projet (TEI subset).
-            Analyser le ODD et repérer sa syntaxe, comprendre son implication.</note>
-          <note>Définir une liste de focus et les proposer : pointeurs, standoff markup, figures,
-            alignement images/text</note>
-          <note>travail en binôme : (définir quelle est l’unité textuelle, quelle est la
-            macrostructure du texte, quels sont les parties les plus significatives de vos
-            documents, quels sont les objets qui correspondent à des p, quels sont les composants
-            des p) Point de vue sur l’édition, objets d’intérêt.</note>
+          <note>Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver à une liste des éléments nécessaires pour son schéma, identification des éléments disponibles et des lacunes éventuelles de la TEI. Sélectionner les éléments utiles pour son projet dans Roma. = un premier schéma personnalisé pour son projet (TEI subset). Analyser le ODD et repérer sa syntaxe, comprendre son implication.</note>
+          <note>Définir une liste de focus et les proposer : pointeurs, standoff markup, figures, alignement images/text</note>
+          <note>travail en binôme : (définir quelle est l’unité textuelle, quelle est la macrostructure du texte, quels sont les parties les plus significatives de vos documents, quels sont les objets qui correspondent à des p, quels sont les composants des p) Point de vue sur l’édition, objets d’intérêt.</note>
         </div>
       </div>
       <div rend="slide" xml:lang="fr">
         <div>
           <head><hi>4<hi rend="superscript">ème</hi></hi> journée</head>
           <list>
-            <item><ref target="09-advanced.html">ODD : sujets avancées</ref> (documentation, schematron, enchainement, traitement...)</item>
+            <item><ref target="09-advanced.html">ODD : sujets avancées</ref> (documentation, schematron, enchaînement, traitement...)</item>
             <item>Poursuite du travail sur les projets</item>
             <item>Produire un ODD avec style</item>
             <item>Comment fournir des exemples</item>
             <item>Comment organiser son fichier ODD</item>
-            <item>Take away : perennisation</item>
+            <item>Take away : pérennisation</item>
           </list>
         </div>
         <div rend="notes">
-          <note>Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver
-            à une liste des éléments nécessaires pour son schéma, identification des éléments
-            disponibles et des lacunes éventuelles de la TEI. Comprendre l’intérêt du schéma pour
-            assurer la pérennisation de ses sources. Identifier la manière dont peut contribuer à la
-            TEI (exemples groupe).</note>
+          <note>Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver à une liste des éléments nécessaires pour son schéma, identification des éléments disponibles et des lacunes éventuelles de la TEI. Comprendre l’intérêt du schéma pour assurer la pérennisation de ses sources. Identifier la manière dont peut contribuer à la TEI (exemples groupe).</note>
         </div>
       </div>
      <div rend="slide">
@@ -213,7 +192,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <list>
               <item>Ouvrir un terminal</item>
               <item>Tapez <code>git version</code></item>
-              <item>Si Git est absent tapez <code>apt-get install git</code></item>
+              <item>Sous Linux, si Git est absent tapez <code>apt-get install git</code></item>
             </list>
           </div>
           <div>
@@ -255,8 +234,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item><ident>presentations/</ident> présentations au format HTML</item>
             <item><ident>ressources/</ident> matériel d’accompagnement</item>
             <item><ident>schemas/</ident> schémas distribués pour la formation</item>
-            <item><ident>sources/</ident> sources tei des présentations (contient un sous-module
-              schema/)</item>
+            <item><ident>sources/</ident> sources tei des présentations</item>
             <item><ident>xsl/</ident> transformations xslt</item>
           </list>
         </div>
