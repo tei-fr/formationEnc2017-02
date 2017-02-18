@@ -81,7 +81,7 @@
             <!-- we constrain div/@type -->
             <elementSpec ident="div" mode="change" module="textstructure">
                <attList>
-                  <attDef ident="type" mode="change">
+                  <attDef ident="type" mode="replace">
                      <datatype>
                         <dataRef key="teidata.enumerated"/>
                      </datatype>
