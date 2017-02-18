@@ -81,7 +81,15 @@
       </div>
       
       <div xml:lang="fr" rend="slide">
-        <!-- a traduire -->
+        <p>Un ODD, vous le savez déjà, c'est un document TEI comme les autres. Vous pouvez le
+        construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
+       <p>Rappel : il y a des outils pour faciliter une construction initiale :</p>
+        <list>
+          <item><ref target="http://www.tei-c.org/Roma"> http://www.tei-c.org/Roma</ref></item>
+          <item><ref target="http://teic.github.io/TCW/howtogenerate.html">ODD By Example stylesheet</ref></item>
+        </list>
+        <p>Nous allons approfondir quelques notions déjà évoquées, et ensuite vous inviter 
+          à créer votre propre ODD  </p>
       </div>
       
       
@@ -109,13 +117,13 @@
       <div xml:lang="fr" rend="slide">
         <head>Création d’un personalisation</head>
         <p>Comme vous le savez déjà, on utilise l’élément <gi>schemaSpec</gi> pour spécifier un
-          schéma: qu'il soit vierge, ou personnalisé. </p>
+          schéma </p>
         <list>
           <item>L’attribut <att>ident</att> obligatoire fournit un nom pour le schéma</item>
           <item>L’attribut <att>start</att> indique le ou les noms des élément(s) racine(s) du
  schéma </item>
-          <item>L’attribut <att>source</att> indique l’emplacement de la source TEI dans le cas
- d’une personnalisation (par ex une version spécifique de TEI P5) </item>
+          <item>L’attribut <att>source</att> indique l’emplacement des declarations référencées par
+            le schéma (par ex une version spécifique de TEI P5) </item>
           <item>Les attributs <att>docLang</att> et <att>targetLang</att> permettent la sélection
  des langues à utiliser pour les descriptions d’éléments et pour les noms d’élément
  respectivement, en supposant la présence dans cette source des traductions
@@ -128,11 +136,11 @@
         </egXML>
       </div>
       <div xml:lang="fr" rend="slide">
-        <head>Composants d’un schemaSpec</head>
+        <head>Composants d’un <gi>schemaSpec</gi></head>
         <list>
-          <item><label>moduleRef</label> : un ensemble d'objets fournis par un module</item>
-          <item><label>elementSpec</label>, <label>dataSpec</label>, <label>macroSpec</label> (etc.) : des objets nouveaux </item>
-          <item><label>elementRef</label>, <label>dataRef</label>, <label>macroRef</label>(etc.) : des objet déjà existant quelque part</item>
+          <item><gi>moduleRef</gi> : un ensemble d'objets fournis par un module</item>
+          <item><gi>elementSpec</gi>, <gi>classSpec</gi>, <gi>dataSpec</gi>, <gi>macroSpec</gi> (etc.) : des objets nouveaux </item>
+          <item><gi>elementRef</gi>, <gi>classRef</gi>, <gi>dataRef</gi>, <gi>macroRef</gi>(etc.) : des objets déjà existants quelque part</item>
         </list>
         <p>La location des objets référencés est specifiée par un attribut <att>source</att> : par défaut il s'agit de la version
         la plus récente de TEI P5</p>
@@ -238,6 +246,30 @@
       <div xml:lang="fr" rend="slide">
         <p>Le traitement d’un ODD implique la résolution de spécifications multiples pour un même
           objet</p>
+        <p>Supposon deux <gi>elementSpec</gi> pour un meme element. La resolution est determinee par la valeur de
+        l'attribut <att>mode</att></p>
+        <list>
+          <item><label>mode='add'</label> (defaut) : cette declaration est primaire</item>
+          <item><label>mode='delete'</label> : aucune declaration n'est valide, l'element est supprime</item>
+          <item><label>mode='replace'</label> : cette declaration remplace entièrement toute autre declaration</item>
+          <item><label>mode='change'</label> : les parties de cette declaration remplacent les parties
+correspondantes d'une autre declaration; la reste ne change pas.         </item>
+        </list>
+      </div><div xml:lang="fr" rend="slide"><head>Par exemple</head>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples" >
+        <moduleRef key="core" include="p hi"/>
+        <elementSpec key="p" mode="delete"/>
+      </egXML>
+      <p>L'élément <gi>p</gi> est supprimé</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" >
+          <moduleRef key="core" include="p hi"/>
+          <elementSpec key="p" mode="change">
+         <desc>Pour nous, un <gi>p</gi> ne peut contenir que de texte</desc>   
+            <content><textNode/></content>
+          </elementSpec>
+        </egXML>
+      <p>Le contenu et la déscription de l'element <gi>p</gi> sont changés; ses autres propretés ne changent pas</p>  
+     
       </div>
       <div xml:lang="fr" rend="slide">
         <p>On peut recombiner des composants de plusieurs sources
