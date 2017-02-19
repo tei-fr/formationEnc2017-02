@@ -62,8 +62,10 @@
             <elementRef key="lb"/>
 
             <elementRef key="list"/>
+            <elementRef key="listBibl"/>
             <elementRef key="name"/>
             <elementRef key="note"/>
+            <elementRef key="org"/>
             <elementRef key="p"/>
             <elementRef key="ptr"/>
             <elementRef key="publisher"/>
