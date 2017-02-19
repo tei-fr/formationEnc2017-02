@@ -5,15 +5,18 @@
     <fileDesc>
       <titleStmt>
         <title>L’édition critique avec la TEI</title>
+        <author>Emmanuel Château-Dutier</author>
       </titleStmt>
       <publicationStmt>
-        <p>from markdown</p>
+        <publisher>École nationale des chartes</publisher>
+        <date from="2014" to="2017">2014-2017</date>
       </publicationStmt>
       <sourceDesc>
-        <p>emchateau, ENC 2015</p>
+        <p>Fichier nativement numérique</p>
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2017-02-18">Relecture du fichier</change>
       <change when="2015-11-17">conversion du fichier en TEI</change>
       <change when="2014-05">première rédaction</change>
     </revisionDesc>
@@ -31,8 +34,8 @@
   <text>
     <front>
       <titlePage xml:lang="fr">
-        <titlePart>02-teiGénéralités : La TEI comme cadre de travail pour l’édition des textes</titlePart>
-        <docImprint>Formation TEI | ENC 27 fév - 2 mars 2017</docImprint>
+        <titlePart>02 – teiGénéralités : La TEI comme cadre de travail pour l’édition des textes</titlePart>
+        <docImprint>Formation TEI | ENC 27 fév au 2 mars 2017</docImprint>
         <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
       <div rend="slide" xml:lang="fr">
