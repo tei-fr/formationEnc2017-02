@@ -464,7 +464,7 @@
                </list>
             </div>
             <div rend="notes">
-               <head>Déclaration d’élément</head>
+               <head>Déclaration du contenu d’élément</head>
                <list>
                   <item><ident>sequence</ident> Indique une séquence, c’est-à-dire que les composants 
                      sont présentés dans l'ordre où il faut les trouver.</item>
@@ -475,7 +475,6 @@
                   <item><ident>elementRef</ident> Indique un élément par son attribut @key</item>
                   <item><ident>classRef</ident> Indique une classe d'éléments par son attribut @key. La signification varie selon la valeur de son attribut @expand. 
                   Par défaut, il correspond à un élément (n'importe lequel) de la classe indiquée.</item>
-        
                </list>
             </div>
          </div>

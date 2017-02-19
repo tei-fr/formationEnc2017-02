@@ -246,14 +246,14 @@
       <div xml:lang="fr" rend="slide">
         <p>Le traitement d’un ODD implique la résolution de spécifications multiples pour un même
           objet</p>
-        <p>Supposon deux <gi>elementSpec</gi> pour un meme element. La resolution est determinee par la valeur de
+        <p>Supposon deux <gi>elementSpec</gi> pour un meme element. La résolution est determinée par la valeur de
         l'attribut <att>mode</att></p>
         <list>
-          <item><label>mode='add'</label> (defaut) : cette declaration est primaire</item>
-          <item><label>mode='delete'</label> : aucune declaration n'est valide, l'element est supprime</item>
-          <item><label>mode='replace'</label> : cette declaration remplace entièrement toute autre declaration</item>
-          <item><label>mode='change'</label> : les parties de cette declaration remplacent les parties
-correspondantes d'une autre declaration; la reste ne change pas.         </item>
+          <item><label>mode='add'</label> (defaut) : cette déclaration est primaire</item>
+          <item><label>mode='delete'</label> : aucune déclaration n'est valide, l'element est supprime</item>
+          <item><label>mode='replace'</label> : cette déclaration remplace entièrement toute autre declaration</item>
+          <item><label>mode='change'</label> : les composants de cette déclaration remplacent les composants
+correspondantes d'une autre déclaration; la reste ne change pas.         </item>
         </list>
       </div><div xml:lang="fr" rend="slide"><head>Par exemple</head>
       <egXML xmlns="http://www.tei-c.org/ns/Examples" >
@@ -268,8 +268,7 @@ correspondantes d'une autre declaration; la reste ne change pas.         </item>
             <content><textNode/></content>
           </elementSpec>
         </egXML>
-      <p>Le contenu et la déscription de l'element <gi>p</gi> sont changés; ses autres propretés ne changent pas</p>  
-     
+      <p>Le contenu et la déscription de l'element <gi>p</gi> sont changés; ses autres propretés ne changent pas</p>      
       </div>
       <div xml:lang="fr" rend="slide">
         <p>On peut recombiner des composants de plusieurs sources
