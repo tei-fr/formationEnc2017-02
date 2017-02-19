@@ -3,12 +3,12 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title xml:lang="en">How the TEI uses ODD</title>
+        <!--How the TEI uses ODD-->
         <title xml:lang="fr" rend="slide">Comment la TEI utilise ODD</title>
         <author xml:id="LB">Lou Burnard Consulting</author>
       </titleStmt>
       <publicationStmt>
-        <p xml:lang="en">for presentation at TEI MM 2014 </p>
+        <!--for presentation at TEI MM 2014 -->
         <p xml:lang="fr" rend="slide">Préparé pour ENC MasterPro 2015</p>
       </publicationStmt>
       <sourceDesc>
@@ -16,6 +16,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+ <change when="2017-02-18">EC, Typos et correction du français</change>
       <change who="#LB" when="2017-02-06">Updated</change>
       <change who="#LB" when="2015-02-26">Added Fr versions back</change>
       <change who="#LB" when="2014-10-11">Add english trans</change>
@@ -25,8 +26,8 @@
   <text>
     <front>
       <titlePage xml:lang="fr">
-        <titlePart>07-Comment la TEI utilise ODD</titlePart>
-        <docImprint>Formation TEI | ENC 27 fév - 2 mars 2017</docImprint>
+        <titlePart>07 – Comment la TEI utilise ODD</titlePart>
+        <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
         <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
  GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
@@ -64,13 +65,10 @@
       </div>
       <div xml:lang="fr" rend="slide">
         <head>TEI ODD sous le capot</head>
-        <p>La TEI s'exprime en langage ODD. Ce fut d’ailleurs la raison principale de l’invention du
- langage. </p>
+        <p>La TEI s’exprime en langage ODD. Ce fut d’ailleurs la raison principale pour laquelle le langage fut inventé </p>
         <p>La source TEI P5 (disponible ici <ptr
    target="http://www.tei-c.org/release/xml/tei/odd/Source/"/>) rassemble : <list>
-   <item>39 fichiers en TEI-XML, dont 25 contiennent un chapitre de documentation en
- TEI-XML, la plupart définissant un module, par ex
- <ident>PH-PrimarySources.xml</ident></item>
+   <item>39 fichiers en TEI-XML, dont 25 contiennent un chapitre de documentation en XML-TEI, la plupart définissant un module, par exemple <ident>PH-PrimarySources.xml</ident></item>
    <item>778 fichiers en TEI-XML, chacun définissant un élément, une classe, ou une macro <list>
    <item>29 datatypes (<code>data.xxxx</code>) par ex.
      <ident>data.sex.xml</ident></item>
@@ -103,11 +101,10 @@
         </list>
       </div>
       <div xml:lang="fr" rend="slide">
-        <head>Organisation physique des Guidelines</head>
-        <p>Il ne faut pas confondre l’organisation physique (en fichiers) avec l’organisation
- logique (en spécifications etc.)</p>
+        <head>Organisation physique des <title>Guidelines</title></head>
+        <p>Il ne faut pas confondre l’organisation physique (en fichiers) avec l’organisation logique (en spécifications, etc.)</p>
         <list>
- <item>Le fichier <ident>guidelines-XX.xml</ident> est <soCalled>la</soCalled> la source
+ <item>Le fichier <ident>guidelines-XX.xml</ident> est <soCalled>la</soCalled> source
    des Guidelines pour la langue XX.</item>
  <item>Mis à part quelques liminaires (un TEI Header, la page de titre, etc.), il contient
    plusieurs lignes comme ceci :
@@ -132,7 +129,7 @@
         </list>
       </div>
       <div xml:lang="fr" rend="slide">
-        <head>Organisation logique des Guidelines</head>
+        <head>Organisation logique des <title>Guidelines</title></head>
         <list>
  <item>À la fin de chaque chapitre définissant un module, il y a (par convention) un
    élément <gi>moduleSpec</gi> qui rassemble toutes les spécifications référencées par le
@@ -140,8 +137,7 @@
  <item>Ces spécifications sont organisées (par commodité) en <gi>specGrp</gi>, qui sont
    ensuite référencées par un <gi>specGrpRef</gi>
  </item>
- <item>Chaque <gi>specGrp</gi> regroupe des spécifications d’objet, indiqué par un
-   xInclude</item>
+ <item>Chaque <gi>specGrp</gi> regroupe des spécifications d’objet, indiqué par un <code>xInclude</code></item>
         </list>
       </div>
       <div xml:lang="en">
@@ -176,7 +172,7 @@
         <p>Cette partie de texte des Guidelines :</p>
         <figure>
  <graphic url="images/ft-1.png"/></figure>
-        <p> est généré à partir de ces lignes de code ODD :
+        <p> est généré à partir des lignes de code suivantes :
  <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="teeny">
    <div><head>Module for Tables, Formulæ, Notated Music, and Graphics</head>
  <p>The module described in this chapter provides the following features: 
@@ -220,7 +216,7 @@
  &lt;include href="../../Specs/row.xml"/> 
  &lt;include href="../../Specs/cell.xml"/> 
  &lt;/specGrp></code></p>
-        <p>et les xInclude apportent chacun la specification d’un <term>objet</term>, par ex :</p>
+        <p>et le xInclude apporte la specification elle meme d’un <term>objet</term>, par ex :</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
  <elementSpec module="figures" ident="cell">
    <gloss versionDate="2007-06-12" xml:lang="fr" rend="slide">cellule</gloss>
@@ -243,13 +239,13 @@
       <div xml:lang="fr" rend="slide">
         <head>De quels types d’objet s’agit-il ?</head>
         <list>
- <item>types de données (datatypes)</item>
- <item>classes de modèle (model classes)</item>
- <item>classes d’attribut (attribute classes)</item>
- <item>macros</item>
+ <item>types de données (<ident>datatypes</ident>)</item>
+ <item>classes de modèle (<ident>model classes</ident>)</item>
+ <item>classes d’attribut (<ident>attribute classes</ident>)</item>
+ <item><ident>macros</ident></item>
  <item>… et éléments</item>
         </list>
-        <p rend="box">Nous allons détailler un exemplaire de chacun de ces objets …</p>
+        <p rend="box">Nous allons détailler un exemple de chacun de ces objets …</p>
       </div>
       <div xml:lang="en">
         <head>An ODD specification</head>
@@ -425,8 +421,7 @@
    éventuellement un <gi>valList</gi>, qui rassemblent chaque valeur prévue avec sa
    définition</item>
  <item>Cette classe est un sous-classe de deux autres (<ident>att.metrical</ident>, et
- <ident>att.fragmentable</ident>) : si ces classes sont disponibles, les attributs
-   qu'elles fournissent seront donc également disponibles.</item>
+ <ident>att.fragmentable</ident>) : si ces classes sont disponibles, les attributs qu’elles fournissent seront donc également disponibles.</item>
         </list>
       </div>
       <div xml:lang="en">
@@ -531,15 +526,15 @@
  </classes>
         </egXML>
         <list>
-          <item>en tant que membre de <ident>model.profileDescPart</ident>, 
+          <item>étant membre de <ident>model.profileDescPart</ident>, 
             <gi>abstract</gi> peut apparaitre dans <gi>profileDesc</gi> parce que
 le contenu de <gi>profileDesc</gi> est
    <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
      <classRef key="model.profileDescPart" maxOccurs="unbounded"/>
 </egXML>
  </item>
-          <item> en tant que membre de <ident>att.responsibility</ident>, <gi>abstract</gi> hérite des attributs
- <att>cert</att> et <att>resp</att></item>
+          <item> en tant que membre de <ident>att.responsibility</ident>, il hérite des attributs
+              <att>cert</att> et <att>resp</att></item>
  <item><ident>att.responsibility</ident> lui transmet également l’attribut
  <att>source</att>, parce qu'elle est <soCalled>memberOf</soCalled> de la classe
  <ident>att.source</ident></item>
@@ -575,10 +570,12 @@ le contenu de <gi>profileDesc</gi> est
       <div xml:lang="fr" rend="slide">
         <head>Par exemple ...</head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
- <content><alternate maxOccurs="unbounded"><classRef key="model.pLike"/><classRef
-   key="model.listLike"/></alternate></content>
+ <content><alternate maxOccurs="unbounded">
+ <classRef key="model.pLike"/>
+ <classRef key="model.listLike"/>
+</alternate></content>
         </egXML>
-        <p><q>Un ou plusieurs elements membres des classes <ident>model.pLike</ident> ou bien
+        <p><q>Un ou plusieurs éléments membres des classes <ident>model.pLike</ident> ou bien
  <ident>model.listLike</ident></q></p>
       </div>
       <!--<div xml:lang="en">
@@ -671,20 +668,15 @@ le contenu de <gi>profileDesc</gi> est
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Exemples</head>
-        <p>Un exemple vaut un million de mots... mais ce n’est pas évident de savoir comment
- intégrer un exemple XML dans un document XML : surtout si on souhaite le valider en même
- temps. Comme déjà noté, plusieurs démarches sont possibles : <list>
-   <item>on représente les chevrons par des entités (<code>&amp;amp;lt;</code> etc) : mais la source devient
- illisible et pas validable</item>
-   <item>on englobe tout dans un CDATA marked section <code>&lt;![CDATA[&lt;p>comme
-   ça&lt;/p> &#93;]></code> : la source est plus lisible mais pas validable</item>
-   <item>on englobe tout dans un élément d’un autre namespace <code rend="tiny">&lt;egXML
-   xmlns="http://www.tei-c.org/ns/Examples"> &lt;p>ça marche !&lt;/p></code>
-   </item>
- </list></p>
-        <p>La TEI a adopté la derniere solution... Les expressions du namespace <code>http://www.tei-c.org/ns/Examples</code> sont validées
- par un schéma spécial, qui permet tout élément TEI comme racine, en utilisant le
- validateur onvdl.</p>
+        <p>l'élément <gi>egXML</gi> est utilisé partout dans les <title>Guidelines</title> pour fournir
+          des exemples d'usage directement en XML-TEI. Pour permettre à une validation du contenu
+          de cet élément il est associé avec une autre espace de nommage.
+          </p><p><code>&lt;p>Par exemple :
+            &lt;egXML xmlns="http://www.tei-c.org/ns/Examples">
+              &lt;p>Je ne suis pas un p comme les autres&lt;/p>
+            &lt;/egXML>
+          &lt;/p></code></p>
+      <p>Oui, c'est une astuce.</p>
       </div>
       
       <div xml:lang="en">
@@ -700,17 +692,13 @@ le contenu de <gi>profileDesc</gi> est
    RELAXNG and you are using ISO Schematron.</item>
         </list>
       </div>
-      <div>
-        <head xml:lang="fr" rend="slide">Contraintes schematron</head>
+      <div xml:lang="fr" rend="slide"><head>Contraintes schematron</head>
         <list>
- <item>Une spécification d’élément peut aussi contenir un élément <gi>constraintSpec</gi>
-   (ou plusieurs), rassemblant des règles exprimées en ISO schématron</item>
- <item>La TEI s’en sert pour exprimer des contraintes additionnelles non exprimables
-   autrement, par ex des contraintes contextuelles ou concurrentielles</item>
+ <item>Une spécification d’élément peut aussi contenir un élément <gi>constraintSpec</gi> (ou plusieurs), rassemblant des règles exprimées en ISO schematron</item>
+ <item>La TEI s’en sert pour exprimer des contraintes additionnelles non exprimables autrement, par exemple des contraintes contextuelles ou concurrentielles</item>
  <item>Le traitement de ces règles nécessite une étape additionnelle dans la validation des
    documents</item>
- <item>La version courante d’oXygen effectue cela automatiquement, pourvu que votre schema
-   s'exprime en RELAXNG et vos contraintes s’expriment en ISO schematron.</item>
+ <item>La version courante d’oXygen effectue cela automatiquement, pourvu que votre schéma s'exprime en RELAXNG et vos contraintes s’expriment en ISO schematron.</item>
         </list>
       </div>
       
@@ -731,14 +719,12 @@ le contenu de <gi>profileDesc</gi> est
       </div>
       
       <div xml:lang="fr" rend="slide">
-        <head>Exemple de schématron</head>
+        <head>Exemple de schematron</head>
         <p rend="box">Ouvrez <ident>span.xml</ident> avec oXygen</p>
         <list>
- <item>cette spécification comporte plusieurs <gi>constraintSpec</gi>, chacun avec son
-   @ident et son @scheme</item>
+ <item>cette spécification comporte plusieurs <gi>constraintSpec</gi>, chacun avec son <att>ident</att> et son <att>scheme</att></item>
  <item>un ou plusieurs <gi>constraint</gi> sont possibles</item>
- <item>la contrainte s’exprime en langue ISO schématron, donc dans une autre espace de
-   noms</item>
+ <item>la contrainte s’exprime en langue ISO schematron, donc dans un autre espace de noms</item>
  <item>par ex. <code>if @to is supplied on &lt;name/>, @from must be supplied as
  well</code> (NB "&lt;name/>" signifie le nom de l’élément qui activera cette
    règle)</item>
@@ -771,7 +757,7 @@ le contenu de <gi>profileDesc</gi> est
         <list>
  <item>Une macro, comme un datatype, fournit une abréviation conventionnelle pour des
    objets souvent utilisés ; dans ce cas, un modèle de contenu.</item>
- <item>L'expansion d'une macro est fourni par un element <gi>content</gi>.
+ <item>L’expansion d’une macro est fournie par un élément <gi>content</gi>.
  </item>
         </list>
         <egXML xmlns="http://www.tei-c.org/ns/Examples"><content>
@@ -782,9 +768,8 @@ le contenu de <gi>profileDesc</gi> est
    <classRef key="model.global"/>
  </alternate>
         </content></egXML>
-        <p><q>Rien de tout, du texte, ou n'importe combien d'elements membres de n'importe laquelle des trois classes 
- <ident>model.gLike</ident>, <ident>model.phrase</ident> ou
- <ident>model.global</ident></q></p>
+        <p><q>Rien du tout, du texte, ou n’importe combien d’éléments membres de n’importe laquelle des trois classes <ident>model.gLike</ident>, <ident>model.phrase</ident> ou
+ <ident>mode.global</ident></q></p>
       </div>
      </body>
     </text></TEI>
