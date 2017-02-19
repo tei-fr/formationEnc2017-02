@@ -33,8 +33,8 @@
     <text>
         <front>
             <titlePage xml:lang="fr">
-                <titlePart>04-Personnalisation de la TEI</titlePart>
-                <docImprint>Formation TEI | ENC 27 fév - 2 mars 2017</docImprint>
+                <titlePart>04 – Personnalisation de la TEI</titlePart>
+                <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
                 <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
                     GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
             </titlePage>
@@ -76,7 +76,7 @@
             </div>
             <div rend="slide" xml:lang="fr">
                 <div>
-                    <head>Installation de l’add on ODD</head>
+                    <head>Installation de l’add-on ODD</head>
                     <p>Tout désactiver dans Options>Préférences>Association de type de document</p>
                     <p>Dans le menu « Préférences » allez dans la sélection « Add-ons »</p>
                     <p>Vérifiez si votre installation comporte l’addon http://www.tei-c.org/release/oxygen/updateSite.oxygen dans la liste des « mise à jour URLs Sites »</p>
