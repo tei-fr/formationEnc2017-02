@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
   <teiHeader>
     <fileDesc>
@@ -8,35 +9,33 @@
         <author>Emmanuel Chateau</author>
       </titleStmt>
       <publicationStmt>
-        <publisher>MEET</publisher>
+        <publisher>École nationale des chartes</publisher>
+        <date from="2015" to="2017">2015 à 2017</date>
       </publicationStmt>
       <sourceDesc>
-        <p>This is the master version of an original document.</p>
+        <p>Document nativement numérique.</p>
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
-      <change>
-        <date>2015-11-18</date>
-        <name>Emmanuel Chateau creation</name>
-      </change>
+      <change when="2017-02-18"><name>Emmanuel Château-Dutier</name>, corrections diverses</change>
+      <change when="2015-11-18"><name>Emmanuel Chateau</name> création</change>
     </revisionDesc>
   </teiHeader>
   <text>
     <front>
       <titlePage xml:lang="fr">
         <titlePart> Focus sur les figures</titlePart>
-        <docImprint>Formation TEI | ENC 27 fév - 2 mars 2017</docImprint>
+        <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
         <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
             <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
-    
     </front>
     <body>
       <div rend="slide" xml:lang="fr" xml:id="index">
         <div>
           <head>Les besoins</head>
           <div>
-            <head>Encodage de figures dans texte</head>
+            <head>Encodage de figures dans le texte</head>
           </div>
           <div>
             <head>Description de figures (métadonnées)</head>
@@ -152,7 +151,7 @@
             </egXML>
           </div>
           <div rend="notes">
-            <p>Il est de pratique courante, en parlier dans le monde numérique, de produire des éditions de textes qui offre des facsimili. Modèle de l’édition hyperdiplomatique. Mise en regard des pages mais aussi directement du texte avec l’image ou des zones.</p>
+            <p>Il est de pratique courante, en particulier dans le monde numérique, de produire des éditions de textes qui offre des facsimili. Modèle de l’édition hyperdiplomatique. Mise en regard des pages mais aussi directement du texte avec l’image ou des zones.</p>
             <p><ident>att.global.facs</ident> groups elements corresponding with all or part of an image, because they contain an alternative representation of it, typically but not necessarily a transcription of it.</p>
             <p><att>facs</att>	(facsimile) points to all or part of an image which corresponds with the content of the element.</p>
             <p><ident>att.global.change</ident> supplies the change attribute, allowing its member elements to specify one or more states or revision campaigns with which they are associated.</p>

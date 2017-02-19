@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <fileDesc>
@@ -26,7 +27,7 @@
     <front>
       <titlePage xml:lang="fr">
         <titlePart>05 – One Document Does It All</titlePart>
-        <docImprint>Formation TEI | ENC 27 fév au 2 mars 2017</docImprint>
+        <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
         <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
  GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
