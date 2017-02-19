@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Organisation de la TEI</title>
+            <author>Emmanuel Château-Dutier</author>
          </titleStmt>
          <publicationStmt>
-            <p>from markdown</p>
+            <publisher>École nationale des chartes</publisher>
          </publicationStmt>
          <sourceDesc>
-            <p>emchateau, ENC 2015</p>
+            <p>Document nativement numérique</p>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2017-02-18">relecture et corrections diverses</change>
          <change when="2015-11-17">conversion du fichier en TEI</change>
          <change when="2014-05">première rédaction</change>
       </revisionDesc>
@@ -33,87 +33,53 @@
    <text>
       <front>
          <titlePage xml:lang="fr">
-            <titlePart>03-L’organisation de la TEI</titlePart>
-            <docImprint>Formation TEI | ENC 27 fev - 2 mars 2017</docImprint>
-            <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
-                  GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
+            <titlePart>03 – L’organisation de la TEI</titlePart>
+            <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
+            <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
          </titlePage>
          <div rend="title" xml:lang="fr" xml:id="index">
             <div>
                <head>Introduction</head>
             </div>
             <div rend="notes">
-               <p>Comme on l’a vu précédemment, la TEI peut donc se concevoir comme un cadre de
-                  travail technique, un framework, qui accompagne l’éditeur ou l’encodeur dans la
-                  structuration de l’information.</p>
-               <p>Elle consiste en un ensemble de préconisations qui doivent être adaptées aux
-                  spécificités inhérentes à chaque projet éditorial.</p>
+               <p>Comme on l’a vu précédemment, la TEI peut donc se concevoir comme un cadre de travail technique, un framework, qui accompagne l’éditeur ou l’encodeur dans la structuration de l’information.</p>
+               <p>Elle consiste en un ensemble de préconisations qui doivent être adaptées aux spécificités inhérentes à chaque projet éditorial.</p>
                <list>
-                  <item>Comme le relève Florence Clavaud, « cette modularité qui garantit la
-                     flexibilité du modèle et sa généralité, peut parfois dérouter l’encodeur
-                     inexpérimenté ou le confronter à des choix difficiles. » La définition des
-                     solutions d’encodage implique d’opérer des choix entre plusieurs solutions
-                     admissibles en en saisissant bien tous les tenants et les aboutissants.</item>
-                  <item>Elle implique un aller-retour continuel entre les sources textuelles à
-                     traiter et la documentation de la TEI afin de réévaluer les solutions
-                     d’encodage envisagées.</item>
+                  <item>Comme le relève Florence Clavaud, « cette modularité qui garantit la flexibilité du modèle et sa généralité, peut parfois dérouter l’encodeur inexpérimenté ou le confronter à des choix difficiles. » La définition des solutions d’encodage implique d’opérer des choix entre plusieurs solutions admissibles en en saisissant bien tous les tenants et les aboutissants.</item>
+                  <item>Elle implique un aller-retour continuel entre les sources textuelles à traiter et la documentation de la TEI afin de réévaluer les solutions d’encodage envisagées.</item>
                </list>
-               <p>Ce besoin de personnalisation s’explique, d’une part parce que le texte est
-                  souvent un objet hétérogène, et d’autre part car l’encodeur ou l’éditeur peut
-                  avoir des objectifs différents.</p>
+               <p>Ce besoin de personnalisation s’explique, d’une part parce que le texte est souvent un objet hétérogène, et d’autre part car l’encodeur ou l’éditeur peut avoir des objectifs différents.</p>
                <list>
-                  <item>Dans le cas d’un texte dramatique, il pourra se révéler nécessaire de
-                     trouver un moyen pour marquer les locuteurs.</item>
-                  <item>Les éléments nécessaires pour traiter le discours oral ne seront sans doute
-                     pas les mêmes que ceux requis pour le traitement diplomatique.</item>
-                  <item>On n’abordera pas un ensemble de textes composites ou un corpus de la même
-                     manière que des textes isolés.</item>
+                  <item>Dans le cas d’un texte dramatique, il pourra se révéler nécessaire de trouver un moyen pour marquer les locuteurs.</item>
+                  <item>Les éléments nécessaires pour traiter le discours oral ne seront sans doute pas les mêmes que ceux requis pour le traitement diplomatique.</item>
+                  <item>On n’abordera pas un ensemble de textes composites ou un corpus de la même manière que des textes isolés.</item>
                </list>
-               <p>Ces différents cas de figure expliquent assez bien le besoin de métadonnées
-                  spécialisées pour décrire les contenus.</p>
-               <p>Ce que propose la TEI c’est un ensemble de mécanismes pour les traiter.
-                  « Formellement parlant, les Guidelines fournissent à la fois des règles
-                  syntactiques sur la manière dont des éléments et des attributs doivent être
-                  utilisés dans des documents valides, mais aussi des recommandations sémantiques
-                  sur l’interprétation que l’on doit attacher à certaines constructions
-                  syntactiques. En ce sens, elle fournissent à la fois une définition de type de
-                  document, et une déclaration de type de document. Plus exactement, on peut
-                  distinguer le modèle abstrait de la TEI (TEI Abstract Model) qui définit un
-                  ensemble de concepts en rapport, et le schéma TEI (TEI schema) qui définit un
-                  ensemble de règles et de contraintes syntactiques. »</p>
-               <bibl>- cf. Sperberg-McQueen, C. Michael, Burnard, Lou, et Bauman, Syd, <ref
-                     target="http://www.tei-c.org/Guidelines/P5/">TEI P5 : Guidelines for Electronic
-                     Text Encoding and Interchange</ref>, 23.3.</bibl>
+               <p>Ces différents cas de figure expliquent assez bien le besoin de métadonnées spécialisées pour décrire les contenus.</p>
+               <p>Ce que propose la TEI c’est un ensemble de mécanismes pour les traiter. « Formellement parlant, les <title>Guidelines</title> fournissent à la fois des règles syntactiques sur la manière dont des éléments et des attributs doivent être utilisés dans des documents valides, mais aussi des recommandations sémantiques sur l’interprétation que l’on doit attacher à certaines constructions syntactiques. En ce sens, elle fournissent à la fois une définition de type de document, et une déclaration de type de document. Plus exactement, on peut distinguer le modèle abstrait de la TEI (TEI Abstract Model) qui définit un ensemble de concepts en rapport, et le schéma TEI (TEI schema) qui définit un ensemble de règles et de contraintes syntactiques. »</p>
+               <bibl>- cf. Sperberg-McQueen, C. Michael, Burnard, Lou, et Bauman, Syd, <ref target="http://www.tei-c.org/Guidelines/P5/">TEI P5 : Guidelines for Electronic Text Encoding and Interchange</ref>, 23.3.</bibl>
             </div>
          </div>
       </front>
       <body>
          <div rend="slide" xml:lang="fr">
             <div>
-               <head>Un projet « open source »</head>
+               <head>Un projet <soCalled>open source</soCalled></head>
                <list>
-                  <item>Les Guidelines et du code sont maintenues sur
-                     [GitHub](https://github.com/TEIC/TEI)</item>
-                  <item>Un projet collaboratif appuyé sur un entrepôt Git</item>
-                  <item>Discussion des problèmes rencontrés, suggestions de modifications sur les
-                     listes et le gestionnaire de bugs</item>
+                  <item>Les <title>Guidelines</title> et l’ensemble du code sont maintenus sur <ref target="https://github.com/TEIC/TEI">GitHub</ref></item>
+                  <item>Un projet collaboratif appuyé sur un entrepôt GitHub</item>
+                  <item>Discussion des problèmes rencontrés, suggestions de modifications sur les listes et le gestionnaire de bugs</item>
                </list>
             </div>
             <div rend="notes">
                <div>
-                  <p>En plus d’être une communauté, comme vous le savez déjà, la TEI propose
-                     également une infrastructure pour l’encodage de textes. L’ensemble du code
-                     informatique du projet est mis à disposition par l’intermédiaire d’un
-                     gestionnaire de version.</p>
+                  <p>En plus d’être une communauté, comme vous le savez déjà, la TEI propose également une infrastructure pour l’encodage de textes. L’ensemble du code informatique du projet est mis à disposition par l’intermédiaire d’un gestionnaire de version.</p>
                </div>
                <div>
                   <head>Un projet « open source »</head>
                   <list>
-                     <item>Les Guidelines et du code sont maintenues sur
-                        [Sourceforge](http://sourceforge.net/projects/tei/)</item>
-                     <item>Un projet collaboratif appuyé sur un entrepôt Git</item>
-                     <item>Discussion des problèmes rencontrés, suggestions de modifications sur les
-                        listes et le gestionnaire de bugs</item>
+                     <item>Les <title>Guidelines</title> et du code sont maintenues sur <ref target="https://github.com/TEIC/TEI">GitHub</ref> (anciennement <ref target="http://sourceforge.net/projects/tei/">Sourceforge</ref>)</item>
+                     <item>Un projet collaboratif appuyé sur un entrepôt GitHub</item>
+                     <item>Discussion des problèmes rencontrés, suggestions de modifications sur les listes et le gestionnaire de bugs</item>
                   </list>
                </div>
             </div>
@@ -124,67 +90,45 @@
                <div>
                   <head>Le modèle abstrait de données</head>
                   <list>
-                     <item>qui définit un ensemble de concepts et de relations entre ces
-                        concepts</item>
-                     <item>qui permet d’exprimer des définitions formelles (modèles de
-                        contenus)</item>
+                     <item>qui définit un ensemble de concepts et de relations entre ces concepts</item>
+                     <item>qui permet d’exprimer des définitions formelles (modèles de contenus)</item>
                   </list>
                </div>
                <div>
                   <head>Implémentations techniques du modèle</head>
                   <list>
-                     <item>qui définissent l’ensemble des règles et contraintes syntaxiques sous
-                        forme de schémas XML ou de DTD</item>
+                     <item>qui définissent l’ensemble des règles et contraintes syntaxiques sous forme de schémas XML ou de DTD</item>
                   </list>
                </div>
             </div>
             <div rend="notes">
-               <p>Pour bien comprendre ce que propose la TEI, il convient de distinguer le modèle
-                  abstrait de données, des implémentations techniques du modèle.</p>
+               <p>Pour bien comprendre ce que propose la TEI, il convient de distinguer le modèle abstrait de données, des implémentations techniques du modèle.</p>
                <div>
                   <head>Modèle abstrait de données</head>
                </div>
                <div>
                   <head/>
                   <list>
-                     <item>qui définit un ensemble de concepts et de relations entre ces
-                        concepts</item>
-                     <item>qui permet d’exprimer des définitions formelles (modèles de
-                        contenus)</item>
+                     <item>qui définit un ensemble de concepts et de relations entre ces concepts</item>
+                     <item>qui permet d’exprimer des définitions formelles (modèles de contenus)</item>
                   </list>
                </div>
                <div>
                   <head>Implémentations techniques du modèle</head>
                   <list>
-                     <item>qui définissent l’ensemble des règles et contraintes syntaxiques sous
-                        forme de schémas XML ou de DTD</item>
+                     <item>qui définissent l’ensemble des règles et contraintes syntaxiques sous forme de schémas XML ou de DTD</item>
                   </list>
                </div>
                <div>
                   <p>Ces deux composantes <hi rend="bold">forment ensemble les Guidelines</hi>.</p>
-                  <p>Ces Guidelines expriment sous forment littérale <ref
-                        target="http://www.literateprogramming.com">Donald Knuth</ref> le modèle
-                     abstrait de données, et propose des implémentations techniques du modèle.</p>
-                  <p>Si la conception de la TEI découle en grande partie des technologies XML, et
-                     que son infrastructure repose principalement sur ces technologies, la TEI
-                     pourrait tout aussi bien être exprimée par l’intermédiaire d’un autre véhicule
-                     si un nouveau formalisme technique devait s’imposer à l’avenir.</p>
+                  <p>Ces Guidelines expriment sous forment littérale <ref target="http://www.literateprogramming.com">Donald Knuth</ref> le modèle abstrait de données, et propose des implémentations techniques du modèle.</p>
+                  <p>Si la conception de la TEI découle en grande partie des technologies XML, et que son infrastructure repose principalement sur ces technologies, la TEI pourrait tout aussi bien être exprimée par l’intermédiaire d’un autre véhicule si un nouveau formalisme technique devait s’imposer à l’avenir.</p>
                </div>
                <div>
                   <head>Indépendance par rapport à XML</head>
-                  <p>Historiquement le développement de la TEI paraît très lié aux technologies XML.
-                     Initialement développée en SGML, le travail conduit dans la TEI a notamment été
-                     à l’origine de certains aspects de la normalisation XML. La TEI a immédiatement
-                     adopté XML lors de sa spécification par le W3C.</p>
-                  <p>Pourtant, la TEI définit un modèle qui s’abstrait de XML. Elle décrit par
-                     exemple des mécanismes pour prendre en charge des structures non hiérarchiques
-                     (stand-off markup), et dispose [on le verra plus tard] de son propre langage de
-                     spécification qui s’autonomise de plus en plus des langages de schemas XML avec
-                     Pure ODD.</p>
-                  <p>Elena Pierazzo à la conférence TEI2015, proposant un travail de modélisation
-                     formelle pour s’abstraire encore plus du modèle XML. De fait, les classes
-                     définies dans TEI recouvrent souvent plus des facilités de construction
-                     d’éléments XML que le modèle abstrait de la TEI.</p>
+                  <p>Historiquement le développement de la TEI paraît très lié aux technologies XML. Initialement développée en SGML, le travail conduit dans la TEI a notamment été à l’origine de certains aspects de la normalisation XML. La TEI a immédiatement adopté XML lors de sa spécification par le W3C.</p>
+                  <p>Pourtant, la TEI définit un modèle qui s’abstrait de XML. Elle décrit par exemple des mécanismes pour prendre en charge des structures non hiérarchiques (stand-off markup), et dispose [on le verra plus tard] de son propre langage de spécification qui s’autonomise de plus en plus des langages de schémas XML avec ODD.</p>
+                  <p>Elena Pierazzo à la conférence TEI2015, proposant un travail de modélisation formelle pour s’abstraire encore plus du modèle XML. De fait, les classes définies dans TEI recouvrent souvent plus des facilités de construction d’éléments XML que le modèle abstrait de la TEI.</p>
                </div>
             </div>
          </div>
@@ -192,32 +136,21 @@
             <div>
                <head>Un cadre de travail flexible et modulaire</head>
                <list>
-                  <item><ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">22
-                        modules</ref>
+                  <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">22 modules</ref>
                      <list>
                         <item>Classement des éléments de la TEI par domaines d’application</item>
                         <item>Chaque module fait l’objet d’un chapitre de la documentation</item>
                      </list></item>
-                  <item><ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-MODEL.html"
-                        >Classes de modèle</ref></item>
-                  <item><ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html"
-                        >Classes d’attribut</ref></item>
-                  <item><ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-MACROS.html"
-                        >Macros et types de données</ref></item>
+                  <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-MODEL.html">Classes de modèle</ref></item>
+                  <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html">Classes d’attribut</ref></item>
+                  <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-MACROS.html">Macros et types de données</ref></item>
                </list>
             </div>
             <div rend="notes">
-               <p>Dès l’origine, la TEI a été conçue pour être employée comme un ensemble de briques
-                  permettant de construire des schémas spécifiques pour un projet donné.</p>
-               <p>L’infrastructure de la Proposition numéro 5 de la TEI (P5) consiste en :<list>
-                     <item>vingt-deux modules parmi lesquels sont répartis les nombreux éléments de
-                        la TEI qui font l’objet d’une importante documentation textuelle</item>
-                     <item>ils sont formellement classés dans des classes de modèle et d’attributs
-                        auxquels on peut faire appel pour spécifier un schéma.</item>
+               <p>Dès l’origine, la TEI a été conçue pour être employée comme un ensemble de briques permettant de construire des schémas spécifiques pour un projet donné.</p>
+               <p>L’infrastructure de la Proposition numéro 5 de la TEI (P5) consiste en :<list> 
+                  <item>vingt-deux modules parmi lesquels sont répartis les nombreux éléments de la TEI qui font l’objet d’une importante documentation textuelle</item>
+                     <item>ils sont formellement classés dans des classes de modèle et d’attributs auxquels on peut faire appel pour spécifier un schéma.</item>
                   </list>
                </p>
                <p>[cf. <ref target="04-personnalisation.html">Personnalisation de la TEI</ref></p>
@@ -225,84 +158,65 @@
          </div>
          <div rend="slide" xml:lang="fr">
             <div>
-               <head>Les 22 <ref
-                     target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA"
-                     >modules</ref> de la TEI</head>
-               <p>![module](../images/modulesTEI.png)</p>
+               <head>Les 22 <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">modules</ref> de la TEI</head>
+               <figure>
+                  <graphic url="../images/modulesTEI.png"/>
+                  <desc>Les modules de la TEI</desc>
+               </figure>
             </div>
          </div>
          <div rend="slide" xml:lang="fr">
             <div>
-               <head>Les 22 <ref
-                     target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA"
-                     >modules</ref> de la TEI</head>
+               <head>Les 22 <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">modules</ref> de la TEI</head>
                <p>Regroupés par domaine d’application, à chaque module correspond un chapitre des
-                     <ref target="http://www.tei-c.org/Guidelines/">Guidelines</ref></p>
+                     <ref target="http://www.tei-c.org/Guidelines/"><title>Guidelines</title></ref></p>
                <p>Trois modules habituellement requis : <list>
-                     <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html"
-                           >core</ref> éléments disponibles dans tous les documents TEI</item>
-                     <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html"
-                           >header</ref> en-tête TEI</item>
-                     <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html"
-                           >textstructure</ref> structure de text par défault</item>
+                     <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html" ><ident>core</ident></ref> éléments disponibles dans tous les documents TEI</item>
+                     <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html"><ident>header</ident></ref> en-tête TEI</item>
+                     <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html"><ident>textstructure</ident></ref> structure de text par défaut</item>
                   </list>
                </p>
                <p>&amp; <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html"
-                     >tei</ref> infrastructure TEI</p>
+                     ><ident>tei</ident></ref> infrastructure TEI</p>
                <p>ex d’autres modules spécialisés : <ref
                      target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html"
-                     >namesdates</ref> pour les noms et dates, [<ref
+                     ><ident>namesdates</ident></ref> pour les noms et dates, [<ref
                      target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html"
-                     >transcr</ref> pour la critique textuelle, <ref
+                     ><ident>transcr</ident></ref> pour la critique textuelle, <ref
                      target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
-                     >msdescription</ref> pour la description de manuscrits, <ref
+                     ><ident>msdescription</ident></ref> pour la description de manuscrits, <ref
                      target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html"
-                     >figure</ref> facsimili, ...</p>
+                     ><ident>figure</ident></ref> facsimili, ...</p>
             </div>
             <div rend="notes">
-               <p>Les modules constituent avant tout un moyen commode de grouper par domaine
-                  d’application les nombreux éléments de la TEI (ils sont actuellement au nombre de
-                  555).</p>
-               <p>Chaque module fait l’objet d’une description littérale dans un chapitre des
-                  Guidelines.</p>
-               <p>Trois de ces modules sont habituellement requis lors de la production d’un schéma
-                  (`core`, `header`, et `textstructure`, on utilise également `tei` pour
-                  RelaxNG).</p>
-               <p>Outre ces trois modules, on fait fréquemment appel aux modules suivants `figures`,
-                  `namesdates`, `linking`, `transcr`.</p>
+               <p>Les modules constituent avant tout un moyen commode de grouper par domaine d’application les nombreux éléments de la TEI (ils sont actuellement au nombre de 555).</p>
+               <p>Chaque module fait l’objet d’une description littérale dans un chapitre des <title>Guidelines</title>.</p>
+               <p>Trois de ces modules sont habituellement requis lors de la production d’un schéma (<ident>core</ident>, <ident>header</ident>, et <ident>textstructure</ident>, on utilise également <ident>tei</ident> pour RelaxNG).</p>
+               <p>Outre ces trois modules, on fait fréquemment appel aux modules suivants <ident>figures</ident>, <ident>namesdates</ident>, <ident>linking</ident>, <ident>transcr</ident>.</p>
                <list>
-                  <item>Le module <ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html"
-                        >namesdates</ref> est particulièrement adapté pour la description des
-                     entités historiques de type personnes et lieux.</item>
+                  <item>Le module <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html"><ident>namesdates</ident></ref> est particulièrement adapté pour la description des entités historiques de type personnes et lieux.</item>
                   <item>Le module <ref
                         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html"
-                        >figure</ref> est utilisé conjointement avec `transcr` pour traiter la
+                        ><ident>figure</ident></ref> est utilisé conjointement avec `transcr` pour traiter la
                      description des facsimili.</item>
                   <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html"
-                        >transcr</ref> est destiné à la transcription de manuscrit et à la
+                        ><ident>transcr</ident></ref> est destiné à la transcription de manuscrit et à la
                      transcription de sources primaires. Y trouvera par exemple des éléments pour
                      signaler un passage rayé, un ajout dans la marge (glose marginale), une
                      abréviation, etc.</item>
                   <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
-                        >msdescription</ref> sert à la description de manuscrits. Quand fait une
-                     édition de texte, besoin de décrire la source que l’on édite, on y trouver les
-                     éléments nécessaires.</item>
-                  <item>Il est également possible d’utiliser le module `dictionaries` pour le
-                     traitement d’un glossaire.</item>
-                  <item>Module drama pour la transcription du texte oral pas la même chose que texte
-                     de base. Composante de temps.</item>
-                  <item>`textCrit` lorsque l’on a besoin d’encoder un apparat critique, quand étudie
-                     un texte qui a plusieurs témoins, plusieurs manuscrits qui constitue plusieurs
-                     leçons d’un texte transcrit (variantes) critical aparatus</item>
-                  <item>`linking` qui concerne le modèle de lien</item>
+                        ><ident>msdescription</ident></ref> sert à la description de manuscrits. Quand fait une édition de texte, besoin de décrire la source que l’on édite, on y trouver les éléments nécessaires.</item>
+                  <item>Il est également possible d’utiliser le module <ident>dictionaries</ident> pour le traitement d’un glossaire.</item>
+                  <item>Module <ident>drama</ident> pour la transcription du texte oral pas la même chose que texte de base. Composante de temps.</item>
+                  <item><ident>textCrit</ident> lorsque l’on a besoin d’encoder un apparat critique, quand étudie un texte qui a plusieurs témoins, plusieurs manuscrits qui constitue plusieurs leçons d’un texte <ident>transcrit</ident> (variantes) critical aparatus</item>
+                  <item><ident>linking</ident> qui concerne le modèle de lien</item>
                </list>
             </div>
          </div>
          <div rend="slide" xml:lang="fr">
             <div>
                <head>Se repérer sur le site du Consortium</head>
-               <p>http://www.tei-c.org</p>
+               <p><ref target="http://www.tei-c.org">http://www.tei-c.org</ref></p>
                <div>
                   <head>Consortium</head>
                   <list>
@@ -312,7 +226,7 @@
                   </list>
                </div>
                <div>
-                  <head>Guidelines</head>
+                  <head><title>Guidelines</title></head>
                   <list>
                      <item>Consultation des chapitres</item>
                      <item>Description des éléments</item>
@@ -323,46 +237,28 @@
             <div rend="notes">
                <div>
                   <head>Le site du consortium</head>
-                  <p>Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder
-                     à la liste des membres. Vous avez également un lien vers le journal de le TEI
-                     dans le menu activités.</p>
-                  <p>Vous disposez également d’un WIKI sur la TEI qui est un regroupement de
-                     tutoriaux, projets de la TEI. Une liste des projets utilisant la TEI. Il n’est
-                     pas obligatoire de déclarer que l’on travaille avec TEI. C’est une démarche
-                     libre, puisqu’il s’agit d’un logiciel libre avec lequel on fait ce que l’on
-                     veut.</p>
-                  <p>Une partie du WIKI est consacrée aux outils. Si vous deviez démarrer un gros
-                     projet, c’est une bonne page pour déterminer les outils existants pour faire
-                     l’état de l’art. Mais, si elle constitue un passage obligé, cette page n’est
-                     évidemment pas exhaustif.</p>
-                  <p>Les guidelines, mais aussi About avec une rubrique sur l’histoire du
-                     projet.</p>
-                  <p>La liste de discussion : il vous suffit de fournir votre nom et votre adresse
-                     email pour être abonné.</p>
+                  <p>Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder à la liste des membres. Vous avez également un lien vers l’<title>International journal of the TEI</title> dans le menu activités.</p>
+                  <p>Vous disposez également d’un WIKI sur la TEI qui est un regroupement de tutoriaux, projets de la TEI. Une liste des projets utilisant la TEI. Il n’est pas obligatoire de déclarer que l’on travaille avec TEI. C’est une démarche libre, puisqu’il s’agit d’un logiciel libre avec lequel on fait ce que l’on veut.</p>
+                  <p>Une partie du WIKI est consacrée aux outils. Si vous deviez démarrer un gros projet, c’est une bonne page pour déterminer les outils existants pour faire l’état de l’art. Mais, si elle constitue un passage obligé, cette page n’est évidemment pas exhaustif.</p>
+                  <p>Les <title>Guidelines</title>, mais aussi <title>About</title> avec une rubrique sur l’histoire du projet.</p>
+                  <p>La liste de discussion : il vous suffit de fournir votre nom et votre adresse courriel pour être abonné.</p>
                </div>
                <div>
-                  <head>Détail des guidelines</head>
+                  <head>Détail des <title>Guidelines</title></head>
                   <list>
                      <item>Consultation des chapitres</item>
                      <item>Navigation par élément</item>
                      <item>Consultation des classes</item>
                      <item>Outils</item>
                   </list>
-                  <p>Les parties concernant les spécifications formelles des guidelines ont fait
-                     l’objet de traduction par le groupe Afnor. Des exemples correspondants à la
-                     pratique française ont été introduits.</p>
-                  <p>En revanche le corps principal des guidelines n’existe qu’en une seule langue.
-                     Si vous commencez un projet, rien ne vaudra une lecture attentive des chapitres
-                     qui vous intéressent. Il s’agit d’une recommandation de base. Ici c’est même un
-                     préalable, car si EAD par exemple est souple et facile à comprendre et cerner,
-                     TEI l’est beaucoup moins. Pour commencer à travailler avec TEI, la première
-                     consigne est de commencer à lire la documentation.</p>
+                  <p>Les parties concernant les spécifications formelles des <time>Guidelines</time> ont fait l’objet de traduction par le groupe Afnor. Des exemples correspondants à la pratique française ont été introduits.</p>
+                  <p>En revanche le corps principal des <title>Guidelines</title> n’existe qu’en une seule langue. Si vous commencez un projet, rien ne vaudra une lecture attentive des chapitres qui vous intéressent. Il s’agit d’une recommandation de base. Ici c’est même un préalable, car si EAD par exemple est souple et facile à comprendre et cerner, TEI l’est beaucoup moins. Pour commencer à travailler avec TEI, la première consigne est de commencer à lire la documentation.</p>
                </div>
             </div>
          </div>
          <div rend="slide">
             <div>
-               <head>Guidelines</head>
+               <head><title>Guidelines</title></head>
                <list>
                   <item>23 chapitres par ordre d’intérêt</item>
                   <item>5 premiers chapitres généralistes</item>
@@ -372,37 +268,22 @@
                </list>
             </div>
             <div rend="notes">
-               <p>The body of this edition of the Guidelines proper contains 23 chapters arranged in
-                  increasing order of specialist interest. The first five chapters discuss in depth
-                  matters likely to be of importance to anyone intending to apply the TEI scheme to
-                  virtually any kind of text. The next seven focus on particular kinds of text:
-                  verse, drama, spoken text, dictionaries, and manuscript materials. The next nine
-                  chapters deal with a wide range of topics, one or more of which are likely to be
-                  of interest in specialist applications of various kinds. The last two chapters
-                  deal with the XML encoding used to represent the TEI scheme itself, and provide
-                  technical information about its implementation. The last chapter also defines the
-                  notion of TEI conformance and its implications for interchange of materials
-                  produced according to these Guidelines.</p>
-               <p>Pas fait pour être lu de bout en bout, mais une documentation de référence.</p>
-               <p>Généralement, les chapitres suivent une organisation similaire. Ils débutent par
-                  des considérations générales sur le sujet traité. Repérer les navigations
-                  hypertextuelles (renvois), les tables de descriptions d’éléments et d’attributs,
-                  les exemples, et à la fin des chapitres le récapitulatif des éléments contenus
-                  dans les modules décrits par les chapitres.</p>
+               <p>Le corps de l’édition actuelle des <title>Guidelines</title> contient vingt-trois chapitres arrangés dans un ordre croissant d’intérêt spécial. Les cinq premiers chapitres abordent en détail les questions importantes pour les personnes envisageant d’employer la TEI pour n’importe quel type de texte. Les sept chapitres suivants focalisent sur des genres de textes particuliers : versifiés, dramatiques, textes oraux, dictionnaires, et manuscrits. Les neuf derniers chapitres s’occupent de sujets variés concernant plutôt des applications spécialisées. Enfin, les deux derniers chapitres s’occupent de l’utilisation de ODD qui sert à déclarer son utilisation de la TEI, et les questions de conformance et d’interopérabilité.</p>
+               <p>Bien évidemment, ces <title>Guidelines</title> ne sont pas faites pour être lues de bout en bout (même si vous pouvez le faire !). Il s’agit plutôt d’une documentation de référence.</p>
+               <p>Généralement, les chapitres suivent tous une organisation similaire. Ils débutent par des considérations générales sur le sujet traité. Repérer les navigations hypertextuelles (renvois), les tables de descriptions d’éléments et d’attributs, les exemples, et à la fin des chapitres le récapitulatif des éléments contenus dans les modules décrits par les chapitres.</p>
             </div>
          </div>
          <div rend="slide">
             <div>
                <head>Conventions de nommage</head>
                <div>
-                  <head>Identifants générique</head>
+                  <head>Identifiants génériques</head>
                   <p>Les noms d’éléments sont les identifiants génériques</p>
                   <p>ex : <code>&lt;name&gt;</code> correspond à <ident>name</ident></p>
                </div>
                <div>
                   <head>Référence aux attributs</head>
-                  <p>prennent la forme <ident>@attname</ident>, où "attname" est le nom de
-                     l’attribut</p>
+                  <p>prennent la forme <ident>@attname</ident>, où "attname" est le nom de l’attribut</p>
                   <p>ex : <code>@name</code> correspond à <ident>name</ident></p>
                  
                </div>
@@ -434,33 +315,23 @@
                </div>
             </div>
             <div rend="notes">
-               <p>Introduire la notion d’héritage à partir des conventions de nommage des
-                  classes :</p>
-               <p>Le premier suffixe "Part" si les membres de la classe sont tous fils de l’élément
-                  racine, ou "Like" les membres de la classe sont tous enfant de l’élément
-                  racine.</p>
-               <p>La racine de nom "global" est utilisée pour indiquer que les membres de la classe
-                  sont permis partout dans un document TEI</p>
-               <p>Il est possible d’ajouter des suffixes additionnels, préfixés par un "." pour
-                  distinguer des sous-classes sémantiques ou structurelles.</p>
-               <p>Par exemple la classe des éléments qui font partie de div est appellée
-                     <ident>model.divPart</ident>. Cette classe inclue dans une sous-classe les
-                  éléments qui peuvent faire partie d’une division dans un texte oral, qui est alors
-                  nommée <ident>model.divPart.spoken</ident></p>
+               <p>Introduire la notion d’héritage à partir des conventions de nommage des classes :</p>
+               <p>Le premier suffixe "Part" si les membres de la classe sont tous fils de l’élément racine, ou "Like" les membres de la classe sont tous enfant de l’élément racine.</p>
+               <p>La racine de nom "global" est utilisée pour indiquer que les membres de la classe sont permis partout dans un document TEI</p>
+               <p>Il est possible d’ajouter des suffixes additionnels, préfixés par un "." pour distinguer des sous-classes sémantiques ou structurelles.</p>
+               <p>Par exemple la classe des éléments qui font partie de div est appelée <ident>model.divPart</ident>. Cette classe inclue dans une sous-classe les éléments qui peuvent faire partie d’une division dans un texte oral, qui est alors nommée <ident>model.divPart.spoken</ident></p>
             </div>
          </div>
          <div rend="slide">
              <div>
                <head>Déclaration du contenu d’un élément</head>
                <list>
-                  <item><code>&lt;sequence&gt;</code> Indique une séquence</item>
-                  <item><code>&lt;alternate&gt;</code> Indique un choix</item>
-                  <item><code>@minOccurs</code> Indique le nombre minimal de 
-                     répétitions (1 par defaut)</item>
-                  <item><code>@maxOccurs</code>Indique le nombre maximal de 
-                     répétitions (1 par defaut)</item>
-                  <item><code>&lt;elementRef&gt;</code> Indique la presence d'un élément</item>
-                  <item><code>&lt;classRef&gt;</code> Indique la presence d'un ou de plusieurs éléments d'une classe spécifique</item>
+                  <item><gi>sequence</gi> Indique une séquence</item>
+                  <item><gi>alternate</gi> Indique un choix</item>
+                  <item><att>minOccurs</att> Indique le nombre minimal de répétitions (par défaut 1)</item>
+                  <item>@<att>maxOccurs</att>Indique le nombre maximal de répétitions (par défaut 1)</item>
+                  <item><gi>elementRef</gi> Indique la présence d’un élément</item>
+                  <item><gi>classRef</gi> Indique la présence d’un ou de plusieurs éléments d’une classe spécifique</item>
                </list>
             </div>
             <div rend="notes">
@@ -470,11 +341,18 @@
                      sont présentés dans l'ordre où il faut les trouver.</item>
                   <item><ident>alternate</ident>Indique un choix, c’est-à-dire que l’on choisit entre tous
                      les composants.</item>
+<<<<<<< HEAD
                   <item><ident>@minOccurs</ident> et <ident>@maxOccurs</ident> sont d'habitude utilisés ensemble pour indiquer la cardinalité d'un composant. 
                      Si absent, ils ont tout les deux une valeur de 1.</item>
                   <item><ident>elementRef</ident> Indique un élément par son attribut @key</item>
                   <item><ident>classRef</ident> Indique une classe d'éléments par son attribut @key. La signification varie selon la valeur de son attribut @expand. 
                   Par défaut, il correspond à un élément (n'importe lequel) de la classe indiquée.</item>
+=======
+                  <item><att>minOccurs</att> et <att>maxOccurs</att> sont d’habitude utilisés ensemble pour indiquer la cardinalité d’un composant.  Si absent, ils ont tout les deux une valeur de 1.</item>
+                  <item><gi>elementRef</gi> Indique un élément par son attribut <att>key</att></item>
+                  <item><gi>classRef</gi> Indique une classe d'éléments par son attribut <att>key</att>. La signification varie selon la valeur de son attribut <att>expand</att>. Par défaut, il correspond à un élément (n’importe lequel) de la classe indiquée.</item>
+        
+>>>>>>> 3a7a82a748180e1e53e2a20d362f86ac297f0d40
                </list>
             </div>
          </div>
