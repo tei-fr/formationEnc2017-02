@@ -726,7 +726,7 @@ le contenu de <gi>profileDesc</gi> est
  <item>un ou plusieurs <gi>constraint</gi> sont possibles</item>
  <item>la contrainte s’exprime en langue ISO schematron, donc dans un autre espace de noms</item>
  <item>par ex. <code>if @to is supplied on &lt;name/>, @from must be supplied as
- well</code> (NB "&lt;name/>" signifie le nom de l’élément qui activera cette
+ well</code> (NB <code>&lt;name/></code> signifie le nom de l’élément qui activera cette
    règle)</item>
         </list>
         <p>Nous reviendrons sur ce sujet plus loin…</p>
@@ -767,7 +767,7 @@ le contenu de <gi>profileDesc</gi> est
    <classRef key="model.phrase"/>
    <classRef key="model.global"/>
  </alternate>
-        </content></egXML>
+</content></egXML>
         <p><q>Rien du tout, du texte, ou n’importe combien d’éléments membres de n’importe laquelle des trois classes <ident>model.gLike</ident>, <ident>model.phrase</ident> ou
  <ident>mode.global</ident></q></p>
       </div>

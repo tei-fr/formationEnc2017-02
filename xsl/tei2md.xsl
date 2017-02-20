@@ -154,6 +154,13 @@
 </xsl:text>
   </xsl:template>
 
+
+  <xsl:template match="q">
+    <xsl:text>« </xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text> »</xsl:text>
+  </xsl:template>
+
   <xsl:template match="att">
     <xsl:text>`@</xsl:text>
     <xsl:apply-templates/>
