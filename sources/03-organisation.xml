@@ -251,7 +251,7 @@
                      <item>Consultation des classes</item>
                      <item>Outils</item>
                   </list>
-                  <p>Les parties concernant les spécifications formelles des <time>Guidelines</time> ont fait l’objet de traduction par le groupe Afnor. Des exemples correspondants à la pratique française ont été introduits.</p>
+                  <p>Les parties concernant les spécifications formelles des <title>Guidelines</title> ont fait l’objet de traduction par le groupe Afnor. Des exemples correspondants à la pratique française ont été introduits.</p>
                   <p>En revanche le corps principal des <title>Guidelines</title> n’existe qu’en une seule langue. Si vous commencez un projet, rien ne vaudra une lecture attentive des chapitres qui vous intéressent. Il s’agit d’une recommandation de base. Ici c’est même un préalable, car si EAD par exemple est souple et facile à comprendre et cerner, TEI l’est beaucoup moins. Pour commencer à travailler avec TEI, la première consigne est de commencer à lire la documentation.</p>
                </div>
             </div>
@@ -341,19 +341,10 @@
                      sont présentés dans l'ordre où il faut les trouver.</item>
                   <item><ident>alternate</ident>Indique un choix, c’est-à-dire que l’on choisit entre tous
                      les composants.</item>
-<<<<<<< HEAD
-                  <item><ident>@minOccurs</ident> et <ident>@maxOccurs</ident> sont d'habitude utilisés ensemble pour indiquer la cardinalité d'un composant. 
-                     Si absent, ils ont tout les deux une valeur de 1.</item>
-                  <item><ident>elementRef</ident> Indique un élément par son attribut @key</item>
-                  <item><ident>classRef</ident> Indique une classe d'éléments par son attribut @key. La signification varie selon la valeur de son attribut @expand. 
-                  Par défaut, il correspond à un élément (n'importe lequel) de la classe indiquée.</item>
-=======
-                  <item><att>minOccurs</att> et <att>maxOccurs</att> sont d’habitude utilisés ensemble pour indiquer la cardinalité d’un composant.  Si absent, ils ont tout les deux une valeur de 1.</item>
+           <item><att>minOccurs</att> et <att>maxOccurs</att> sont d’habitude utilisés ensemble pour indiquer la cardinalité d’un composant.  Si absent, ils ont tout les deux une valeur de 1.</item>
                   <item><gi>elementRef</gi> Indique un élément par son attribut <att>key</att></item>
                   <item><gi>classRef</gi> Indique une classe d'éléments par son attribut <att>key</att>. La signification varie selon la valeur de son attribut <att>expand</att>. Par défaut, il correspond à un élément (n’importe lequel) de la classe indiquée.</item>
-        
->>>>>>> 3a7a82a748180e1e53e2a20d362f86ac297f0d40
-               </list>
+                </list>
             </div>
          </div>
          <div rend="title" xml:lang="fr">

@@ -8,7 +8,7 @@
   <xsl:import
     href="/usr/share/xml/tei/stylesheet/markdown/tei-to-markdown.xsl"/>
 
-  <xsl:output method="html" version="5" indent="yes"/>
+  <xsl:output method="html" version="5.0" indent="yes"/>
 
   <xsl:strip-space elements="egXML"/>
 
