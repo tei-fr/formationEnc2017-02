@@ -120,7 +120,7 @@
  >et devrait être intégrable dans un système de balisage documentaire
  classique</p>
       </div>
-      <div type="slide" xml:lang="fr">
+    <!--  <div type="slide" xml:lang="fr">
         <head>L’idée essentielle de ODD 2</head>
         <p rend="box">Un ODD peut combiner plusieurs spécifications pour un même objet <list>
  <item>une qui est <soCalled>canonique</soCalled>, référencée dans les <title>Guidelines</title></item>
@@ -129,7 +129,7 @@
  autre ODD</item>
  </list></p>
         <p>Les règles de combinaison sont explicites, mais un peu complexes… </p>
-      </div>
+      </div>-->
       <div xml:lang="en">
         <head>Basic ODD components for schema definition</head>
         <list type="gloss">
@@ -147,7 +147,7 @@
  <item>References an existing <soCalled>module</soCalled> i.e. a group of predefined
    elements and attributes, entirely or partially</item>
         </list>
-        <p rend="box">(We discuss documentary components of an ODD later)</p>
+         <p rend="box">(We discuss documentary components of an ODD later)</p>
       </div>
       <div type="slide" xml:lang="fr">
         <head>Éléments essentiel d’un ODD</head>
@@ -168,7 +168,8 @@
  <soCalled>module</soCalled>
  </item>
         </list>
-        <p rend="box">(Nous reviendrons plus loin sur les composants documentaire d’un ODD)</p>
+     <p>   Un ODD peut combiner plusieurs spécifications pour un même objet
+    </p>    <p rend="box">(Nous reviendrons plus loin sur ce point, et sur les composants documentaire d’un ODD)</p>
       </div>
       <div xml:lang="en">
         <head>A simple example</head>
@@ -201,7 +202,7 @@
    </content>
  </elementSpec>
  <!-- ... la suite à la prochaine diapo -->
-        </schemaSpec>
+</schemaSpec>
  </egXML>
       </div>
       <div xml:lang="en">
@@ -231,7 +232,7 @@
        <attDef ident="href">
          <desc>fournit l’URI de l'objet ciblé</desc>
          <datatype>
-  <dataRef name="anyURI"/>
+            <dataRef name="anyURI"/>
          </datatype>
        </attDef>
      </attList>
@@ -267,7 +268,7 @@
         <p>TEI fournit un élément spécialisé pour cela : <egXML
  xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><specList> 
    <specDesc key="para"/>
- <specDesc key="picture"/> 
+   <specDesc key="picture"/> 
  </specList></egXML> </p>
         <p>Ce balisage généra quelque chose comme </p>
         <list>
@@ -344,7 +345,8 @@ sa ou ses classe/s : <egXML
   </elementSpec></egXML> </p>
         <p>Et voici la définition de la classe <ident>bookPart</ident>.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> <classSpec ident="bookPart" type="model">
- <desc>éléments qui ont la possibilité de figurer dans un <gi>book</gi></desc> </classSpec>
+ <desc>éléments qui ont la possibilité de figurer dans un <gi>book</gi></desc> 
+ </classSpec>
         </egXML>
       </div>
       <div xml:lang="en">
@@ -352,8 +354,11 @@ sa ou ses classe/s : <egXML
         <p>Rather than say that a <gi>book</gi> contains <gi>para</gi> elements (and other things),
  we can now say that it contains members of the <ident>bookPart</ident> class.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> <elementSpec ident="book">
- <desc>Root element for a very simple schema</desc> <content> <classRef key="bookPart"
- minOccurs="1" maxOccurs="unbounded"/> </content> </elementSpec></egXML>
+ <desc>Root element for a very simple schema</desc> 
+ <content> 
+    <classRef key="bookPart" minOccurs="1" maxOccurs="unbounded"/> 
+ </content> 
+</elementSpec></egXML>
         <p>(When we realise that books can also contain <gi>list</gi>s this will save time!)</p>
       </div>
       <div type="slide" xml:lang="fr">
@@ -362,8 +367,10 @@ sa ou ses classe/s : <egXML
    <gi>book</gi>, il suffit de dire que cet élément est composé des membres de la classe
    <ident>bookPart</ident> .</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> <elementSpec ident="book">
- <desc>Élément racine d’un schéma simplissime pour encoder les livres</desc> <content>
- <classRef key="bookPart" minOccurs="1" maxOccurs="unbounded"/> </content>
+ <desc>Élément racine d’un schéma simplissime pour encoder les livres</desc> 
+ <content>
+  <classRef key="bookPart" minOccurs="1" maxOccurs="unbounded"/> 
+ </content>
  </elementSpec></egXML>
         <p>(Dès que nous découvrirons l’existence de listes dans les livres nous saurons quoi
  faire)</p>
@@ -391,7 +398,7 @@ sa ou ses classe/s : <egXML
        <attDef ident="href">
          <desc>fournit l’URI de l’objet ciblé</desc>
          <datatype>
-  <dataRef name="anyURI"/>
+           <dataRef name="anyURI"/>
          </datatype>
        </attDef>
      </attList>
@@ -567,13 +574,12 @@ sa ou ses classe/s : <egXML
       </div>
       <div type="slide" xml:lang="fr">
         <head>Par exemple </head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
- <eg>&lt;![CDATA[&lt;p>un paragraphe&lt;/p> &#93;]></eg> </egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"> <eg> <code lang="XML"
- >&amp;lt;p>un paragraphe&amp;lt;/p></code></eg></egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"
- > &lt;egXML
- xmlns="http://www.tei-c.org/ns/examples"> <p>un paragraphe</p> &lt;/egXML></egXML>
+       <p> <code>
+ &lt;![CDATA[&lt;p>un paragraphe&lt;/p> &#93;]> </code></p>
+        <p><code
+ >&amp;lt;p>un paragraphe&amp;lt;/p></code></p>
+       <p> <code> &lt;egXML xmlns="http://www.tei-c.org/ns/examples"> 
+&lt;p>un paragraphe&lt;/p> &lt;/egXML></code></p>
       </div>
 
       <div xml:lang="en">
@@ -638,7 +644,6 @@ sa ou ses classe/s : <egXML
        <elementRef key="image"/>
      </alternate>
    </content>
-   <classes><memberOf key="bookPart"/></classes>
  </elementSpec></egXML>
         <p>Notez bien que ce nouvel élément fait partie de la classe <ident>bookPart</ident> ;
  sinon il ne serait pas disponible dans nos documents.</p>
@@ -687,7 +692,7 @@ sa ou ses classe/s : <egXML
  <elementRef key="graphic"/>
  <elementRef key="figure"/>
  <moduleRef key="tei"/>
-        </schemaSpec></egXML>
+</schemaSpec></egXML>
         <p>L’élément <gi>moduleRef</gi> nous fournit un ensemble de définitions infrastructurales,
  notamment pour les classes utilisées partout dans le systeme TEI. À part cela, nous
  n’avons besoin que de référencer les éléments TEI souhaités avec un <gi>elementRef</gi>.
