@@ -10,7 +10,7 @@
       </titleStmt>
       <publicationStmt>
         <p xml:lang="en">As presented at TEI MM 2014</p>
-        <p type="slide" xml:lang="fr">Préparé pour ENC MasterPro 2015</p>
+        <p xml:lang="fr">Préparé pour ENC MasterPro 2015</p>
       </publicationStmt>
       <sourceDesc>
         <p>From previous talks in Tours, Paris, Barcelona, Paris, Graz...</p>
@@ -189,12 +189,20 @@
           >Nous utilisons un élément <gi>book</gi>, qui contient un mélange d’éléments
    <gi>para</gi>s et <gi>image</gi>s. Nous ne connaissons rien de la TEI, et n’en avons pas
  envie. De même pour les espaces de noms.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> <schemaSpec ns="" start="book"
-          ident="bookSchema"> <elementSpec ident="book">
-          <desc>Élément racine d’un schéma simplissime pour encoder les livres</desc><desc/>
-          <content> <alternate maxOccurs="unbounded"> <elementRef key="para"/> <elementRef
-          key="image"/> </alternate> </content> </elementSpec>
-          <!-- ... la suite à la prochaine diapo --> </schemaSpec> </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><schemaSpec ns=""
+          start="book" ident="bookSchema">
+          <elementSpec ident="book">
+            <desc>Élément racine d’un schéma simplissime pour encoder les livres</desc><desc/>
+            <content>
+              <alternate maxOccurs="unbounded">
+                <elementRef key="para"/>
+                <elementRef key="image"/>
+              </alternate>
+            </content>
+          </elementSpec>
+          <!-- ... la suite à la prochaine diapo -->
+        </schemaSpec>
+          </egXML>
       </div>
       <div xml:lang="en">
         <head>A simple example, contd.</head>
@@ -208,13 +216,27 @@
       <div type="slide" xml:lang="fr">
         <head>Un exemple simplissime (suite)</head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
-          xmlns:rng="http://relaxng.org/ns/structure/1.0"> <schemaSpec ns="" start="stuff"
-          ident="oddex-1">
-          <!-- ... suite --> <elementSpec ident="para"> <desc>un paragraphe de text </desc>
-          <content> <textNode/> </content> </elementSpec> <elementSpec ident="image">
-          <desc>un élément vide qui pointe sur un fichier graphique</desc> <content/> <attList>
-          <attDef ident="href"> <desc>fournit l’URI de l'objet ciblé</desc> <datatype> <dataRef
-          name="anyURI"/> </datatype> </attDef> </attList> </elementSpec> </schemaSpec> </egXML>
+          xmlns:rng="http://relaxng.org/ns/structure/1.0"> <schemaSpec ns="" start="stuff" ident="oddex-1">
+            <!-- ... suite -->
+            <elementSpec ident="para">
+              <desc>un paragraphe de text </desc>
+              <content>
+                <textNode/>
+              </content>
+            </elementSpec>
+            <elementSpec ident="image">
+              <desc>un élément vide qui pointe sur un fichier graphique</desc>
+              <content/>
+              <attList>
+                <attDef ident="href">
+                  <desc>fournit l’URI de l'objet ciblé</desc>
+                  <datatype>
+                    <dataRef name="anyURI"/>
+                  </datatype>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </schemaSpec></egXML>
       </div>
       <div xml:lang="en">
         <head>So what?</head>
@@ -243,8 +265,10 @@
    éléments et des attributs</item>
         </list>
         <p>TEI fournit un élément spécialisé pour cela : <egXML
-          xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><specList> <specDesc key="para"/>
-          <specDesc key="picture"/> </specList></egXML> </p>
+          xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><specList> 
+            <specDesc key="para"/>
+          <specDesc key="picture"/> 
+          </specList></egXML> </p>
         <p>Ce balisage généra quelque chose comme </p>
         <list>
 
@@ -271,7 +295,7 @@
    generated schema; validate the file. </item>
         </list>
       </div>
-      <div type="slide" xml:lang="fr" type="tp">
+      <div type="tp" xml:lang="fr" >
         <head>Essayons cela avec oXygen… </head>
         <list>
           <item>Démarrez oXygen</item>
@@ -313,8 +337,11 @@
    <term>classe</term>, pour laquelle nous proposons le nom <ident>bookPart</ident>.</p>
         <p>Nous utilisons l’élément <gi>classes</gi> pour indiquer l’association d’un élément avec
 sa ou ses classe/s : <egXML
-          xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> <elementSpec ident="para"> <classes>
-          <memberOf key="bookPart"/> </classes> </elementSpec> </egXML> </p>
+  xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> <elementSpec ident="para">
+    <classes>
+      <memberOf key="bookPart"/>
+    </classes>
+  </elementSpec></egXML> </p>
         <p>Et voici la définition de la classe <ident>bookPart</ident>.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> <classSpec ident="bookPart" type="model">
           <desc>éléments qui ont la possibilité de figurer dans un <gi>book</gi></desc> </classSpec>
@@ -358,10 +385,17 @@ sa ou ses classe/s : <egXML
  même attributs : il sera donc très pratique de les définir en une seule fois</p>
         <p> ODD nous permet de dire que tous les éléments ayant en commun un ensemble d’attributs
           constituent une <term>classe attributs</term> que nous définissons ainsi <egXML
-          xmlns="http://www.tei-c.org/ns/Examples"> <classSpec ident="pointing" type="atts">
-          <desc>regroupe les éléments comportant l’attribut <att>href</att></desc> <attList> <attDef
-          ident="href"> <desc>fournit l’URI de l’objet ciblé</desc> <datatype> <dataRef
-          name="anyURI"/> </datatype> </attDef> </attList> </classSpec></egXML></p>
+            xmlns="http://www.tei-c.org/ns/Examples"> <classSpec ident="pointing" type="atts">
+              <desc>regroupe les éléments comportant l’attribut <att>href</att></desc>
+              <attList>
+                <attDef ident="href">
+                  <desc>fournit l’URI de l’objet ciblé</desc>
+                  <datatype>
+                    <dataRef name="anyURI"/>
+                  </datatype>
+                </attDef>
+              </attList>
+            </classSpec></egXML></p>
       </div>
       <div xml:lang="en">
         <head>Test your understanding</head>
@@ -417,14 +451,29 @@ sa ou ses classe/s : <egXML
       <div type="slide" xml:lang="fr">
         <head>Exemple </head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
-          xmlns:rng="http://relaxng.org/ns/structure/1.0"> <classSpec ident="bookAtts" type="atts">
-          <desc>attributs applicables aux objets contenus par des <gi>book</gi></desc> <attList>
-          <attDef ident="xml:id"> <desc>fournit un identifiant unique pour le composant</desc>
-          <datatype> <dataRef name="ID"/> </datatype> </attDef> <attDef ident="status">
-          <desc>indique le statut du composant </desc> <valList> <valItem ident="red"/> <valItem
-          ident="green"/> <valItem ident="unknown"/> </valList> </attDef> <attDef ident="version">
-          <desc>indique le numéro de version du composant</desc> <datatype><dataRef
-          key="teidata.versionNumber"/></datatype> </attDef> </attList> </classSpec> </egXML>
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">  <classSpec ident="bookAtts" type="atts">
+            <desc>attributs applicables aux objets contenus par des <gi>book</gi></desc>
+            <attList>
+              <attDef ident="xml:id">
+                <desc>fournit un identifiant unique pour le composant</desc>
+                <datatype>
+                  <dataRef name="ID"/>
+                </datatype>
+              </attDef>
+              <attDef ident="status">
+                <desc>indique le statut du composant </desc>
+                <valList>
+                  <valItem ident="red"/>
+                  <valItem ident="green"/>
+                  <valItem ident="unknown"/>
+                </valList>
+              </attDef>
+              <attDef ident="version">
+                <desc>indique le numéro de version du composant</desc>
+                <datatype><dataRef key="teidata.versionNumber"/></datatype>  
+              </attDef>
+            </attList>
+          </classSpec> </egXML>
       </div>
       <div xml:lang="en">
         <head>Test your understanding</head>
@@ -579,12 +628,17 @@ sa ou ses classe/s : <egXML
       <div xml:lang="fr" type="slide">
         <head>Notions de namespace : exemple</head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
-          xmlns:rng="http://relaxng.org/ns/structure/1.0"> <elementSpec ident="para"
-          ns="http://myNamespace.org" prefix="extra">
-          <desc>une paragraph contenant de text et facultativement des images </desc>
-          <classes><memberOf key="bookPart"/></classes> <content> <alternate maxOccurs="unbounded"
-          minOccurs="0"> <textNode/> <elementRef key="image"/> </alternate> </content>
-          <classes><memberOf key="bookPart"/></classes> </elementSpec> </egXML>
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">   <elementSpec ident="para" ns="http://myNamespace.org" prefix="extra">
+            <desc>une paragraph contenant de text et facultativement des images </desc>
+            <classes><memberOf key="bookPart"/></classes>
+            <content>           
+              <alternate maxOccurs="unbounded" minOccurs="0">
+                <textNode/>
+                <elementRef key="image"/>
+              </alternate>
+            </content>
+            <classes><memberOf key="bookPart"/></classes>
+          </elementSpec></egXML>
         <p>Notez bien que ce nouvel élément fait partie de la classe <ident>bookPart</ident> ;
           sinon il ne serait pas disponible dans nos documents.</p>
       </div>
@@ -626,10 +680,13 @@ sa ou ses classe/s : <egXML
  que notre <gi>image</gi> ressemble beaucoup à l’élément TEI <gi>graphic</gi>, et que notre
    <gi>book</gi> pourrait être considéré comme un élément TEI <gi>div</gi>. Comment
  ré-écrire ce schéma pour profiter des définitions TEI existantes ? </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"> <schemaSpec start="div"
-          ident="testSchema-2" source="tei:1.6.0"> <elementRef key="div"/> <elementRef key="p"/>
-          <elementRef key="graphic"/> <elementRef key="figure"/> <moduleRef key="tei"/>
-          </schemaSpec></egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">  <schemaSpec start="div" ident="testSchema-2" source="tei:1.6.0">
+          <elementRef key="div"/>
+          <elementRef key="p"/>
+          <elementRef key="graphic"/>
+          <elementRef key="figure"/>
+          <moduleRef key="tei"/>
+        </schemaSpec></egXML>
         <p>L’élément <gi>moduleRef</gi> nous fournit un ensemble de définitions infrastructurales,
  notamment pour les classes utilisées partout dans le systeme TEI. À part cela, nous
  n’avons besoin que de référencer les éléments TEI souhaités avec un <gi>elementRef</gi>.
