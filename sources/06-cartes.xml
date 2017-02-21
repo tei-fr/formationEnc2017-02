@@ -499,12 +499,13 @@ France
         <head>1<hi rend="superscript">ère</hi> proposition d’encodage TEI -- l’envoi</head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> <div type="envoi">
  <ab type="evidences">
-   <stamp type="cachetPoste"> <placeName>El Paso</placeName> - TX 799 -<date
-     when="1983-08-18">18-08-1983</date> </stamp>
+   <stamp type="cachetPoste"> 
+     <placeName>El Paso</placeName> - TX 799 -
+     <date when="1983-08-18">18-08-1983</date> 
+   </stamp>
    <stamp type="timbrePoste">
      <figure>
-       <figDesc>Portrait masculin de profil, avec un avion ou un radar au second
-  plan</figDesc>
+       <figDesc>Portrait masculin de profil, avec un avion ou un radar au second plan</figDesc>
      </figure>
      <seg>US Airmail 21 c.</seg>
    </stamp>
@@ -595,38 +596,44 @@ France
       <div xml:lang="en">
         <head>An ODD for postcards </head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="teeny"> <schemaSpec ident="teiCards"
- docLang="en" start="TEI teiCorpus"> <moduleRef key="tei"/> <moduleRef key="textstructure"
- include="TEI body dateline div postscript 
-     salute signed text"/> <moduleRef
- key="core"
- include=" add addrLine address bibl 
+ docLang="en" start="TEI teiCorpus"> 
+ <moduleRef key="tei"/> 
+ <moduleRef key="textstructure" 
+     include="TEI body dateline div postscript 
+     salute signed text"/> 
+ <moduleRef key="core" include=" add addrLine address bibl 
      date del foreign graphic head hi 
      item lb list name p publisher q 
      reg resp respStmt street 
-     teiCorpus title unclear"
- /> <moduleRef key="header"
+     teiCorpus title unclear" /> 
+<moduleRef key="header"
  include="teiHeader fileDesc titleStmt 
-     publicationStmt sourceDesc"/> <moduleRef
- key="figures" include="figure figDesc"/> <moduleRef key="msdescription" include="stamp"/>
- <moduleRef key="transcr" include="att.global.facs"/> <moduleRef key="namesdates"
- include="persName placeName"/> <elementRef key="ab"/>
+     publicationStmt sourceDesc"/> 
+ <moduleRef key="figures" include="figure figDesc"/> 
+ <moduleRef key="msdescription" include="stamp"/>
+ <moduleRef key="transcr" include="att.global.facs"/> 
+ <moduleRef key="namesdates" include="persName placeName"/> 
+ <elementRef key="ab"/>
  <!-- ... --> </schemaSpec> </egXML>
         <p>This is just the formal part of the ODD, which defines the schema. The rest of the ODD
  provides human-readable documentation... </p>
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Proposition d’un ODD pour les cartes </head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="teeny"> <schemaSpec ident="teiCards"
- docLang="en" start="TEI teiCorpus"> <moduleRef key="tei"/> <moduleRef key="textstructure"
- include="TEI body dateline div postscript salute signed text"/> <moduleRef key="core"
- include=" add addrLine address bibl date del foreign graphic head
-     hi item lb list name p publisher q reg resp respStmt street 
-     teiCorpus title unclear"
- /> <moduleRef key="header"
- include="teiHeader fileDesc titleStmt publicationStmt sourceDesc"/> <moduleRef
- key="figures" include="figure figDesc"/> <moduleRef key="msdescription" include="stamp"/>
- <moduleRef key="transcr" include="att.global.facs"/> <moduleRef key="namesdates"
- include="persName placeName"/> <elementRef key="ab"/>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="teeny"> <schemaSpec ident="teiCards" docLang="fr" start="TEI teiCorpus"> 
+  <moduleRef key="tei"/> 
+  <moduleRef key="textstructure" include="TEI body dateline div 
+    postscript salute signed text"/> 
+  <moduleRef key="core" include="add addrLine address bibl 
+    date del foreign graphic head hi item lb list name p 
+    publisher q reg resp respStmt street teiCorpus title unclear"/> 
+  <moduleRef key="header" include="teiHeader fileDesc titleStmt 
+    publicationStmt sourceDesc"/> 
+  <moduleRef key="figures" include="figure figDesc"/> 
+  <moduleRef key="msdescription" include="stamp"/>
+  <moduleRef key="transcr" include="att.global.facs"/> 
+  <moduleRef key="namesdates" include="persName placeName"/> 
+  <elementRef key="ab"/>
  <!-- ... --> </schemaSpec> </egXML>
 
       </div>

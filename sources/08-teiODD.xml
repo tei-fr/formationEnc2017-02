@@ -62,7 +62,7 @@
 <p>Un ODD de personnalisation est spécifié par rapport à un autre ODD ; typiquement mais pas forcément celui qui définit la version actuelle des <title>Guidelines</title><list>
   <item>en sélectionnant des modules</item>
   <item>en sélectionnant parmi les objets (éléments, classes, datatypes, macros) fournis par ces modules</item>
-  <item>en supprimant quelques uns des attributs fournis par ces objets</item>
+  <item>en supprimant ou modifiant quelques uns des attributs fournis par ces objets</item>
   <item>en modifiant ou remplaçant quelques parties de ces spécifications (par ex. les valList)</item>
   <item>éventuellement en ajoutant des spécifications d’objets nouveaux</item>
   </list></p>
@@ -80,6 +80,7 @@
       </div>
       
       <div xml:lang="fr" rend="slide">
+        <head>Comment créer un ODD</head>
 <p>Un ODD, vous le savez déjà, c'est un document TEI comme les autres. Vous pouvez le
 construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
        <p>Rappel : il y a des outils pour faciliter une construction initiale :</p>
@@ -228,12 +229,21 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 <p rend="box"
   >Attention ! un module peut définir d’autres choses que des éléments. Les attributs <att>include</att> et <att>except</att> ne s’appliquent qu’aux éléments</p>
       </div>
+      
+      <div xml:lang="fr" rend="slide"><head>Usage des module</head>
+        <list>
+          <item>Vous n'êtes pas obligé de préciser son module si vous souhaitez préciser l’inclusion d'un élément!</item>
+          <item>Un <gi>elementRef</gi> suffit – pourvu que l'élément concerné soit déclaré par la source invoquée</item>
+          <item>Mais il faut préciser son module si vous souhaitez inclure/utiliser une classe de modèle ou une classe d’attribut. </item>
+          <item>La plupart des classes TEI étant défini par le module <ident>tei</ident>, ce dernier est à peu pres essentiel pour tout ODD TEI.</item></list>
+      </div>
       <div xml:lang="fr" rend="slide">
+        <head>Spécifications multiples</head>
 <p>Le traitement d’un ODD implique la résolution de spécifications multiples pour un même
   objet</p>
 <p>Supposons deux <gi>elementSpec</gi> pour un même élément. La résolution est déterminée par la valeur de l’attribut <att>mode</att></p>
 <list>
-  <item><label>mode='add'</label> (defaut) : cette déclaration est primaire</item>
+  <item><label>mode='add'</label> (défaut) : cette déclaration est primaire</item>
   <item><label>mode='delete'</label> : aucune déclaration n'est valide, l’élément est supprimé</item>
   <item><label>mode='replace'</label> : cette déclaration remplace entièrement toute autre déclaration</item>
   <item><label>mode='change'</label> : les parties de cette déclaration remplacent les parties correspondantes d’une autre déclaration ; le reste ne change pas. </item>
@@ -248,9 +258,11 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples"> <moduleRef key="core" include="p hi"/>
   <elementSpec key="p" mode="change">
   <desc>Pour nous, un <gi>p</gi> ne peut contenir que du texte</desc>
-  <content><textNode/></content> </elementSpec> </egXML>
+  <content><textNode/></content> 
+ </elementSpec> </egXML>
       <p>Le contenu et la description de l’élément <gi>p</gi> sont changés ; ses autres propriétés ne changent pas</p>  
        </div>
+      
       <div xml:lang="fr" rend="slide">
 <p>On peut recombiner des composants de plusieurs sources
  </p>
@@ -340,14 +352,16 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   <item><label>you must be explicit</label> : Supplying an ODD is the best way of showing
  exactly what modifications you made in your TEI customization</item>
 </list>
-<p>More formally... <list>
- <item>Elements from the TEI namespace must be valid with respect to the TEI-ALL
-   schema</item>
- <item>Any extension of an existing TEI element should therefore be placed in a different
-   namespace</item>
-  </list></p>
-<p rend="box">These rules are intended to simplify the "blind interchange" of documents. But
-  they don’t guarantee it. .</p>
+        <p>Formally speaking, we can say of a conformant TEI document  :
+          <list>
+            <item>it must be a well formed XML document</item>
+            <item>if a schema is constructed to validate those elements it contains from 
+              the TEI namespace, the set of documents considered valid by that schema 
+              should be a proper subset of the set of documents considered valid
+              by the  TEI-ALL schema.</item>
+          </list></p>
+        <p rend="box">The purpose of these rules is to make "blind interchange" of documents 
+          easier.  They do not  guarantee it. </p>
       </div>
       <div xml:lang="fr" rend="slide">
 <head>Être conforme à la TEI veut dire quoi ?</head>
@@ -355,13 +369,15 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   <item><label>être honnête</label> : Les éléments XML qui sont déclarés comme appartenant au namespace TEI doivent respecter les définitions TEI de ces éléments</item>
   <item><label>être explicite</label> : Pour valider un document TEI, un ODD est fortement conseillé, parce que cela mettra en évidence toutes les modifications effectuées.</item>
 </list>
-<p>Plus formellement dans un document TEI <list>
- <item>Tout élément appartenant à l’espace de nommage TEI doit être valide par rapport au
-   schéma TEI-ALL.</item>
- <item>Toute autre élément présent doit donc appartenir à un autre namespace</item>
+<p>Plus formellement, pour un document TEI conforme :<list>
+  <item>il doit etre un document XML bien-forme</item>
+  <item>si la construction de son schéma ne prend en compte que les
+   éléments appartenant à l’espace de nommage TEI, l'ensemble de documents considéré comme valide par ce schéma devrait être un sous-ensemble de l'ensemble de documents
+   considéré valide par le schéma TEI-ALL.</item>
+ <item>Toute autre élément présent doit appartenir à un autre namespace</item>
   </list></p>
 <p rend="box">L’objet de ces règles est de faciliter le "blind interchange" des
-  documents.</p>
+  documents; elles ne le garantissent pas.</p>
       </div>
     </body>
   </text>
