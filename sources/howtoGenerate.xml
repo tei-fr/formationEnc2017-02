@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../../../../../Sites/tei-fr/formationEnc2017-02/schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -100,16 +100,7 @@
                   <item>Si tout se déroule comme il faut, le XHTML va s’afficher dans votre navigateur par défaut, tandis que la sortie RelaxNG compacte sera sauvée dans un répertoire nommé <ident>out</ident>, qu’oXygen créée dans le répertoire courant si nécessaire. </item>
                </list></p>
             <p>Vous pouvez bien sûr vérifier que le schéma généré depuis cet ODD valide correctement les documents de votre corpus. Ce serait alarmant si cela n’était pas le cas ! Mais lorsque vous aurez de nouveaux fichiers à ajouter à votre corpus, cependant, cette procédure eut devenir utile en fonction du fait que vous décidiez de maintenir des pratiques d’encodage déjà établies, ou bien pour les étendre afin de tenir compte des nouveaux usages dans vos fichiers. Vous aurez peut-être besoin d’ajouter de nouvelles valeurs parmi celles permises pour l’un de vos attributs. Peut-être devrez-vous réintroduire un nouvel attribut ou un élément dont vous pensiez ne jamais avoir besoin ?</p>
-            <p></p>
-            <p>Suppose for example that although your ODD says that the values of <att>type</att> if
-               supplied on <gi>div</gi> should be <val>chapter</val> or <val>section</val>, your new
-               material includes some <gi>div</gi> elements with a <att>type</att> of
-                  <val>book</val>. You might decide that this is a mistake and change the data, or
-               you might decide that you need to modify the ODD. (Michael always used to say <q>If
-                  there is a discrepancy between the text and the schema, in our world we trust the
-                  text</q>) Let's say you adopt the latter course. You need to locate the
-                  <gi>valList</gi> within the <gi>attDef</gi> concerned, and add a new
-                  <gi>valItem</gi>. So where your ODD perhaps looks like this:
+            <p>Supposer par exemple que votre ODD indique que les valeurs de <att>type</att> si elles sont indiquées <gi>div</gi> devrait être <val>chapter</val> ou <val>section</val>, vos nouveaux matériaux incluent des éléments <gi>div</gi> avec un attribut <att>type</att> avec la valeur <val>book</val>. Vous pourriez décider que c’est une erreur et modifier le fichier, ou bien vous pourriez décider que vous avez besoin de modifier le fichier ODD. (Michael avait toujours l’habitude de dire <q>S’il y a un manque de compatibilité entre le texte et le schéma, dans notre monde nous suivons le texte.</q>) Disons-donc que vous adoptiez la dernière solution. Vous auriez alors besoin de localiser l’élément <gi>valList</gi> au sein de l’<gi>attDef</gi> concerné, et d’ajouter un nouvel élément <gi>valItem</gi>. De sorte que votre ODD ressemblerait alors à ça :
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <elementSpec ident="div" mode="change">
                      <attList>
@@ -121,7 +112,7 @@
                         </attDef>
                      </attList>
                   </elementSpec></egXML>
-                You need to change it to read
+                Que vous changeriez pour ce qui suit :
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <elementSpec ident="div" mode="change">
                      <attList>
@@ -135,11 +126,7 @@
                      </attList>
                   </elementSpec></egXML>
             </p>
-            <p>While you're there, you might like to document what you mean by each of these values,
-               for the benefit of non-English speakers, or yourself when you have forgotten whether
-                  <soCalled>section</soCalled>s contain <soCalled>book</soCalled>s or vice versa.
-               You can do this by adding one or more <gi>desc</gi> elements within the appropriate
-                  <gi>valItem</gi>, like this
+            <p>Tant que vous êtes-là, vous pourriez aimer documenter ce que signifient chacune de ces valeurs, pour le bénéfice des non-anglophones, ou pour vous lorsque vous avez oublié si <soCalled>section</soCalled> contient les <soCalled>book</soCalled> ou l’inverse, ou bien vice et versa. Vous pouvez faire cela en ajoutant une ou deux descriptions supplémentaires en ajoutant les éléments <gi>desc</gi> au seins des différents <gi>valItem</gi>, comme voici :
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <elementSpec ident="div" mode="change">
                      <attList>
@@ -164,34 +151,18 @@
                      </attList>
                   </elementSpec></egXML>
             </p>
-            <p>Once you've made these changes, you might like to regenerate a schema from your ODD,
-               and then check that oXygen will use the new features you added. When adding a
-                  <gi>div</gi> to a new document, for example, you should be offered a menu for the
-                  <att>type</att> attribute including the new values and their associated help text. </p>
-            <p>Now take a look at the HTML <soCalled>mini-manual</soCalled> generated from your ODD.
-               By default this will contain just an index of links pointing to detailed
-               specifications for each of the elements and classes your corpus uses. These
-               descriptions are modelled closely in appearance on the detailed specifications used
-               in the Guidelines proper. </p>
-            <p>By default, the examples, descriptions, and cross references supplied for each
-               element will be just the same as those in the Guidelines. The content model and list
-               of attributes however should reflect any changes proposed by your ODD. </p>
-            <p>You might like to test this by replacing one or more of the usage examples provided
-               for each element with examples taken from your own corpus.</p>
-            <p>Open your generated ODD in oXygen and locate the <gi>elementSpec</gi> for the element
-               you wish to change, if there is one. (If there isn't, you will need to add one
-               yourself, of course.) For example, suppose I want to supply a better example for the
-                  <gi>hi</gi> element which has been included in my ODD. A declaration has been
-               provided for this element deleting two global attributes which it does not use :
+            <p>Maintenant que vous avez fait ces changements, vous pourriez vouloir régénérer un schéma depuis votre ODD, puis pouvoir vérifier qu’oXygen utilise les nouvelles fonctionnalités que vous avez ajoutées. En ajoutant une <gi>div</gi> à un nouveau document, par exemple, vous devriez vous voir offrir un menu pour l’attribut <att>type</att> incluant les nouvelles valeurs ainsi que l’aide qui leur est associée.</p>
+            <p>Maintenant, jeter un œil au <soCalled>mini-manuel</soCalled> HTML généré depuis votre ODD. Par défaut, cela contiendra seulement un index des liens qui pointent vers des spécifications détaillées de chacun des éléments et des classes utilisées dans votre corpus. Ces descriptions sont apparemment modelée de près sur les spécifications employées dans les <title>Guidelines</title>.</p>
+            <p>Par défaut les exemples, les descriptions et les références fournies pour chaque élément seront les mêmes que celles des <title>Guidelines</title>. Le modèle de contenu et la liste des attributs pourraient toutefois refléter les changements que vous avez proposés dans votre ODD.</p>
+            <p>Vous pourriez vouloir tester cela en remplaçant un ou plusieurs des exemples d’utilisation fournis pour chaque éléments par des exemples tirés de votre propre corpus.</p>
+            <p>Ouvrir le fichier ODD que vous avez généré dans oXygen puis localiser l’élément <gi>elementSpec</gi> que vous voulez changer, s’il y en a un. (Sinon, vous devriez en ajouter un vous-même, bien évidemment.) Par exemple, supposons que je veuille fournir un meilleur exemple pour l’élément <gi>hi</gi> qui est inclus dans mon ODD. Une déclaration a été fournie pour cet élément qui efface les deux attributs globaux qui ne sont pas employés sur lui :
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><elementSpec ident="hi" mode="change">
                      <attList>
                         <attDef ident="facs" mode="delete"/>
                         <attDef ident="resp" mode="delete"/>
                      </attList>
                   </elementSpec></egXML>
-                My new usage example is supplied following the <gi>attList</gi>. It is encoded using
-               the <gi>exemplum</gi> element, which contains an <gi>egXML</gi> element and
-               (optionally) some additional paragraphs of discussion.
+               Mon nouvel exemple d’usage est fourni après <gi>attList</gi>. Il est encodé en utilisant l’élément <gi>exemplum</gi>, qui contient un élément <gi>egXML</gi> et (optionnellement) quelques paragraphes additionnels de discussion.
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><elementSpec ident="hi" mode="change">
                      <attList>
                         <attDef ident="facs" mode="delete"/>
@@ -200,23 +171,8 @@
                      <exemplum> &lt;egXML xmlns="http://www.tei-c.org/ns/Examples"> Here's how I use
                         it <hi>my example</hi> &lt;/egXML> </exemplum>
                   </elementSpec></egXML>
-                Further details about the <gi>exemplum</gi> element and its content are provided in
-               the appropriate section of the Guidelines, of course. Note here that when used like
-               this in a customization ODD, it replaces completely any existing <gi>exemplum</gi>
-               element in the TEI source. You may like to modify your ODD like this, and regenerate
-               the HTML minimanual to check. </p>
-            <p>Before doing so, however, we suggest you also add some discussion explaining what
-               your ODD is for, documenting its components and intended usage. This informal
-               documentation can be as simple or complex as you want, and you can (of course) use
-               all the range of elements provided by the TEI to express it. Add at least a
-                  <gi>div</gi> or two, with some <gi>head</gi> elements, some <gi>p</gi>s and some
-                  <gi>list</gi>s... You can also use some special tag documentation elements
-               provided by the <ident>tagdocs</ident> module, which enable you to distinguish
-               element and attribute names in the markup, to embed formal descriptions of specific
-               elements in the prose, and many other things. Make sure that your ODD document is
-               validated against a schema which includes these specialised elements however: the
-               schema <ident>tei_odds</ident> in the <ident>exemplars</ident> directory is intended
-               for this purpose. </p>
+               Plus de détails au sujet de l’élément <gi>exemplum</gi> et son contenu sont donnés dans la section dédiée des <title>Guidelines</title>, bien sûr. Notons que quand nous l’utilisons comme cela dans une personnalisation ODD, elle remplace complètement tous les <gi>exemplum</gi> existants dans la source TEI. Vous pouvez vouloir modifier votre ODD comme cela puis régénérer un mini-manuel HTML pour vérifier. </p>
+            <p>Avant cela, nous vous suggérons cependant d’aussi ajouter des explications au sujet de la destination de votre ODD, en documentant ses composants et leur emploi attendu. Cette documentation informelle peut être aussi simple ou complexe que vous le voulez, et vous pouvez (bien sûr) utiliser toute l’étendue des éléments fournis par la TEI pour l’exprimer. Ajouter au moins une <gi>div</gi> ou deux, avec quelques éléments <gi>head</gi>, quelques <gi>p</gi> et quelques <gi>list</gi>… Vous pouvez aussi utiliser quelques balises de documentation plus spéciales fournies par le module <ident>tagdocs</ident> qui vous permettent de distinguer les noms d’attributs ou d’éléments par le balisage, et d’embarquer des descriptions formelles d’éléments spécifiques dans la prose, ou plein d’autres choses. Assurez-vous seulement que votre documentent ODD est valide contre un schéma qui inclue ces éléments spécialisés : le schéma <ident>tei_odds</ident> au sein du répertoire <ident>examplars</ident> est destiné à cet usage.</p>
             <p>For example, you might expand your ODD to look like this:
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <body>
@@ -251,7 +207,6 @@
             <p>There are many other things you might do once you start editing your ODD. This
                tutorial just suggests a few that are likely to be particularly useful in the process
                of defining a useful schema for an existing set of TEI documents. </p>
-            <p/>
          </div>
          <div>
             <head>Configurable parameters for the oddbyexample stylesheet</head>
