@@ -38,9 +38,9 @@
  >Programme</ref></note>
       </titlePage>
       <div rend="title" xml:lang="fr" xml:id="index">
-        <div>
+  <!--      <div>-->
  <head>TEI à la carte : un cas détude</head>
-        </div>
+        <!--</div>-->
       </div>
     </front>
     

@@ -83,6 +83,7 @@ Le programme laisse une large place au travail sur les projets des participants 
               spécifications</ref></item>
             <label>14h00-14h30</label>
             <item><ref target="04-personnalisation.html">Personnaliser la TEI</ref></item>
+           
             <label>14h30-15h00</label>
             <item>TP01 : Vérification d’installation correcte d’oXygen</item> 
             <label>15h00-15h30</label>
@@ -91,6 +92,8 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>pause</item>
             <label>16h30-17h30</label>
             <item>TP03 : Quiz TEI</item> <!-- ?? -->
+            <!-- proposition: remplacer ceci par le talk-03 de la formation de Tours 
+                   "Comment se servir des TEI Guidelines " suivi par l'ex Roma -->
           </list>
         </div>
         <div type="notes">

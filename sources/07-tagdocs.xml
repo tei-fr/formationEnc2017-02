@@ -336,7 +336,7 @@
    </item>
           <item>Les attributs utilisant ce datatype seront limités aux valeurs indiquées</item>
         </list>
-        <p rend="box">Ouvrez <ident>teidata.probcert.xml</ident> avec oXygen</p>
+        <p rend="box">Ouvrez <ident>teidata.probCert.xml</ident> avec oXygen</p>
 <list>
 <item>Dans ce cas, le <gi>content</gi> propose une choix entre
             deux éléments <gi>dataRef</gi> </item>
@@ -552,6 +552,10 @@ le contenu de <gi>profileDesc</gi> est
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Définition du contenu d’un élément</head>
+        <p>L'element <gi>content</gi> peut contenir: </p><list><item><gi>elementRef</gi> : un element</item><item><gi>classRef</gi> une classe d'element</item><item><gi>macroRef</gi> reference a un patron</item><item><gi>textNode</gi> un morceau de texte</item><item><gi>anyElement</gi> : un element non-specifie</item></list>
+        <p>Regroupé par :</p>
+        <list><item><gi>alternate</gi> une alternation</item><item><gi>sequence</gi> une séquence</item></list>
+        <p>Tous sous contrôle des attributs <att>minOccurs</att> et <att>maxOccurs</att> en ce qui concerne leurs fréquences d'occurence</p>
         <!-- a traduire -->
       </div>
       <div xml:lang="en">
@@ -563,6 +567,14 @@ le contenu de <gi>profileDesc</gi> est
  <classRef key="model.listLike"/>
    </alternate>
  </content>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <content>
+            <alternate maxOccurs="unbounded">
+              <classRef key="model.pLike"/>
+              <classRef key="model.listLike"/>
+            </alternate>
+          </content>
         </egXML>
         <p><q>One or more elements from either the <ident>model.pLike</ident> class or the
  <ident>model.listLike</ident> class</q></p>
@@ -577,6 +589,13 @@ le contenu de <gi>profileDesc</gi> est
         </egXML>
         <p><q>Un ou plusieurs éléments membres des classes <ident>model.pLike</ident> ou bien
  <ident>model.listLike</ident></q></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<content><sequence maxOccurs="unbounded">
+ <classRef key="model.pLike"/>
+ <classRef key="model.listLike"/>
+</sequence></content></egXML>
+        <p><q>Une ou plusieurs répétitions d'un élément de la classe <ident>model.pLike</ident> suivi d'un élément de la classe 
+          <ident>model.listLike</ident></q></p>
       </div>
       <!--<div xml:lang="en">
         <head>What is a class reference?</head>
@@ -749,7 +768,7 @@ le contenu de <gi>profileDesc</gi> est
  </content></egXML>
         <p><q>Nothing at all, some text, or any number of elements from any of the three classes
  <ident>model.gLike</ident>, <ident>model.phrase</ident> or
-   <ident>mode.global</ident></q></p>
+   <ident>model.global</ident></q></p>
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Spécification d’une macro</head>
@@ -769,7 +788,7 @@ le contenu de <gi>profileDesc</gi> est
  </alternate>
 </content></egXML>
         <p><q>Rien du tout, du texte, ou n’importe combien d’éléments membres de n’importe laquelle des trois classes <ident>model.gLike</ident>, <ident>model.phrase</ident> ou
- <ident>mode.global</ident></q></p>
+ <ident>model.global</ident></q></p>
       </div>
      </body>
     </text></TEI>

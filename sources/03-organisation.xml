@@ -160,7 +160,7 @@
             <div>
                <head>Les 22 <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">modules</ref> de la TEI</head>
                <figure>
-                  <graphic url="../images/modulesTEI.png"/>
+                  <graphic url="images/modulesTEI.png"/>
                   <desc>Les modules de la TEI</desc>
                </figure>
             </div>
