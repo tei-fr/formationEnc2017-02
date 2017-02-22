@@ -30,9 +30,9 @@
   GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
       <div rend="title" xml:lang="fr"  xml:id="index">
-<div>
+
   <head>Personnalisation avec ODD</head>
-</div>
+
 
       </div>
     </front>
@@ -220,7 +220,7 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
     <moduleRef key="textstructure" include="body div"/> 
   </schemaSpec> </egXML> </p>
 <p>ou également : <egXML xmlns="http://www.tei-c.org/ns/Examples"> <schemaSpec start="TEI"
-  ident="testschéma"> 
+  ident="testschema"> 
   <moduleRef key="core"/> 
   <moduleRef key="header"/> 
   <elementRef key="div"/> 
@@ -250,22 +250,30 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
        </list>
       </div>
       <div xml:lang="fr" rend="slide"><head>Par exemple</head>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples" >
-<moduleRef key="core" include="p hi"/>
-<elementSpec key="p" mode="delete"/>
-      </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" ><schemaSpec start="TEI" ident="testschema">
+ <moduleRef key="core" include="p hi"/>        
+ <elementSpec key="p" mode="delete"/>
+ </schemaSpec>     </egXML>
       <p>L’élément <gi>p</gi> est supprimé</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples"> <moduleRef key="core" include="p hi"/>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><schemaSpec start="TEI" ident="testschema"> 
+  <moduleRef key="core" include="p hi"/>
   <elementSpec key="p" mode="change">
   <desc>Pour nous, un <gi>p</gi> ne peut contenir que du texte</desc>
   <content><textNode/></content> 
- </elementSpec> </egXML>
+ </elementSpec> </schemaSpec></egXML>
       <p>Le contenu et la description de l’élément <gi>p</gi> sont changés ; ses autres propriétés ne changent pas</p>  
        </div>
       
       <div xml:lang="fr" rend="slide">
-<p>On peut recombiner des composants de plusieurs sources
- </p>
+<head>Traitement d'un ODD</head>
+        <list>
+          <item>Toutes les déclarations (*Spec et *Ref) sont d'abord réunies et canonicalisées</item>
+          <item>Les déclarations multiples sont résolues</item>
+          <item>La sortie de cette procédure est ensuite transformée en schéma, et/ou en documentation</item>
+        </list>
+        <p>La feuille de style <ident>odd2odd</ident> nous permet d'éffectuer les 2 étapes initiales et d'en garder le résultat:
+        nous appelons cela un <term>compiled ODD</term></p>
+        <p>Un tel fichier est réutilisable comme la <att>source</att> d'un autre ODD</p>
       </div>
       
       
@@ -290,7 +298,8 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 <p>You'll do an exercise like this in the next session. For the moment, think about how you
   might write the <gi>schemaSpec</gi> you'll need.</p>
       </div>
-      <div xml:lang="fr">
+      
+      <div xml:lang="fr" rend="slide">
 <head>Exercice de personnalisation </head>
 <p>Créons un schéma <ident>featherLite</ident> très simple, pour un projet de corpus langagier. </p>
 <list>
@@ -321,19 +330,68 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 <head>Exercice de personnalisation (1) </head>
 <list>
   <item>Ouvrez le fichier <ident>feather-1.odd</ident> avec oXygen</item>
-  <item>Testez votre compréhension de ce fichier</item>
-  <item>Utilisez oXygen pour générer un schéma dans votre langage de schéma préféré </item>
+  <item>Testez votre compréhension de ce fichier </item>
+  <item>Utilisez oXygen pour générer un schéma dans votre langage de schéma préféré et un petit manuel en HTML</item>
   <item>Créez un nouveau document TEI XML qui utilise ce schéma</item>
   <item>Vérifiez les éléments et les attributs disponibles </item>
 </list>
       </div>
       <div xml:lang="fr" rend="slide">
+        <head>Exercice de personnalisation (2) </head>   
+        <list>
+          <item>Transformer le fichier <ident>feather-1.odd</ident> en <q>compiled ODD</q> avec oXygen
+            en utilisant la feuille de style <ident>${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl</ident></item>
+          <item>Regardez rapidement la sortie en profitant de l'affichage <soCalled>Outline</soCalled></item>
+          <item>Tous ces classSpec et dataSpec sont fournis par le module <ident>tei</ident>: ils constituent l'infrastructure TEI, pas forcement
+          utilise par notre petit schema</item>
+        </list>
+      <p>Nous allons simplifier un peu plus ce schema :
+      <list><item>supprimer plusieurs attributs inutiles</item>
+        <item>simplifier le modele de contenu de quelques elements</item>
+        <item>ajouter un nouveau element</item></list></p></div>
+      
+     
+      <div xml:lang="fr" rend="slide">
+        <head>Suppression d'attributs</head>   
+        <p>Pour supprimer un attribut il faut savoir d'ou il vient: 
+          <list><item>il est defini avec l'element qui le comporte (assez inhabituel)</item><item>il est herite d'une classe (qui elle-meme peut
+          aussi heriter des attributs d'une autre classe</item>
+            </list>
+        </p>
+        <p>Regardez la definition de <gi>body</gi> par exemple :
+         </p>
+       <figure> <graphic url="images/bodyshot.png"/></figure>
+         <p>On peut supprimer un attribut 
+           <list>
+             <item>en modifiant que l'element qui le comporte</item><item>en modifiant la participation a la classe qui le fournit</item><item>en modifiant ou supprimant la classe entierement</item>
+           </list>
+       </p>
+        </div>
+      <div  xml:lang="fr" rend="slide"><head>Exemples</head><list>  
+          <item>Pour supprimer partout l'attribut <att>decls</att>, qui est fourni par la classe <ident>att.declaring</ident>. 
+            <code>&lt;classSpec type="atts" mode="change"/></code></item>
+         <item>Pour supprimer partout les attributs <att>rend</att> et <att>rendition</att> 
+              <code>&lt;classRef type="att.global.rendition" except="rend rendition"/></code></item>
+        <item>Pour supprimer partout les attributs <att>rend</att> et <att>rendition</att> 
+          <code>&lt;classRef type="att.global.rendition" except="rend rendition"/></code></item> 
+         <item>Pour supprimer les attributs xml:base et  xml:space
+           <egXML xmlns="http://www.tei-c.org/ns/Examples"><classSpec type="atts" ident="att.global" mode="change">         
+<attList>
+ <attDef ident="xml:base" mode="delete"/>
+ <attDef ident="xml:space" mode="delete"/>
+</attList>
+</classSpec></egXML></item><item>et pour supprimer les autres sous-classes de att.global, nous changeons aussi la participation de cette classe:
+  <code>&lt;classes>
+    &lt;memberOf key="att.global.rendition"/>
+  &lt;/classes></code></item>
+        </list></div>
+      
+      <div xml:lang="fr" rend="slide">
 <!-- no eng equiv -->
 <head>Exercice un peu plus avancé</head>
 <p>Continuons de personnaliser le schéma feather... </p>
 <list>
-  <item>Supprimez tous les attributs globaux sauf <att>style</att>
- <att>xml:id</att> et <att>xml:lang</att></item>
+  <item></item>
   <item>Supprimez l’élément <gi>title</gi> du body, mais non pas du header</item>
   <item>Ajoutez l’élément <gi>span</gi> et assurez vous que ces règles schematron sont
  prises en compte dans votre schéma </item>
