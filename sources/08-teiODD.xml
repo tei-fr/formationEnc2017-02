@@ -232,21 +232,21 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
       
       <div xml:lang="fr" rend="slide"><head>Usage des module</head>
         <list>
-          <item>Vous n'êtes pas obligé de préciser son module si vous souhaitez préciser l’inclusion d'un élément!</item>
+          <item>Vous n'êtes pas obligé de préciser son module si vous souhaitez préciser l’inclusion d'un élément !</item>
           <item>Un <gi>elementRef</gi> suffit – pourvu que l'élément concerné soit déclaré par la source invoquée</item>
           <item>Mais il faut préciser son module si vous souhaitez inclure/utiliser une classe de modèle ou une classe d’attribut. </item>
-          <item>La plupart des classes TEI étant défini par le module <ident>tei</ident>, ce dernier est à peu pres essentiel pour tout ODD TEI.</item></list>
+          <item>La plupart des classes TEI étant défini par le module <ident>tei</ident>, ce dernier est à peu près essentiel pour tout ODD TEI.</item></list>
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Spécifications multiples</head>
 <p>Le traitement d’un ODD implique la résolution de spécifications multiples pour un même
   objet</p>
-<p>Supposons deux <gi>elementSpec</gi> pour un même élément. La résolution est déterminée par la valeur de l’attribut <att>mode</att></p>
+<p>Supposons deux <gi>elementSpec</gi> pour un même élément, la résolution est déterminée par la valeur de l’attribut <att>mode</att></p>
 <list>
-  <item><label>mode='add'</label> (défaut) : cette déclaration est primaire</item>
+  <item><label>mode='add'</label> (défaut) : effectuer une nouvelle déclaration </item>
   <item><label>mode='delete'</label> : aucune déclaration n'est valide, l’élément est supprimé</item>
   <item><label>mode='replace'</label> : cette déclaration remplace entièrement toute autre déclaration</item>
-  <item><label>mode='change'</label> : les parties de cette déclaration remplacent les parties correspondantes d’une autre déclaration ; le reste ne change pas. </item>
+  <item><label>mode='change'</label> : les parties de cette déclaration remplacent les parties correspondantes dans une autre déclaration ; le reste ne change pas. </item>
        </list>
       </div>
       <div xml:lang="fr" rend="slide"><head>Par exemple</head>
@@ -261,7 +261,7 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   <desc>Pour nous, un <gi>p</gi> ne peut contenir que du texte</desc>
   <content><textNode/></content> 
  </elementSpec> </schemaSpec></egXML>
-      <p>Le contenu et la description de l’élément <gi>p</gi> sont changés ; ses autres propriétés ne changent pas</p>  
+      <p>Le contenu et la déscription de l’élément <gi>p</gi> sont changés ; ses autres propriétés ne changent pas</p>  
        </div>
       
       <div xml:lang="fr" rend="slide">
@@ -310,9 +310,9 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
  <gi>sourceDesc</gi> et <gi>title</gi>) </item>
   <item>L’élément <gi>text</gi> est composé d’un seul <gi>body</gi> contenant des <gi>div</gi>s contenant un ou plus d’éléments <gi>ab</gi></item>
   <item>Chaque <gi>ab</gi> ne permet qu’une séquence d’éléments <gi>s</gi></item>
-  <item>Chaque <gi>s</gi> est composé d’éléments <gi>w</gi> et d’éléments <gi>pc</gi> </item>
+  <item>Chaque <gi>s</gi> est composé d’éléments <gi>w</gi><!-- et d’éléments <gi>pc</gi> --></item>
   <item>et nous souhaitons supprimer la majorité des attributs, en gardant notamment
-   <att>xml:id</att>, <att>xml:lang</att>, <att>type</att>, <att>subtype</att>
+   <att>xml:id</att>, <att>xml:lang</att>, <att>type</att>, <att>style</att>
   </item>
 </list>
       </div>
@@ -342,21 +342,23 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
           <item>Transformer le fichier <ident>feather-1.odd</ident> en <q>compiled ODD</q> avec oXygen
  en utilisant la feuille de style <ident>${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl</ident></item>
           <item>Regardez rapidement la sortie en profitant de l'affichage <soCalled>Outline</soCalled></item>
-          <item>Tous ces classSpec et dataSpec sont fournis par le module <ident>tei</ident>: ils constituent l'infrastructure TEI, pas forcement
-          utilise par notre petit schema</item>
+          <item>Tous ces classSpec et dataSpec sont fournis par le module <ident>tei</ident>: 
+            ils constituent l'infrastructure TEI, pas forcément utilisables par notre petit schéma</item>
         </list>
-      <p>Nous allons modifier un peu plus ce schema :
+      <p>Nous allons modifier un peu plus ce schéma pour :
       <list><item>supprimer plusieurs attributs inutiles</item>
-        <item>ajouter un nouveau element</item>
-        <item>simplifier le modele de contenu de quelques elements</item>
+        <item>ajouter un nouveau élément</item>
+        <item>simplifier le modèle de contenu de quelques éléments</item>
       </list></p></div>
       
      
       <div xml:lang="fr" rend="slide">
         <head>Suppression d'attributs</head>   
-        <p>Pour supprimer un attribut il faut savoir d'ou il vient: 
-          <list><item>il est defini avec l'element qui le comporte (assez inhabituel)</item><item>il est herite d'une classe (qui elle-meme peut
-          aussi heriter des attributs d'une autre classe</item>
+        <p>Pour supprimer un attribut il faut savoir d'où il vient : 
+          <list><item>soit il est défini avec l'élément qui le comporte (assez inhabituel)</item>
+            <item>soit il est hérité d'une classe</item>
+            <item>qui peut elle-même 
+          hériter des attributs d'une autre classe</item>
  </list>
         </p>
         <p>Regardez la definition de <gi>body</gi> par exemple :
@@ -364,34 +366,40 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
        <figure> <graphic url="images/bodyshot.png"/></figure>
          <p>On peut supprimer un attribut 
            <list>
-  <item>en modifiant que l'element qui le comporte</item><item>en modifiant la participation a la classe qui le fournit</item><item>en modifiant ou supprimant la classe entierement</item>
+  <item>en modifiant que l'element qui le comporte</item>
+   <item>en modifiant la participation à la classe qui le fournit</item>
+   <item>en modifiant ou supprimant la classe entièrement</item>
            </list>
        </p>
         </div>
       <div  xml:lang="fr" rend="slide"><head>Exemples</head><list>  
-          <item>Pour supprimer partout l'attribut <att>decls</att>, qui est fourni par la classe <ident>att.declaring</ident>. 
+          <item>Pour supprimer partout l'attribut <att>decls</att>, 
+            qui est fourni par la classe <ident>att.declaring</ident>. 
  <code>&lt;classSpec type="atts" mode="change"/></code></item>
          <item>Pour supprimer partout les attributs <att>rend</att> et <att>rendition</att> 
    <code>&lt;classRef type="att.global.rendition" except="rend rendition"/></code></item>
         <item>Pour supprimer partout les attributs <att>rend</att> et <att>rendition</att> 
           <code>&lt;classRef type="att.global.rendition" except="rend rendition"/></code></item> 
-         <item>Pour supprimer les attributs xml:base et  xml:space
+         <item>Pour supprimer les attributs <att>xml:base</att> et  <att>xml:space</att>
            <egXML xmlns="http://www.tei-c.org/ns/Examples"><classSpec type="atts" ident="att.global" mode="change">         
 <attList>
  <attDef ident="xml:base" mode="delete"/>
  <attDef ident="xml:space" mode="delete"/>
 </attList>
-</classSpec></egXML></item><item>et pour supprimer les autres sous-classes de att.global, nous changeons aussi la participation de cette classe:
+</classSpec></egXML></item>
+        <item>et pour supprimer les autres sous-classes de att.global, nous changeons la participation de cette classe:
   <code>&lt;classes>
     &lt;memberOf key="att.global.rendition"/>
   &lt;/classes></code></item>
         </list></div>
-      
-      <div xml:lang="fr" rend="slide"><head>Ajout d'un nouvel element</head>
+      <div xml:lang="fr" rend="slide">
+        <head>Ajout d'un nouvel element</head>
         <p>Nous souhaitons ajouter un element <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais.. )</p>
         <list>
-          <item>nous fournissons un <gi>elementSpec</gi> complete</item><item>le nouvel element doit etre dans notre propre espace de noms</item>
-          <item>et nous l'ajoutons a une des classes TEI existantes pour qu'il apparaissent dans les modeles de contenu relevant</item>
+          <item>il faut fournir un <gi>elementSpec</gi> complet</item>
+          <item>le nouvel élément doit être dans notre propre espace de noms</item>
+          <item>il est avantageux de le faire participer à une des classes TEI existantes 
+            pour qu'il apparaissent dans les modeles de contenu rélévant</item>
         </list>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
 <elementSpec ident="mw" ns="http://myNameSpace.org" >
@@ -409,22 +417,23 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
  </content>
 </elementSpec>
         </egXML>
+        <p>Modifier ainsi votre copie de l'ODD et voir l'effet sur le schéma généré et sa documentation.</p>
       </div>
-      
+     
       <div xml:lang="fr" rend="slide">
 <!-- no eng equiv -->
 <head>Modification du modele de contenu</head>
 <p>Continuons de personnaliser le schéma feather... </p>
 <list>
-  <item>La plupart des modeles de contenu s'exprime avec un macro, qui fait reference a des classes</item>
-  <item>Regardez par ex la specification de l'element <gi>s</gi> dans notre petit schema</item>
-  <item>Le macro macro.phraseSeq definit un modele permettant de texte ou des elements des classes model.gLike, model.phrase et model.global </item>
-  <item>Mais la plupart de ces classes sont vides dans notre petit schema</item>
-  <item>En effet, les seuls elements disponibles sont <gi>title</gi>, <gi>s</gi>, <gi>w</gi> et (apres la modification precedente) <gi>mw</gi></item> 
+  <item>La plupart des modèles de contenu s'exprime avec un macro, qui fait référence à des classes</item>
+  <item>Regardez par ex la spécification de l'élément <gi>s</gi> dans notre petit schéma</item>
+  <item>Le macro macro.phraseSeq définit un modèle permettant de texte ou des éléments des classes model.gLike, model.phrase et model.global </item>
+  <item>Suivez l’hiérarchie des déclarations et vous constaterez que la plupart de ces classes sont vides dans notre petit schéma</item>
+  <item>En effet, les seuls éléments disponibles sont <gi>title</gi>, <gi>s</gi>, <gi>w</gi> et (apràs la modification précédente) <gi>mw</gi></item> 
  </list>
       <p>Nous souhaitons simplifier cela: donc nous allons changer le <gi>content</gi> de <gi>s</gi>.</p> </div>
       <div xml:lang="fr" rend="slide"><head>Changement du model de contenu</head>
-      <p>Ajouter dans votre specification :
+      <p>Ajouter dans votre ODD :
           <egXML xmlns="http://www.tei-c.org/ns/Examples"><elementSpec ident="s" mode="change">
 <content>         
   <alternate maxOccurs="unbounded">
@@ -433,18 +442,11 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 </alternate>
 </content>
 </elementSpec></egXML></p>
-<list><item>Regenerez le schema et la doc, et controler si l'effet corresponde a vos attentes</item>
-  <item>Comment est-ce que ca marche?</item>
+<list><item>Regénérez le schéma et la doc, et contrôler si l'effet corresponde à vos attentes</item>
+  <item>Comment est-ce que cela marche?</item>
       </list>
-        <p>Attention : un changement de modele de contenu risque de mettre en cause notre TEI-conformite</p></div>
-      
-      <div xml:lang="fr" rend="slide"><head>Ajout d'un nouvel element</head>
-    <p>Nous souhaitons ajouter un element <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais.. )</p>
-      <list>
-        <item>nous fournissons un <gi>elementSpec</gi> complete</item><item>le nouvel element doit etre dans notre propre espace de noms</item>
-        <item>et nous l'ajoutons a une des classes TEI existantes pour qu'il apparaissent dans les modeles de contenu relevant</item>
-      </list>
-      </div>
+        <p>Attention : un changement de modèle de contenu risque de mettre en cause notre TEI-conformité</p></div>
+     
       
       
  <!--       
