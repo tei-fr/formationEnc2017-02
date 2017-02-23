@@ -31,8 +31,8 @@ a, a > code {
   text-decoration: none;
 }
 code {
-  -moz-border-radius: 5px;
-  -web-border-radius: 5px;
+ /*   -moz-border-radius: 5px; */
+ /*  -web-border-radius: 5px; */
   background: #e7e8e2;
   border-radius: 5px;
 }
@@ -58,7 +58,7 @@ font-size: 1em}
   padding: 15px;
 }
 .inverse {
-  // background: #272822;
+  /*  background: #272822; */
   background: #fbf8f4;
   color: #272822;
   text-shadow: 0 0 6px #333;
