@@ -340,15 +340,16 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
         <head>Exercice de personnalisation (2) </head>   
         <list>
           <item>Transformer le fichier <ident>feather-1.odd</ident> en <q>compiled ODD</q> avec oXygen
-            en utilisant la feuille de style <ident>${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl</ident></item>
+ en utilisant la feuille de style <ident>${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl</ident></item>
           <item>Regardez rapidement la sortie en profitant de l'affichage <soCalled>Outline</soCalled></item>
           <item>Tous ces classSpec et dataSpec sont fournis par le module <ident>tei</ident>: ils constituent l'infrastructure TEI, pas forcement
           utilise par notre petit schema</item>
         </list>
-      <p>Nous allons simplifier un peu plus ce schema :
+      <p>Nous allons modifier un peu plus ce schema :
       <list><item>supprimer plusieurs attributs inutiles</item>
+        <item>ajouter un nouveau element</item>
         <item>simplifier le modele de contenu de quelques elements</item>
-        <item>ajouter un nouveau element</item></list></p></div>
+      </list></p></div>
       
      
       <div xml:lang="fr" rend="slide">
@@ -356,22 +357,22 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
         <p>Pour supprimer un attribut il faut savoir d'ou il vient: 
           <list><item>il est defini avec l'element qui le comporte (assez inhabituel)</item><item>il est herite d'une classe (qui elle-meme peut
           aussi heriter des attributs d'une autre classe</item>
-            </list>
+ </list>
         </p>
         <p>Regardez la definition de <gi>body</gi> par exemple :
          </p>
        <figure> <graphic url="images/bodyshot.png"/></figure>
          <p>On peut supprimer un attribut 
            <list>
-             <item>en modifiant que l'element qui le comporte</item><item>en modifiant la participation a la classe qui le fournit</item><item>en modifiant ou supprimant la classe entierement</item>
+  <item>en modifiant que l'element qui le comporte</item><item>en modifiant la participation a la classe qui le fournit</item><item>en modifiant ou supprimant la classe entierement</item>
            </list>
        </p>
         </div>
       <div  xml:lang="fr" rend="slide"><head>Exemples</head><list>  
           <item>Pour supprimer partout l'attribut <att>decls</att>, qui est fourni par la classe <ident>att.declaring</ident>. 
-            <code>&lt;classSpec type="atts" mode="change"/></code></item>
+ <code>&lt;classSpec type="atts" mode="change"/></code></item>
          <item>Pour supprimer partout les attributs <att>rend</att> et <att>rendition</att> 
-              <code>&lt;classRef type="att.global.rendition" except="rend rendition"/></code></item>
+   <code>&lt;classRef type="att.global.rendition" except="rend rendition"/></code></item>
         <item>Pour supprimer partout les attributs <att>rend</att> et <att>rendition</att> 
           <code>&lt;classRef type="att.global.rendition" except="rend rendition"/></code></item> 
          <item>Pour supprimer les attributs xml:base et  xml:space
@@ -386,13 +387,68 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   &lt;/classes></code></item>
         </list></div>
       
+      <div xml:lang="fr" rend="slide"><head>Ajout d'un nouvel element</head>
+        <p>Nous souhaitons ajouter un element <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais.. )</p>
+        <list>
+          <item>nous fournissons un <gi>elementSpec</gi> complete</item><item>le nouvel element doit etre dans notre propre espace de noms</item>
+          <item>et nous l'ajoutons a une des classes TEI existantes pour qu'il apparaissent dans les modeles de contenu relevant</item>
+        </list>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<elementSpec ident="mw" ns="http://myNameSpace.org" >
+ <desc>multiword strings which function as if they were single words</desc>
+ <classes>
+   <memberOf key="model.segLike"/>
+   <memberOf key="att.global"/>
+   <memberOf key="att.typed"/>
+ </classes>
+ <content>
+   <alternate maxOccurs="unbounded">
+     <textNode/>
+     <elementRef key="w"/>
+   </alternate>
+ </content>
+</elementSpec>
+        </egXML>
+      </div>
+      
       <div xml:lang="fr" rend="slide">
 <!-- no eng equiv -->
-<head>Exercice un peu plus avancé</head>
+<head>Modification du modele de contenu</head>
 <p>Continuons de personnaliser le schéma feather... </p>
 <list>
-  <item></item>
-  <item>Supprimez l’élément <gi>title</gi> du body, mais non pas du header</item>
+  <item>La plupart des modeles de contenu s'exprime avec un macro, qui fait reference a des classes</item>
+  <item>Regardez par ex la specification de l'element <gi>s</gi> dans notre petit schema</item>
+  <item>Le macro macro.phraseSeq definit un modele permettant de texte ou des elements des classes model.gLike, model.phrase et model.global </item>
+  <item>Mais la plupart de ces classes sont vides dans notre petit schema</item>
+  <item>En effet, les seuls elements disponibles sont <gi>title</gi>, <gi>s</gi>, <gi>w</gi> et (apres la modification precedente) <gi>mw</gi></item> 
+ </list>
+      <p>Nous souhaitons simplifier cela: donc nous allons changer le <gi>content</gi> de <gi>s</gi>.</p> </div>
+      <div xml:lang="fr" rend="slide"><head>Changement du model de contenu</head>
+      <p>Ajouter dans votre specification :
+          <egXML xmlns="http://www.tei-c.org/ns/Examples"><elementSpec ident="s" mode="change">
+<content>         
+  <alternate maxOccurs="unbounded">
+  <elementRef key="w"/>
+  <elementRef key="mw"/>
+</alternate>
+</content>
+</elementSpec></egXML></p>
+<list><item>Regenerez le schema et la doc, et controler si l'effet corresponde a vos attentes</item>
+  <item>Comment est-ce que ca marche?</item>
+      </list>
+        <p>Attention : un changement de modele de contenu risque de mettre en cause notre TEI-conformite</p></div>
+      
+      <div xml:lang="fr" rend="slide"><head>Ajout d'un nouvel element</head>
+    <p>Nous souhaitons ajouter un element <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais.. )</p>
+      <list>
+        <item>nous fournissons un <gi>elementSpec</gi> complete</item><item>le nouvel element doit etre dans notre propre espace de noms</item>
+        <item>et nous l'ajoutons a une des classes TEI existantes pour qu'il apparaissent dans les modeles de contenu relevant</item>
+      </list>
+      </div>
+      
+      
+ <!--       
+        Supprimez l’élément <gi>title</gi> du body, mais non pas du header</item>
   <item>Ajoutez l’élément <gi>span</gi> et assurez vous que ces règles schematron sont
  prises en compte dans votre schéma </item>
   <item>Modifiez le contenu de <gi>s</gi> pour ne permettre que des <gi>w</gi></item>
@@ -400,7 +456,7 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 </list>
 <p rend="box">Ma proposition est disponible dans le fichier <ident>feather-final</ident> ...
 </p>
-      </div>
+      </div>-->
       <div xml:lang="en">
 <head>P.S. A word on TEI conformance.</head>
 <p>What does it mean to be TEI-conformant?</p>
@@ -412,11 +468,11 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 </list>
         <p>Formally speaking, we can say of a conformant TEI document  :
           <list>
-            <item>it must be a well formed XML document</item>
-            <item>if a schema is constructed to validate those elements it contains from 
-              the TEI namespace, the set of documents considered valid by that schema 
-              should be a proper subset of the set of documents considered valid
-              by the  TEI-ALL schema.</item>
+ <item>it must be a well formed XML document</item>
+ <item>if a schema is constructed to validate those elements it contains from 
+   the TEI namespace, the set of documents considered valid by that schema 
+   should be a proper subset of the set of documents considered valid
+   by the  TEI-ALL schema.</item>
           </list></p>
         <p rend="box">The purpose of these rules is to make "blind interchange" of documents 
           easier.  They do not  guarantee it. </p>
