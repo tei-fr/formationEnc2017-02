@@ -54,7 +54,15 @@
             </alternate>
           </content>
         </elementSpec>
-        
+<!-- modification du modele de contenu -->
+        <elementSpec ident="s" mode="change">
+          <content>         
+            <alternate maxOccurs="unbounded">
+              <elementRef key="w"/>
+              <elementRef key="mw"/>
+            </alternate>
+          </content>
+        </elementSpec>        
       </schemaSpec>
     </body>
   </text>
