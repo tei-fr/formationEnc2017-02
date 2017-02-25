@@ -4,7 +4,8 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>TEI à la carte: a case study</title>
+        <title xml:lang="fr">TEI à la carte : une étude de cas</title>
+        <title xml:lang="en">TEI à la carte: a case study</title>
         <author>Lou Burnard</author>
       </titleStmt>
       <publicationStmt>

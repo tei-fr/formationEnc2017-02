@@ -4,15 +4,15 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-<title xml:lang="en">ODD for customization</title>
-<title xml:lang="fr" rend="slide">Personnalisation avec ODD</title>
-<author xml:id="LB">Lou Burnard Consulting</author>
+        <title xml:lang="en">ODD for customization</title>
+        <title xml:lang="fr" rend="slide">Personnalisation avec ODD</title>
+        <author xml:id="LB">Lou Burnard Consulting</author>
       </titleStmt>
       <publicationStmt>
-<p xml:lang="fr" rend="slide">Préparé pour ENC niv2 2017</p>
+        <p xml:lang="fr" rend="slide">Préparé pour ENC niv2 2017</p>
       </publicationStmt>
       <sourceDesc>
-<p>Translated from ODD MuteC 2014 which was majoritairement nouveau!</p>
+        <p>Translated from ODD MuteC 2014 which was majoritairement nouveau!</p>
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
@@ -24,49 +24,43 @@
   <text>
     <front>
       <titlePage xml:lang="fr" rend="slide">
-<titlePart>08 – Personnalisation avec ODD</titlePart>
-<docImprint>Formation TEI | ENC 27 février - 2 mars 2017</docImprint>
-<note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
+        <titlePart>08 – Personnalisation avec ODD</titlePart>
+        <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02"
+          >Répertoire
   GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
-      <div rend="title" xml:lang="fr"  xml:id="index">
-
-  <head>Personnalisation avec ODD</head>
-
-
-      </div>
     </front>
     <body>
       <div xml:lang="en">
-<head>ODD is also a customization language </head>
-<p>It is used both to specify your choices from the TEI framework, and to specify the
+        <head>ODD is also a customization language </head>
+        <p>It is used both to specify your choices from the TEI framework, and to specify the
   framework itself</p>
-<p>A customization ODD specifies a selection or modification of the objects provided by
+        <p>A customization ODD specifies a selection or modification of the objects provided by
   another ODD, typically (but not necessarily) some release of the whole TEI framework by <list>
- <item>selecting some modules</item>
- <item>selecting or deleting some of the objects defined by those modules (éléments,
+          <item>selecting some modules</item>
+          <item>selecting or deleting some of the objects defined by those modules (éléments,
    classes, datatypes, macros) </item>
- <item>selecting or deleting some attributes </item>
- <item>modifying or replacing some parts of the original specification (e.g. a valList or
+          <item>selecting or deleting some attributes </item>
+          <item>modifying or replacing some parts of the original specification (e.g. a valList or
    an example)</item>
- <item>possibly adding entirely new objects</item>
-  </list></p>
-<p>A customization ODD will often contain multiple specifications for the same object: one
+          <item>possibly adding entirely new objects</item>
+          </list></p>
+        <p>A customization ODD will often contain multiple specifications for the same object: one
   original, and one modified. ODD processing must unify these, following rules we will
   explain later. </p>
       </div>
       <div xml:lang="fr" rend="slide">
-<head>ODD est aussi un langage de personnalisation </head>
-<p>On se sert du même système pour spécifier ses choix dans le grand bazar de la TEI et pour
+        <head>ODD est aussi un langage de personnalisation </head>
+        <p>On se sert du même système pour spécifier ses choix dans le grand bazar de la TEI et pour
   spécifier le bazar lui-même.</p>
-<p>Un ODD de personnalisation est spécifié par rapport à un autre ODD ; typiquement mais pas forcément celui qui définit la version actuelle des <title>Guidelines</title><list>
-  <item>en sélectionnant des modules</item>
-  <item>en sélectionnant parmi les objets (éléments, classes, datatypes, macros) fournis par ces modules</item>
-  <item>en supprimant ou modifiant quelques uns des attributs fournis par ces objets</item>
-  <item>en modifiant ou remplaçant quelques parties de ces spécifications (par ex. les valList)</item>
-  <item>éventuellement en ajoutant des spécifications d’objets nouveaux</item>
-  </list></p>
-       
+        <p>Un ODD de personnalisation est spécifié par rapport à un autre ODD ; typiquement mais pas forcément celui qui définit la version actuelle des <title>Guidelines</title><list>
+          <item>en sélectionnant des modules</item>
+          <item>en sélectionnant parmi les objets (éléments, classes, datatypes, macros) fournis par ces modules</item>
+          <item>en supprimant ou modifiant quelques uns des attributs fournis par ces objets</item>
+          <item>en modifiant ou remplaçant quelques parties de ces spécifications (par ex. les valList)</item>
+          <item>éventuellement en ajoutant des spécifications d’objets nouveaux</item>
+          </list></p>
       </div>
       <div xml:lang="en">
 <head>How to make an ODD</head>
@@ -81,9 +75,9 @@
       
       <div xml:lang="fr" rend="slide">
         <head>Comment créer un ODD</head>
-<p>Un ODD, vous le savez déjà, c'est un document TEI comme les autres. Vous pouvez le
-construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
-       <p>Rappel : il y a des outils pour faciliter une construction initiale :</p>
+<p>Un ODD, vous le savez déjà, c’est un document TEI comme les autres. Vous pouvez le
+construire et modifier avec oXygen ou n’importe quel autre éditeur XML </p>
+       <p>Rappel ! il existe des outils pour faciliter une construction initiale :</p>
 <list>
   <item><ref target="http://www.tei-c.org/Roma"> http://www.tei-c.org/Roma</ref></item>
   <item><ref target="http://teic.github.io/TCW/howtogenerate.html">ODD By Example stylesheet</ref></item>
@@ -115,7 +109,7 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 </egXML>
       </div>
       <div xml:lang="fr" rend="slide">
-<head>Création d’un personalisation</head>
+<head>Création d’une personnalisation</head>
 <p>Comme vous le savez déjà, on utilise l’élément <gi>schemaSpec</gi> pour spécifier un
   schéma </p>
 <list>
@@ -137,7 +131,7 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
       <div xml:lang="fr" rend="slide">
 <head>Composants d’un <gi>schemaSpec</gi></head>
 <list>
-  <item><gi>moduleRef</gi> : un ensemble d'objets fournis par un module</item>
+  <item><gi>moduleRef</gi> : un ensemble d’objets fournis par un module</item>
   <item><gi>elementSpec</gi>, <gi>classSpec</gi>, <gi>dataSpec</gi>, <gi>macroSpec</gi> (etc.) : des objets nouveaux </item>
   <item><gi>elementRef</gi>, <gi>classRef</gi>, <gi>dataRef</gi>, <gi>macroRef</gi>(etc.) : des objets déjà existants quelque part</item>
 </list>
@@ -231,10 +225,10 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
       
       <div xml:lang="fr" rend="slide"><head>Usage des module</head>
         <list>
-          <item>Vous n'êtes pas obligé de préciser son module si vous souhaitez préciser l’inclusion d'un élément !</item>
-          <item>Un <gi>elementRef</gi> suffit – pourvu que l'élément concerné soit déclaré par la source invoquée</item>
+          <item>Vous n’êtes pas obligé de préciser son module si vous souhaitez préciser l’inclusion d'un élément !</item>
+          <item>Un <gi>elementRef</gi> suffit – pourvu que l’élément concerné soit déclaré par la source invoquée</item>
           <item>Mais il faut préciser son module si vous souhaitez inclure/utiliser une classe de modèle ou une classe d’attribut. </item>
-          <item>La plupart des classes TEI étant défini par le module <ident>tei</ident>, ce dernier est à peu près essentiel pour tout ODD TEI.</item></list>
+          <item>La plupart des classes TEI étant définies par le module <ident>tei</ident>, ce dernier est à peu près essentiel pour tout ODD TEI.</item></list>
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Spécifications multiples</head>
@@ -242,10 +236,10 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   objet</p>
 <p>Supposons deux <gi>elementSpec</gi> pour un même élément, la résolution est déterminée par la valeur de l’attribut <att>mode</att></p>
 <list>
-  <item><code>mode='add'</code> (défaut) : effectuer une nouvelle déclaration </item>
-  <item><code>mode='delete'</code> : aucune déclaration n'est valide, l’élément est supprimé</item>
-  <item><code>mode='replace'</code> : cette déclaration remplace entièrement toute autre déclaration</item>
-  <item><code>mode='change'</code> : les parties de cette déclaration remplacent les parties correspondantes dans une autre déclaration ; le reste ne change pas. </item>
+  <item><code>mode='add'</code> (défaut) : effectuer une nouvelle déclaration </item>
+  <item><code>mode='delete'</code> : aucune déclaration n'est valide, l’élément est supprimé</item>
+  <item><code>mode='replace'</code> : cette déclaration remplace entièrement toute autre déclaration</item>
+  <item><code>mode='change'</code> : les parties de cette déclaration remplacent les parties correspondantes dans une autre déclaration ; le reste ne change pas. </item>
        </list>
       </div>
       <div xml:lang="fr" rend="slide"><head>Par exemple</head>
@@ -260,19 +254,19 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   <desc>Pour nous, un <gi>p</gi> ne peut contenir que du texte</desc>
   <content><textNode/></content> 
  </elementSpec> </schemaSpec></egXML>
-      <p>Le contenu et la déscription de l’élément <gi>p</gi> sont changés ; ses autres propriétés ne changent pas</p>  
+      <p>Le contenu et la description de l’élément <gi>p</gi> sont changés ; ses autres propriétés ne changent pas</p>  
        </div>
       
       <div xml:lang="fr" rend="slide">
-<head>Traitement d'un ODD</head>
+<head>Traitement d’un ODD</head>
         <list>
-          <item>Toutes les déclarations (*Spec et *Ref) sont d'abord réunies et canonicalisées</item>
+          <item>Toutes les déclarations (*Spec et *Ref) sont d’abord réunies et canonicalisées</item>
           <item>Les déclarations multiples sont résolues</item>
           <item>La sortie de cette procédure est ensuite transformée en schéma, et/ou en documentation</item>
         </list>
-        <p>La feuille de style <ident>odd2odd</ident> nous permet d'éffectuer les 2 étapes initiales et d'en garder le résultat:
+        <p>La feuille de style <ident>odd2odd</ident> nous permet d’effectuer les deux étapes initiales et d’en conserver le résultat :
         nous appelons cela un <term>compiled ODD</term></p>
-        <p>Un tel fichier est réutilisable comme la <att>source</att> d'un autre ODD</p>
+        <p>Un tel fichier est réutilisable comme la <att>source</att> d’un autre ODD</p>
       </div>
       
       
@@ -302,7 +296,7 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 <head>Exercice de personnalisation </head>
 <p>Créons un schéma <ident>featherLite</ident> très simple, pour un projet de corpus langagier. </p>
 <list>
-  <item>L’entête TEI ne possédera que les composants essentiels à sa conformité (à savoir :
+  <item>L’entête TEI ne possédera que les composants essentiels à sa conformité (à savoir :
    <gi>teiHeader</gi>, <gi>fileDesc</gi>,  <gi>titleStmt</gi>, <gi>publicationStmt</gi>
  <gi>sourceDesc</gi> et <gi>title</gi>) </item>
   <item>L’élément <gi>text</gi> est composé d’un seul <gi>body</gi> contenant des <gi>div</gi>s contenant un ou plus d’éléments <gi>ab</gi></item>
@@ -340,9 +334,9 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
  en utilisant la feuille de style <ident>${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl</ident></item>
           <item>Regardez rapidement la sortie en profitant de l'affichage <soCalled>Outline</soCalled></item>
           <item>Tous ces classSpec et dataSpec sont fournis par le module <ident>tei</ident>: 
-            ils constituent l'infrastructure TEI, pas forcément utilisables par notre petit schéma</item>
+            ils constituent l’infrastructure TEI, pas forcément utilisables par notre petit schéma</item>
         </list>
-      <p>Nous allons modifier un peu plus ce schéma pour :
+      <p>Nous allons modifier un peu plus ce schéma pour :
       <list><item>supprimer plusieurs attributs inutiles</item>
         <item>ajouter un nouveau élément</item>
         <item>simplifier le modèle de contenu de quelques éléments</item>
@@ -350,27 +344,27 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
       
      
       <div xml:lang="fr" rend="slide">
-        <head>Suppression d'attributs</head>   
-        <p>Pour supprimer un attribut il faut savoir d'où il vient : 
-          <list><item>soit il est défini avec l'élément qui le comporte (assez inhabituel)</item>
-            <item>soit il est hérité d'une classe</item>
+        <head>Suppression d’attributs</head>   
+        <p>Pour supprimer un attribut il faut savoir d’où il vient : 
+          <list><item>soit il est défini avec l’élément qui le comporte (assez inhabituel)</item>
+            <item>soit il est hérité d’une classe</item>
             <item>qui peut elle-même 
-          hériter des attributs d'une autre classe</item>
+          hériter des attributs d’une autre classe</item>
  </list>
         </p>
-        <p>Regardez la definition de <gi>body</gi> par exemple :
+        <p>Regardez la définition de <gi>body</gi> par exemple :
          </p>
        <figure> <graphic url="images/bodyshot.png"/></figure>
          <p>On peut supprimer un attribut 
            <list>
-  <item>en modifiant que l'element qui le comporte</item>
+  <item>en modifiant que l’élement qui le comporte</item>
    <item>en modifiant la participation à la classe qui le fournit</item>
    <item>en modifiant ou supprimant la classe entièrement</item>
            </list>
        </p>
         </div>
       <div  xml:lang="fr" rend="slide"><head>Exemples</head><list>  
-        <item>    supprimez partout l'attribut <att>decls</att> : 
+        <item>    supprimez partout l’attribut <att>decls</att> : 
  <code>&lt;classSpec type="atts" mode="delete" ident="att.declaring"/></code>
       </item>
         <item>    supprimez partout les attributs <att>rend</att> et <att>rendition</att> :  
@@ -390,13 +384,13 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   &lt;/classes></code></item>
         </list></div>
       <div xml:lang="fr" rend="slide">
-        <head>Ajout d'un nouvel element</head>
-        <p>Nous souhaitons ajouter un element <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais.. )</p>
+        <head>Ajout d’un nouvel ’lement</head>
+        <p>Nous souhaitons ajouter un élement <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais... )</p>
         <list>
           <item>il faut fournir un <gi>elementSpec</gi> complet</item>
           <item>le nouvel élément doit être dans notre propre espace de noms</item>
           <item>il est avantageux de le faire participer à une des classes TEI existantes 
-            pour qu'il apparaissent dans les modeles de contenu rélévant</item>
+            pour qu’il apparaissent dans les modèles de contenu relevants</item>
         </list>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
 <elementSpec ident="mw" ns="http://myNameSpace.org" >
@@ -419,7 +413,7 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
      
       <div xml:lang="fr" rend="slide">
 <!-- no eng equiv -->
-<head>Modification du modele de contenu</head>
+<head>Modification du modèle de contenu</head>
 <p>Continuons de personnaliser le schéma feather... </p>
 <list>
   <item>La plupart des modèles de contenu s'exprime avec un macro, qui fait référence à des classes</item>
@@ -428,9 +422,9 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   <item>Suivez l’hiérarchie des déclarations et vous constaterez que la plupart de ces classes sont vides dans notre petit schéma</item>
   <item>En effet, les seuls éléments disponibles sont <gi>title</gi>, <gi>s</gi>, <gi>w</gi> et (après la modification précédente) <gi>mw</gi></item> 
  </list>
-      <p>Nous souhaitons simplifier cela: donc nous allons changer le <gi>content</gi> de <gi>s</gi>.</p> </div>
-      <div xml:lang="fr" rend="slide"><head>Changement du model de contenu</head>
-      <p>Ajouter dans votre ODD :
+      <p>Nous souhaitons simplifier cela : donc nous allons changer le <gi>content</gi> de <gi>s</gi>.</p> </div>
+      <div xml:lang="fr" rend="slide"><head>Changement du modèle de contenu</head>
+      <p>Ajouter dans votre ODD :
           <egXML xmlns="http://www.tei-c.org/ns/Examples"><elementSpec ident="s" mode="change">
 <content>         
   <alternate maxOccurs="unbounded">
@@ -439,18 +433,18 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
 </alternate>
 </content>
 </elementSpec></egXML></p>
-<list><item>Regénérez le schéma et la doc, et contrôler si l'effet corresponde à vos attentes</item>
-  <item>Comment est-ce que cela marche?</item>
+<list><item>Regénérez le schéma et la doc, et contrôlez si l’effet corresponde à vos attentes</item>
+  <item>Comment est-ce que cela marche ?</item>
       </list>
-        <p>Attention : un changement de modèle de contenu risque de mettre en cause notre TEI-conformité</p></div>
+        <p>Attention : un changement de modèle de contenu risque de mettre en cause notre TEI-conformité</p></div>
       
-      <div xml:lang="fr" rend="slide"><head>Exercice finale</head>
-        <p>S'il vous reste du temps, vous etes invité à considérer 
+      <div xml:lang="fr" rend="slide"><head>Exercice final</head>
+        <p>S’il vous reste du temps, vous êtes invité à considérer 
           <list>
-            <item>comment ajouter <gi>pc</gi> pour les sequences de ponctuation</item>
+            <item>comment ajouter <gi>pc</gi> pour les séquences de ponctuation</item>
             <item>comment modifier le ODD pour supprimer <gi>title</gi>, sauf dans le <gi>titleStmt</gi> où il est obligatoire</item>
           </list></p>
-        <p>Vous trouverez ma proposition dans <ident>feather-final.odd</ident>. N'hésitez pas de l'améliorer !</p></div>
+        <p>Vous trouverez ma proposition dans <ident>feather-final.odd</ident>. N’hésitez pas à l’améliorer !</p></div>
      
       
       
@@ -491,14 +485,14 @@ construire et modifier avec oXygen ou n'importe quel autre editeur XML </p>
   <item><label>être explicite</label> : Pour valider un document TEI, un ODD est fortement conseillé, parce que cela mettra en évidence toutes les modifications effectuées.</item>
 </list>
 <p>Plus formellement, pour un document TEI conforme :<list>
-  <item>il doit etre un document XML bien-forme</item>
+  <item>il doit être un document XML bien-forme</item>
   <item>si la construction de son schéma ne prend en compte que les
    éléments appartenant à l’espace de nommage TEI, l'ensemble de documents considéré comme valide par ce schéma devrait être un sous-ensemble de l'ensemble de documents
    considéré valide par le schéma TEI-ALL.</item>
  <item>Toute autre élément présent doit appartenir à un autre namespace</item>
   </list></p>
 <p rend="box">L’objet de ces règles est de faciliter le "blind interchange" des
-  documents; elles ne le garantissent pas.</p>
+  documents ; elles ne le garantissent pas.</p>
       </div>
     </body>
   </text>
