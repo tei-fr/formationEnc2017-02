@@ -55,7 +55,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>Comprendre les enjeux de la modélisation d’une édition critique</item>
             <item>S’y retrouver dans la TEI</item>
             <item>Pouvoir personnaliser la TEI pour son projet</item>
-            <item>Apprendre le language ODD</item>
+            <item>Apprendre le langage ODD</item>
             <item>Savoir documenter son modèle</item>
             <item>Identifier l’utilité d’un modèle pour la pérennisation</item>
           </list>
@@ -70,8 +70,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <label>09h30-10h00</label>
             <item><ref target="00-programme.html">Introduction de la formation</ref></item>
             <label>10h-10h45</label>
-            <item><ref target="01-editionNumerique.html">La production d’une édition
-              numérique</ref></item>
+            <item><ref target="01-editionNumerique.html">La production d’une édition numérique</ref></item>
             <label>10h45-11h15</label>
             <item>pause</item>
             <label>11h15-12h</label>
@@ -92,8 +91,7 @@ Le programme laisse une large place au travail sur les projets des participants 
             <item>pause</item>
             <label>16h30-17h30</label>
             <item>TP03 : Quiz TEI</item> <!-- ?? -->
-            <!-- proposition: remplacer ceci par le talk-03 de la formation de Tours 
-                   "Comment se servir des TEI Guidelines " suivi par l'ex Roma -->
+            <!-- proposition: remplacer ceci par le talk-03 de la formation de Tours "Comment se servir des TEI Guidelines " suivi par l'ex Roma -->
           </list>
         </div>
         <div type="notes">
@@ -232,10 +230,10 @@ Le programme laisse une large place au travail sur les projets des participants 
           <head>Organisation du répertoire</head>
           <list>
             <item><ident>exemples/</ident> exemples tei</item>
-            <item><ident>exercices/</ident> contient les dossiers de travaux pratiques</item>
+            <item><ident>travaux/</ident> contient les dossiers de travaux pratiques</item>
             <item><ident>images/</ident> contenus graphiques</item>
             <item><ident>pdf/</ident> présentations au format pdf</item>
-            <item><ident>presentations/</ident> présentations au format HTML</item>
+            <item><ident>diapos/</ident> présentations au format HTML</item>
             <item><ident>ressources/</ident> matériel d’accompagnement</item>
             <item><ident>schemas/</ident> schémas distribués pour la formation</item>
             <item><ident>sources/</ident> sources tei des présentations</item>
