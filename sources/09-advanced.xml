@@ -37,44 +37,106 @@
       </titlePage>
       <div rend="title" xml:lang="fr" xml:id="index">
         <div>
-          <head>Personnalisation avec ODD</head>
+          <head>ODD  : sujets avancées</head>
         </div>
       </div>
     </front>
     <body>
-      <div>
-        <head>ODD : advanced topics</head>
+      <div rend="slide">
+        <head>ODD  : sujets avancées</head>
         <list>
+          <item>ODD comme systeme de documentation</item>
           <item>What is TEI conformance?</item>
           <item>Defining other constraints : use of schematron</item>
           <item>Documenting intentions : the Processing Model</item>
         </list>
       </div>
-      <div>
-        <head>Varietes de ODD</head>
-        <figure>
-          <graphic url="images/oddflavours.png"/>
-        </figure>
-        <p>Chacun de ces boites represente : </p>
-        <list>
-          <item>un ODD</item>
-          <item>le schema genere a partir de cet ODD</item>
-          <item>l'ensemble de documents consideres comme valide par ce schema</item>
+      <div xml:lang="fr" rend="slide">
+        <head>ODD comme systeme de documentation</head>
+        <p>ODD est un langage conçu pour faciliter la documentation systématique des systèmes de
+          documentation. Il fournit donc des balises spécialisés pour cela </p>
+        <list type="gloss">
+          <item><gi>code</gi> : un morceau de code exprimé en n’importe quel langage formel
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"><code>count += 56;</code></egXML>
+          </item>
+          <item><gi>att</gi> : un nom d’attribut
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">The <att>target</att> attribute
+              indicates a URI</egXML>
+          </item>
+          <item><gi>gi</gi> : un nom d’élément
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">The <gi>table</gi> element is
+              for...</egXML>
+          </item>
         </list>
       </div>
-      <div>
-        <head>Flavours of ODD</head>
-        <figure>
-          <graphic url="images/oddflavours.png"/>
-        </figure>
+      <div xml:lang="fr" rend="slide">
+        <head>ODD comme systeme de documentation suite </head>
         <list>
-          <item>"TEI All" is, err, TEI All </item>
-          <item> a TEI subset is an ODD in which some of the components (elements, attributes,
-            classes, macros) provided by TEI All have been
-            suppressed<!--, the schema derived from it, and the set of documents considered valid by that schema. Note that there's nothing about modules here: they are a syntactic convenience but otherwise irrelevant. Note also that there's an assumption that we haven't suppressed mandatory components (see #1589)-->
+          <item><gi>ident</gi> : identifiant ou nom d’un objet en n’importe quel langage formel
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> The <ident>model.biblLike</ident> class
+            </egXML>
           </item>
-          <item> a customised subset is a TEI subset in which changes other than simple suppression
-            have been made but without affecting validity of the result wrt TEI All. <!--Not an easy
+          <item>
+            <gi>val</gi> : valeur d’attribut
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">Cet attribut porte la valeur
+                <val>unknown</val></egXML>
+          </item>
+          <item><gi>tag</gi> : balise XML
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <tag><ptr target="http://www.bbc.co.uk"/></tag></egXML>
+          </item>
+        </list>
+      </div>
+      <div xml:lang="fr" rend="slide">
+        <head>Structuration d'un ODD</head>
+        <p>A part le <gi>schemaSpec</gi> qui definit le schema, on peut organiser le document comme
+          tout autre document, utilisant <gi>div</gi>, <gi>list</gi> etc. </p>
+        <p>Des elements supplementaires sont prevus pour le regroupement des déclarations a
+          l'exterieur du <gi>schemaSpec</gi>: </p>
+        <list>
+          <item>
+            <gi>specGrp</gi> : un regroupement de déclarations identifiable
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <p>Nous n'utilisons que ces éléments du module <ident>linking</ident>: <specGrp
+                  xml:id="linkingElts">
+                  <!-- quelques elementSpec etc -->
+                </specGrp>
+              </p>
+            </egXML>
+          </item>
+          <item><gi>specGrpRef</gi> indication du bon endroit dans un schemaSpec ou on souhaite
+            integrer les déclarations precises par un <gi>specGrp</gi>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <specGrpRef target="#linkingElts"/></egXML>
+          </item>
+        </list>
+      </div>
+      <div xml:lang="fr" rend="slide">
+        <head>Varietes de ODD</head>
+       <p> <figure>
+          <graphic url="images/oddflavours.png"/>
+        </figure></p>
+        <p>Chacune de ces formes représente : </p>
+        <list>
+          <item>un ODD</item>
+          <item>le schéma généré à partir de cet ODD</item>
+          <item>l'ensemble de documents considérés comme valide par ce schéma</item>
+        </list>
+      </div>
+      <div rend="slide">
+        <head>Flavours of ODD</head>
+       <p> <figure>
+          <graphic url="images/oddflavours.png"/>
+        </figure></p>
+        <list>
+       <!--   <item><q>TEI All</q> rassemble toute la TEI</item>
+      -->    <item>un <q>TEI subset</q> fournit un sous-ensemble des composants constituant TEI All
+                 </item>
+          <item>un <q>customised subset</q> est également un sous-ensemble avec des personnalisations
+            supplémentaires</item> <!--
+              TEI subset in which changes other than simple suppression
+            have been made but without affecting validity of the result wrt TEI All.
+            Not an easy
             concept to define, but I am thinking of things like restricting the domain of attribute
             values, replacing glosses or examples, etc. The meaning of "restricting" in that
             sentence is not entirely obvious: changing an attribute value defined as teidata.word to
@@ -82,14 +144,18 @@
             teidata.temporal.w3c, but changing teidata.temporal.w3c to (say) teidata.count probably
             isn't. We need to specify some sort of priority order for datatypes. Likewise rewriting
             the desc for the element p to licence its use to encode pages may not change the
-            resulting schema, but blows a big hole in the TEI semantic model. --></item>
-          <item> an extended subset is a TEI subset which includes components either not defined in TEI
-            All or defined differently by it. These should all be in a non-TEI namespace.</item>
-          <!--         It's not clear whether this also applies to TEI components that reference them. If I define my:unicorn and then add it to the TEI's class model.phrase, I am not actually changing the class, just the number of things that reference it. If however I change the content model of p so that it explicitly references my:unicorn I am arguably extending the definition of p, so p should be drummed out of the TEI namespace, and so on up the tree. That seems at best counter productive. Hence my desire to discount non-TEI-namespaced elements when calculating conformance.</item><item>le schema genere a partir de cet ODD</item><item>l'ensemble de documents consideres comme valide par ce schema</item>
-    -->
+            resulting schema, but blows a big hole in the TEI semantic model. -->
+          <item>un <q>extended subset</q> contient des composants qui ne font pas partie de TEI All
+           <!-- a TEI subset which includes components either not defined in
+            TEI All or defined differently by it. These should all be in a non-TEI namespace.-->
+          <!--         It's not clear whether this also applies to TEI components that reference them. 
+            If I define my:unicorn and then add it to the TEI's class model.phrase, I am not actually 
+            changing the class, just the number of things that reference it. If however I change the 
+            content model of p so that it explicitly references my:unicorn I am arguably extending
+            the definition of p, so p should be drummed out of the TEI namespace, and so on up the tree.
+           --></item>
         </list>
       </div>
-      
       <!--Freedom to Constrain
 
     If you merely constrain the TEI to be:
@@ -175,75 +241,28 @@ Flexibility vs Fragmentation
       <div xml:lang="fr" rend="slide">
         <head>Être conforme à la TEI veut dire quoi ?</head>
         <list>
-          <item><label>être honnête</label> : Les éléments XML qui sont déclarés comme appartenant
+          <item><hi>être honnête</hi> : Les éléments XML qui sont déclarés comme appartenant
             au namespace TEI doivent respecter les définitions TEI de ces éléments</item>
-          <item><label>être explicite</label> : Pour valider un document TEI, un ODD est fortement
+          <item><hi>être explicite</hi> : Pour valider un document TEI, un ODD est fortement
             conseillé, parce que cela mettra en évidence toutes les modifications effectuées.</item>
         </list>
         <p>Plus formellement, pour un document TEI conforme :<list>
-            <item>il doit etre un document XML bien-forme</item>
+            <item>il doit être un document XML bien-formé</item>
             <item>si la construction de son schéma ne prend en compte que les éléments appartenant à
               l’espace de nommage TEI, l'ensemble de documents considéré comme valide par ce schéma
               devrait être un sous-ensemble de l'ensemble de documents considéré valide par le
               schéma TEI-ALL.</item>
-            <item>Toute autre élément présent doit appartenir à un autre namespace</item>
+            <item>Tout autre élément présent doit appartenir à un autre namespace</item>
           </list></p>
         <p rend="box">L’objet de ces règles est de simplifier le "blind interchange" des documents;
           elles ne le garantissent pas.</p>
-      </div><div xml:lang="fr" rend="slide"><head>Some conformance questions</head>
-      <list>
-        <item>why can't I just delete <gi>title</gi>?</item>
-        <item>why do I need all these empty classes?</item>
-      </list></div>
-      <div xml:lang="fr" rend="slide">
-        <head>Rappel : ODD est un langage conçu pour faciliter la documentation systématique des
-          systèmes de documentation </head>
-        <list type="gloss">
-          <label><gi>code</gi></label>
-          <item>morceau de code exprimé en n’importe quel langage formel
-            <egXML xmlns="http://www.tei-c.org/ns/Examples"><code>count += 56;</code></egXML>
-          </item>
-          <label><gi>att</gi></label>
-          <item>nom d’attribut
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">The <att>target</att> attribute
-              indicates a URI</egXML>
-          </item>
-          <label><gi>gi</gi></label>
-          <item>nom d’élément
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">The <gi>table</gi> element is
-              for...</egXML>
-          </item>
-          <label><gi>ident</gi></label>
-          <item>identifiant ou nom d’un objet en n’importe quel langage formel
-            <egXML xmlns="http://www.tei-c.org/ns/Examples"> The <ident>model.biblLike</ident> class
-            </egXML>
-          </item>
-        </list>
       </div>
       <div xml:lang="fr" rend="slide">
+        <head>Some conformance questions</head>
         <list>
-          <label><gi>val</gi></label>
-          <item>valeur d’attribut
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">Cet attribut porte la valeur
-                <val>unknown</val></egXML>
-          </item>
-          <label><gi>tag</gi></label>
-          <item>balise XML
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <ptr target="http://www.bbc.co.uk"/></egXML>
-          </item>
+          <item>why can't I just delete <gi>title</gi>?</item>
+          <item>why do I need all these empty classes?</item>
         </list>
-        <p>Dans un ODD il est possible de regrouper des déclarations pour faciliter leur exposition:
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>Nous n'utilisons que ces éléments du module <ident>linking</ident>: <specGrp
-                xml:id="linkingElts">
-                <!-- quelques elementSpec etc -->
-              </specGrp>
-            </p>
-          </egXML>
-        </p>
-        <p>Ensuite, dans le <gi>schemaSpec</gi>, on intègre ces déclarations avec un
-            <gi>specGrpRef</gi></p>
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Contraintes de données avec Schematron </head>
@@ -296,8 +315,8 @@ Flexibility vs Fragmentation
             <hi>true</hi></item>
           <item>Astuce : plusieurs éléments schematron sont disponibles pour enrichir le texte du
             message affiché, notamment <gi>name</gi> (context) et <gi>value-of</gi> (valeur) </item>
-          <item>Voir <ptr target="http://www.schematron.com/"/> pour une description plus
-            détaillée</item>
+        <!--  <item>Voir <ptr target="http://www.schematron.com/"/> pour une description plus
+            détaillée</item>-->
         </list>
         <p rend="box">Un schéma RNG intégrant ces règles sera autogénéré si l’on utilise le logiciel
           oXygen pour traiter son ODD </p>
@@ -434,7 +453,7 @@ Flexibility vs Fragmentation
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Organigramme ODD</head>
-        <p><graphic url="oddity.png"/></p>
+        <p><graphic url="images/oddity.png"/></p>
       </div>
       <div xml:lang="en">
         <head>What about this <att>prefix</att> thing?</head>
@@ -606,198 +625,19 @@ Flexibility vs Fragmentation
       </div>
       <div xml:lang="fr" rend="slide">
         <head>TEI + MathML : le document</head>
-        <p>Le schéma généré va valider par ex :
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <p><figure><graphic url="images/vavilov.png"/></figure></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <p>The relevant inequalities and distributions are <formula notation="MathML">
                 <math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
-                  <mn>0</mn>
-                  <mo>.</mo>
-                  <mn>0</mn>
-                  <mn>1</mn>
-                  <mo>&lt;</mo>
-                  <mi>κ</mi>
-                  <mo>&lt;</mo>
-                  <mn>1</mn>
-                  <mn>0</mn>
+                  <mn>0</mn> <mo>.</mo> <mn>0</mn>
+                  <mn>1</mn> <mo>&lt;</mo> <mi>κ</mi>
+                  <mo>&lt;</mo> <mn>1</mn> <mn>0</mn>
                 </math>
               </formula>, Vavilov distribution, and ... </p>
           </egXML>
-        </p>
-        <p><graphic url="vavilov.png"/></p>
-      </div>
-      <div xml:lang="en">
-        <head>Merging SVG uses a different technique</head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <moduleRef url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/svg11.rng">
-            <content>
-              <rng:define name="tei_model.graphicLike" combine="choice">
-                <rng:ref name="svg"/>
-              </rng:define>
-            </content>
-          </moduleRef>
-        </egXML>
-        <p>In a rather devious way, we add an SVG pattern to a TEI model class.</p>
-        <p rend="box">This technique may well not work in the Pure ODD world.</p>
-      </div>
-      <div xml:lang="en">
-        <head>ODD by Example</head>
-        <p>What if you want to create an ODD by examining your current practice?</p>
-        <p><hi>oddbyexample</hi> is your friend.</p>
-        <p>On a command line:
-          <egXML xmlns="http://www.tei-c.org/ns/Examples"> java -Xmx12000m -jar
-            /usr/share/saxon/saxon9he.jar \ -it:main
-            -xsl:/usr/share/xml/tei/stylesheet/tools/oddbyexample.xsl \ corpus=/tmp/texts </egXML>
-           with many parameters you can set to vary its behaviour. </p>
-        <p rend="box">oddbyexample needs plenty of memory provided to Java on your computer to
-          operate on big corpora.</p>
-      </div>
-      <div xml:lang="en">
-        <head>What does oddbyexample actually do?</head>
-        <list rend="ordered">
-          <item>create a variable and copy in all of the TEI </item>
-          <item>read the corpus and get a list of all the elements and their attributes that it
-            uses</item>
-          <item>process the new corpus list and compare with the TEI section. if an element or
-            attribute is not present in the corpus section, put out a delete customization; if the
-            attributes of an attribute class are never used that class may be deleted only if it
-            doesn't claim membership in any other class or, if it does, none of the attributes from
-            that other class is used too</item>
-          <item>for every attribute which is of type "enumerated", construct a valList</item>
-        </list>
-      </div>
-      <div xml:lang="en">
-        <head>Parameters in oddbyexample</head>
-        <table>
-          <row role="label">
-            <cell>name</cell>
-            <cell>default</cell>
-            <cell>explanation</cell>
-          </row>
-          <row>
-            <cell>schema</cell>
-            <cell>oddbyexample</cell>
-            <cell>name of result </cell>
-          </row>
-          <row>
-            <cell>keepGlobals</cell>
-            <cell>false</cell>
-            <cell>whether to do all the global attributes </cell>
-          </row>
-          <row>
-            <cell>corpus</cell>
-            <cell>./</cell>
-            <cell>the path to document corpus </cell>
-          </row>
-          <row>
-            <cell>prefix</cell>
-            <cell/>
-            <cell>file names starting with what prefix?</cell>
-          </row>
-          <row>
-            <cell>suffix</cell>
-            <cell>xml</cell>
-            <cell>file names ending with what suffix?</cell>
-          </row>
-          <row>
-            <cell>includeHeader</cell>
-            <cell>true</cell>
-            <cell>should elements in teiHeader be included</cell>
-          </row>
-          <row>
-            <cell>defaultSource</cell>
-            <cell>http://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml</cell>
-          </row>
-          <row>
-            <cell>enumerateRend</cell>
-            <cell>false</cell>
-            <cell>should we make valList for @rend and @rendition </cell>
-          </row>
-          <row>
-            <cell>enumerateType</cell>
-            <cell>false</cell>
-            <cell>should we make valList for @type </cell>
-          </row>
-          <row>
-            <cell>processNonTEI</cell>
-            <cell>false</cell>
-            <cell>should we deal with non-TEI namespaces </cell>
-          </row>
-          <row>
-            <cell>attributeList</cell>
-            <cell/>
-            <cell>which attributes should be make valLists for, regardless </cell>
-          </row>
-          <row>
-            <cell>method</cell>
-            <cell>include</cell>
-            <cell>moduleRef generated with @include or @except? </cell>
-          </row>
-          <row>
-            <cell>debug</cell>
-            <cell>false</cell>
-            <cell>turn on debug messages </cell>
-          </row>
-          <row>
-            <cell>verbose</cell>
-            <cell>false</cell>
-            <cell>turn on messages </cell>
-          </row>
-          <row>
-            <cell>corpusList</cell>
-            <cell/>
-            <cell>provide specific list of files </cell>
-          </row>
-          <row>
-            <cell>processP4</cell>
-            <cell>false</cell>
-            <cell>should P4 files be considered? </cell>
-          </row>
-          <row>
-            <cell>processP5</cell>
-            <cell>true</cell>
-            <cell>should P5 files be considered? </cell>
-          </row>
-        </table>
-      </div>
-      <div xml:lang="en">
-        <head>Setting up oddbyexample in oXygen</head>
-        <list>
-          <item>Open any TEI XML file in the target collection of texts</item>
-          <item>Choose <ident>Transformation -> Configure Transformation Scenario(s)</ident> from
-              the<ident> Document</ident> menu</item>
-          <item>Click <ident>New</ident> and choose "XML Transformation with XSLT"</item>
-          <item>Give your scenario a name ("oddGenerator" for example)</item>
-          <item>Leave XML URL as it is. Change XSL URL to point to the stylesheet
-              <ident>oddbyexample.xsl</ident> in your TEI Framework directory directory. Enter
-              <code>${frameworks}/tei/xml/tei/stylesheet/tools/oddbyexample.xsl</code> to find
-            it</item>
-          <item>Choose <ident>Saxon-PE 9.4.0.4</ident> as processor</item>
-          <item>Click the little yellow wheel next to this window to select Advanced Options: you
-            need to set <code>Template("-it")</code> to <code>main</code>
-          </item>
-        </list>
-      </div>
-      <div xml:lang="en">
-        <head>Setting up oddbyexample in oXygen (cont.)</head>
-        <list>
-          <item>Click the <ident>Parameters</ident> button : you need to set the <code>corpus</code>
-            parameter to contain the full name of the folder which you want to analyse. Assuming you
-            opened one of its files in step 1 above, just set the parameter to <code>${cfdu}</code>
-            and click OK </item>
-          <item>Now select the <ident>Output</ident> tab ... <list>
-              <item>In the <ident>Save as</ident> window supply an output filename such as
-                generated.odd </item>
-              <item>Tick the <ident>Open in editor</ident> box </item>
-              <item>Select the XML radio button underneath <ident>Show in results view as</ident>
-                and click OK</item>
-            </list>
-          </item>
-          <item>Launch the transformation by clicking the <ident>Apply Associated</ident>
-            button</item>
-          <item>If everything works, you should see the resulting ODD file
-              <ident>generated.odd</ident></item>
-        </list>
-      </div>
+     
+        </div>
+      <!--
       <div xml:lang="en">
         <head>Other ODD outputs</head>
         <p>You are already aware that the current ODD tools can produce <list type="gloss">
@@ -852,7 +692,7 @@ Flexibility vs Fragmentation
           using CSV files which are generated by running the stylesheet <ptr
             target="https://github.com/TEIC/Stylesheets/blob/master/tools/odd-to-csv.xsl"/> on a
           compiled ODD.</p>
-      </div>
+      </div>-->
     </body>
   </text>
 </TEI>
