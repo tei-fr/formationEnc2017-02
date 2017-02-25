@@ -77,7 +77,9 @@
                <div>
                   <head>Un projet « open source »</head>
                   <list>
-                     <item>Les <title>Guidelines</title> et du code sont maintenues sur <ref target="https://github.com/TEIC/TEI">GitHub</ref> (anciennement <ref target="http://sourceforge.net/projects/tei/">Sourceforge</ref>)</item>
+                     <item>Les <title>Guidelines</title> et l’ensemble du code sont maintenues sur <ref
+                        target="https://github.com/TEIC/TEI">GitHub</ref> (anciennement <ref
+                        target="http://sourceforge.net/projects/tei/">Sourceforge</ref>)</item>
                      <item>Un projet collaboratif appuyé sur un entrepôt GitHub</item>
                      <item>Discussion des problèmes rencontrés, suggestions de modifications sur les listes et le gestionnaire de bugs</item>
                   </list>
@@ -128,7 +130,9 @@
                   <head>Indépendance par rapport à XML</head>
                   <p>Historiquement le développement de la TEI paraît très lié aux technologies XML. Initialement développée en SGML, le travail conduit dans la TEI a notamment été à l’origine de certains aspects de la normalisation XML. La TEI a immédiatement adopté XML lors de sa spécification par le W3C.</p>
                   <p>Pourtant, la TEI définit un modèle qui s’abstrait de XML. Elle décrit par exemple des mécanismes pour prendre en charge des structures non hiérarchiques (stand-off markup), et dispose [on le verra plus tard] de son propre langage de spécification qui s’autonomise de plus en plus des langages de schémas XML avec ODD.</p>
-                  <p>Elena Pierazzo à la conférence TEI2015, proposant un travail de modélisation formelle pour s’abstraire encore plus du modèle XML. De fait, les classes définies dans TEI recouvrent souvent plus des facilités de construction d’éléments XML que le modèle abstrait de la TEI.</p>
+                  <p>Elena Pierazzo à la conférence <ref
+                     target="http://tei2015.huma-num.fr/en/papers/#140"
+                     >TEI2015</ref>, proposant un travail de modélisation formelle pour s’abstraire encore plus du modèle XML. De fait, les classes définies dans TEI recouvrent souvent plus des facilités de construction d’éléments XML que le modèle abstrait de la TEI.</p>
                </div>
             </div>
          </div>
@@ -196,9 +200,8 @@
                <list>
                   <item>Le module <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html"><ident>namesdates</ident></ref> est particulièrement adapté pour la description des entités historiques de type personnes et lieux.</item>
                   <item>Le module <ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html"
-                        ><ident>figure</ident></ref> est utilisé conjointement avec `transcr` pour traiter la
-                     description des facsimili.</item>
+                     target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html"
+                     ><ident>figure</ident></ref> est utilisé conjointement avec <ident>transcr</ident> pour traiter la description des facsimili.</item>
                   <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html"
                         ><ident>transcr</ident></ref> est destiné à la transcription de manuscrit et à la
                      transcription de sources primaires. Y trouvera par exemple des éléments pour
@@ -237,7 +240,7 @@
             <div rend="notes">
                <div>
                   <head>Le site du consortium</head>
-                  <p>Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder à la liste des membres. Vous avez également un lien vers l’<title>International journal of the TEI</title> dans le menu activités.</p>
+                  <p>Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder à la liste des membres. Vous avez également un lien vers l’<ref target="https://jtei.revues.org"><title>Journal of the TEI</title></ref> dans le menu activités.</p>
                   <p>Vous disposez également d’un WIKI sur la TEI qui est un regroupement de tutoriaux, projets de la TEI. Une liste des projets utilisant la TEI. Il n’est pas obligatoire de déclarer que l’on travaille avec TEI. C’est une démarche libre, puisqu’il s’agit d’un logiciel libre avec lequel on fait ce que l’on veut.</p>
                   <p>Une partie du WIKI est consacrée aux outils. Si vous deviez démarrer un gros projet, c’est une bonne page pour déterminer les outils existants pour faire l’état de l’art. Mais, si elle constitue un passage obligé, cette page n’est évidemment pas exhaustif.</p>
                   <p>Les <title>Guidelines</title>, mais aussi <title>About</title> avec une rubrique sur l’histoire du projet.</p>
@@ -329,7 +332,7 @@
                   <item><gi>sequence</gi> Indique une séquence</item>
                   <item><gi>alternate</gi> Indique un choix</item>
                   <item><att>minOccurs</att> Indique le nombre minimal de répétitions (par défaut 1)</item>
-                  <item>@<att>maxOccurs</att>Indique le nombre maximal de répétitions (par défaut 1)</item>
+                  <item><att>maxOccurs</att>Indique le nombre maximal de répétitions (par défaut 1)</item>
                   <item><gi>elementRef</gi> Indique la présence d’un élément</item>
                   <item><gi>classRef</gi> Indique la présence d’un ou de plusieurs éléments d’une classe spécifique</item>
                </list>
@@ -337,9 +340,9 @@
             <div rend="notes">
                <head>Déclaration du contenu d’élément</head>
                <list>
-                  <item><ident>sequence</ident> Indique une séquence, c’est-à-dire que les composants 
+                  <item><gi>sequence</gi> Indique une séquence, c’est-à-dire que les composants 
                      sont présentés dans l'ordre où il faut les trouver.</item>
-                  <item><ident>alternate</ident>Indique un choix, c’est-à-dire que l’on choisit entre tous
+                  <item><gi>alternate</gi>Indique un choix, c’est-à-dire que l’on choisit entre tous
                      les composants.</item>
            <item><att>minOccurs</att> et <att>maxOccurs</att> sont d’habitude utilisés ensemble pour indiquer la cardinalité d’un composant.  Si absent, ils ont tout les deux une valeur de 1.</item>
                   <item><gi>elementRef</gi> Indique un élément par son attribut <att>key</att></item>

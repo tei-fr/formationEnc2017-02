@@ -331,7 +331,7 @@
  </classSpec> </egXML>
       </div>
       <div type="slide" xml:lang="fr">
-        <head>Notions de classe 1</head>
+        <head>Notions de classe (1)</head>
         <p>Dans le monde réel, le contenu de nos <gi>book</gi> ne se limite pas uniquement aux
    <gi>para</gi>s et aux <gi>image</gi>s... on peut regrouper tous les éléments qui peuvent
  apparaître au sein d’un <ident>book</ident> : nous appelons ce regroupement une

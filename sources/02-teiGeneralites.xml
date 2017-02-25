@@ -71,13 +71,14 @@
             <item>Un effort international pour unifier les pratiques d’encodage de textes dans le domaine académique</item>
             <item>Un vocabulaire XML qui permet de produire des modèles de textes</item>
             <item>Un cadre de travail</item>
-            <item>Un ensemble de recommandations ([_Guidelines_](http://www.tei-c.org/Guidelines/))</item>
+            <item>Un ensemble de recommandations (<ref target="http://www.tei-c.org/Guidelines/"
+              >Guidelines</ref>)</item>
           </list>
         </div>
         <div rend="notes">
           <p>La Text Encoding Initiative (TEI) est un effort international pour <hi rend="bold">unifier les pratiques d’encodage de textes</hi> dans le domaine académique.</p>
-          <p>Elle fournit <hi rend="bold">un vocabulaire XML</hi> qui permet de produire des modèles de textes que l’on peut utiliser à différentes fins notamment pour l’édition de sources primaires. </p>
-          <p>Plus qu’un schéma générique, elle offre en fait **un cadre de travail** qui permet de traiter différents cas de figure.</p>
+          <p>Elle fournit <hi>un vocabulaire XML</hi> qui permet de produire des modèles de textes que l’on peut utiliser à différentes fins notamment pour l’édition de sources primaires. </p>
+          <p>Plus qu’un schéma générique, elle offre en fait <hi>un cadre de travail</hi> qui permet de traiter différents cas de figure.</p>
           <p>Ce cadre de travail se compose <list>
               <item>d’un vocabulaire,</item>
               <item>d’une documentation qui en fournit la sémantique en langage naturel,</item>
