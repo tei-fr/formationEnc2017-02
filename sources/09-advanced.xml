@@ -54,13 +54,15 @@
           <item>morceau de code exprimé en n’importe quel langage formel
             <egXML xmlns="http://www.tei-c.org/ns/Examples"><code>count += 56;</code></egXML></item>
           <label><gi>att</gi></label>
-          <item>nom d’attribut  <egXML xmlns="http://www.tei-c.org/ns/Examples">The <att>target</att> attribute indicates a URI</egXML></item>
+          <item>nom d’attribut <egXML xmlns="http://www.tei-c.org/ns/Examples"
+            >L’attribut <att>target</att> indique une URI</egXML></item>
           <label><gi>gi</gi></label>
-          <item>nom d’élément <egXML xmlns="http://www.tei-c.org/ns/Examples">The <gi>table</gi> element is for...</egXML></item>
+          <item>nom d’élément <egXML xmlns="http://www.tei-c.org/ns/Examples"
+            >L’élément <gi>table</gi> est pour...</egXML></item>
           <label><gi>ident</gi></label>
-          <item>identifiant ou nom d’un objet en n’importe quel langage formel
-         <egXML xmlns="http://www.tei-c.org/ns/Examples">     The <ident>model.biblLike</ident> class 
-         </egXML> </item>
+          <item>identifiant ou nom d’un objet en n’importe quel langage formel <egXML
+            xmlns="http://www.tei-c.org/ns/Examples"> La classe <ident>model.biblLike</ident>
+            </egXML> </item>
         </list>
       </div>
       <div xml:lang="fr" rend="slide">
@@ -71,9 +73,9 @@
           <item>balise XML <egXML xmlns="http://www.tei-c.org/ns/Examples"> <ptr
             target="http://www.bbc.co.uk"/></egXML></item>          
         </list>
-        <p>Dans un ODD il est possible de regrouper des déclarations pour faciliter leur exposition: <egXML
+        <p>Dans un ODD il est possible de regrouper des déclarations pour faciliter leur exposition : <egXML
           xmlns="http://www.tei-c.org/ns/Examples">
-          <p>Nous n'utilisons que ces éléments du module <ident>linking</ident>: <specGrp
+          <p>Nous n’utilisons que ces éléments du module <ident>linking</ident> : <specGrp
             xml:id="linkingElts">
             <!-- quelques elementSpec etc --> </specGrp> </p>
           </egXML></p>
@@ -132,13 +134,12 @@
             détaillée</item>
         </list>
         <p rend="box"
-          >Un schéma RNG intégrant ces règles sera autogénéré si l’on utilise le logiciel oXygen pour traiter son ODD </p>
+          >Un schéma RNG intégrant ces règles sera auto-généré si l’on utilise le logiciel oXygen pour traiter son ODD </p>
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Applications typiques des règles Schematron</head>
         <list>
-          <item>Contraintes de co-occurrence : <q>si l’attribut X a la valeur A, l’élément qui le
-              porte doit contenir un Y</q></item>
+          <item>Contraintes de co-occurrence : <q>si l’attribut X a la valeur A, l’élément qui le porte doit contenir un Y</q></item>
           <item>Contraintes arithmétique contextuelles : <q>au sein d’un <gi>titleStmt</gi>, on ne
               permet qu’un seul <gi>title</gi></q></item>
           <item>Contraintes textuelles : <q>Les caractères ' et ` ne sont pas permis au sein d’un
@@ -150,21 +151,15 @@
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Un schematron plus complexe (1) </head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="full">
-          <constraintSpec ident="validtarget" scheme="isoschematron">
-            <constraint>
-              <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="tei:*[@target]">
-                <let name="results"
-                  value="for $t in tokenize(normalize-space(@target),'\s+') 
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="full"> <constraintSpec
+          ident="validtarget" scheme="isoschematron"> <constraint> <rule
+          xmlns="http://purl.oclc.org/dsdl/schematron" context="tei:*[@target]"> <let name="results"
+          value="for $t in tokenize(normalize-space(@target),'\s+') 
                   return starts-with($t,'#') 
-                  and not(id(substring($t,2)))"/>
-                <report test="some $x in $results satisfies $x"> Erreur: Chaque pointer dans
-                    "<value-of select="@target"/>" doit indiquer un ID dans ce meme document
-                    (<value-of select="$results"/>)</report>
-              </rule>
-            </constraint>
-          </constraintSpec>
-        </egXML>
+                  and not(id(substring($t,2)))"
+          /> <report test="some $x in $results satisfies $x"> Erreur: Chaque pointer dans "<value-of
+          select="@target"/>" doit indiquer un ID dans ce même document (<value-of select="$results"
+          />)</report> </rule> </constraint> </constraintSpec> </egXML>
       </div>
       <div xml:lang="en">
         <head>Techniques used in that example</head>
@@ -209,13 +204,10 @@
       <div xml:lang="fr" rend="slide">
         <head>Il n’est pas obligatoire d’utiliser l’approche Schematron</head>
         <p>On pourrait également écrire des instructions XSLT pures et simples pour valider son document, en utilisant <gi>xsl:message</gi>.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <xsl:template match="q">
-            <xsl:if test="count(ancestor-or-self::q)&gt;3">
-              <xsl:message>Trois niveaux de quotes? tu es sûr????</xsl:message>
-            </xsl:if>
-          </xsl:template>
-        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> <xsl:template match="q"> <xsl:if
+          test="count(ancestor-or-self::q)&gt;3">
+          <xsl:message>Trois niveaux de citation (quotes) ? tu es sûr ????</xsl:message> </xsl:if>
+          </xsl:template> </egXML>
       </div>
       <div xml:lang="en">
         <head>Processing ODD</head>
@@ -233,7 +225,7 @@
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Traitement d’un ODD</head>
-        <p>Un outil ODD doit</p>
+        <p>Un outil ODD doit :</p>
         <list>
           <item>rassembler les déclarations référencées ou fournies directement </item>
           <item>résoudre les conflits éventuels </item>
@@ -306,8 +298,7 @@
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Usage de l’attribut <att>source</att></head>
-        <p>L’attribut <att>source</att> sert à specifier la source des déclarations qu’on souhaite
-          intégrer</p>
+        <p>L’attribut <att>source</att> sert à spécifier la source des déclarations qu’on souhaite intégrer</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <schemaSpec ident="test1" prefix="tei_" start="TEI"
             source="http://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml"
@@ -325,7 +316,7 @@
             <gi>macroRef</gi>, et <gi>moduleRef</gi>.</p>
       </div>
       <div xml:lang="fr" rend="slide">
-        <head>Enchainement des ODD</head>
+        <head>Enchaînement des ODD</head>
         <p>L’opération <q>ODD to RELAX NG</q> comporte deux étapes (<q>odd to odd</q> suivi de <q>odd to relax</q>) ; pour créer son propre base de personnalisation réutilisable il faut garder le produit de la première étape</p>
         <list>
           <item>En <ident>roma</ident> utilisez l’option <code>--compile</code>
