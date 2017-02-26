@@ -32,7 +32,7 @@
   <text>
     <front>
       <titlePage xml:lang="fr">
-        <titlePart>0? – TEI </titlePart>
+        <titlePart>04 – Comment utiliser la TEI</titlePart>
         <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
         <note><ref target="https://github.com/tei-fr/formationEnc2017-02"
           >Répertoire
@@ -49,18 +49,18 @@
     <body>
       <!-- d'abord un peu de contextualisation -->
       <div rend="slide">
-        <head>Les Cinq Etapes du chemin de l'Eveil TEI</head>
+        <head>Les Cinq étapes du chemin de l’éveil TEI</head>
         <list type="ordered">
-          <item>Modelisation : quels sont les buts et les objets de votre projet ?</item>
-          <item>Orientation : est-ce que vos objets sont déjà reconnus par la TEI ?</item>
-          <item>Declaration : comment créer une specification TEI-conforme ? </item>
-          <item>Documentation : comment documenter vos pratiques TEI ?</item>
-          <item>Validation : comment valider vos efforts ?</item>
+          <item>Modélisation : quels sont les buts et les objets de votre projet ?</item>
+          <item>Orientation : est-ce que vos objets sont déjà reconnus par la TEI ?</item>
+          <item>Déclaration : comment créer une spécification TEI-conforme ? </item>
+          <item>Documentation : comment documenter vos pratiques TEI ?</item>
+          <item>Validation : comment valider vos efforts ?</item>
         </list>
       </div>
       <div  rend="slide">
-        <head>Modelisation</head>
-        <p>La modelisation de vos données est une préalable essentiel. Que vous vous servez de UML,
+        <head>Modélisation</head>
+        <p>La modélisation de vos données est une préalable essentiel. Que vous vous servez de UML,
           de RDBMS, de SKOS, ou quoique ça soit d'autre, si vous n'avez pas un modèle explicite des
           choses que vous espérez gérer, vous aurez de grands difficultés.</p>
         <figure>
@@ -70,13 +70,13 @@
       <div rend="slide">
         <head>Analyse des données classique</head>
         <p>On identifie... <list>
-            <item>les "objets d'interêt"</item>
+            <item>les "objets d’intérêt"</item>
             <item>leurs attributs et propriétés</item>
             <item>les relations entre objets</item>
             <item>les procédures/traitements essentiels envisagés </item>
           </list>
         </p>
-        <p rend="box">Ce travail est essentiel pour n'importe quel projet d'informatisation</p>
+        <p rend="box">Ce travail est essentiel pour n’importe quel projet d’informatisation</p>
       </div>
       <div rend="slide">
         <head>Orientation</head>
@@ -85,27 +85,27 @@
         </figure>
       </div>
       <div rend="slide">
-        <head>Comment s'orienter?</head>
-        <p>Les TEI Guidelines, imprimées ou en ligne, se divisent en deux gros parties : <list>
+        <head>Comment s’orienter ?</head>
+        <p>Les TEI Guidelines, imprimées ou en ligne, se divisent en deux grandes parties : <list>
             <item>une séquence de 23 chapitres, dont la plupart correspondent à un module</item>
-            <item>des listes alphabétiques de définitions exhaustives de classes (183), d'éléments
-              (546), d'attributs (470), de macros(8), et vde types de données (28) .</item>
+            <item>des listes alphabétiques de définitions exhaustives de classes (183), d’éléments
+              (546), d’attributs (470), de macros(8), et vde types de données (28) .</item>
           </list>
         </p>
-        <p rend="box">Comment savoir quel élément (etc) choisir pour tel ou tel entité identifiée
-          dans votre analyse préalable ? Comment savoir que vous avez besoin d'une
+        <p rend="box">Comment savoir quel élément (etc.) choisir pour tel ou tel entité identifiée
+          dans votre analyse préalable ? Comment savoir que vous avez besoin d'une
             <soCalled>licorne</soCalled>? </p>
       </div>
       <div rend="slide">
         <head>La triste vérité...</head>
         <list>
-          <item>Désolé, mais il n'y a aucune méthode scientifique ; aucun raccourci pour cela... </item>
+          <item>Désolé, mais il n’y a aucune méthode scientifique ; aucun raccourci pour cela... </item>
           <item>Il faut étudier les exemplaires et les définitions pour savoir si cet élément TEI si
-            prometteur s'applique en effet à votre cas</item>
-          <item>comme c'est le cas pour d'autres types de mapping... </item>
+            prometteur s’applique en effet à votre cas</item>
+          <item>comme c’est le cas pour d’autres types de mapping... </item>
         </list>
-        <p>Pour chacun(e) des entités/concepts identifiés dans votre modèle, il faut décider : <list>
-            <item>quel objet TEI lui correspond parfaitement? (s'il existe)</item>
+        <p>Pour chacun(e) des entités/concepts identifiés dans votre modèle, il faut décider : <list>
+            <item>quel objet TEI lui correspond parfaitement ? (s’il existe)</item>
             <item>quel objet TEI lui ressemble et quelles petites modifications seraient nécessaires
               pour qu'il lui corresponde ?</item>
             <item>quelle lacune TEI votre analyse vous permettra de corriger (oui, elles existent
@@ -126,15 +126,15 @@
         <head>Structuration</head>
         <list>
           <item>C'est un livret de la bibliothèque bleue -- un <soCalled>chapbook</soCalled>--
-            organisé de manière traditionelle, avec des piéces liminaires (page à titre, une table
+            organisé de manière traditionnelle, avec des pièces liminaires (page à titre, une table
             des matières) et plusieurs chapitres </item>
           <item>chacun des chapitres contient : <list>
               <item>un titre et une sommaire</item>
               <item>des paragraphes narratives</item>
               <item>des passages de dialogue</item>
-              <item>des noms de lieux, noms de lieux, noms d'évènement etc.</item>
+              <item>des noms de lieux, noms de lieux, noms d’événement etc.</item>
             </list></item>
-          <item>chaque page est dôtée de matières paratextuelles (signatures, etc.)</item>
+          <item>chaque page est dotée de matières paratextuelles (signatures, etc.)</item>
           <item>Et plusieurs images</item>
         </list>
       </div>
@@ -143,11 +143,11 @@
         <head>Structure(s) d'un document TEI-XML</head>
         <list>
           <item>Chaque document TEI est représenté par un élément <gi>TEI</gi>, regroupant de texte
-            et des metadonnées </item>
+            et des métadonnées </item>
           <item>On peut également regrouper des <gi>TEI</gi> dans un <gi>teiCorpus</gi></item>
         </list>
         <p rend="box"> Le terme <term rend="it">document </term> n'a aucune définition formelle,
-          mais d'habitude il correspond à un object complet (un livre par ex). D'autres possibilités
+          mais d’habitude il correspond à un object complet (un livre par ex). D'autres possibilités
           ne sont pas exclus... </p>
       </div>
       <!-- <div rend="slide">
@@ -238,9 +238,9 @@
       </div>
       <div rend="slide">
         <head>L'élément <gi>text</gi></head>
-        <p> Un text peut etre simple ou complexe : <list>
-            <item>un text simple est un objet autonome, complète en soi, par ex un roman, un poème </item>
-            <item>un text complèxe ou composé rassemble d'autres textes, par ex une anthologie, une
+        <p> Un texte peut être simple ou complexe : <list>
+            <item>un texte simple est un objet autonome, complète en soi, par ex un roman, un poème </item>
+            <item>un texte complexe ou composé rassemble d'autres textes, par ex une anthologie, une
               collection de poésies</item>
           </list>
         </p>
@@ -292,13 +292,13 @@
         <head>Entrons dans le <gi>body</gi> d'un <gi>text</gi>... </head>
         <p>D'habitude, on y trouve des <term>divisions</term>
           <list type="unordered">
-            <item>qui s'emboitent</item>
+            <item>qui s’emboîtent</item>
             <item>l'attribut <att>type</att> sert à distinguer les divisions par fonction ou par
               niveau </item>
             <item>l'attribut <att>n</att> fournit un nom ou un nombre pour une division déjà
               numérotée d'une manière quelconque</item>
             <item>l'attribut <att>xml:id</att> fournit une identifiant unique </item>
-            <item>l'attribut <att>xml:lang</att> identifie la langue (humaine) du contentu de la
+            <item>l'attribut <att>xml:lang</att> identifie la langue (humaine) du contenu de la
               division</item>
           </list>
         </p>
@@ -424,14 +424,14 @@
       <div rend="slide">
         <head>Composants des divisions</head>
         <p>Qu'est-ce qu'on trouve dans une division ? <list type="unordered">
-            <item>Un ou plusieurs titres (au debut et/ou à la fin), balisés avec <gi>head</gi> ou
+            <item>Un ou plusieurs titres (au début et/ou à la fin), balisés avec <gi>head</gi> ou
                 <gi>trailer</gi></item>
             <item>de la prose, divisée en paragraphes (<gi>p</gi>) ou listes (<gi>list</gi>)
-              contenant des <gi>item</gi> et facuiltativement des <gi>label</gi>
+              contenant des <gi>item</gi> et facultativement des <gi>label</gi>
             </item>
             <item>de la poésie, divisée en vers (<gi>l</gi>), facultativement regroupés en strophes
                 (<gi>lg</gi>)</item>
-            <item>de la théatre, divisée en énoncés (<gi>sp</gi>), contenant une mélange de
+            <item>du théâtre, divisée en énoncés (<gi>sp</gi>), contenant une mélange de
                 <gi>p</gi> ou de <gi>l</gi> facultativement entrecoupée de didascalies
                 (<gi>stage</gi>)</item>
           </list>
@@ -547,9 +547,9 @@
       <div rend="slide">
         <head>Composants textuels typiques</head>
         <list type="unordered">
-          <item>des séquences de mots qui sont (par convention) mises en evidence, par exemple pour
+          <item>des séquences de mots qui sont (par convention) mises en évidence, par exemple pour
             leur donner une emphase, parce qu'ils sont en langue étranger, ou cités etc, </item>
-          <item> des mots qui pourraient être d'interêt non-lexicale &#x201C;data-like&#x201D; (des
+          <item> des mots qui pourraient être d’intérêt non-lexicale &#x201C;data-like&#x201D; (des
             noms de lieu ou de personne, des dates, des chiffres ... )</item>
           <item> des indications d'interventions éditorielles (corrections, normalisations, ajouts,
             ratures...)</item>
@@ -562,7 +562,7 @@
           selon les objectifs de son projet</p>
       </div>
       <div rend="slide">
-        <head>La mise en evidence et son interprétation</head>
+        <head>La mise en évidence et son interprétation</head>
         <p>On voit une partie en italique ou en petites capitales : et on se demande pourquoi... par
           exemple :</p>
         <figure>
@@ -570,7 +570,7 @@
         </figure>
       </div>
       <div rend="slide">
-        <head>La mise en evidence, et son interprétation - 1</head>
+        <head>La mise en évidence, et son interprétation - 1</head>
         <p>Plusieurs politiques sont envisageables : <list>
             <item> on signale la présence d'une mise en évidence sans distinction particulière avec
                 <gi>hi</gi> (highlighted : distinction typographique) <egXML rend="tiny"
@@ -580,7 +580,7 @@
                   à l'accord que les gens du <hi>Dîner de Têtes</hi>, ....</p>
               </egXML>
             </item>
-            <item> on essaie de distinguer l' <hi>objectif sémantique</hi> de ces mises en evidence
+            <item> on essaie de distinguer l' <hi>objectif sémantique</hi> de ces mises en évidence
               : en ce cas, il y a un <gi>emph</gi> (emphase linguistique), un <gi>quote</gi>
               (citation) et un <gi>title</gi> (titre): <egXML rend="tiny"
                 xmlns="http://www.tei-c.org/ns/Examples">
@@ -592,7 +592,7 @@
         </p>
       </div>
       <div rend="slide">
-        <head>La mise en evidence et son interprétation - 2</head>
+        <head>La mise en évidence et son interprétation - 2</head>
         <p>
           <list>
             <item> on peut combiner ces deux niveaux de description ... <egXML rend="tiny"
@@ -636,7 +636,7 @@
                 <placeName>Champs-Élysées</placeName>, est resté dans ma mémoire, parce que
               l’après-midi de ce même jour fut celui où j’allai enfin entendre <name>la
               Berma</name>, en « matinée », dans <title>Phèdre</title>...</p></egXML></p>
-        <p>Nous allons traîter ce sujet en plus de détail la semaine prochaine.</p>
+        <p>Nous allons traiter ce sujet en plus de détail par la suite.</p>
       </div>
     
       <div rend="slide">
@@ -661,7 +661,7 @@
       </div>
       <div rend="slide">
         <head>Expressions temporelles</head>
-        <p>Les dates qui figurent dans les textes manifestent beaucoup de variation lexicalle, pour
+        <p>Les dates qui figurent dans les textes manifestent beaucoup de variation lexicale, pour
           ne rien dire des variations des systèmes de calendrier. Pour comparer et contrôler de
           telles expressions d'une manière efficace, il faut les normaliser. La TEI propose un
           élément <gi>date</gi> pour identifier ces expressions, et plusieurs attributs pour leur
@@ -682,7 +682,7 @@
             <item><gi>graphic</gi> précise la location d'une image, illustration, etc. faisant
               partie du texte)</item>
             <item><gi>figure</gi> précise une partie iconographique plus complexe, rassemblant par
-              exemple plusieurs images, un titre, des <gi>figDesc</gi> pour les decrire</item>
+              exemple plusieurs images, un titre, des <gi>figDesc</gi> pour les décrire</item>
             <item>L'attribut <att>facs</att> fournit un lien externe sur une représentation
               supplémentaire de la source encodée</item>
             <item>L'attribut <att>url</att> par contre (sur <gi>graphic</gi>) fournit un lien sur
@@ -770,7 +770,7 @@
               annotations</item>
             <item>liens, correspondances, alignements</item>
             <item>données et entités : par exemple de temps, personnes, lieux ou événements</item>
-            <item>annotations peritextuelles et métatextuelles (correction, suppression,
+            <item>annotations péritextuelles et métatextuelles (correction, suppression,
               ajouts)</item>
             <item>analyses linguistiques</item>
             <item>métadonnées de plusieurs types</item>
@@ -908,7 +908,7 @@
       <div rend="slide">
         <head>Niveaux de validation</head>
         <p>Un document TEI-XML doit: <list type="ordered">
-            <item>respecter les règles syntaxiques d'XML; </item>
+            <item>respecter les règles syntaxiques de XML; </item>
             <item>être valide par rapport à un schéma quelconque; </item>
             <item>respecter la sémantique définie de chaque élément TEI utilisé</item>
           </list></p>
@@ -929,11 +929,11 @@
               </list>
             </item>
             <item>une documentation pour expliquer nos principes éditoriaux, nos principes de choix
-              de balises, etc. aux utilisateurs/ developpeurs : <list>
+              de balises, etc. aux utilisateurs/ développeurs : <list>
                 <item>en plusieurs langues naturelles</item>
                 <item>en plusieurs formats bureautiques (PDF, Word, HTML, epub...) </item>
               </list></item>
-            <item>des outils informatiques pour transformer et gèrer nos données XML</item>
+            <item>des outils informatiques pour transformer et gérer nos données XML</item>
           </list></p>
       </div>
       <div rend="slide">
@@ -970,7 +970,7 @@
               jusqu'à présent en anglais.</item>
           </list>
         </p>
-        <p rend="box">L'usage de ODD nous permet de séléctionner une documentation française.</p>
+        <p rend="box">L'usage de ODD nous permet de sélectionner une documentation française.</p>
       </div>
       <div rend="slide">
         <head>L'idée essentielle de ODD</head>
@@ -992,8 +992,8 @@
       <div rend="slide">
         <head>Etre conforme à la TEI veut dire quoi?</head>
         <list>
-          <item><label>être honnet</label> : Les éléments XML qui se déclarent comme appartenant au
-            namespace TEI doivent respecter les définitions TEI de ces elements</item>
+          <item><label>être honnête</label> : Les éléments XML qui se déclarent comme appartenant au
+            namespace TEI doivent respecter les définitions TEI de ces éléments</item>
           <item><label>être explicite</label> : Pour valider un document TEI, un ODD est fortement
             conseillé, parce que cela mettra en évidence toutes les modifications effectuées</item>
           <item>Tout document valide TEI est valide par rapport au schéma TEI-ALL</item>
@@ -1003,7 +1003,7 @@
       </div>
       <div rend="slide">
         <head>http://www.tei-c.org/Roma/</head>
-        <p>On va experimenter cela... <graphic url="../Graphics/Roma-new.png" height="60%"/>
+        <p>On va expérimenter cela... <graphic url="../Graphics/Roma-new.png" height="60%"/>
         </p>
         <list>
           <item>Build up : ajouter ce qu'il vous faut à un schéma minimale</item>
