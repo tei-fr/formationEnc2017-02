@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Programme</title>
+      <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css">
+   </head>
+   <body><textarea id="source">
+title: TEI pour l’édition critique numérique : niveau deux
+description: Lou BurnardEmmanuel Château-Dutier,
+theme: theme/remark-dark-em.css
+name: inverse
+layout: true
+class: inverse
+
+---
+class: center middle
+
+
+
+# 00-Programme
+
+## Formation TEI | ENC 27 fév - 2 mars 2017
+
+.footnote[[Répertoire GitHub](https://github.com/tei-fr/formationEnc2017-02) | [jour1](#jour1) | [jour2](#jour2) | [jour3](#jour3) | [jour4](#jour4)]
+![test](images/logo-ecole-nationale-des-chartes.png)
+
+---
+name: index
+
+## Programme d’ensemble
+
+* Comprendre les enjeux de la modélisation d’une édition critique
+
+* S’y retrouver dans la TEI
+
+* Pouvoir personnaliser la TEI pour son projet
+
+* Apprendre le language ODD
+
+* Savoir documenter son modèle
+
+* Identifier l’utilité d’un modèle pour la pérennisation
+
+---
+name: jour1
+
+## .red[Première] journée : pourquoi produire un modèle ?
+* 09h30-10h00&nbsp;: [Introduction de la formation](00-programme.html)
+* 10h-10h45&nbsp;: [La production d’une édition numérique](01-editionNumerique.html)
+* 10h45-11h15&nbsp;: pause
+* 11h15-12h&nbsp;: [Ce que propose la TEI](02-teiGeneralites.html)
+* 12h-13h30&nbsp;: pause déjeuner
+* 13h30-14h00&nbsp;: [Savoir manipuler les Guidelines et les spécifications](03-organisation.html)
+* 14h00-15h00&nbsp;: [Comment utiliser la TEI](04-commentUtiliser.pdf)
+* 15h00 - 15h30&nbsp;: TP01 : [Création d’un schéma avec Roma](exercice-roma.pdf)
+* 15h30-16h00&nbsp;: pause
+* 16h00-17h30&nbsp;: TP01 : Création du schéma (suite) suivi d’un premier essai d’encodage de votre texte avec oXygen
+
+???
+
+.footnote[Objectifs : Mettre à niveau les participants sur la connaissance de l’organisation des Guidelines et les enjeux d’une modélisation à l’aide d’un schéma.]
+
+---
+name: jour2
+
+## .red[2&lt;sup&gt;ème&lt;/sup&gt;] journée
+* 09h30-10h30&nbsp;: Exposé des projets
+* 10h30-11h00&nbsp;: Pause
+* 11-11h30&nbsp;: De quoi a-t-on besoin ?
+* 11h30-12h30&nbsp;: [Mon premier schéma ODD ](05-initODD.html)(création schéma simple, complexifier, ODD)
+* 12h30-13h30&nbsp;: Pause déjeuner
+* 14h-15h30&nbsp;: [Un cas d’étude : définition automatique d’un schéma pour les cartes postales](06-cartes.html)
+* 15h30-16h00&nbsp;: Pause
+* 16h00-17h00&nbsp;: [TEI sous le capot](07-tagdocs.html)
+* 17h-17h30&nbsp;: Pure ODD
+
+???
+
+.footnote[Objectifs : Connaître les principes d’un langage de spécification de schéma et apprendre les bases de la syntaxe ODD. Avoir vu la manière dont la TEI utilise ODD.]
+
+.footnote[Le cas d’étude n’est pas forcément nécessaire comme car par la suite dans ce format de formation on traite de la modélisation le lendemain. En revanche la partie d’exercice fonctionnait bien. Par ailleurs l’ODD est simple et lisible. D’autant que les exemples présentaient des problèmes différents qui permettaient d’explorer différentes situations : que fournit le schéma produit avec l’ODD pour l’édition du document (choix des valeurs d’attribut, etc.), élément non autorisé dans le schéma, comment ajouter un élément dans le schéma.]
+
+---
+name: jour3
+
+## .red[3&lt;sup&gt;ème&lt;/sup&gt;] journée
+* 9h30-11h00&nbsp;: [Construction d’un ODD ](08-teiODD.html)
+* 11h00-11h30&nbsp;: Pause
+* 11h30-12h30&nbsp;: [Travail en binôme](atelier.html)
+* 12h30-13h30&nbsp;: Pause déjeuner
+* 13h30-14h30&nbsp;: Présentation des projets
+* 14h30-15h00&nbsp;: Construction d’un ODD pour votre projet
+* 15h00-15h15&nbsp;: [Focus 1 : les figures](focus-figures.html)
+* 15h15-15h45&nbsp;: Construction de l’ODD (cont)
+* 15h45-16h00&nbsp;: [Focus 2 : les pointeurs](focus-pointing.html)
+* 16h00-16h30&nbsp;: Pause
+* 16h30-17h00&nbsp;: Construction de l’ODD (cont)
+* 17h00-17h30&nbsp;: Revue des ODD construits
+
+???
+
+.footnote[
+* Présentation de modules (survol sur tout ce qui est disponible, il y a probablement tout ce qu’il faut)
+
+* Création de vos propres schémas (exercice d’analyse à partir de vos propres sources = travail en binôme ou en groupe)
+
+* Travail sur les cas (mise en commun)
+
+* Créer un premier ODD avec Roma
+]
+
+.footnote[Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver à une liste des éléments nécessaires pour son schéma, identification des éléments disponibles et des lacunes éventuelles de la TEI. Sélectionner les éléments utiles pour son projet dans Roma. = un premier schéma personnalisé pour son projet (TEI subset). Analyser le ODD et repérer sa syntaxe, comprendre son implication.]
+
+.footnote[Définir une liste de focus et les proposer : pointeurs, standoff markup, figures, alignement images/text]
+
+.footnote[travail en binôme : (définir quelle est l’unité textuelle, quelle est la macrostructure du texte, quels sont les parties les plus significatives de vos documents, quels sont les objets qui correspondent à des p, quels sont les composants des p) Point de vue sur l’édition, objets d’intérêt.]
+
+---
+name: jour4
+
+## .red[4&lt;sup&gt;ème&lt;/sup&gt;] journée
+
+* [ODD : sujets avancées](09-advanced.html) (documentation, schematron, enchaînement, traitement...)
+
+* Poursuite du travail sur les projets
+
+* Produire un ODD avec style
+
+* Comment fournir des exemples
+
+* Comment organiser son fichier ODD
+
+* Take away : pérennisation
+
+???
+
+.footnote[Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver à une liste des éléments nécessaires pour son schéma, identification des éléments disponibles et des lacunes éventuelles de la TEI. Comprendre l’intérêt du schéma pour assurer la pérennisation de ses sources. Identifier la manière dont peut contribuer à la TEI (exemples groupe).]
+
+.footnote[Mettre en pratique chacun des points à partir des acquis de la formation.]
+
+---
+
+
+### S’assurer d’avoir git
+
+* Ouvrir un terminal
+
+* Tapez `git version`
+
+* Sous Linux, si Git est absent tapez `apt-get install git`
+
+### Se déplacer dans l’arborescence de fichiers
+
+* `cd Desktop/formationEnc2017-02/`
+
+* `cd ..`
+
+### Mettre à jour les sources
+
+* `cd Desktop/formationEnc2017-02/`
+
+* `git pull`
+
+---
+
+
+## Télécharger les sources
+
+* Aller sur https://github.com/tei-fr/formationEnc2017-02
+
+* Copiez le lien HTTPS
+
+* Ouvrez le terminal et tapez les commandes magiques suivantes
+cd Desktopgit clone -\-recursive https://github.com/tei-fr/formationEnc2015-05.git
+---
+
+
+## Organisation du répertoire
+
+* `exemples/` exemples tei
+
+* `exercices/` contient les dossiers de travaux pratiques
+
+* `images/` contenus graphiques
+
+* `pdf/` présentations au format pdf
+
+* `presentations/` présentations au format HTML
+
+* `ressources/` matériel d’accompagnement
+
+* `schemas/` schémas distribués pour la formation
+
+* `sources/` sources tei des présentations
+
+* `xsl/` transformations xslt
+
+---
+
+
+## Utiliser ces diapositives
+
+* `←`, `↑`, `Pg Up`, `k` : aller à la page précédente
+
+* `→`, `↓`, `Pg Dn`, `Espace`, `j` : aller à la page suivante
+
+* `Home` : aller à la première diapositive
+
+* `End` : aller à la dernière diapositive
+
+* `f` : afficher en plein écran
+
+* `Esc` : quitter le mode plein écran
+
+* `?`, `h` : afficher l’aide
+
+---
+template: inverse
+class: center middle
+
+
+## Pour [commencer](01-editionNumerique.html)
+
+.footnote[[Revenir au début](#index) | [Programme](00-programme.html)]
+</textarea><script src="js/remark-0.6.5.min.js" type="text/javascript"></script><script type="text/javascript">
+        var hljs = remark.highlighter.engine;
+      </script><script src="remark.language.js" type="text/javascript"></script><script type="text/javascript">
+        var slideshow = remark.create({
+        highlightStyle: 'monokai',
+        highlightLanguage: 'remark'
+        }) ;
+      </script></body>
+</html>

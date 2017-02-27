@@ -28,8 +28,8 @@
       <titlePage xml:lang="fr">
         <titlePart>05 – One Document Does It All</titlePart>
         <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
-        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
- GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
+          <ref target="00-programme.html#jour1">jour1</ref> | <ref target="00-programme.html#jour2">jour2</ref> | <ref target="00-programme.html#jour3">jour3</ref> | <ref target="00-programme.html#jour4">jour4</ref></note>
       </titlePage>
     </front>
     <body>
