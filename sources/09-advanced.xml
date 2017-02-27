@@ -5,7 +5,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt xml:lang="fr">
-        <title>ODD : sujets avancées</title>
+        <title>ODD : wait there's more</title>
       </titleStmt>
       <editionStmt>
         <edition>
@@ -30,14 +30,14 @@
   <text>
     <front>
       <titlePage xml:lang="fr" rend="slide">
-        <titlePart>09 – ODD : sujets avancées</titlePart>
+        <titlePart>09 – ODD : il y en a encore </titlePart>
         <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
         <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
             <ref target="00-programme.html">Programme</ref></note>
       </titlePage>
       <div rend="title" xml:lang="fr" xml:id="index">
         <div>
-          <head>ODD  : sujets avancées</head>
+          <head>ODD  : wait, there's more</head>
         </div>
       </div>
     </front>
@@ -61,16 +61,16 @@
           </item>
           <item><gi>att</gi> : un nom d’attribut
             <egXML xmlns="http://www.tei-c.org/ns/Examples">The <att>target</att> attribute
-              indicates a URI</egXML>
+  indicates a URI</egXML>
           </item>
           <item><gi>gi</gi> : un nom d’élément
             <egXML xmlns="http://www.tei-c.org/ns/Examples">The <gi>table</gi> element is
-              for...</egXML>
+  for...</egXML>
           </item>
         </list>
       </div>
       <div xml:lang="fr" rend="slide">
-        <head>ODD comme systeme de documentation suite </head>
+        <head>ODD comme systeme de documentation (suite) </head>
         <list>
           <item><gi>ident</gi> : identifiant ou nom d’un objet en n’importe quel langage formel
             <egXML xmlns="http://www.tei-c.org/ns/Examples"> The <ident>model.biblLike</ident> class
@@ -79,11 +79,11 @@
           <item>
             <gi>val</gi> : valeur d’attribut
             <egXML xmlns="http://www.tei-c.org/ns/Examples">Cet attribut porte la valeur
-                <val>unknown</val></egXML>
+    <val>unknown</val></egXML>
           </item>
           <item><gi>tag</gi> : balise XML
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <tag><ptr target="http://www.bbc.co.uk"/></tag></egXML>
+  <tag><ptr target="http://www.bbc.co.uk"/></tag></egXML>
           </item>
         </list>
       </div>
@@ -97,20 +97,26 @@
           <item>
             <gi>specGrp</gi> : un regroupement de déclarations identifiable
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <p>Nous n'utilisons que ces éléments du module <ident>linking</ident>: <specGrp
-                  xml:id="linkingElts">
-                  <!-- quelques elementSpec etc -->
-                </specGrp>
-              </p>
+  <p>Nous n'utilisons que ces éléments du module <ident>linking</ident>: <specGrp
+      xml:id="linkingElts">
+      <!-- quelques elementSpec etc -->
+    </specGrp>
+  </p>
             </egXML>
           </item>
           <item><gi>specGrpRef</gi> indication du bon endroit dans un schemaSpec ou on souhaite
             integrer les déclarations precises par un <gi>specGrp</gi>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <specGrpRef target="#linkingElts"/></egXML>
+  <specGrpRef target="#linkingElts"/></egXML>
           </item>
         </list>
       </div>
+      <div>
+        <head>Par exemple...</head>
+        <p>Ouvrir le fichier <ident>tei_bare.odd</ident> avec oXygen</p>
+      </div>
+      <!-- show tei_bare example -->
+      
       <div xml:lang="fr" rend="slide">
         <head>Varietes de ODD</head>
        <p> <figure>
@@ -131,10 +137,10 @@
         <list>
        <!--   <item><q>TEI All</q> rassemble toute la TEI</item>
       -->    <item>un <q>TEI subset</q> fournit un sous-ensemble des composants constituant TEI All
-                 </item>
+     </item>
           <item>un <q>customised subset</q> est également un sous-ensemble avec des personnalisations
             supplémentaires</item> <!--
-              TEI subset in which changes other than simple suppression
+  TEI subset in which changes other than simple suppression
             have been made but without affecting validity of the result wrt TEI All.
             Not an easy
             concept to define, but I am thinking of things like restricting the domain of attribute
@@ -155,7 +161,14 @@
             the definition of p, so p should be drummed out of the TEI namespace, and so on up the tree.
            --></item>
         </list>
-      </div>
+      </div><div rend="slide"><head>Le plus simple</head>
+      <list>
+        <item>Vos modifications génèrent un schéma réduit, plus précis, plus adapté à votre projet
+        et une documentation plus exacte et correcte pour votre communauté d'utilisateurs</item>
+        <item>Mais vos documents restent toujours valides par rapport à TEI All et vous respectez toujours le
+        modèle sémantique de la TEI.</item><item>Les extensions eventuelles sont signallées clairement, en utilisant
+        une autre espace de nommage, et sont d'ailleurs expliquées dans votre ODD </item>
+      </list></div>
       <!--Freedom to Constrain
 
     If you merely constrain the TEI to be:
@@ -232,8 +245,8 @@ Flexibility vs Fragmentation
         <p>Formally speaking, we can say of a conformant TEI document : <list>
             <item>it must be a well formed XML document</item>
             <item>if a schema is constructed to validate those elements it contains from the TEI
-              namespace, the set of documents considered valid by that schema should be a proper
-              subset of the set of documents considered valid by the TEI-ALL schema.</item>
+  namespace, the set of documents considered valid by that schema should be a proper
+  subset of the set of documents considered valid by the TEI-ALL schema.</item>
           </list></p>
         <p rend="box">The purpose of these rules is to make "blind interchange" of documents easier.
           They do not guarantee it. </p>
@@ -249,19 +262,19 @@ Flexibility vs Fragmentation
         <p>Plus formellement, pour un document TEI conforme :<list>
             <item>il doit être un document XML bien-formé</item>
             <item>si la construction de son schéma ne prend en compte que les éléments appartenant à
-              l’espace de nommage TEI, l'ensemble de documents considéré comme valide par ce schéma
-              devrait être un sous-ensemble de l'ensemble de documents considéré valide par le
-              schéma TEI-ALL.</item>
+  l’espace de nommage TEI, l'ensemble de documents considéré comme valide par ce schéma
+  devrait être un sous-ensemble de l'ensemble de documents considéré valide par le
+  schéma TEI-ALL.</item>
             <item>Tout autre élément présent doit appartenir à un autre namespace</item>
           </list></p>
         <p rend="box">L’objet de ces règles est de simplifier le "blind interchange" des documents;
           elles ne le garantissent pas.</p>
       </div>
       <div xml:lang="fr" rend="slide">
-        <head>Some conformance questions</head>
+        <head>Les limites de modification</head>
         <list>
-          <item>why can't I just delete <gi>title</gi>?</item>
-          <item>why do I need all these empty classes?</item>
+          <item>Est-ce qu'on peut supprimer n'importe quoi ? par ex <gi>title</gi> ?</item>
+          <item>A quoi servent les classes vides ?</item>
         </list>
 
       </div>
@@ -278,10 +291,10 @@ Flexibility vs Fragmentation
           <elementSpec xmlns:s="http://purl.oclc.org/dsdl/schematron" ident="div"
             module="teistructure" mode="change">
             <constraintSpec ident="div" scheme="isoschematron">
-              <constraint>
-                <s:assert test="@type='prose' and .//tei:p">une division prosaïque doit contenir au
-                  moins un paragraphe</s:assert>
-              </constraint>
+  <constraint>
+    <s:assert test="@type='prose' and .//tei:p">une division prosaïque doit contenir au
+      moins un paragraphe</s:assert>
+  </constraint>
             </constraintSpec>
           </elementSpec>
         </egXML>
@@ -294,13 +307,13 @@ Flexibility vs Fragmentation
         <!--          The rule applies to the context of the element in which it is defined. </p>-->
         <list>
           <item>L’attribut <att>scheme</att> spécifie le langage dans lequel s’exprime la contrainte
-              (<val>isoschematron</val> par défaut)</item>
+  (<val>isoschematron</val> par défaut)</item>
           <item>L’attribut <att>ident</att> est obligatoire : il fournit un identifiant
             unique</item>
           <item>Il rassemble une ou plusieurs <gi>constraint</gi></item>
           <item>L’élément <gi>constraint</gi> contient (typiquement) un <gi>assert</gi> ou un
-              <gi>report</gi> élément de l’espace de nommage
-              <code>http://purl.oclc.org/dsdl/schematron</code>
+  <gi>report</gi> élément de l’espace de nommage
+  <code>http://purl.oclc.org/dsdl/schematron</code>
           </item>
           <item>L’attribut <att>test</att> fournit une expression XPath vers l’objet à tester.
             <!--The prefix <code>tei</code> is
@@ -327,15 +340,15 @@ Flexibility vs Fragmentation
         <list>
           <item>Contraintes de co-occurrence : <q>si l’attribut X a la valeur A, l’élément qui le porte doit contenir un Y</q></item>
           <item>Contraintes arithmétique contextuelles : <q>au sein d’un <gi>titleStmt</gi>, on ne
-              permet qu’un seul <gi>title</gi></q></item>
+  permet qu’un seul <gi>title</gi></q></item>
           <item>Contraintes textuelles : <q>Les caractères ' et ` ne sont pas permis au sein d’un
-                <tag>p xml:lang="en"</tag></q>
+    <tag>p xml:lang="en"</tag></q>
           </item>
           <item>Contraintes contextuelles : <q>mots en français (xml:lang='fr') ne sont pas permis
-              au sein d’un élément latin (xml:lang='la')</q></item>
+  au sein d’un élément latin (xml:lang='la')</q></item>
           <item>Intégrité référentielle : <q>un pointer exprimé sous la forme d’une URL et
-              commençant par # doit correspondre à un élément ayant un <att>xml:id</att> identique
-              quelque part dans le document</q>
+  commençant par # doit correspondre à un élément ayant un <att>xml:id</att> identique
+  quelque part dans le document</q>
           </item>
         </list>
       </div>
@@ -345,8 +358,8 @@ Flexibility vs Fragmentation
           ident="validtarget" scheme="isoschematron"> <constraint> <rule
           xmlns="http://purl.oclc.org/dsdl/schematron" context="tei:*[@target]"> <let name="results"
           value="for $t in tokenize(normalize-space(@target),'\s+') 
-                  return starts-with($t,'#') 
-                  and not(id(substring($t,2)))"
+      return starts-with($t,'#') 
+      and not(id(substring($t,2)))"
           /> <report test="some $x in $results satisfies $x"> Erreur: Chaque pointer dans "<value-of
           select="@target"/>" doit indiquer un ID dans ce même document (<value-of select="$results"
           />)</report> </rule> </constraint> </constraintSpec> </egXML>
@@ -385,7 +398,7 @@ Flexibility vs Fragmentation
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <xsl:template match="q">
             <xsl:if test="count(ancestor-or-self::q)&gt;3">
-              <xsl:message>Quotes nested 3 deep? really????</xsl:message>
+  <xsl:message>Quotes nested 3 deep? really????</xsl:message>
             </xsl:if>
           </xsl:template>
         </egXML>
@@ -397,12 +410,12 @@ Flexibility vs Fragmentation
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <xsl:template match="q">
             <xsl:if test="count(ancestor-or-self::q)&gt;3">
-              <xsl:message>Trois niveaux de quotes? tu es sûr????</xsl:message>
+  <xsl:message>Trois niveaux de quotes? tu es sûr????</xsl:message>
             </xsl:if>
           </xsl:template>
         </egXML>
       </div>
-      <div xml:lang="en">
+     <!-- <div xml:lang="en">
         <head>Processing ODD</head>
         <p>An ODD processor:</p>
         <list>
@@ -440,7 +453,7 @@ Flexibility vs Fragmentation
           <item>transform TEI Lite to (eg) Word, LaTeX, XSL FO, Markdown (some work to do
             there....)</item>
         </list>
-      </div>
+      </div>-->
       <div xml:lang="en">
         <head>ODD flow diagram</head>
         <p><graphic url="oddity.png"/></p>
@@ -457,18 +470,18 @@ Flexibility vs Fragmentation
         <p>in TEI:
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <define name="tei_list" xmlns="http://relaxng.org/ns/structure/1.0">
-              <element name="list">
-                <!-- ... -->
-              </element>
+  <element name="list">
+    <!-- ... -->
+  </element>
             </define>
           </egXML>
            and in MathML
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <define name="mathml.list" xmlns="http://relaxng.org/ns/structure/1.0">
-              <element name="list">
-                <ref name="mathml.attlist-list"/>
-                <ref name="mathml.ContentExpression"/>
-              </element>
+  <element name="list">
+    <ref name="mathml.attlist-list"/>
+    <ref name="mathml.ContentExpression"/>
+  </element>
             </define>
           </egXML>
            so prefixes solve the problem of conflict.</p>
@@ -523,10 +536,10 @@ Flexibility vs Fragmentation
           <item>Utilisez la ligne de commande <ident>teitoodd</ident>
           </item>
           <item>Avec OxGarage convertissez du format <q>ODD Document</q> vers <q>Compiled ODD
-              Document</q></item>
+  Document</q></item>
           <item>Avec oXygen générez une nouvelle transformation Ant ; utilisant la feuille XSLT
-              <ident>odd2odd.xsl</ident> et les options définis par
-              <ident>stylesheets/odd/build-to.xml</ident></item>
+  <ident>odd2odd.xsl</ident> et les options définis par
+  <ident>stylesheets/odd/build-to.xml</ident></item>
         </list>
       </div>
       <div xml:lang="en">
@@ -536,20 +549,20 @@ Flexibility vs Fragmentation
           you need to do is specify it explicitly:
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <schemaSpec ident="test-pure"
-              source="/Users/rahtz/TEI/tei.oucs.ox.ac.uk/Talks/2014-10-odds/examples/alienbase.odd"
-              start="TEI" prefix="alien_">
-              <moduleRef key="tei"/>
-              <moduleRef key="header"/>
-              <moduleRef key="core"/>
-              <moduleRef key="aliens"/>
-              <moduleRef key="textstructure"/>
+  source="/Users/rahtz/TEI/tei.oucs.ox.ac.uk/Talks/2014-10-odds/examples/alienbase.odd"
+  start="TEI" prefix="alien_">
+  <moduleRef key="tei"/>
+  <moduleRef key="header"/>
+  <moduleRef key="core"/>
+  <moduleRef key="aliens"/>
+  <moduleRef key="textstructure"/>
             </schemaSpec>
           </egXML>
         </p>
         <p>Note the module <ident>aliens</ident> there; the customization from which is derived has
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <elementSpec module="aliens" ident="alien" ns="http://www.dixit.eu/ns/" mode="add"
-              ><!-- ... --></elementSpec>
+  ><!-- ... --></elementSpec>
           </egXML>
         </p>
       </div>
@@ -560,7 +573,7 @@ Flexibility vs Fragmentation
             <item>Pull in the MathML schema</item>
             <item>Adjust the content model of <gi>formula</gi></item>
             <item>Generate the TEI schema in a such a way that it doesn't conflict with
-              MathML</item>
+  MathML</item>
           </list>
         </p>
       </div>
@@ -581,16 +594,16 @@ Flexibility vs Fragmentation
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <schemaSpec ident="tei_math" prefix="tei_" start="TEI teiCorpus">
             <moduleRef
-              url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/>
+  url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/>
             <moduleRef key="header"/>
             <moduleRef key="core"/>
             <moduleRef key="tei"/>
             <moduleRef key="textstructure"/>
             <moduleRef key="figures"/>
             <elementSpec module="figures" ident="formula" mode="change">
-              <content>
-                <rng:ref name="mathml.math"/>
-              </content>
+  <content>
+    <rng:ref name="mathml.math"/>
+  </content>
             </elementSpec>
           </schemaSpec>
         </egXML>
@@ -600,16 +613,16 @@ Flexibility vs Fragmentation
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <schemaSpec ident="tei_math" prefix="tei_" start="TEI teiCorpus">
             <moduleRef
-              url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/>
+  url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/>
             <moduleRef key="header"/>
             <moduleRef key="core"/>
             <moduleRef key="tei"/>
             <moduleRef key="textstructure"/>
             <moduleRef key="figures"/>
             <elementSpec module="figures" ident="formula" mode="change">
-              <content>
-                <rng:ref name="mathml.math"/>
-              </content>
+  <content>
+    <rng:ref name="mathml.math"/>
+  </content>
             </elementSpec>
           </schemaSpec>
         </egXML>
@@ -620,14 +633,15 @@ Flexibility vs Fragmentation
         <head>TEI + MathML : le document</head>
         <p><figure><graphic url="images/vavilov.png"/></figure></p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>The relevant inequalities and distributions are <formula notation="MathML">
-                <math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
-                  <mn>0</mn> <mo>.</mo> <mn>0</mn>
-                  <mn>1</mn> <mo>&lt;</mo> <mi>κ</mi>
-                  <mo>&lt;</mo> <mn>1</mn> <mn>0</mn>
-                </math>
-              </formula>, Vavilov distribution, and ... </p>
-          </egXML>
+<p>The relevant inequalities and distributions are 
+  <formula notation="MathML">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+      <mn>0</mn> <mo>.</mo> <mn>0</mn>
+      <mn>1</mn> <mo>&lt;</mo> <mi>κ</mi>
+      <mo>&lt;</mo> <mn>1</mn> <mn>0</mn>
+    </math>
+  </formula>, Vavilov distribution, and ... </p>
+</egXML>
      
         </div>
       <!--
@@ -641,10 +655,10 @@ Flexibility vs Fragmentation
           </list> but there are at least two other transformations available <list type="gloss">
             <label>JSON</label>
             <item><code>odds/odd2json.xsl</code> produces a generic JSON output which you can use
-              with any of the myriad Javascript libraries</item>
+  with any of the myriad Javascript libraries</item>
             <label>JSON</label>
             <item><code>tools/odd-to-tree.xsl</code> produces a generic JSON output which you can
-              use with any of the myriad Javascript libraries</item>
+  use with any of the myriad Javascript libraries</item>
           </list>
         </p>
       </div>
@@ -670,7 +684,7 @@ Flexibility vs Fragmentation
           </list> et en plus <list type="gloss">
             <label>JSON</label>
             <item><code>odds/odd2json.xsl</code> produit un JSON definissant la structure de votre
-              schema, pret a utiuliser avec un bibliotheseque Javascript</item>
+  schema, pret a utiuliser avec un bibliotheseque Javascript</item>
           </list>
         </p>
       </div>
@@ -682,10 +696,46 @@ Flexibility vs Fragmentation
         <head>Making your own dancing graphs</head>
         <p>There are a selection of force-directed graphs for TEI customizations available at <ptr
             target="http://tei.oucs.ox.ac.uk/Talks/2014-10-teimm-visualization/showviz.html"/>,
-          using CSV files which are generated by running the stylesheet <ptr
+          using CSV files which cvlaration are generated by running the stylesheet <ptr
             target="https://github.com/TEIC/Stylesheets/blob/master/tools/odd-to-csv.xsl"/> on a
           compiled ODD.</p>
       </div>-->
+
+<div><head>Adding a processing model</head>
+<p>You can now enrich your documentation with a more precise declaraion of how particular elements should be processed, in partricular
+how threy should bne formatted.</p>
+  <p>This is  complementary to features like @rend or @style, which describe how the non digital source was formatted.</p>
+  <p>New elements <gi>model</gi>, <gi>modelGrp</gi>, <gi>param</gi>, <gi>outputRendition</gi></p>  </div>  <!-- BRAND NEW ODD
+model
+param
+outputRendition
+modelGrp
+modelSeq
+
+@output specifies output in which model applies
+@predicate specifies context in which model applies
+@behaviour specifies function from teiSimple function
+library to apply
+@useSourceRendition indication to preserve @rendition
+value from the source
+<param> elements specify parameters for behaviour
+if no content parameter specified, all functions use
+current element as default content
+<outputRendition> elements specify CSS instructions to
+indicate outline appearance
+
+there can be as many <model> statements as required
+each <model> may have multiple <outputRendition>
+children
+set of multiple <model> statements is regarded as an
+alternation and only the first <model> with @predicate
+matching current context is applied
+@behaviour specifies which one from TEI Simple function
+library should be applied and function parameters are
+specified as <param> children
+<desc> allows for initial textual description of
+-->
+
     </body>
   </text>
 </TEI>
