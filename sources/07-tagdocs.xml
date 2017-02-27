@@ -28,8 +28,8 @@
       <titlePage xml:lang="fr">
         <titlePart>07 – Comment la TEI utilise ODD</titlePart>
         <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
-        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire
- GitHub</ref> | <ref target="00-programme.html">Programme</ref></note>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
+          <ref target="00-programme.html#jour1">jour1</ref> | <ref target="00-programme.html#jour2">jour2</ref> | <ref target="00-programme.html#jour3">jour3</ref> | <ref target="00-programme.html#jour4">jour4</ref></note>
       </titlePage>
       <div rend="title" xml:lang="fr" xml:id="index">
         <div>
@@ -328,7 +328,7 @@
         </list>
       </div>
       <div xml:lang="fr" rend="slide">
-        <head>D'autre formes de spécification de datatype</head>
+        <head>D’autres formes de spécification de datatype</head>
         <!-- a relire -->
         <p rend="box">Ouvrez <ident>teidata.certainty.xml</ident> avec oXygen</p>
         <list>
@@ -340,7 +340,7 @@
 <list>
 <item>Dans ce cas, le <gi>content</gi> propose une choix entre
             deux éléments <gi>dataRef</gi> </item>
-          <item>>Les attributs utilisant ce datatype peuvent avoir soit une des valeurs
+          <item>Les attributs utilisant ce datatype peuvent avoir soit une des valeurs
             proposés pour <ident>teidata.certainty</ident>, soit une valeur
             indiquée par l'element <gi>content</gi> de  <ident>teidata.probability</ident> (à savoir, un nombre réel entre 0 et 1)</item>
         </list>

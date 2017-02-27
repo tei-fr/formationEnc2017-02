@@ -6,7 +6,7 @@
   xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 
   <xsl:import
-    href="/usr/share/xml/tei/stylesheet/markdown/tei-to-markdown.xsl"/>
+    href="/Users/emmanuelchateau/TEIC/stylesheets/markdown/tei-to-markdown.xsl"/>
 
   <xsl:output method="html" version="5.0" indent="yes"/>
 

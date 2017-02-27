@@ -34,10 +34,8 @@
       <titlePage xml:lang="fr">
         <titlePart>04 – Comment utiliser la TEI</titlePart>
         <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
-        <note><ref target="https://github.com/tei-fr/formationEnc2017-02"
-          >Répertoire
-          GitHub</ref> | <ref target="00-programme.html"
-            >Programme</ref></note>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
+          <ref target="00-programme.html#jour1">jour1</ref> | <ref target="00-programme.html#jour2">jour2</ref> | <ref target="00-programme.html#jour3">jour3</ref> | <ref target="00-programme.html#jour4">jour4</ref></note>
       </titlePage>
       <div rend="title" xml:lang="fr" xml:id="index">
         <!--      <div>-->
@@ -88,8 +86,7 @@
         <head>Comment s’orienter ?</head>
         <p>Les TEI Guidelines, imprimées ou en ligne, se divisent en deux grandes parties : <list>
             <item>une séquence de 23 chapitres, dont la plupart correspondent à un module</item>
-            <item>des listes alphabétiques de définitions exhaustives de classes (183), d’éléments
-              (546), d’attributs (470), de macros(8), et vde types de données (28) .</item>
+            <item>des listes alphabétiques de définitions exhaustives de classes (183), d’éléments (546), d’attributs (470), de macros(8), et de types de données (28) .</item>
           </list>
         </p>
         <p rend="box">Comment savoir quel élément (etc.) choisir pour tel ou tel entité identifiée
@@ -439,7 +436,7 @@
         <p rend="box">... et bien sûr des sous-divisions </p>
       </div>
       <div rend="slide">
-        <head>Exemple prosaique ... </head>
+        <head>Exemple prosaïque ... </head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#fr-ex-Flaubert_Sal">
           <div n="1">
             <head>La Fête</head>
