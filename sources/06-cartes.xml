@@ -658,7 +658,7 @@ France
         <list>
  <item>Chargez n’importe quel fichier XML du dossier <ident>Cartes</ident> dans oXygen </item>
  <item>Créez un nouveau Scénario de Transformation <ident>oddByExample</ident> et
-   appliquez-le (pour les détails, voir le <ref target="http://teic.github.io/TCW/howtoGenerate.html"
+   appliquez-le (pour les détails, voir le <ref target="http://teic.github.io/TCW/howtoGenerate-fr.html"
    >tuto oddByExample</ref> ;</item><!-- @todo corriger le lien -->
  <item>Comparer votre <ident>generated.odd</ident> et le <ident>teiCartes.odd</ident> fourni. Est-ce que les schémas générés par les deux 
    sont pareils?</item>
