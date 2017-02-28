@@ -422,7 +422,7 @@ sa ou ses classe/s : <egXML
  <item>Créez une nouvelle version du schéma à partir de cet ODD</item>
  <item>Assurez vous que le fichier test <ident>oddex-1-test.xml</ident> reste valide contre
    cette nouvelle version du schéma </item>
- <item>Comprenez-vous l'effet des références aux classes?</item>
+ <item>Comprenez-vous l’effet des références aux classes?</item>
         </list>
       </div>
       <div xml:lang="en">
@@ -500,7 +500,7 @@ sa ou ses classe/s : <egXML
         <list>
  <item>Insérez dans votre fichier <ident>oddex-2.odd</ident> la définition d’une deuxieme classe
    d’attribut (il y en a une dans le fichier <ident>oddex-2.xml</ident>)</item>
- <item>Ajoutez un <gi>memberOf</gi> à la spécification de l’élément <gi>para</gi> pour qu'il participe à cette
+ <item>Ajoutez un <gi>memberOf</gi> à la spécification de l’élément <gi>para</gi> pour qu’il participe à cette
    nouvelle classe</item>
  <item>Générez un schéma et assurez-vous que le fichier <ident>oddex-1-test.xml</ident>
    reste valide avec cette version du schéma.</item>
