@@ -325,16 +325,6 @@ construire et modifier avec oXygen ou n’importe quel autre éditeur XML </p>
   <item>Créez un nouveau document TEI XML qui utilise ce schéma</item>
   <item>Vérifiez les éléments et les attributs disponibles </item>
 </list>
-      </div>
-      <div xml:lang="fr" rend="slide">
-        <head>Compilation d'un ODD</head>   
-        <list>
-          <item>Transformer le fichier <ident>feather-1.odd</ident> en <q>compiled ODD</q> avec oXygen
- en utilisant la feuille de style <ident>${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl</ident></item>
-          <item>Regardez rapidement la sortie en profitant de l'affichage <soCalled>Outline</soCalled></item>
-          <item>Tous ces classSpec et dataSpec sont fournis par le module <ident>tei</ident>: 
-            ils constituent l’infrastructure TEI, pas forcément utilisables par notre petit schéma</item>
-        </list>
       <p>Nous allons modifier un peu plus ce schéma pour :
       <list><item>supprimer plusieurs attributs inutiles</item>
         <item>ajouter un nouveau élément</item>
@@ -383,8 +373,8 @@ construire et modifier avec oXygen ou n’importe quel autre éditeur XML </p>
   &lt;/classes></code></item>
         </list></div>
       <div xml:lang="fr" rend="slide">
-        <head>Ajout d’un nouvel ’lement</head>
-        <p>Nous souhaitons ajouter un élement <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais... )</p>
+        <head>Ajout d’un nouvel élément</head>
+        <p>Nous souhaitons ajouter un élément <gi>mw</gi> pour baliser les <q>multiwords</q> (concept linguistique un peu inexacte mais... )</p>
         <list>
           <item>il faut fournir un <gi>elementSpec</gi> complet</item>
           <item>le nouvel élément doit être dans notre propre espace de noms</item>
