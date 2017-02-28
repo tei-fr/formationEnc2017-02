@@ -722,6 +722,13 @@ sa ou ses classe/s : <egXML
         </list>
         <p rend="box">Plus tard, nous verrons comment la TEI se sert du système ODD…</p>
       </div>
+      <div rend="title" xml:lang="fr">
+        <div>
+          <head>La <ref target="06-cartes.html">suite</ref></head>
+          <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
+            >Programme</ref></note>
+        </div>
+      </div>
     </body>
   </text>
 </TEI>

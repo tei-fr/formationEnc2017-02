@@ -1,14 +1,20 @@
+## Références à fournir
+
 Elena Pierrazzo
 
-Entête TEI
+Entête TEI Consortium Cahier
 
+## Todo
 
+Dias 1er jour
 
-mettre à jour le programme 1er jour
+- Corriger incohérence dans le 1er TP manuscrit vs imprimé
+- Clarifier l’enregistrement de l’ODD dans le TP
+- Dans dia TEI corriger doublon persName et div manquante
 
-Corriger incohérence dans le 1er TP manuscrit vs imprimé
+## Remarques
 
-Clarifier l’enregistrement de l’ODD
+2e jour
 
-Dans dia TEI corriger doublon persName et div manquante
+Mieux introduire à quoi sert ODD.
 
