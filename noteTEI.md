@@ -18,3 +18,9 @@ Dias 1er jour
 
 Mieux introduire à quoi sert ODD.
 
+Pour TEI sous le capot :
+
+- présenter une hiérarchie de classe sous forme hiérarchique
+- indiquer les classes fondamentales, exemple : phraseLike, etc.
+- model.global les éléments qui peuvent apparaître à n’importe quelle position
+

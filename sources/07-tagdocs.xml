@@ -41,14 +41,14 @@
       <div xml:lang="en">
         <head>TEI ODD under the bonnet</head>
         <p>The TEI Guidelines are written in the ODD format </p>
-        <p>The source code for TEI P5 (available from <ptr
-   target="http://www.tei-c.org/release/xml/tei/odd/Source/"/>) contains : <list>
+        <p>The source code for TEI P5 (available from <ref
+   target="http://www.tei-c.org/release/xml/tei/odd/Source/">here</ref>) contains : <list>
    <item>39 TEI-XML files, 25 of which correspond to a published chapter, most of them
  defining a module, for example <ident>PH-PrimarySources.xml</ident></item>
    <item>778 TEI-XML files, each defining an element, a class, or a macro; more
  specifically: <list>
    <item>29 datatype macros (<code>data.xxxx</code>) for example
-       <ident>data.sex.xml</ident></item>
+       <ident>teidata.sex.xml</ident></item>
    <item>116 model classes (<code>model.xxxx</code>) for example
        <ident>model.biblLike.xml</ident></item>
    <item>71 attribute classes (<code>att.xxxx</code>) for example
@@ -71,7 +71,7 @@
    <item>39 fichiers en TEI-XML, dont 25 contiennent un chapitre de documentation en XML-TEI, la plupart définissant un module, par exemple <ident>PH-PrimarySources.xml</ident></item>
    <item>778 fichiers en TEI-XML, chacun définissant un élément, une classe, ou une macro <list>
    <item>29 datatypes (<code>data.xxxx</code>) par ex.
-     <ident>data.sex.xml</ident></item>
+     <ident>tei.sex.xml</ident></item>
    <item>116 classes de type modèle (code>model.xxxx) par ex.
        <ident>model.biblLike.xml</ident></item>
    <item>71 classes de type attribut (<code>att.xxxx</code>) par ex.
@@ -94,7 +94,7 @@
  <item>It contains some preliminaries (a TEI Header, a title page, etc.), followed by
    several lines like this :
    <egXML rend="tiny" xmlns="http://www.tei-c.org/ns/Examples">&lt;include
- xmlns="http://www.w3.org/2001/XInclude" href="Guidelines/en/HD-Header.xml"/> </egXML>
+ xmlns="http://www.w3.org/2001/XInclude" href="Guidelines/en/HD-Header.xml"/></egXML>
     , one for each chapter</item>
  <item>Within each chapter file there are similar <code>xInclude</code> statements for the
    objects declared by that chapter </item>
@@ -104,13 +104,8 @@
         <head>Organisation physique des <title>Guidelines</title></head>
         <p>Il ne faut pas confondre l’organisation physique (en fichiers) avec l’organisation logique (en spécifications, etc.)</p>
         <list>
- <item>Le fichier <ident>guidelines-XX.xml</ident> est <soCalled>la</soCalled> source
-   des Guidelines pour la langue XX.</item>
- <item>Mis à part quelques liminaires (un TEI Header, la page de titre, etc.), il contient
-   plusieurs lignes comme ceci :
-   <code>&lt;include
- xmlns="http://www.w3.org/2001/XInclude" href="Guidelines/en/HD-Header.xml"/> </code>
- </item>
+ <item>Le fichier <ident>guidelines-XX.xml</ident> est <soCalled>la</soCalled> source primaire des <title>Guidelines</title> pour la langue XX.</item>
+ <item>Mis à part quelques liminaires (une en-tête TEI, la page de titre, etc.), il contient plusieurs lignes comme ceci : <code>&lt;include xmlns="http://www.w3.org/2001/XInclude" href="Guidelines/en/HD-Header.xml"/> </code> </item>
  <item>Au sein de chaque chapitre, on trouve des <code>xInclude</code> similaires pour les
    objets définis par ce chapitre.</item>
         </list>
@@ -210,20 +205,21 @@
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Les pointers (#DFTTAB etc.) indiquent des <term>specGrp</term>, comme ceci …</head>
-        <p><code> &lt;specGrp xml:id="DFTTAB" xmlns:xi="http://www.w3.org/2001/XInclude"
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> 
+<specGrp xml:id="DFTTAB" xmlns:xi="http://www.w3.org/2001/XInclude"
  n="Tables"> 
- &lt;include href="../../Specs/table.xml"/> 
- &lt;include href="../../Specs/row.xml"/> 
- &lt;include href="../../Specs/cell.xml"/> 
- &lt;/specGrp></code></p>
+  &lt;include href="../../Specs/table.xml"/> 
+  &lt;include href="../../Specs/row.xml"/> 
+  &lt;include href="../../Specs/cell.xml"/> 
+</specGrp>
+        </egXML>
         <p>et le xInclude apporte la specification elle meme d’un <term>objet</term>, par ex :</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
- <elementSpec module="figures" ident="cell">
-   <gloss versionDate="2007-06-12" xml:lang="fr" rend="slide">cellule</gloss>
-   <desc versionDate="2005-01-14" xml:lang="en">contains one cell of à table.</desc>
-   <!-- ... -->
- </elementSpec>
-        </egXML>
+<elementSpec module="figures" ident="cell">
+  <gloss versionDate="2007-06-12" xml:lang="fr" rend="slide">cellule</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains one cell of à table.</desc>
+  <!-- ... -->
+</elementSpec></egXML>
       </div>
       <div xml:lang="en">
         <head>What sort of objects are specified?</head>
@@ -561,39 +557,39 @@ le contenu de <gi>profileDesc</gi> est
       <div xml:lang="en">
         <head>For example... </head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
- <content>
-   <alternate maxOccurs="unbounded">
- <classRef key="model.pLike"/>
- <classRef key="model.listLike"/>
-   </alternate>
- </content>
-        </egXML>
+<content>
+  <alternate maxOccurs="unbounded">
+    <classRef key="model.pLike"/>
+    <classRef key="model.listLike"/>
+  </alternate>
+</content></egXML>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <content>
-            <alternate maxOccurs="unbounded">
-              <classRef key="model.pLike"/>
-              <classRef key="model.listLike"/>
-            </alternate>
-          </content>
-        </egXML>
+<content>
+  <alternate maxOccurs="unbounded">
+    <classRef key="model.pLike"/>
+    <classRef key="model.listLike"/>
+  </alternate>
+</content></egXML>
         <p><q>One or more elements from either the <ident>model.pLike</ident> class or the
  <ident>model.listLike</ident> class</q></p>
       </div>
       <div xml:lang="fr" rend="slide">
         <head>Par exemple ...</head>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
- <content><alternate maxOccurs="unbounded">
- <classRef key="model.pLike"/>
- <classRef key="model.listLike"/>
-</alternate></content>
-        </egXML>
+<content>
+  <alternate maxOccurs="unbounded">
+    <classRef key="model.pLike"/>
+    <classRef key="model.listLike"/>
+  </alternate></content></egXML>
         <p><q>Un ou plusieurs éléments membres des classes <ident>model.pLike</ident> ou bien
  <ident>model.listLike</ident></q></p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-<content><sequence maxOccurs="unbounded">
- <classRef key="model.pLike"/>
- <classRef key="model.listLike"/>
-</sequence></content></egXML>
+<content>
+  <sequence maxOccurs="unbounded">
+    <classRef key="model.pLike"/>
+    <classRef key="model.listLike"/>
+  </sequence>
+</content></egXML>
         <p><q>Une ou plusieurs répétitions d'un élément de la classe <ident>model.pLike</ident> suivi d'un élément de la classe 
           <ident>model.listLike</ident></q></p>
       </div>
@@ -689,12 +685,12 @@ le contenu de <gi>profileDesc</gi> est
         <head>Exemples</head>
         <p>l'élément <gi>egXML</gi> est utilisé partout dans les <title>Guidelines</title> pour fournir
           des exemples d'usage directement en XML-TEI. Pour permettre à une validation du contenu
-          de cet élément il est associé avec une autre espace de nommage.
-          </p><p><code>&lt;p>Par exemple :
-            &lt;egXML xmlns="http://www.tei-c.org/ns/Examples">
-              &lt;p>Je ne suis pas un p comme les autres&lt;/p>
-            &lt;/egXML>
-          &lt;/p></code></p>
+          de cet élément il est associé avec une autre espace de nommage.</p>
+<p>Par exemple :<egXML xmlns="http://www.tei-c.org/ns/Examples">
+&lt;egXML xmlns="http://www.tei-c.org/ns/Examples">
+  <p>Je ne suis pas un p comme les autres</p>
+&lt;/egXML></egXML>
+</p>
       <p>Oui, c'est une astuce.</p>
       </div>
       
@@ -792,5 +788,4 @@ le contenu de <gi>profileDesc</gi> est
       </div>
      </body>
     </text></TEI>
-
 
