@@ -7,7 +7,7 @@
    </head>
    <body><textarea id="source">
 title: Initiation ODDAn ODD Initiation
-description: Lou Burnard Consulting,
+description: Lou Burnard Consulting, 
 theme: theme/remark-dark-em.css
 name: inverse
 layout: true
@@ -36,7 +36,7 @@ name: index
 ---
 
 
-# À quoi ça sert, un ODD&nbsp;?
+# À quoi ça sert, un ODD&nbsp;? 
 
 Nous avons besoin de deux choses complémentaires…
 
@@ -65,7 +65,7 @@ Une .red[documentation] pour expliciter aux utilisateurs/développeurs nos princ
 
 Ces attentes pourraient être satisfaites de plusieurs manières.
 
-Les avantages d’ODD&nbsp;:
+Les avantages d’ODD&nbsp;: 
 * un format XML bien établi,
 
 * faisant partie intégrante du système TEI,
@@ -89,7 +89,7 @@ Un vocabulaire spécialisé pour la définition&nbsp;:
 
 * des types d’élément XML, indépendants des schémas
 
-* des regroupements de tels éléments, publics ou privés
+* des regroupements de tels éléments, publics ou privés 
 
 * des patrons (MLE macros) et des spécifications de donnée (datatype)
 
@@ -119,7 +119,7 @@ Une histoire de .red[Spec] et .red[Ref]...
 * classRef&nbsp;: utilise une définition de classe existante
 * moduleRef&nbsp;: fournit un ensemble de spécifications d’éléments en faisant référence à un module
 
-Un ODD peut combiner plusieurs spécifications pour un même objet
+Un ODD peut combiner plusieurs spécifications pour un même objet 
 
 (Nous reviendrons plus loin sur ce point, et sur les composants documentaire d’un ODD)
 
@@ -131,11 +131,9 @@ Un ODD peut combiner plusieurs spécifications pour un même objet
 Nous utilisons un élément `&lt;book&gt;`, qui contient un mélange d’éléments `&lt;para&gt;`s et `&lt;image&gt;`s. Nous ne connaissons rien de la TEI, et n’en avons pas envie. De même pour les espaces de noms.
 
 ```xml
-<schemaSpec xmlns="http://www.tei-c.org/ns/Examples"
-ns="" start="book" ident="bookSchema">
+<schemaSpec  ns="" start="book" ident="bookSchema">
  <elementSpec ident="book">
-   <desc>Élément racine d’un schéma simplissime pour
-     encoder les livres</desc><desc></desc>
+   <desc>Élément racine d’un schéma simplissime pour encoder les livres</desc><desc></desc>
    <content>
      <alternate maxOccurs="unbounded">
        <elementRef key="para"></elementRef>
@@ -143,7 +141,7 @@ ns="" start="book" ident="bookSchema">
      </alternate>
    </content>
  </elementSpec>
-
+ 
             <!-- ... la suite à la prochaine diapo -->
 </schemaSpec>
 ```
@@ -154,9 +152,9 @@ ns="" start="book" ident="bookSchema">
 # Un exemple simplissime (suite)
 
 ```xml
-<schemaSpec xmlns="http://www.tei-c.org/ns/Examples"
-ns="" start="stuff" ident="oddex-1">
-   <!-- ... suite -->
+<schemaSpec  ns="" start="stuff" ident="oddex-1">
+   
+            <!-- ... suite -->
    <elementSpec ident="para">
      <desc>un paragraphe de text </desc>
      <content>
@@ -187,11 +185,11 @@ ns="" start="stuff" ident="oddex-1">
 
 * On peut extraire les fragments documentaires, notamment les descriptions des éléments et des attributs
 
-TEI fournit un élément spécialisé pour cela&nbsp;:
+TEI fournit un élément spécialisé pour cela&nbsp;: 
 ```xml
-<specList xmlns="http://www.tei-c.org/ns/Examples">
+<specList > 
    <specDesc key="para"></specDesc>
-   <specDesc key="picture"></specDesc>
+   <specDesc key="picture"></specDesc> 
  </specList>
 ```
 
@@ -205,7 +203,7 @@ Ce balisage généra quelque chose comme&nbsp;
 ---
 
 
-# Essayons cela avec oXygen…
+# Essayons cela avec oXygen… 
 
 * Démarrez oXygen
 
@@ -232,9 +230,9 @@ Ce balisage généra quelque chose comme&nbsp;
 
 Dans le monde réel, le contenu de nos `&lt;book&gt;` ne se limite pas uniquement aux `&lt;para&gt;`s et aux `&lt;image&gt;`s... on peut regrouper tous les éléments qui peuvent apparaître au sein d’un `book`&nbsp;: nous appelons ce regroupement une classe, pour laquelle nous proposons le nom `bookPart`.
 
-Nous utilisons l’élément `&lt;classes&gt;` pour indiquer l’association d’un élément avec sa ou ses classe/s&nbsp;:
+Nous utilisons l’élément `&lt;classes&gt;` pour indiquer l’association d’un élément avec sa ou ses classe/s&nbsp;: 
 ```xml
-<elementSpec xmlns="http://www.tei-c.org/ns/Examples" ident="para">
+<elementSpec  ident="para">
     <classes>
       <memberOf key="bookPart"></memberOf>
     </classes>
@@ -245,10 +243,8 @@ Nous utilisons l’élément `&lt;classes&gt;` pour indiquer l’association d�
 Et voici la définition de la classe `bookPart`.
 
 ```xml
-<classSpec xmlns="http://www.tei-c.org/ns/Examples"
- ident="bookPart" type="model">
- <desc>éléments qui ont la possibilité de figurer dans un
-   <gi>book</gi></desc>
+<classSpec  ident="bookPart" type="model">
+ <desc>éléments qui ont la possibilité de figurer dans un <gi>book</gi></desc> 
  </classSpec>
 ```
 
@@ -260,13 +256,12 @@ Et voici la définition de la classe `bookPart`.
 Maintenant, au lieu de lister exhaustivement tous les composants possibles d’un `&lt;book&gt;`, il suffit de dire que cet élément est composé des membres de la classe `bookPart` .
 
 ```xml
-<elementSpec xmlns="http://www.tei-c.org/ns/Examples" ident="book">
-   <desc>Élément racine d’un schéma simplissime pour
-   encoder les livres</desc>
-   <content>
-     <classRef key="bookPart" minOccurs="1" maxOccurs="unbounded"/>
-   </content>
-</elementSpec>
+<elementSpec  ident="book">
+ <desc>Élément racine d’un schéma simplissime pour encoder les livres</desc> 
+ <content>
+  <classRef key="bookPart" minOccurs="1" maxOccurs="unbounded"></classRef> 
+ </content>
+ </elementSpec>
 ```
 
 (Dès que nous découvrirons l’existence de listes dans les livres nous saurons quoi faire)
@@ -278,20 +273,19 @@ Maintenant, au lieu de lister exhaustivement tous les composants possibles d’u
 
 Dans le monde réel, il est très probable que plusieurs éléments différents comportent les même attributs&nbsp;: il sera donc très pratique de les définir en une seule fois
 
-ODD nous permet de dire que tous les éléments ayant en commun un ensemble d’attributs constituent une classe attributs que nous définissons ainsi
+ODD nous permet de dire que tous les éléments ayant en commun un ensemble d’attributs constituent une classe attributs que nous définissons ainsi 
 ```xml
-<classSpec xmlns="http://www.tei-c.org/ns/Examples"
-  ident="pointing" type="atts">
-  <desc>regroupe les éléments comportant l’attribut <att>href</att></desc>
-  <attList>
-    <attDef ident="href">
-      <desc>fournit l’URI de l’objet ciblé</desc>
-      <datatype>
-        <dataRef name="anyURI"></dataRef>
-      </datatype>
-    </attDef>
-  </attList>
-</classSpec>
+<classSpec  ident="pointing" type="atts">
+     <desc>regroupe les éléments comportant l’attribut <att>href</att></desc>
+     <attList>
+       <attDef ident="href">
+         <desc>fournit l’URI de l’objet ciblé</desc>
+         <datatype>
+           <dataRef name="anyURI"></dataRef>
+         </datatype>
+       </attDef>
+     </attList>
+   </classSpec>
 ```
 
 
@@ -313,7 +307,7 @@ ODD nous permet de dire que tous les éléments ayant en commun un ensemble d’
 
 # Contrôle des valeurs d’un attribut
 
-Les valeurs possibles d’un attribut peuvent être contrôlées de plusieurs manières&nbsp;:
+Les valeurs possibles d’un attribut peuvent être contrôlées de plusieurs manières&nbsp;: 
 * Par référence à un datatype (type de donnée) externe, par ex `anyURI ` ou `ID` (ce sont des datatypes standard, définis par le W3C)
 
 * En fournissant notre propre liste des valeurs avec l’élément `&lt;valList&gt;`
@@ -324,32 +318,29 @@ Les valeurs possibles d’un attribut peuvent être contrôlées de plusieurs ma
 ---
 
 
-## Exemple
+# Exemple 
 
 ```xml
-<classSpec xmlns="http://www.tei-c.org/ns/Examples"
-   ident="bookAtts" type="atts">
+<classSpec  ident="bookAtts" type="atts">
    <desc>attributs applicables aux objets contenus par des <gi>book</gi></desc>
    <attList>
      <attDef ident="xml:id">
        <desc>fournit un identifiant unique pour le composant</desc>
        <datatype>
-         <dataRef name="ID"/>
+         <dataRef name="ID"></dataRef>
        </datatype>
      </attDef>
      <attDef ident="status">
        <desc>indique le statut du composant </desc>
        <valList>
-         <valItem ident="red"/>
-         <valItem ident="green"/>
-         <valItem ident="unknown"/>
+         <valItem ident="red"></valItem>
+         <valItem ident="green"></valItem>
+         <valItem ident="unknown"></valItem>
        </valList>
      </attDef>
      <attDef ident="version">
        <desc>indique le numéro de version du composant</desc>
-       <datatype>
-         <dataRef key="teidata.versionNumber"/>
-       </datatype>
+       <datatype><dataRef key="teidata.versionNumber"></dataRef></datatype>  
      </attDef>
    </attList>
  </classSpec>
@@ -373,12 +364,12 @@ Les valeurs possibles d’un attribut peuvent être contrôlées de plusieurs ma
 
 # Qu’est-ce que l’on pourrait vouloir ajouter pour bien documenter son système&nbsp;?
 
-Peut-être…
+Peut-être… 
 * Des gloses, des descriptions en plusieurs langues
 
 * Des exemples d’usage
 
-* des contraintes plus sophistiquées
+* des contraintes plus sophistiquées 
 * modèles de contenu plus complexes
 
 * contraintes variables selon le contexte
@@ -405,7 +396,7 @@ Seul le dernier vous permet de valider vos exemples&nbsp;: un plus très avantag
 ---
 
 
-# Par exemple
+# Par exemple 
 
 `&lt;![CDATA[&lt;p&gt;un paragraphe&lt;/p&gt; ]]&gt; `
 
@@ -439,11 +430,11 @@ Nous allons regarder cela de plus près plus tard...
 ---
 
 
-# Notions de namespace
+# Notions de namespace 
 
 * Un namespace (espace de noms) fournit une manière d’associer et distinguer un groupe de termes, typiquement d’éléments XML.
 
-* Jusqu’à présent, tout ce qui a été nommé dans notre schéma appartient à un namespace "nul".
+* Jusqu’à présent, tout ce qui a été nommé dans notre schéma appartient à un namespace "nul". 
 
 * Supposons que nous souhaitions ajouter un nouvel élément `&lt;para&gt;` avec un modèle de contenu moins restreint. Ce `&lt;para&gt;` contiendra un mélange de texte et des images, mais nous souhaitons l'appeler un `&lt;para&gt;` quand même. Pour le distinguer du `&lt;para&gt;` existant, il faut donc l’associer à un autre espace de noms.
 
@@ -455,18 +446,13 @@ Nous allons regarder cela de plus près plus tard...
 # Notions de namespace : exemple
 
 ```xml
-<elementSpec xmlns="http://www.tei-c.org/ns/Examples"
- ident="para" ns="http://myNamespace.org"
- prefix="extra">
-   <desc>une paragraph contenant de text et facultativement
-     des images </desc>
-   <classes>
-     <memberOf key="bookPart"/>
-   </classes>
-   <content>
+<elementSpec  ident="para" ns="http://myNamespace.org" prefix="extra">
+   <desc>une paragraph contenant de text et facultativement des images </desc>
+   <classes><memberOf key="bookPart"></memberOf></classes>
+   <content>  
      <alternate maxOccurs="unbounded" minOccurs="0">
-       <textNode/>
-       <elementRef key="image"/>
+       <textNode></textNode>
+       <elementRef key="image"></elementRef>
      </alternate>
    </content>
  </elementSpec>
@@ -501,13 +487,12 @@ Notez bien que ce nouvel élément fait partie de la classe `bookPart` ; sinon i
 Admettons enfin que notre `&lt;para&gt;` n’est pas si loin de l’élément TEI `&lt;p&gt;`, que notre `&lt;image&gt;` ressemble beaucoup à l’élément TEI `&lt;graphic&gt;`, et que notre `&lt;book&gt;` pourrait être considéré comme un élément TEI `&lt;div&gt;`. Comment ré-écrire ce schéma pour profiter des définitions TEI existantes&nbsp;?
 
 ```xml
-<schemaSpec xmlns="http://www.tei-c.org/ns/Examples"
-  start="div" ident="testSchema-2" source="tei:1.6.0">
- <elementRef key="div"/>
- <elementRef key="p"/>
- <elementRef key="graphic"/>
- <elementRef key="figure"/>
- <moduleRef key="tei"/>
+<schemaSpec  start="div" ident="testSchema-2" source="tei:1.6.0">
+ <elementRef key="div"></elementRef>
+ <elementRef key="p"></elementRef>
+ <elementRef key="graphic"></elementRef>
+ <elementRef key="figure"></elementRef>
+ <moduleRef key="tei"></moduleRef>
 </schemaSpec>
 ```
 
