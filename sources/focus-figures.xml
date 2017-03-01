@@ -235,9 +235,6 @@
   <attList>
     <attDef ident="type" usage="req" mode="change">
       <gloss>(MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type</gloss>
-      <datatype>
-        
-      </datatype>
       <valList type="closed" mode="replace">
         <valItem ident="section">
           <gloss>1st level section</gloss>
