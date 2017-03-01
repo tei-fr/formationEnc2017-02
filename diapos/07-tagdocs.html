@@ -44,7 +44,11 @@ La source TEI P5 (disponible ici ) rassemble&nbsp;:
 * 39 fichiers en TEI-XML, dont 25 contiennent un chapitre de documentation en XML-TEI, la plupart définissant un module, par exemple `PH-PrimarySources.xml`
 
 * 778 fichiers en TEI-XML, chacun définissant un élément, une classe, ou une macro 
+<<<<<<< HEAD
 * 29 datatypes (`data.xxxx`) par ex. `tei.sex.xml`
+=======
+* 29 datatypes (`data.xxxx`) par ex. `data.sex.xml`
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
 
 * 116 classes de type modèle (code&gt;model.xxxx) par ex. `model.biblLike.xml`
 
@@ -65,9 +69,15 @@ Nous allons regarder cela de plus près…
 
 Il ne faut pas confondre l’organisation physique (en fichiers) avec l’organisation logique (en spécifications, etc.)
 
+<<<<<<< HEAD
 * Le fichier `guidelines-XX.xml` est la source primaire des Guidelines pour la langue XX.
 
 * Mis à part quelques liminaires (une en-tête TEI, la page de titre, etc.), il contient plusieurs lignes comme ceci&nbsp;: `&lt;include xmlns="http://www.w3.org/2001/XInclude" href="Guidelines/en/HD-Header.xml"/&gt; `
+=======
+* Le fichier `guidelines-XX.xml` est la source des Guidelines pour la langue XX.
+
+* Mis à part quelques liminaires (un TEI Header, la page de titre, etc.), il contient plusieurs lignes comme ceci&nbsp;: `&lt;include xmlns="http://www.w3.org/2001/XInclude" href="Guidelines/en/HD-Header.xml"/&gt; `
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
 
 * Au sein de chaque chapitre, on trouve des `xInclude` similaires pour les objets définis par ce chapitre.
 
@@ -91,7 +101,11 @@ Cette partie de texte des Guidelines&nbsp;:
 ![](images/ft-1.png)
 est généré à partir des lignes de code suivantes&nbsp;: 
 ```xml
+<<<<<<< HEAD
 <div xmlns="http://www.tei-c.org/ns/Examples"><head>Module for Tables, Formulæ, Notated Music, and Graphics</head>
+=======
+<div ><head>Module for Tables, Formulæ, Notated Music, and Graphics</head>
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
  <p>The module described in this chapter provides the following features: 
    <moduleSpec xml:id="DFTFF" ident="figures">
      <desc>Tables, formulæ, notated music, and figures</desc>
@@ -113,6 +127,7 @@ est généré à partir des lignes de code suivantes&nbsp;:
 
 # Les pointers (#DFTTAB etc.) indiquent des specGrp, comme ceci …
 
+<<<<<<< HEAD
 ```xml
 <specGrp xmlns="http://www.tei-c.org/ns/Examples" xml:id="DFTTAB" n="Tables"> 
  &lt;include href="../../Specs/table.xml"/&gt; 
@@ -120,11 +135,18 @@ est généré à partir des lignes de code suivantes&nbsp;:
  &lt;include href="../../Specs/cell.xml"/&gt; 
  </specGrp>
 ```
+=======
+`&lt;specGrp xml:id="DFTTAB" xmlns:xi="http://www.w3.org/2001/XInclude" n="Tables"&gt; &lt;include href="../../Specs/table.xml"/&gt; &lt;include href="../../Specs/row.xml"/&gt; &lt;include href="../../Specs/cell.xml"/&gt; &lt;/specGrp&gt;`
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
 
 et le xInclude apporte la specification elle meme d’un objet, par ex :
 
 ```xml
+<<<<<<< HEAD
 <elementSpec xmlns="http://www.tei-c.org/ns/Examples" module="figures" ident="cell">
+=======
+<elementSpec  module="figures" ident="cell">
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
    <gloss versionDate="2007-06-12" xml:lang="fr" rend="slide">cellule</gloss>
    <desc versionDate="2005-01-14" xml:lang="en">contains one cell of à table.</desc>
    
@@ -272,7 +294,11 @@ Si on ne comprend pas le système de classes TEI, on aura du mal à comprendre l
 # Par exemple
 
 ```xml
+<<<<<<< HEAD
 <classes xmlns="http://www.tei-c.org/ns/Examples">
+=======
+<classes >
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
    <memberOf key="att.global"></memberOf>
    <memberOf key="att.responsibility"></memberOf>
    <memberOf key="model.profileDescPart"></memberOf>
@@ -281,7 +307,11 @@ Si on ne comprend pas le système de classes TEI, on aura du mal à comprendre l
 
 * étant membre de `model.profileDescPart`, `&lt;abstract&gt;` peut apparaitre dans `&lt;profileDesc&gt;` parce que le contenu de `&lt;profileDesc&gt;` est 
 ```xml
+<<<<<<< HEAD
 <classRef xmlns="http://www.tei-c.org/ns/Examples" key="model.profileDescPart" maxOccurs="unbounded"></classRef>
+=======
+<classRef  key="model.profileDescPart" maxOccurs="unbounded"></classRef>
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
 ```
 
 
@@ -320,7 +350,11 @@ Tous sous contrôle des attributs `@minOccurs` et `@maxOccurs` en ce qui concern
 # Par exemple ...
 
 ```xml
+<<<<<<< HEAD
 <content xmlns="http://www.tei-c.org/ns/Examples"><alternate maxOccurs="unbounded">
+=======
+<content ><alternate maxOccurs="unbounded">
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
  <classRef key="model.pLike"></classRef>
  <classRef key="model.listLike"></classRef>
 </alternate></content>
@@ -329,7 +363,11 @@ Tous sous contrôle des attributs `@minOccurs` et `@maxOccurs` en ce qui concern
 « Un ou plusieurs éléments membres des classes `model.pLike` ou bien `model.listLike` »
 
 ```xml
+<<<<<<< HEAD
 <content xmlns="http://www.tei-c.org/ns/Examples"><sequence maxOccurs="unbounded">
+=======
+<content ><sequence maxOccurs="unbounded">
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
  <classRef key="model.pLike"></classRef>
  <classRef key="model.listLike"></classRef>
 </sequence></content>
@@ -344,7 +382,11 @@ Tous sous contrôle des attributs `@minOccurs` et `@maxOccurs` en ce qui concern
 
 l'élément `&lt;egXML&gt;` est utilisé partout dans les Guidelines pour fournir des exemples d'usage directement en XML-TEI. Pour permettre à une validation du contenu de cet élément il est associé avec une autre espace de nommage.
 
+<<<<<<< HEAD
 `&lt;p&gt;Par exemple : &lt;egXML xmlns="http://www.tei-c.org/ns/Examples"&gt; &lt;p&gt;Je ne suis pas un p comme les autres&lt;/p&gt; &lt;/egXML&gt; &lt;/p&gt;`
+=======
+`&lt;p&gt;Par exemple : &lt;egXML &gt; &lt;p&gt;Je ne suis pas un p comme les autres&lt;/p&gt; &lt;/egXML&gt; &lt;/p&gt;`
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
 
 Oui, c'est une astuce.
 
@@ -390,7 +432,11 @@ Ouvrez `macro.phraseSeq.xml` avec oXygen
 * L’expansion d’une macro est fournie par un élément `&lt;content&gt;`.
 
 ```xml
+<<<<<<< HEAD
 <content xmlns="http://www.tei-c.org/ns/Examples">
+=======
+<content >
+>>>>>>> 4b530519b031a4dc3fa4525b52e4c71a36ac83a7
  <alternate minOccurs="0" maxOccurs="unbounded">
    <textNode></textNode>
    <classRef key="model.gLike"></classRef>

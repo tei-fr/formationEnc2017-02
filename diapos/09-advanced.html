@@ -1,0 +1,531 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Programme</title>
+      <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css">
+   </head>
+   <body><textarea id="source">
+title: ODD&nbsp;: wait there's more
+description: , 
+theme: theme/remark-dark-em.css
+name: inverse
+layout: true
+class: inverse
+
+---
+class: center middle
+
+
+
+# 09 – ODD&nbsp;: il y en a encore 
+
+## Formation TEI | ENC 27 février au 2 mars 2017
+
+.footnote[[Répertoire GitHub](https://github.com/tei-fr/formationEnc2017-02) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2) | [jour3](00-programme.html#jour3) | [jour4](00-programme.html#jour4)]
+![test](images/logo-ecole-nationale-des-chartes.png)
+
+---
+template: inverse
+class: center middle
+name: index
+
+
+## ODD &nbsp;: wait, there's more
+
+---
+
+
+# ODD &nbsp;: wait, there's more
+
+* ODD comme systeme de documentation
+
+* Defining other constraints : use of schematron
+
+* Chaining and Combining ODDs
+
+* Documenting intentions : the Processing Model
+
+* What is TEI conformance?
+
+---
+
+
+# ODD comme système de documentation
+
+ODD est un langage conçu pour faciliter la documentation systématique des systèmes de documentation. Il fournit donc des balises spécialisés pour distinguer : 
+
+* `&lt;code&gt;` : un morceau de code exprimé en n’importe quel langage formel 
+```xml
+<code  lang="C">count += 56;</code>
+```
+
+
+* `&lt;att&gt;` : un nom d’attribut 
+```xml
+<att  scheme="TEI">target</att>
+```
+
+
+* `&lt;gi&gt;` : un nom d’élément 
+```xml
+<gi >table</gi>
+```
+
+
+---
+
+
+# ODD comme systeme de documentation (suite) 
+
+* `&lt;ident&gt;` : identifiant ou nom d’un objet en n’importe quel langage formel 
+```xml
+<ident  type="class">model.biblLike</ident>
+```
+
+
+* `&lt;val&gt;` : valeur d’attribut 
+```xml
+<val >unknown</val>
+```
+
+
+* `&lt;tag&gt;` : balise XML 
+```xml
+<tag >ptr target="http://www.bbc.co.uk"/</tag>
+```
+
+
+---
+
+
+# Structuration d'un ODD
+
+A part le `&lt;schemaSpec&gt;` qui definit le schema, on peut organiser le document comme tout autre document, utilisant `&lt;div&gt;`, `&lt;list&gt;` etc.
+
+Des éléments supplémentaires sont prévus pour le regroupement des déclarations a l'exterieur du `&lt;schemaSpec&gt;`:
+
+* `&lt;specGrp&gt;` : un regroupement de déclarations identifiable 
+```xml
+<p >Nous n'utilisons que ces éléments du module <ident>linking</ident>: 
+  <specGrp xml:id="linkingElts">
+ 
+               <!-- quelques elementSpec etc -->
+</specGrp>
+</p>
+```
+
+
+* `&lt;specGrpRef&gt;` indique où on souhaite intégrer les déclarations précisées par un `&lt;specGrp&gt;` 
+```xml
+<specGrpRef  target="#linkingElts"></specGrpRef>
+```
+
+
+---
+
+
+# Un exemple tres simple...
+
+Ouvrir le fichier `tei_bare.odd` avec oXygen
+
+Retrouvez l'élément `&lt;schemaSpec&gt;`
+
+Examiner la structuration du fichier (utiliser la perspective `Outline/Sommaire` de oXygen)
+
+---
+
+
+# Un exemple plus ambitieux ...
+
+Ouvrir le fichier `tei_simplePrint.odd` avec oXygen
+
+Retrouvez l'élément `&lt;schemaSpec&gt;`
+
+Examiner la structuration du fichier (utiliser la perspective `Outline/Sommaire` de oXygen)
+
+---
+
+
+# Contraintes de données avec Schematron 
+
+* Une spécification d’élément peut proposer des contraintes supplémentaires sur son contenu en utilisant un ou plusieurs éléments `&lt;constraintSpec&gt;`
+
+* Ces règles sont exprimées (typiquement) en utilisant le langage [ISO Schematron ](http://schematron.com/)
+
+```xml
+<elementSpec  ident="div" module="teistructure" mode="change">
+     <constraintSpec ident="div" scheme="isoschematron">
+       <constraint>
+  <s:assert xmlns:s="http://purl.oclc.org/dsdl/schematron" test="@type='prose' and .//tei:p">une division prosaïque doit contenir au
+    moins un paragraphe</s:assert>
+       </constraint>
+     </constraintSpec>
+   </elementSpec>
+```
+
+---
+
+
+# L’élément `&lt;constraintSpec&gt;`
+
+Il définit une contrainte qui s’applique au sein de l’élément dans lequel il est déclaré
+
+* L’attribut `@ident` est obligatoire&nbsp;: il fournit un identifiant unique
+
+* Il rassemble une ou plusieurs `&lt;constraint&gt;`
+
+* L’élément `&lt;constraint&gt;` contient (typiquement) un `&lt;assert&gt;` ou un `&lt;report&gt;`, éléments de l’espace de nommage `http://purl.oclc.org/dsdl/schematron`
+
+---
+
+
+# Fonctionnement des règles Schematron 
+
+* Le contenu de l’élément `&lt;assert&gt;` est affiché si le test est .red[false]
+
+* Le contenu de l’élément `&lt;report&gt;` est affiché si le test est .red[true]
+
+* Astuce&nbsp;: plusieurs éléments schematron sont disponibles pour enrichir le texte du message affiché, notamment `&lt;name&gt;` (context) et `&lt;value-of&gt;` (valeur)
+
+Un schéma RNG intégrant ces règles sera auto-généré si l’on utilise le logiciel oXygen pour traiter son ODD 
+
+---
+
+
+# Applications typiques des règles Schematron
+
+* Contraintes de co-occurrence&nbsp;: « si l’attribut X a la valeur A, l’élément qui le porte doit contenir un Y »
+
+* Contraintes arithmétique contextuelles&nbsp;: « au sein d’un `&lt;titleStmt&gt;`, on ne permet qu’un seul `&lt;title&gt;` »
+
+* Contraintes textuelles&nbsp;: « Les caractères ' et “ ne sont pas permis au sein d’un `&lt;p&gt;` apparaissant dans le `&lt;body&gt;` »
+
+* Contraintes contextuelles&nbsp;: « mots en français (`@xml:lang`='fr') ne sont pas permis au sein d’un élément latin (`@xml:lang`='la') »
+
+* Intégrité référentielle&nbsp;: « un pointer exprimé sous la forme d’une URL et commençant par # doit correspondre à un élément ayant un `@xml:id` identique quelque part dans le document »
+
+---
+
+
+# Par exemple...
+
+```xml
+<constraintSpec  ident="isoconstraint">
+     <constraint>
+       <s:assert xmlns:s="http://purl.oclc.org/dsdl/schematron" test="tei:fileDesc/tei:titleStmt/tei:title[@type='main']"> il faut fournir
+  un titre principal </s:assert>
+     </constraint>
+   </constraintSpec>
+```
+
+```xml
+<elementSpec  ident="figure">
+     
+            <!-- ... -->
+     <constraintSpec ident="demo-c2">
+       <constraint>
+  <s:report xmlns:s="http://purl.oclc.org/dsdl/schematron" test="not(tei:figDesc or tei:head)"> Votre figure ne contient ni un
+    figDesc ni un head : aucun attribut <att>alt</att> n'est générable</s:report>
+       </constraint>
+     </constraintSpec></elementSpec>
+```
+
+---
+
+
+# Un schematron plus complexe (1) 
+
+```xml
+<constraintSpec  ident="validtarget">
+     <constraint>
+       <rule context="tei:*[@target]">
+  <let name="results" value="for $t in tokenize(normalize-space(@target),'\s+')        return starts-with($t,'#')        and not(id(substring($t,2)))"></let>
+  <report test="some $x in $results satisfies $x"> Erreur: Chaque pointer dans
+      "<value-of select="@target"></value-of>" doit indiquer un ID dans ce même document
+      (<value-of select="$results"></value-of>)</report>
+       </rule>
+     </constraint>
+   </constraintSpec>
+```
+
+---
+
+
+# Un schematron plus complexe (suite) 
+
+* `normalize-space(@target)`: supprimer les blancs non-signifiants
+
+* `tokenize(normalize-space(@target),'\s+')`&nbsp;: couper la valeur de l’attribut dans des tokens séparés par des blancs
+
+* `starts-with($t,'#')`&nbsp;: ne considérer que les pointeurs locaux
+
+* `not(id(substring($t,2)))`: y-a-t il un attribut `@xml:id` dont la valeur correspond à la valeur indiquée en sélectionnant ce qui suit son 2ème caractère
+
+* `some $x in $results satisfies $x`&nbsp;: expression XPath permettant la validation d’une séquence de valeurs booléennes (vraies/fausses)
+
+---
+
+
+# Chaining and combining ODDs
+
+![](images/oddity.png)
+
+---
+
+
+# Usage de l’attribut `@source`
+
+L’attribut `@source` sert à spécifier la source des déclarations qu’on souhaite intégrer: par défaut dans la version la plus récente de TEI P5.
+
+Ou bien ... 
+
+```xml
+<schemaSpec  ident="test2" prefix="tei_" start="TEI" source="tei:1.5.0">
+            <!-- dans la version 1.5.0 --></schemaSpec>
+```
+
+```xml
+<schemaSpec  ident="test3" prefix="tei_" start="TEI" source="http://www.tei-c.org/Vault/P5/1.5.0/xml/tei/odd/p5subset.xml">
+            <!-- version plus verbose du même --></schemaSpec>
+```
+
+```xml
+<schemaSpec  ident="test4" source="myCompiled.odd">
+            <!-- ensemble de déclarations maison --></schemaSpec>
+```
+
+`@source` peut être utilisé sur `&lt;classRef&gt;`, `&lt;elementRef&gt;`, `&lt;macroRef&gt;`, et `&lt;moduleRef&gt;` : il doit fournir un ODD compile
+
+---
+
+
+# Compilation d'un ODD
+
+* Transformer le fichier `tei_bare.odd` en « compiled ODD » avec oXygen en utilisant la feuille de style `${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl`
+
+* Regardez rapidement la sortie en profitant de l'affichage Outline
+
+* Tous ces classSpec et dataSpec sont fournis par le module `tei`: ils constituent l’infrastructure TEI.
+
+* Enregistrez cette version sous le nom `tei_bare.compiled.odd`
+
+---
+
+
+# Usage d'un ODD compilé
+
+Nous allons réutiliser TEI_bare, mais nous souhaitons supprimer l'élément `&lt;head&gt;`
+
+```xml
+<schemaSpec  ident="Bare-minus" source="tei_bare.compiled.odd" start="TEI">
+     <moduleRef key="tei"></moduleRef>
+     <moduleRef key="header"></moduleRef>
+     <moduleRef key="core" except="head"></moduleRef>
+     <moduleRef key="textstructure"></moduleRef>
+   </schemaSpec>
+```
+
+Notez qu’on ne peut supprimer ou modifier que les choses qui sont déjà présentes dans l’ODD compilé spécifié par l’attribut `@source`.
+
+---
+
+
+# Chaînage : super-ensemble
+
+Nous allons réutiliser TEI_bare, mais nous souhaitons ajouter le module `gaiji`
+
+```xml
+<schemaSpec  ident="Bare-plus" source="tei_bare.compiled.odd" start="TEI">
+     <moduleRef key="tei"></moduleRef>
+     <moduleRef key="header"></moduleRef>
+     <moduleRef key="gaiji" source="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml"></moduleRef>
+     <moduleRef key="textstructure"></moduleRef>
+   </schemaSpec>
+```
+
+Le `&lt;moduleRef&gt;` qui va fournir le module `gaiji` utilise son propre attribut `@source` pour spécifier où aller cherche les déclarations de ce module.
+
+---
+
+
+# Rétablir un élément supprimé
+
+Nous allons ramener l'élément `&lt;q&gt;` qui a été effacé du schéma compilé :
+
+```xml
+<schemaSpec  ident="Bare-plus" source="tei_bare.compiled.odd" start="TEI">
+     <moduleRef key="tei"></moduleRef>
+     <moduleRef key="header"></moduleRef>
+     <elementRef key="q" source="tei:3.0.0"></elementRef>
+     <moduleRef key="textstructure"></moduleRef>
+   </schemaSpec>
+```
+
+---
+
+
+# Addition des composants d’une schéma nonTEI
+
+On souhaite utiliser l’élément TEI `&lt;formula&gt;` et y insérer du contenu exprimé en MathML&nbsp;
+
+Il nous faut donc&nbsp;:
+1. inclure les composants du schéma MathML 
+
+1. modifier le modèle de contenu de l’élément `&lt;formula&gt;`
+
+1. générer un schéma qui résout les conflits de nommage 
+
+
+ATTENTION&nbsp;: il y a un élément `&lt;list&gt;` dans TEI mais également dans MathML&nbsp;!
+
+---
+
+
+# TEI + MathML&nbsp;: le ODD
+
+```xml
+<schemaSpec  ident="tei_math" prefix="tei_" start="TEI teiCorpus">
+     <moduleRef url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"></moduleRef>
+     <moduleRef key="header"></moduleRef>
+     <moduleRef key="core"></moduleRef>
+     <moduleRef key="tei"></moduleRef>
+     <moduleRef key="textstructure"></moduleRef>
+     <moduleRef key="figures"></moduleRef>
+     <elementSpec module="figures" ident="formula" mode="change">
+       <content>
+  <elementRef key="mathml.math"></elementRef>
+       </content>
+     </elementSpec>
+   </schemaSpec>
+```
+
+L’attribut `@prefix` nous permet de désambiguïser les identifiants ressortant des schémas différentes
+
+---
+
+
+# TEI + MathML&nbsp;: le document
+
+![](images/vavilov.png)
+
+```xml
+<p >The relevant inequalities and distributions are <formula notation="MathML">
+       <math overflow="scroll">
+  <mn>0</mn>
+  <mo>.</mo>
+  <mn>0</mn>
+  <mn>1</mn>
+  <mo>&lt;</mo>
+  <mi>κ</mi>
+  <mo>&lt;</mo>
+  <mn>1</mn>
+  <mn>0</mn>
+       </math>
+     </formula>, Vavilov distribution, and ... </p>
+```
+
+---
+
+
+# Adding a processing model
+
+You can also enrich your documentation with a more precise declaration of how particular elements should be processed, in particular how they should be formatted.
+
+This is complementary to features like @rend or @style, which describe how the (non-digital) source was formatted.
+
+New elements `&lt;model&gt;`, `&lt;modelGrp&gt;`, `&lt;param&gt;`, `&lt;outputRendition&gt;`
+
+The concept of `behaviour` is introduced to define particular commonly-used formatting concepts, for example, « block », « inline », « pointer », etc.
+
+```xml
+<elementSpec  mode="change" ident="quote">
+     <model predicate="ancestor::p" behaviour="inline"></model>
+     <model predicate="not(ancestor::p)" behaviour="block"></model>
+   </elementSpec>
+```
+« Process a `&lt;quote&gt;` inside a `&lt;p&gt;` as an inline; elsewhere as a block »
+---
+
+
+# Behaviours : some examples 
+behaviourparamsfunctionalternate(default, alternate) support display of alternative visualisations, for example by displaying the preferred content, by displaying both in parallel, or by toggling between the two.graphic(url, width, height, scale, title)if url is present, uses it to display graphic, else display a placeholder image.omitdo nothing, do not process childreninline(content, labelcreates inline element 
+---
+
+
+# Variétés de ODD
+
+![](images/oddflavours.png)
+
+Chacune de ces formes représente : 
+
+* un ODD
+
+* le schéma généré à partir de cet ODD
+
+* l'ensemble de documents considérés comme valide par ce schéma
+
+---
+
+
+# Flavours of ODD
+
+![](images/oddflavours.png)
+
+* un « TEI subset » fournit un sous-ensemble des composants constituant TEI All
+
+* un « customised subset » est également un sous-ensemble avec des personnalisations supplémentaires
+
+* un « extended subset » contient des composants qui ne font pas partie de TEI All
+
+---
+
+
+# Le plus simple
+
+* Vos modifications génèrent un schéma réduit, plus précis, plus adapté à votre projet et une documentation plus exacte et correcte pour votre communauté d'utilisateurs
+
+* Mais vos documents restent toujours valides par rapport à TEI All et vous respectez toujours le modèle sémantique de la TEI.
+
+* Les extensions eventuelles sont signallées clairement, en utilisant une autre espace de nommage, et sont d'ailleurs expliquées dans votre ODD 
+
+---
+
+
+# Être conforme à la TEI veut dire quoi&nbsp;?
+
+* .red[être honnête]&nbsp;: Les éléments XML qui sont déclarés comme appartenant au namespace TEI doivent respecter les définitions TEI de ces éléments
+
+* .red[être explicite]&nbsp;: Pour valider un document TEI, un ODD est fortement conseillé, parce que cela mettra en évidence toutes les modifications effectuées.
+
+Plus formellement, pour un document TEI conforme :
+* il doit être un document XML bien-formé
+
+* si la construction de son schéma ne prend en compte que les éléments appartenant à l’espace de nommage TEI, l'ensemble de documents considéré comme valide par ce schéma devrait être un sous-ensemble de l'ensemble de documents considéré valide par le schéma TEI-ALL.
+
+* Tout autre élément présent doit appartenir à un autre namespace
+
+
+L’objet de ces règles est de simplifier le « blind interchange » des documents; elles ne le garantissent pas.
+
+---
+
+
+# Les limites de la modification
+
+* Est-ce qu'on peut supprimer n'importe quoi ? par ex `&lt;title&gt;` ?
+
+* A quoi servent les classes vides ?
+
+* Est-ce qu'on peut ajouter n'importe quoi ? quelles limitations ?
+
+L'enjeu c'est de permettre a un utilisateur de comprendre votre encodage, non pas forcement de le contraindre a vous suivre aveuglement!
+</textarea><script src="js/remark-0.6.5.min.js" type="text/javascript"></script><script type="text/javascript">
+        var hljs = remark.highlighter.engine;
+      </script><script src="remark.language.js" type="text/javascript"></script><script type="text/javascript">
+        var slideshow = remark.create({
+        highlightStyle: 'monokai',
+        highlightLanguage: 'remark'
+        }) ;
+      </script></body>
+</html>

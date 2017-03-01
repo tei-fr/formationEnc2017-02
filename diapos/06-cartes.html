@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Programme</title>
+      <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css">
+   </head>
+   <body><textarea id="source">
+title: TEI à la carte&nbsp;: une étude de casTEI à la carte: a case study
+description: Lou Burnard, 
+theme: theme/remark-dark-em.css
+name: inverse
+layout: true
+class: inverse
+
+---
+class: center middle
+
+
+
+# 06 – TEI à la carte
+
+## Formation TEI | ENC 27 février au 2 mars 2017
+
+.footnote[[Répertoire GitHub](https://github.com/tei-fr/formationEnc2017-02) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2) | [jour3](00-programme.html#jour3) | [jour4](00-programme.html#jour4)]
+![test](images/logo-ecole-nationale-des-chartes.png)
+
+---
+template: inverse
+class: center middle
+name: index
+
+
+# TEI à la carte : un cas détude
+
+---
+
+
+# Comment créer un ODD TEI&nbsp;?
+
+Le site web [http://www.tei-c.org/Roma/](http://www.tei-c.org/Roma/) qui facilite la construction d’un ODD TEI. Il vous permet de ...
+
+* Retravailler l’un des ODDs d’exemple (TEI simplePrint, TEI Bare...) 
+
+* Construire selon vos besoins, en choisissant des modules, et ensuite des éléments 
+
+* ... un outil pour les esprits "top-down"
+
+Il y a également une feuille de style XSLT `oddByExample`. Il vous permet de...
+
+* Construire un ODD à partir d’un ensemble de documents déjà balisés 
+
+* Détecter ainsi les incohérences éventuels d’encodage et les corriger
+
+* Vous assurer que votre schéma répondra exactement à vos pratiques d’encodage
+
+* ... un outil pour les esprits "bottom-up"
+
+Regardons ce dernier ...
+
+---
+
+
+# Notre cas d’étude&nbsp;: la carte postale
+
+La TEI –&nbsp;la texte encoding initiative&nbsp;– s’applique quotidiennement aux livres et manuscrits, aux corpus littéraires et linguistiques.
+
+Supposons que l’on ait obtenu un financement ANR pour un projet de numérisation et de transcription d’une collection gigantesque de cartes postales. Comment va-t-on créer un système TEI apte à gérer des centaines de choses comme celles-ci&nbsp;?
+
+---
+
+
+# Une carte (recto)
+![](images/19800726_001r.jpg)
+---
+
+
+# Une carte (verso)
+![](images/19800726_001v.jpg)
+---
+
+
+# Encore une carte
+![](images/19530723.png)
+---
+
+
+# Quels sont les éléments significatifs qu’il faut absolument distinguer dans notre encodage&nbsp;?
+
+* image
+
+* oblitération
+
+* partie imprimée
+
+* message(s) écrit(s)
+
+* destinataire(s)
+
+* le(s) sujet(s) représenté(s) sur la carte
+
+* infos sur l’édition, impression, circulation de la carte … métadonnées à volonté
+
+* …
+
+---
+
+
+# Propositions
+
+Nous commençons en structurant chaque carte en divisions de type variés&nbsp;:
+
+Physiquement&nbsp;: 
+* .red[recto]&nbsp;: la surface qui porte l’image (normalement)
+
+* .red[verso]&nbsp;: la surface qui porte (normalement) le message
+
+
+Ensuite, nous constatons la possibilité d’avoir indifféremment sur ces deux surfaces d’autres sous-divisions telles que&nbsp;: 
+* le message
+
+* les marques associés à la communication du document, notamment&nbsp;:
+* le destinataire
+
+* les oblitérations
+
+
+* des infos sur l’édition, la vente, la collection etc. de la carte
+
+
+---
+
+
+# Première proposition d’encodage
+
+```xml
+<carte  n="0010"> 
+  <recto url="cartes/19800726_001r.jpg"></recto> 
+  <verso url="cartes/19800726_001v.jpg"> 
+    <obliteration>
+      <date>PM ?? Jul ???</date> 
+      <lieu>EL PASO. TX 799</lieu> 
+    </obliteration> 
+    <message>
+     <p>26 juill 80</p>
+     <p>Chère Madame, après New-York et Washington dont le gigantisme m’a 
+       beaucoup séduite,  nous avons commencé notre conquête de l’Ouest 
+       par New Orleans, ville folle en fête  perpétuelle. Il fait 
+       une chaleur torride au Texas mais le coca-cola permet de 
+       résister – l’Amérique m’enchante&nbsp;! Bientôt, le grand 
+       Canyon, le Colorado et San Francisco… En espérant 
+       que vous passez de bonnes vacances, affectueusement </p>
+     <p> Sylvie </p>
+     <p>François. </p>
+    </message>
+ <destinataire>
+   Madame Lefrère
+   4, allée George Rouault
+   75020 Paris
+   France
+</destinataire>
+ </verso> 
+</carte>
+```
+
+---
+
+
+# Commentaire
+
+* On ne s’est pas servi du vocabulaire TEI&nbsp;: donc on aura de mal à expliquer cet encodage à des non-francophones, ou de partager nos travaux avec d’autres.
+
+* On n’a pas mis en évidence tout ce qui pourrait nous intéresser du point de vue patrimonial, par exemple&nbsp;: les ratures, les retours à ligne, les noms de personnes ou de lieux, les aspects linguistiques, les métadonnées… 
+
+* On n’a pas structuré (par exemple) le destinataire, ce qui va nous embêter pour faire des recherches efficaces… 
+
+* Pour ajouter de telles choses, on doit inventer encore du vocabulaire… ce qui gaspille un peu notre temps, vu que la TEI l’a déjà fait…
+
+---
+
+
+# Proposition TEI initiale
+
+* On traite chaque carte comme un `&lt;text&gt;` et chaque sous-partie comme un `&lt;div&gt;` composé de `&lt;p&gt;` ou `&lt;ab&gt;`
+
+* On se sert de l’attribut `@type` pour caractériser chaque division
+
+* On va structurer les composants du destinataire en `&lt;address&gt;`, qui regroupe un `&lt;persName&gt;` et des `&lt;addrLine&gt;`
+
+* On aura également besoin de l’attribut `@facs` pour associer une partie de texte avec son image numérisée
+
+* On propose l’élément `&lt;stamp&gt;` pour tout timbrage, oblitération, etc. ; et de l’élément `&lt;bibl&gt;` pour les métadonnées concernant l’édition de la carte avant son usage
+
+* On pourrait distinguer les noms de lieux avec `&lt;placeName&gt;`, les noms de personnes avec `&lt;persName&gt;`, les dates avec `&lt;date&gt;`
+
+* On pourrait se servir de `&lt;del&gt;`(pour les ratures), `&lt;add&gt;` (pour les ajouts), `&lt;reg&gt;` (pour les régularisations), `&lt;hi&gt;` pour les mots ou phrases mises en évidence, `&lt;lb&gt;` pour les retours à la ligne….
+
+Est-ce que cela nous suffira&nbsp;?
+
+---
+
+
+# 1&lt;sup&gt;ère&lt;/sup&gt; proposition d’encodage TEI -- l’entête
+
+```xml
+<teiHeader >
+ <fileDesc>
+   <titleStmt>
+     <title>San Antonio River : digital edition of card 19800726_001 from the Virgolos
+         collection</title>
+   </titleStmt>
+   <publicationStmt>
+     <p>Démonstration à une formation TEI</p>
+   </publicationStmt>
+   <sourceDesc>
+     <bibl>
+       <title level="m">San Antonio River (postcard)</title>
+       <publisher>School Mart</publisher>
+       <pubPlace>1812 South Press, San Antonio, Texas 70210</pubPlace>
+       <idno>SA-146-C</idno>
+       <note resp="#ed">The San Antonio river, often called the Venice of Texas," winds
+  its way through the business section of San Antonio. It is very picturesque with
+  its many bridges and beautifully landscaped banks.</note>
+     </bibl>
+   </sourceDesc>
+ </fileDesc>
+ </teiHeader>
+```
+
+---
+
+
+# 1&lt;sup&gt;ère&lt;/sup&gt; proposition d’encodage TEI -- le texte
+
+```xml
+<text >
+ <body>
+   <div type="recto">
+     <figure>
+       <graphic url="../../Talks/Graphics/Cartes/19800726_001r.jpg"></graphic>
+       <figDesc>Vue d’un cours d’eau avec un pont en pierre et de petites maisons de style mexicain. Un homme et une femme  naviguent un pédalo au premier plan.</figDesc>
+       <head>San Antonio River</head>
+     </figure>
+   </div>
+   <div facs="../../Talks/Graphics/Cartes/19800726_001v.jpg" type="verso">
+     <div type="message">
+       
+                     <!-- ... --> </div>
+     <div type="envoi">
+       <ab type="evidences">
+         
+                        <!-- ... --> </ab>
+       <ab type="destinataire">
+         
+                        <!-- ... --> </ab>
+     </div>
+   </div>
+ </body>
+ </text>
+```
+
+---
+
+
+# 1&lt;sup&gt;ère&lt;/sup&gt; proposition d’encodage TEI -- le message
+
+```xml
+<div  type="message">
+ <p> <date when="1980-07-26">26 juill 80</date> </p>
+ <p>Chère Madame , après New-York et Washington dont le gigantisme m’a beaucoup séduite,
+     nous avons commencé notre conquête de l’Ouest par la Nouvelle Orléans, ville folle en
+     fête perpétuelle. Il fait une chaleur torride au Texas mais le coca-cola permet de
+     résister – l’Amérique m’enchante&nbsp;! Bientôt, le grand Canyon, le Colorado et San
+     Francisco… </p>
+ <p>En espérant que vous passez de bonnes vacances, affectueusement. </p>
+ <signed> Sylvie </signed>
+ <signed>François </signed>
+ </div>
+```
+
+---
+
+
+# 1&lt;sup&gt;ère&lt;/sup&gt; proposition d’encodage TEI -- l’envoi
+
+```xml
+<div  type="envoi">
+ <ab type="evidences">
+   <stamp type="cachetPoste"> 
+     <placeName>El Paso</placeName> - TX 799 -
+     <date when="1983-08-18">18-08-1983</date> 
+   </stamp>
+   <stamp type="timbrePoste">
+     <figure>
+       <figDesc>Portrait masculin de profil, avec un avion ou un radar au second plan</figDesc>
+     </figure>
+     <seg>US Airmail 21 c.</seg>
+   </stamp>
+ </ab>
+ <ab type="destinataire">
+   <address>
+     <addrLine>
+       <persName>Madame <surname>Lefrère</surname></persName>
+     </addrLine>
+     <addrLine>4, allée George Rouault</addrLine>
+     <addrLine>75020 Paris</addrLine>
+     <addrLine>France</addrLine>
+   </address>
+ </ab>
+ </div>
+```
+
+---
+
+
+# Comment construire son ODD&nbsp;?
+
+Il faut ... 
+* identifier les éléments que nous souhaitons utiliser 
+
+* décider les modifications éventuelles de leurs attributs et leur contenus 
+
+* documenter des règles d’usage etc
+
+
+Nous commençons en faisant la sélection des éléments
+
+---
+
+
+# Proposition d’un ODD pour les cartes 
+
+```xml
+<schemaSpec  ident="teiCards" docLang="fr" start="TEI teiCorpus"> 
+  <moduleRef key="tei"></moduleRef> 
+  <moduleRef key="textstructure" include="TEI body dateline div      postscript salute signed text"></moduleRef> 
+  <moduleRef key="core" include="add addrLine address bibl      date del foreign graphic head hi item lb list name p      publisher q reg resp respStmt street teiCorpus title unclear"></moduleRef> 
+  <moduleRef key="header" include="teiHeader fileDesc titleStmt      publicationStmt sourceDesc"></moduleRef> 
+  <moduleRef key="figures" include="figure figDesc"></moduleRef> 
+  <moduleRef key="msdescription" include="stamp"></moduleRef>
+  <moduleRef key="transcr" include="att.global.facs"></moduleRef> 
+  <moduleRef key="namesdates" include="persName placeName"></moduleRef> 
+  <elementRef key="ab"></elementRef>
+ 
+            <!-- ... --> </schemaSpec>
+```
+
+---
+
+
+# Génération d’un ODD TEI
+
+La feuille de style `oddbyexample` nous permet de générer un ODD à partir d’un corpus de documents TEI.
+
+* Chargez n’importe quel fichier XML du dossier `Cartes` dans oXygen
+
+* Créez un nouveau Scénario de Transformation `oddByExample` et appliquez-le (pour les détails, voir le [tuto oddByExample](http://teic.github.io/TCW/howtoGenerate-fr.html)&nbsp;;
+
+* Comparer votre `generated.odd` et le `teiCartes.odd` fourni. Est-ce que les schémas générés par les deux sont pareils?
+</textarea><script src="js/remark-0.6.5.min.js" type="text/javascript"></script><script type="text/javascript">
+        var hljs = remark.highlighter.engine;
+      </script><script src="remark.language.js" type="text/javascript"></script><script type="text/javascript">
+        var slideshow = remark.create({
+        highlightStyle: 'monokai',
+        highlightLanguage: 'remark'
+        }) ;
+      </script></body>
+</html>

@@ -31,7 +31,7 @@
       </titlePage>
     </front>
     <body>
-      <div rend="slide" xml:lang="fr" xml:id="index">
+      <div type="slide" xml:lang="fr" xml:id="index">
         <div>
           <head>Les besoins</head>
           <div>
@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <div rend="slide" xml:lang="fr">
+      <div type="slide" xml:lang="fr">
         <div>
           <head>Des composants tirés de différents modules</head>
           <div>
@@ -64,12 +64,11 @@
           <div>
             <head><ident>figure</ident></head>
             <p><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/FT.html#FTGRA">14
-    Tables, Formulæ, Graphics and Notated Music</ref> – 14.4 Specific Elements for
-  Graphic Images</p>
+    Tables, Formulæ, Graphics and Notated Music</ref> – 14.4 Specific Elements for Graphic Images</p>
             <p>Éléments utiles définis <gi>figDesc</gi>, <gi>figure</gi></p>
           </div>
         </div></div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Exemple de figure simple</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -83,42 +82,41 @@
             <p>Signaler les problèmes liés au point d’insertion.</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Exemple de figure <hi>assez</hi> simple</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
   <figure xml:id="c2Pl0001" type="plate">
-    <head>L'église de Sainte-Sabine à Rome</head>
-    <figDesc>Plan de l'église</figDesc>
+    <head>L’église de Sainte-Sabine à Rome</head>
+    <figDesc>Plan de l’église</figDesc>
     <graphic url="facs/full/facsC2Pl0001.jpg" mimeType="image/png"/>
-  </figure>
-            </egXML>
+  </figure></egXML>
           </div>
           <div rend="notes">
-            <p>(graphic) indique l’emplacement d’une image, d’une illustration ou d’un schéma intégrés.</p>
+            <p><gi>graphic</gi> indique l’emplacement d’une image, d’une illustration ou d’un schéma intégrés.</p>
             <p>Les éléments <gi>graphic</gi>, <gi>media</gi> et <gi>binaryObject</gi> sont membres de la classe <ident>model.graphicLike</ident>.</p>
            <div>
- <p><ident>att.internet</ident> Media fournit des attributs pour spécifier le type de ressource informatique selon une taxinomie normalisée.</p>
+             <p><ident>att.internet</ident> Media fournit des attributs pour spécifier le type de ressource informatique selon une taxinomie normalisée.</p>
  <p>
    <ident>mimeType</ident> (type de média MIME) spécifie le type MIME (multipurpose internet mail extension) applicable.
  </p>
            </div>
             <div>
-  <p><ident>att.media</ident> provides attributes for specifying display and related properties of external media.</p>
+              <p><ident>att.media</ident> fournit des attributs pour spécifier la présentation et les propriétés aux média externes.</p>
  <list>
-   <item><att>width</att>	Where the media are displayed, indicates the display width</item>
-   <item><att>height</att>	Where the media are displayed, indicates the display height</item>
-   <item><att>scale</att>	Where the media are displayed, indicates a scale factor to be applied when generating the desired display size</item>
+   <item><att>width</att>	à l’endroit où le média est présenté, indique la largeur de rendu</item>
+   <item><att>height</att>	à l’endroit où le média est présenté, indique la hauteur de rendu</item>
+   <item><att>scale</att>	à l’endroit où le média est présenté, indique un facteur d’échelle à appliquer lors de la génération du rendu</item>
  </list>
            </div>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
-            <head>Exemple de figure <hi>Encore moins</hi> simple</head>
+            <head>Exemple de figure <hi>moins</hi> simple</head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
   <figure xml:id="c2Pl0001" type="plate">
-    <head>L'église de Sainte-Sabine à Rome</head>
+    <head>L’église de Sainte-Sabine à Rome</head>
     <figDesc>
       <locus from="#c2F9v" n="p16">p. 16</locus>
       <label>
@@ -131,13 +129,12 @@
         <width quantity="42" unit="mm"></width>
       </dimensions>
     </figDesc>
-  </figure>
-            </egXML>
+  </figure></egXML>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
-            <head>Utilisation de facsimile</head>
+            <head>Utilisation de <gi>facsimile</gi></head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
   <teiHeader><!-- ... --></teiHeader>
   <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
@@ -147,19 +144,16 @@
   </facsimile>
   <text>...
     du texte <pb facs="#c2Plf0001"/> du texte
-  </text>
-            </egXML>
+  </text></egXML>
           </div>
           <div rend="notes">
-            <p>Il est de pratique courante, en particulier dans le monde numérique, de produire des éditions de textes qui offre des facsimili. Modèle de l’édition hyperdiplomatique. Mise en regard des pages mais aussi directement du texte avec l’image ou des zones.</p>
-            <p><ident>att.global.facs</ident> groups elements corresponding with all or part of an image, because they contain an alternative representation of it, typically but not necessarily a transcription of it.</p>
-            <p><att>facs</att>	(facsimile) points to all or part of an image which corresponds with the content of the element.</p>
-            <p><ident>att.global.change</ident> supplies the change attribute, allowing its member elements to specify one or more states or revision campaigns with which they are associated.</p>
-            <p><att>change</att>	points to one or more change elements documenting a state or revision campaign to which the element bearing this attribute and its children have been assigned by the encoder.</p>
-            <p>facsimile contains a representation of some written source in the form of a set of images rather than as transcribed or encoded text.</p>
+            <p>Il est de pratique courante, en particulier dans le monde numérique, de produire des éditions de textes qui offre des facsimili. Modèle de l’édition hyper-diplomatique. Mise en regard des pages mais aussi directement du texte avec l’image ou des zones.</p>
+            <p><ident>att.global.facs</ident> groupe les éléments correspondant à toutes les parties d’une image, parce que ceux-ci comportent une représentation, typiquement mais pas nécessairement, une transcription.</p>
+            <p><att>facs</att> (facsimile) pointe vers toutes les parties d’une image qui correspond au contenu de l’élément.</p>
+            <p><gi>facsimile</gi> contient des représentations de la source écrite sous la forme d’un ensemble d’images plutôt qu’un texte transcrit. Cet élément suit immédiatement le <gi>teiHeader</gi></p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Utilisation de <gi>facsimile</gi></head>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -180,36 +174,80 @@
             </egXML>
           </div>
           <div rend="notes">
-            <p>surface defines a written surface as a two-dimensional coordinate space, optionally grouping one or more graphic representations of that space, zones of interest within that space, and transcriptions of the writing within them.</p>
+            <p><gi>surface</gi> définit une surface écrite au moyen de coordonnées spatiales à deux dimensions, groupant optionnellement un ou plusieurs représentations graphiques de cet espace, des zones d’intérêt au sein de cet espace, et des transcriptions de l’écriture en leur sein.</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
+        <div type="slide" xml:lang="fr">
           <div>
             <head>Que faire avec ça ?</head>
             <p>![image](../images/facs-fig2.jpg)</p>
           </div>
         </div>
-        <div rend="slide" xml:lang="fr">
-          <div>
-            <head>Utilisation des <gi>zone</gi>s</head>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <div type="slide" xml:lang="fr">
+        <div>
+          <head>Utilisation des <gi>zone</gi>s</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
   <teiHeader><!-- ... --></teiHeader>
-  <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs">
-    <surface xml:id="c2FacsPl0001">
-      <zone ulx="0" uly="0" lrx="50" lry="321">
-        <graphic n="full" mimeType="image/jpg" 
-        url="facs/full/facsC2Pl0001.jpg">
-        </graphic>
-      </zone>
-      <!-- ... -->
-    </surface><!-- ... -->
-  </facsimile>
-  <text><!-- ... --></text>
-            </egXML>
-          </div>
-        </div>
-     
-      <div rend="slide">
+    <facsimile corresp="#c2ImagesLicence" xml:id="c2Facs"> 
+      <surface xml:id="c2FacsPl0001">
+        <zone ulx="0" uly="0" lrx="50" lry="321"> 
+          <graphic n="full" mimeType="image/jpg"
+            url="facs/full/facsC2Pl0001.jpg">
+          </graphic>
+        </zone>
+        <!-- ... --> 
+    </surface>
+    <!-- ... -->
+    </facsimile>
+    <text><!-- ... --></text></egXML>
+      </div>
+      </div>
+      <div type="slide">
+        <head>Ce que l’on pourrait vouloir faire</head>
+        <list>
+          <item>Rendre obligatoire l’utilisation de <gi>graphic</gi> dans <gi>figure</gi></item>
+          <item>Rendre obligatoire l’utilisation de <gi>figDesc</gi></item>
+          <item>Imposer l’utilisation de <gi>facsimile</gi></item>
+          <item>Contrôler les valeurs de <att>mimeType</att></item>
+        </list>
+      </div>
+      <div type="slide">
+        <head>Contrôler les valeurs de <att>mimeType</att></head>
+        <p><att>mimeType</att> appartient à la classe <ident>att.internetMedia</ident></p>
+        <p>Afin de fournir une liste de valeurs fermées pour tous ces attributs on peut modifier cette classe de la manière suivante :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<classSpec ident="att.internetMedia"
+  type="atts" mode="change" module="tei">
+  <attList>
+    <attDef ident="mimeType" mode="change">
+      <valList type="closed" mode="replace">
+        <valItem ident="image/jpg" />
+        <valItem ident="application/pdf" />
+        <valItem ident="application/tei+xml" />
+        <valItem ident="application/xml" />
+      </valList>
+    </attDef>
+  </attList>
+</classSpec></egXML>
+        <p>Afin de fournir une liste de valeurs fermées pour tous cet attribut seulement lorsqu’il est porté par <gi>graphic</gi> :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<elementSpec ident="graphic" mode="change">
+  <attList>
+    <attDef ident="type" usage="req" mode="change">
+      <gloss>(MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type</gloss>
+      <datatype>
+        
+      </datatype>
+      <valList type="closed" mode="replace">
+        <valItem ident="section">
+          <gloss>1st level section</gloss>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+</elementSpec></egXML>
+      </div>
+      <div type="slide">
         <head>Quelques outils</head>
         <div><head>Image Markup Tool</head>
           <p><ref target="http://www.tapor.uvic.ca/~mholmes/image_markup/">http://www.tapor.uvic.ca/~mholmes/image_markup/</ref></p>
