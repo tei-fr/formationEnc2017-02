@@ -6,7 +6,7 @@
       <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css">
    </head>
    <body><textarea id="source">
-title: Comment se servir des TEI Guidelines? 
+title: Comment se servir des TEI Guidelines?
 description: , 2012-01-24
 theme: theme/remark-dark-em.css
 name: inverse
@@ -31,7 +31,7 @@ class: center middle
 name: index
 
 
-# TEI 
+# TEI
 
 ---
 
@@ -42,7 +42,7 @@ name: index
 
 1. Orientation&nbsp;: est-ce que vos objets sont déjà reconnus par la TEI&nbsp;?
 
-1. Déclaration&nbsp;: comment créer une spécification TEI-conforme&nbsp;? 
+1. Déclaration&nbsp;: comment créer une spécification TEI-conforme&nbsp;?
 
 1. Documentation&nbsp;: comment documenter vos pratiques TEI&nbsp;?
 
@@ -60,14 +60,14 @@ La modélisation de vos données est une préalable essentiel. Que vous vous ser
 
 # Analyse des données classique
 
-On identifie... 
+On identifie...
 * les "objets d’intérêt"
 
 * leurs attributs et propriétés
 
 * les relations entre objets
 
-* les procédures/traitements essentiels envisagés 
+* les procédures/traitements essentiels envisagés
 
 
 Ce travail est essentiel pour n’importe quel projet d’informatisation
@@ -82,7 +82,7 @@ Ce travail est essentiel pour n’importe quel projet d’informatisation
 
 # Comment s’orienter&nbsp;?
 
-Les TEI Guidelines, imprimées ou en ligne, se divisent en deux grandes parties&nbsp;: 
+Les TEI Guidelines, imprimées ou en ligne, se divisent en deux grandes parties&nbsp;:
 * une séquence de 23 chapitres, dont la plupart correspondent à un module
 
 * des listes alphabétiques de définitions exhaustives de classes (183), d’éléments (546), d’attributs (470), de macros(8), et de types de données (28) .
@@ -95,13 +95,13 @@ Comment savoir quel élément (etc.) choisir pour tel ou tel entité identifiée
 
 # La triste vérité...
 
-* Désolé, mais il n’y a aucune méthode scientifique&nbsp;; aucun raccourci pour cela... 
+* Désolé, mais il n’y a aucune méthode scientifique&nbsp;; aucun raccourci pour cela...
 
 * Il faut étudier les exemplaires et les définitions pour savoir si cet élément TEI si prometteur s’applique en effet à votre cas
 
-* comme c’est le cas pour d’autres types de mapping... 
+* comme c’est le cas pour d’autres types de mapping...
 
-Pour chacun(e) des entités/concepts identifiés dans votre modèle, il faut décider&nbsp;: 
+Pour chacun(e) des entités/concepts identifiés dans votre modèle, il faut décider&nbsp;:
 * quel objet TEI lui correspond parfaitement&nbsp;? (s’il existe)
 
 * quel objet TEI lui ressemble et quelles petites modifications seraient nécessaires pour qu'il lui corresponde ?
@@ -112,7 +112,7 @@ Pour chacun(e) des entités/concepts identifiés dans votre modèle, il faut dé
 ---
 
 
-# Par exemple... 
+# Par exemple...
 ![](../Graphics/guyDeWarwick-tp.jpg)![](../Graphics/guyDeWarwick-13.jpg)
 ---
 
@@ -121,7 +121,7 @@ Pour chacun(e) des entités/concepts identifiés dans votre modèle, il faut dé
 
 * C'est un livret de la bibliothèque bleue -- un chapbook-- organisé de manière traditionnelle, avec des pièces liminaires (page à titre, une table des matières) et plusieurs chapitres
 
-* chacun des chapitres contient : 
+* chacun des chapitres contient :
 * un titre et une sommaire
 
 * des paragraphes narratives
@@ -161,44 +161,37 @@ Le terme document  n'a aucune définition formelle, mais d’habitude il corresp
 
 ```xml
 <TEI >
-            <teiHeader>
-              
-               <!-- obligatoire :  métadonnées  -->
-            </teiHeader>
-            <facsimile>
-              
-               <!-- facultatif :  rassemble des images de l'objet-->
-            </facsimile>
-            <sourceDoc>
-              
-               <!-- facultatif :  transcription documentaire  de l'objet -->
-            </sourceDoc>
-            <text>
-              
-               <!-- facultatif :  transcription textuelle  de l'objet -->
-            </text>
-          </TEI>
+  <teiHeader>
+    <!-- obligatoire :  métadonnées  -->
+  </teiHeader>
+  <facsimile>
+    <!-- facultatif :  rassemble des images de l'objet-->
+  </facsimile>
+  <sourceDoc>
+    <!-- facultatif :  transcription documentaire  de l'objet -->
+  </sourceDoc>
+  <text>
+    <!-- facultatif :  transcription textuelle  de l'objet -->
+  </text>
+</TEI>
 ```
 
 ---
 
 
-# Un TEI Corpus par contre.... 
+# Un TEI Corpus par contre....
 
 
 ```xml
 <teiCorpus >
-              <teiHeader>
-                
-               <!-- obligatoire -->
-              </teiHeader>
-              <TEI>
-                
-               <!-- obligatoire -->
-              </TEI>
-              
-            <!-- encore d'elements <TEI>  -->
-            </teiCorpus>
+  <teiHeader>
+    <!-- obligatoire -->
+  </teiHeader>
+  <TEI>
+    <!-- obligatoire -->
+  </TEI>
+    <!-- encore d'elements <TEI>  -->
+</teiCorpus>
 ```
 
 
@@ -209,7 +202,7 @@ Cette structure servirait par ex à une collection de livres de cette sorte
 
 # L’entête TEI
 
-Inspiré de la pratique AACR2, il contient quatre éléments principaux 
+Inspiré de la pratique AACR2, il contient quatre éléments principaux
 
 1. `&lt;fileDesc&gt;`: une description bibliographique de la ressource et de ses origines
 
@@ -229,18 +222,18 @@ tous facultatifs, sauf le premier
 
 ```xml
 <teiHeader >
-              <fileDesc>
-                <titleStmt>
-                  <title>titre de la ressource</title>
-                </titleStmt>
-                <publicationStmt>
-                  <p>agence de distribution de la source</p>
-                </publicationStmt>
-                <sourceDesc>
-                  <p>provenance de la source</p>
-                </sourceDesc>
-              </fileDesc>
-            </teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title>titre de la ressource</title>
+    </titleStmt>
+    <publicationStmt>
+      <p>agence de distribution de la source</p>
+    </publicationStmt>
+    <sourceDesc>
+      <p>provenance de la source</p>
+    </sourceDesc>
+  </fileDesc>
+</teiHeader>
 ```
 
 
@@ -249,8 +242,8 @@ tous facultatifs, sauf le premier
 
 # L'élément `&lt;text&gt;`
 
-Un texte peut être simple ou complexe : 
-* un texte simple est un objet autonome, complète en soi, par ex un roman, un poème 
+Un texte peut être simple ou complexe :
+* un texte simple est un objet autonome, complète en soi, par ex un roman, un poème
 
 * un texte complexe ou composé rassemble d'autres textes, par ex une anthologie, une collection de poésies
 
@@ -260,22 +253,19 @@ Un texte peut être simple ou complexe :
 
 # TEI text structure (1)
 
-Un document simple : 
+Un document simple :
 ```xml
 <text >
-              <front>
-                
-               <!-- facultatif -->
-              </front>
-              <body>
-                
-               <!-- obligatoire -->
-              </body>
-              <back>
-                
-               <!-- facultatif -->
-              </back>
-            </text>
+  <front>
+    <!-- facultatif -->
+  </front>
+  <body>
+    <!-- obligatoire -->
+  </body>
+  <back>
+    <!-- facultatif -->
+  </back>
+</text>
 ```
 
 
@@ -284,30 +274,28 @@ Un document simple :
 
 # TEI text structure (2)
 
-Un document composé : 
+Un document composé :
 ```xml
 <text >
-              <front>
-                
-               <!-- ... -->
-              </front>
-              <group>
-                <text n="1">
-                  <body>
-                    <p>...</p>
-                  </body>
-                </text>
-                <text n="2">
-                  <body>
-                    <p>...</p>
-                  </body>
-                </text>
-              </group>
-              <back>
-                
-               <!-- ... -->
-              </back>
-            </text>
+  <front>
+    <!-- ... -->
+  </front>
+  <group>
+    <text n="1">
+      <body>
+        <p>...</p>
+      </body>
+    </text>
+    <text n="2">
+      <body>
+        <p>...</p>
+      </body>
+    </text>
+  </group>
+  <back>
+    <!-- ... -->
+  </back>
+</text>
 ```
 
 
@@ -316,7 +304,7 @@ Un document composé :
 
 # Entrons dans le `&lt;body&gt;` d'un `&lt;text&gt;`...
 
-D'habitude, on y trouve des divisions 
+D'habitude, on y trouve des divisions
 * qui s’emboîtent
 
 * l'attribut `@type` sert à distinguer les divisions par fonction ou par niveau
@@ -335,7 +323,7 @@ Ces deux derniers sont deux des attributs dits globaux qui peuvent s'attacher à
 
 # Composants des divisions
 
-Vous avez déjà rencontré ... 
+Vous avez déjà rencontré ...
 
 * éléments liminaux spécialisés : `&lt;head&gt;`, `&lt;trailer&gt;`, etc.
 
@@ -352,7 +340,7 @@ Vous avez déjà rencontré ...
 
 # Composants des composants des divisions
 
-Vous avez déjà rencontré ... 
+Vous avez déjà rencontré ...
 
 * éléments de repérage : les `&lt;lb&gt;`, `&lt;pb&gt;` etc.
 
@@ -371,31 +359,30 @@ Vous avez déjà rencontré ...
 
 ```xml
 <text >
-            <front>
-              <titlePage> ... </titlePage>
-              
-               <!-- ... -->
-              <div type="prolog" xml:id="P1">
-                <head>Ici commence le prologue de lecteur</head>
-                
-                  <!-- ... -->
-                <trailer>Ici fine le prologue</trailer>
-              </div>
-            </front>
-            <body>
-              <div type="chap" xml:id="C1">
-                <head>Comment le conte Roalt avoit une belle fille nomee Felisse sur montant en
-                  beautee toutes autres dames et damoiselles et envoya querir Guyonet filz de son
-                  seneschal pour demeurer en sa court.</head>
-                
-                  <!-- ... -->
-              </div>
-            </body>
-            <back>
-              
-               <!-- ... -->
-            </back>
-          </text>
+  <front>
+    <titlePage> ... </titlePage>
+      <!-- ... -->
+    <div type="prolog" xml:id="P1">
+    <head>Ici commence le prologue de lecteur</head>
+      <!-- ... -->
+    <trailer>Ici fine le prologue</trailer>
+    </div>
+  </front>
+  <body>
+    <div type="chap" xml:id="C1">
+    <head>Comment le conte Roalt avoit
+      une belle fille nomee Felisse sur
+      montant en beautee toutes autres
+      dames et damoiselles et envoya
+      querir Guyonet filz de son
+      seneschal pour demeurer en sa court.</head>
+        <!-- ... -->
+      </div>
+  </body>
+  <back>
+    <!-- ... -->
+  </back>
+</text>
 ```
 ![](../Graphics/guyDeWarwick-13.jpg)
 ---
@@ -403,7 +390,7 @@ Vous avez déjà rencontré ...
 
 # Composants des divisions
 
-Qu'est-ce qu'on trouve dans une division ? 
+Qu'est-ce qu'on trouve dans une division ?
 * Un ou plusieurs titres (au début et/ou à la fin), balisés avec `&lt;head&gt;` ou `&lt;trailer&gt;`
 
 * de la prose, divisée en paragraphes (`&lt;p&gt;`) ou listes (`&lt;list&gt;`) contenant des `&lt;item&gt;` et facultativement des `&lt;label&gt;`
@@ -413,30 +400,29 @@ Qu'est-ce qu'on trouve dans une division ?
 * du théâtre, divisée en énoncés (`&lt;sp&gt;`), contenant une mélange de `&lt;p&gt;` ou de `&lt;l&gt;` facultativement entrecoupée de didascalies (`&lt;stage&gt;`)
 
 
-... et bien sûr des sous-divisions 
+... et bien sûr des sous-divisions
 
 ---
 
 
-# Exemple prosaïque ... 
+# Exemple prosaïque ...
 
 ```xml
 <div  n="1">
-            <head>La Fête</head>
-            <p>C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar.</p>
-            <p>Les soldats qu'il avait commandés en Sicile se donnaient un grand festin pour
-              célébrer le jour anniversaire de la bataille d'Eryx, et comme le maître était absent
-              et qu'ils se trouvaient nombreux, ils mangeaient et ils buvaient en pleine
-              liberté.</p>
-            
-            <!-- ... -->
-          </div>
+  <head>La Fête</head>
+  <p>C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar.</p>
+  <p>Les soldats qu'il avait commandés en Sicile se donnaient un grand festin pour
+  célébrer le jour anniversaire de la bataille d'Eryx, et comme le maître était absent
+  et qu'ils se trouvaient nombreux, ils mangeaient et ils buvaient en pleine
+  liberté.</p>
+   <!-- ... -->
+</div>
 ```
 
 ---
 
 
-# Exemple poétique 
+# Exemple poétique
 
 ```xml
 <div  type="sonnet">
@@ -468,7 +454,7 @@ Qu'est-ce qu'on trouve dans une division ?
 ---
 
 
-# Exemples dramatiques (1) 
+# Exemples dramatiques (1)
 
 ```xml
 <sp  who="#V">
@@ -490,7 +476,7 @@ Qu'est-ce qu'on trouve dans une division ?
           </sp><sp  who="#E">
             <speaker>Estragon</speaker>
             <p>Allons-y.</p>
-          </sp><stage >Ils ne bougent pas.</stage><list xmlns="http://www.tei-c.org/ns/Examples" type="speakers">
+          </sp><stage >Ils ne bougent pas.</stage><list  type="speakers">
             <item xml:id="V">Vladimir</item>
             <item xml:id="E">Estragon</item>
           </list>
@@ -533,7 +519,7 @@ Qu'est-ce qu'on trouve dans une division ?
 
 # Composants textuels typiques
 
-* des séquences de mots qui sont (par convention) mises en évidence, par exemple pour leur donner une emphase, parce qu'ils sont en langue étranger, ou cités etc, 
+* des séquences de mots qui sont (par convention) mises en évidence, par exemple pour leur donner une emphase, parce qu'ils sont en langue étranger, ou cités etc,
 
 * des mots qui pourraient être d’intérêt non-lexicale “data-like” (des noms de lieu ou de personne, des dates, des chiffres ... )
 
@@ -559,8 +545,8 @@ On voit une partie en italique ou en petites capitales : et on se demande pourqu
 
 # La mise en évidence, et son interprétation - 1
 
-Plusieurs politiques sont envisageables : 
-* on signale la présence d'une mise en évidence sans distinction particulière avec `&lt;hi&gt;` (highlighted : distinction typographique) 
+Plusieurs politiques sont envisageables :
+* on signale la présence d'une mise en évidence sans distinction particulière avec `&lt;hi&gt;` (highlighted : distinction typographique)
 ```xml
 <p >... mais Prévert pense que la <hi>parole</hi> convainc, et il continue « <hi>mais
                     la brûlure de son regard Les rappelle à de bons sentiments</hi> », plus prompts
@@ -568,7 +554,7 @@ Plusieurs politiques sont envisageables :
 ```
 
 
-* on essaie de distinguer l' .red[objectif sémantique] de ces mises en évidence : en ce cas, il y a un `&lt;emph&gt;` (emphase linguistique), un `&lt;quote&gt;` (citation) et un `&lt;title&gt;` (titre): 
+* on essaie de distinguer l' .red[objectif sémantique] de ces mises en évidence : en ce cas, il y a un `&lt;emph&gt;` (emphase linguistique), un `&lt;quote&gt;` (citation) et un `&lt;title&gt;` (titre):
 ```xml
 <p >... mais Prévert pense que la <emph>parole</emph> convainc, et il continue «
                     <quote>mais la brûlure de son regard Les rappelle à de bons sentiments</quote>
@@ -583,7 +569,7 @@ Plusieurs politiques sont envisageables :
 # La mise en évidence et son interprétation - 2
 
 
-* on peut combiner ces deux niveaux de description ... 
+* on peut combiner ces deux niveaux de description ...
 ```xml
 <p >... mais Prévert pense que la <emph rend="italic">parole</emph> convainc, et il continue « <q rend="italic">mais la
                     brûlure de son regard Les rappelle à de bons sentiments</q> », plus prompts à
@@ -599,13 +585,13 @@ Plusieurs politiques sont envisageables :
 ---
 
 
-# Phrases en langues étrangères 
+# Phrases en langues étrangères
 
 * L'attribut `@xml:lang` peut s'attacher à tout élément TEI
 
 * L'élément `&lt;foreign&gt;` est disponible s'il n'y a pas d'autre sémantique à signaler
 
-* La langue est identifiée par son code normalisé ISO 
+* La langue est identifiée par son code normalisé ISO
 
 ```xml
 <title  xml:lang="de">Die
@@ -622,7 +608,7 @@ Plusieurs politiques sont envisageables :
 
 # Noms de lieux et de personnes
 
-La balise `&lt;rs&gt;` (referring string) est très générique : 
+La balise `&lt;rs&gt;` (referring string) est très générique :
 ```xml
 <p >Le premier dîner que <rs type="person">M. de Norpois</rs> fit à la maison, une année où je jouais encore aux
                 <rs type="place">Champs-Élysées</rs>, est resté dans ma mémoire, parce que
@@ -631,7 +617,7 @@ La balise `&lt;rs&gt;` (referring string) est très générique :
 ```
 
 
-Les balises `&lt;name&gt;`, `&lt;persName&gt;`, ou `&lt;persName&gt;` sont plus spécifique : 
+Les balises `&lt;name&gt;`, `&lt;persName&gt;`, ou `&lt;persName&gt;` sont plus spécifique :
 ```xml
 <p >Le premier dîner que
                 <persName ref="http://fr.wikipedia.org/wiki/Marquis_de_Norpois">M. de
@@ -649,33 +635,33 @@ Nous allons traiter ce sujet en plus de détail par la suite.
 
 # Les références croisées et les liens
 
-Pour relier deux endroits d’un ou plusieurs textes, on utilise l’un des éléments `&lt;ptr&gt;` ou `&lt;ref&gt;`. 
+Pour relier deux endroits d’un ou plusieurs textes, on utilise l’un des éléments `&lt;ptr&gt;` ou `&lt;ref&gt;`.
 ```xml
 <ref  target="#pv1894_61"> procès-verbal no
               61</ref>
 ```
- 
+
 ```xml
 <ptr  target="#pv1894_61"></ptr>
 ```
 
 
-L'attribut `@target` spécifie l'objet ciblé par la référence, que ce soit en fournissant l'identifiant d'un autre élément dans le même document, ou en fournissant une adresse complète sur le Web (un URL) 
+L'attribut `@target` spécifie l'objet ciblé par la référence, que ce soit en fournissant l'identifiant d'un autre élément dans le même document, ou en fournissant une adresse complète sur le Web (un URL)
 ```xml
 <ptr  target="http://www.example.org/example.xml#pv1894_61"></ptr>
 ```
 
 
-Dans ces exemples, on pointe sur la section suivante : 
+Dans ces exemples, on pointe sur la section suivante :
 ```xml
 <div  xml:id="pv1894_61">
-              
+
             <!-- ... -->
             </div>
 ```
 
 
-Plusieurs autres attributs de type "pointeur" sont disponibles, fournissant une gamme de type de liens plus spécialisés. 
+Plusieurs autres attributs de type "pointeur" sont disponibles, fournissant une gamme de type de liens plus spécialisés.
 
 ---
 
@@ -719,7 +705,7 @@ Les dates qui figurent dans les textes manifestent beaucoup de variation lexical
 # Par exemple
 
 ```xml
-<pb  n="15" facs="page_15.png"></pb><fw xmlns="http://www.tei-c.org/ns/Examples">fueillet premier.</fw><div xmlns="http://www.tei-c.org/ns/Examples" rend="slide"><head>Comment le conte Roalt ... en sa court</head><figure>
+<pb  n="15" facs="page_15.png"></pb><fw >fueillet premier.</fw><div xmlns="http://www.tei-c.org/ns/Examples" rend="slide"><head>Comment le conte Roalt ... en sa court</head><figure>
               <graphic url="p15_dtl.png"></graphic>
               <figDesc></figDesc>
             </figure>
@@ -775,13 +761,13 @@ Les dates qui figurent dans les textes manifestent beaucoup de variation lexical
 
 # Vous vous sentez un peu accablé ?
 
-Tout ceci n'est qu'une des manières de se servir de la TEI. 
+Tout ceci n'est qu'une des manières de se servir de la TEI.
 
 * TEI est un système modulaire. On s'en sert pour créer un système d'encodage selon ses propres besoins, en sélectionnant des modules spécifiés par la TEI
 
 * Chaque module définit un groupe d'éléments (et leurs attributs)
 
-* on peut sélectionner les éléments voulus, et même en changer des propriétés 
+* on peut sélectionner les éléments voulus, et même en changer des propriétés
 
 * on peut y mélanger des éléments nouveaux, ou bien natifs ou bien d'autres standards
 
@@ -792,8 +778,8 @@ Il faut définir ses objets avant de se servir la TEI !
 
 # La TEI facilite un balisage intelligent
 
-La TEI s'applique à l'encodage des... 
-* composants structuraux et fonctionnels d'un texte 
+La TEI s'applique à l'encodage des...
+* composants structuraux et fonctionnels d'un texte
 
 * transcriptions diplomatiques des sources historiques, des images, des annotations
 
@@ -822,10 +808,10 @@ analysisSimple analytic mechanismscertaintyCertainty and uncertainty.red[core]é
 
 # Niveaux de validation
 
-Un document TEI-XML doit: 
-1. respecter les règles syntaxiques de XML; 
+Un document TEI-XML doit:
+1. respecter les règles syntaxiques de XML;
 
-1. être valide par rapport à un schéma quelconque; 
+1. être valide par rapport à un schéma quelconque;
 
 1. respecter la sémantique définie de chaque élément TEI utilisé
 
@@ -839,8 +825,8 @@ Un TEI ODD nous permet de construire un schéma adéquat à nos besoins
 
 # Comment effectuer notre choix de balises?
 
-Nous aurons besoins de plusieurs choses : 
-* un schéma formel (en langue informatique tel que DTD, RELAXNG, W3C Schema, Schematron) qui peut contrôler : 
+Nous aurons besoins de plusieurs choses :
+* un schéma formel (en langue informatique tel que DTD, RELAXNG, W3C Schema, Schematron) qui peut contrôler :
 * quelles balises sont disponibles ?
 
 * dans quels contextes ?
@@ -852,10 +838,10 @@ Nous aurons besoins de plusieurs choses :
 * en respectant quelles contraintes ?
 
 
-* une documentation pour expliquer nos principes éditoriaux, nos principes de choix de balises, etc. aux utilisateurs/ développeurs : 
+* une documentation pour expliquer nos principes éditoriaux, nos principes de choix de balises, etc. aux utilisateurs/ développeurs :
 * en plusieurs langues naturelles
 
-* en plusieurs formats bureautiques (PDF, Word, HTML, epub...) 
+* en plusieurs formats bureautiques (PDF, Word, HTML, epub...)
 
 
 * des outils informatiques pour transformer et gérer nos données XML
@@ -868,12 +854,12 @@ Nous aurons besoins de plusieurs choses :
 
 Ayant elle-même ces mêmes besoins, la TEI vous propose : * ODD&nbsp;: Un vocabulaire XML pour définir les vocabulaires XML
 * Stylesheets&nbsp;: Un ensemble de feuilles de style XSLT très générique pour la conversion des documents XML TEI
-* Roma&nbsp;: Un logiciel pour traiter des documents exprimés dans ce vocabulaire, pour en faire ressortir 
-* des schémas RELAXNG, DTD, etc. 
+* Roma&nbsp;: Un logiciel pour traiter des documents exprimés dans ce vocabulaire, pour en faire ressortir
+* des schémas RELAXNG, DTD, etc.
 
 * des manuels "mode d'emploi" en HTML, PDF etc.
 
-* OxGarage&nbsp;: Un outil web pour effectuer plusieurs transformations documentaires, par ex 
+* OxGarage&nbsp;: Un outil web pour effectuer plusieurs transformations documentaires, par ex
 * de DOCX en TEI, et l'inverse
 
 * de HTML en TEI, et l'inverse
@@ -885,8 +871,8 @@ Ayant elle-même ces mêmes besoins, la TEI vous propose : * ODD&nbsp;: Un vocab
 
 # I18n
 
-Nous essayons le mieux possible d'internationaliser la TEI! 
-* Suite à un effort financé par le ALLC (entre autres), les définitions, les gloses, et quelques exemples sont traduits en plusieurs langues, notamment le français, mais aussi: 
+Nous essayons le mieux possible d'internationaliser la TEI!
+* Suite à un effort financé par le ALLC (entre autres), les définitions, les gloses, et quelques exemples sont traduits en plusieurs langues, notamment le français, mais aussi:
 * espagnol, portugais, allemand, chinois, koréen, japonais...
 
 
@@ -902,19 +888,19 @@ L'usage de ODD nous permet de sélectionner une documentation française.
 
 .red[O]ne .red[D]ocument .red[D]oes it all
 
-Un vocabulaire spécialisé pour la définition 
+Un vocabulaire spécialisé pour la définition
 * des schémas
 
 * des types d'élément XML, indépendant des schémas
 
-* des regroupements de tels éléments, publics ou privés 
+* des regroupements de tels éléments, publics ou privés
 
-* des patrons (MLE macros) 
+* des patrons (MLE macros)
 
 * des classes (et sous-classes) d'éléments
 
 
-Pour la définition des références également, qui permettront de réunir dans un schéma 
+Pour la définition des références également, qui permettront de réunir dans un schéma
 * des objets identifiables (dans la liste ci-dessus)
 
 * des objets appartenant à d'autres espaces de nom
@@ -940,7 +926,7 @@ L'objet de ces règles est de faciliter le "blind interchange" des documents.
 
 # http://www.tei-c.org/Roma/
 
-On va expérimenter cela... 
+On va expérimenter cela...
 
 * Build up : ajouter ce qu'il vous faut à un schéma minimale
 
@@ -948,7 +934,7 @@ On va expérimenter cela...
 
 * Utilisez un template ou un schema prédéfini
 
-* Retravailler une personalisation déjà faite 
+* Retravailler une personalisation déjà faite
 </textarea><script src="js/remark-0.6.5.min.js" type="text/javascript"></script><script type="text/javascript">
         var hljs = remark.highlighter.engine;
       </script><script src="remark.language.js" type="text/javascript"></script><script type="text/javascript">

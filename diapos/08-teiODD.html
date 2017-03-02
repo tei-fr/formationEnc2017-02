@@ -7,7 +7,7 @@
    </head>
    <body><textarea id="source">
 title: ODD for customizationPersonnalisation avec ODD
-description: Lou Burnard Consulting, 
+description: Lou Burnard Consulting,
 theme: theme/remark-dark-em.css
 name: inverse
 layout: true
@@ -26,9 +26,9 @@ class: center middle
 ![test](images/logo-ecole-nationale-des-chartes.png)
 
 ---
+layout: false
 
-
-# ODD est aussi un langage de personnalisation 
+# ODD est aussi un langage de personnalisation
 
 On se sert du même système pour spécifier ses choix dans le grand bazar de la TEI et pour spécifier le bazar lui-même.
 
@@ -49,7 +49,7 @@ Un ODD de personnalisation est spécifié par rapport à un autre ODD ; typiquem
 
 # Comment créer un ODD
 
-Un ODD, vous le savez déjà, c’est un document TEI comme les autres. Vous pouvez le construire et modifier avec oXygen ou n’importe quel autre éditeur XML 
+Un ODD, vous le savez déjà, c’est un document TEI comme les autres. Vous pouvez le construire et modifier avec oXygen ou n’importe quel autre éditeur XML
 
 Rappel&nbsp;! il existe des outils pour faciliter une construction initiale&nbsp;:
 
@@ -57,7 +57,7 @@ Rappel&nbsp;! il existe des outils pour faciliter une construction initiale&nbsp
 
 * [ODD By Example stylesheet](http://teic.github.io/TCW/howtogenerate.html)
 
-Nous allons approfondir quelques notions déjà évoquées, et ensuite vous inviter à créer votre propre ODD 
+Nous allons approfondir quelques notions déjà évoquées, et ensuite vous inviter à créer votre propre ODD
 
 ---
 
@@ -75,9 +75,9 @@ Comme vous le savez déjà, on utilise l’élément `&lt;schemaSpec&gt;` pour s
 * Les attributs `@docLang` et `@targetLang` permettent la sélection des langues à utiliser pour les descriptions d’éléments et pour les noms d’élément respectivement, en supposant la présence dans cette source des traductions requises
 
 ```xml
-<schemaSpec  start="TEI" ident="testschema" source="tei:1.5.0" docLang="fr">
- 
-            <!-- declarations -->
+<schemaSpec  start="TEI" ident="testschema"
+ source="tei:1.5.0" docLang="fr">
+  <!-- declarations -->
   </schemaSpec>
 ```
 
@@ -99,24 +99,24 @@ La location des objets référencés est specifiée par un attribut `@source`&nb
 
 # Sélection par exclusion
 
-Vous pouvez spécifier les éléments que vous souhaitez supprimer parmi ceux proposés par un module&nbsp;: 
+Vous pouvez spécifier les éléments que vous souhaitez supprimer parmi ceux proposés par un module&nbsp;:
 ```xml
 <schemaSpec  start="TEI" ident="testschema">
- <moduleRef key="core" except="mentioned said"></moduleRef> 
- <moduleRef key="header"></moduleRef> 
- <moduleRef key="textstructure"></moduleRef> 
+ <moduleRef key="core" except="mentioned said"/>
+ <moduleRef key="header"/>
+ <moduleRef key="textstructure"/>
 </schemaSpec>
 ```
 
 
-ou également&nbsp;: 
+ou également&nbsp;:
 ```xml
-<schemaSpec  start="TEI" ident="testschema"> 
- <moduleRef key="core"></moduleRef> 
- <moduleRef key="header"></moduleRef> 
- <moduleRef key="textstructure"></moduleRef> 
- <elementSpec ident="mentioned" mode="delete"></elementSpec> 
- <elementSpec ident="said" mode="delete"></elementSpec> 
+<schemaSpec  start="TEI" ident="testschema">
+ <moduleRef key="core"/>
+ <moduleRef key="header"/>
+ <moduleRef key="textstructure"/>
+ <elementSpec ident="mentioned" mode="delete"/>
+ <elementSpec ident="said" mode="delete"/>
  </schemaSpec>
 ```
 
@@ -128,23 +128,23 @@ ou également&nbsp;:
 
 # Sélection par inclusion
 
-Vous pouvez spécifier les éléments que vous souhaitez inclure parmi ceux qui sont proposés par un module&nbsp;: 
+Vous pouvez spécifier les éléments que vous souhaitez inclure parmi ceux qui sont proposés par un module&nbsp;:
 ```xml
 <schemaSpec  start="TEI" ident="testschema">
-  <moduleRef key="core"></moduleRef> 
-    <moduleRef key="header"></moduleRef> 
-    <moduleRef key="textstructure" include="body div"></moduleRef> 
+  <moduleRef key="core"/>
+    <moduleRef key="header"/>
+    <moduleRef key="textstructure" include="body div"/>
   </schemaSpec>
 ```
 
 
-ou également&nbsp;: 
+ou également&nbsp;:
 ```xml
-<schemaSpec  start="TEI" ident="testschema"> 
-  <moduleRef key="core"></moduleRef> 
-  <moduleRef key="header"></moduleRef> 
-  <elementRef key="div"></elementRef> 
-  <elementRef key="body"></elementRef> 
+<schemaSpec  start="TEI" ident="testschema">
+  <moduleRef key="core"/>
+  <moduleRef key="header"/>
+  <elementRef key="div"/>
+  <elementRef key="body"/>
 </schemaSpec>
 ```
 
@@ -160,7 +160,7 @@ Attention&nbsp;! un module peut définir d’autres choses que des éléments. L
 
 * Un `&lt;elementRef&gt;` suffit – pourvu que l’élément concerné soit déclaré par la source invoquée
 
-* Mais il faut préciser son module si vous souhaitez inclure/utiliser une classe de modèle ou une classe d’attribut. 
+* Mais il faut préciser son module si vous souhaitez inclure/utiliser une classe de modèle ou une classe d’attribut.
 
 * La plupart des classes TEI étant définies par le module `tei`, ce dernier est à peu près essentiel pour tout ODD TEI.
 
@@ -188,20 +188,24 @@ Supposons deux `&lt;elementSpec&gt;` pour un même élément, la résolution est
 
 ```xml
 <schemaSpec  start="TEI" ident="testschema">
- <moduleRef key="core" include="p hi"></moduleRef>        
- <elementSpec key="p" mode="delete"></elementSpec>
+ <moduleRef key="core" include="p hi"/>
+ <elementSpec key="p" mode="delete"/>
  </schemaSpec>
 ```
 
 L’élément `&lt;p&gt;` est supprimé
 
 ```xml
-<schemaSpec  start="TEI" ident="testschema"> 
-  <moduleRef key="core" include="p hi"></moduleRef>
+<schemaSpec  start="TEI" ident="testschema">
+  <moduleRef key="core" include="p hi"/>
   <elementSpec key="p" mode="change">
-  <desc>Pour nous, un <gi>p</gi> ne peut contenir que du texte</desc>
-  <content><textNode></textNode></content> 
- </elementSpec> </schemaSpec>
+    <desc>Pour nous, un <gi>p</gi> ne
+    peut contenir que du texte</desc>
+    <content>
+      <textNode/>
+    </content>
+  </elementSpec>
+</schemaSpec>
 ```
 
 Le contenu et la description de l’élément `&lt;p&gt;` sont changés&nbsp;; ses autres propriétés ne changent pas
@@ -224,7 +228,7 @@ Un tel fichier est réutilisable comme la `@source` d’un autre ODD
 ---
 
 
-# Exercice de personnalisation 
+# Exercice de personnalisation
 
 Créons un schéma `featherLite` très simple, pour un projet de corpus langagier.
 
@@ -245,15 +249,15 @@ Créons un schéma `featherLite` très simple, pour un projet de corpus langagie
 
 * Ouvrez le fichier `feather-1.odd` avec oXygen
 
-* Testez votre compréhension de ce fichier 
+* Testez votre compréhension de ce fichier
 
 * Utilisez oXygen pour générer un schéma dans votre langage de schéma préféré et un petit manuel en HTML
 
 * Créez un nouveau document TEI XML qui utilise ce schéma
 
-* Vérifiez les éléments et les attributs disponibles 
+* Vérifiez les éléments et les attributs disponibles
 
-Nous allons modifier un peu plus ce schéma pour&nbsp;: 
+Nous allons modifier un peu plus ce schéma pour&nbsp;:
 * supprimer plusieurs attributs inutiles
 
 * ajouter un nouveau élément
@@ -266,7 +270,7 @@ Nous allons modifier un peu plus ce schéma pour&nbsp;:
 
 # Suppression d’attributs
 
-Pour supprimer un attribut il faut savoir d’où il vient&nbsp;: 
+Pour supprimer un attribut il faut savoir d’où il vient&nbsp;:
 * soit il est défini avec l’élément qui le comporte (assez inhabituel)
 
 * soit il est hérité d’une classe
@@ -276,7 +280,7 @@ Pour supprimer un attribut il faut savoir d’où il vient&nbsp;:
 
 Regardez la définition de `&lt;body&gt;` par exemple&nbsp;:
 ![](images/bodyshot.png)
-On peut supprimer un attribut 
+On peut supprimer un attribut
 * en modifiant que l’élement qui le comporte
 
 * en modifiant la participation à la classe qui le fournit
@@ -293,13 +297,13 @@ On peut supprimer un attribut
 
 * supprimez partout les attributs `@rend` et `@rendition` : `&lt;classRef type="att.global.rendition" except="rend rendition"/&gt;`
 
-* supprimez partout les attributs `@xml:base` et `@xml:space` 
+* supprimez partout les attributs `@xml:base` et `@xml:space`
 ```xml
-<classSpec  type="atts" ident="att.global" mode="change">         
-<attList>
- <attDef ident="xml:base" mode="delete"></attDef>
- <attDef ident="xml:space" mode="delete"></attDef>
-</attList>
+<classSpec  type="atts" ident="att.global" mode="change">
+  <attList>
+    <attDef ident="xml:base" mode="delete"/>
+    <attDef ident="xml:space" mode="delete"/>
+  </attList>
 </classSpec>
 ```
 
@@ -321,18 +325,19 @@ Nous souhaitons ajouter un élément `&lt;mw&gt;` pour baliser les « multiwords
 
 ```xml
 <elementSpec  ident="mw" ns="http://myNameSpace.org">
- <desc>multiword strings which function as if they were single words</desc>
- <classes>
-   <memberOf key="model.segLike"></memberOf>
-   <memberOf key="att.global"></memberOf>
-   <memberOf key="att.typed"></memberOf>
- </classes>
- <content>
-   <alternate maxOccurs="unbounded">
-     <textNode></textNode>
-     <elementRef key="w"></elementRef>
-   </alternate>
- </content>
+  <desc>multiword strings which function
+  as if they were single words</desc>
+  <classes>
+    <memberOf key="model.segLike"/>
+    <memberOf key="att.global"/>
+    <memberOf key="att.typed"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <textNode/>
+      <elementRef key="w"/>
+    </alternate>
+  </content>
 </elementSpec>
 ```
 
@@ -343,13 +348,13 @@ Modifier ainsi votre copie de l'ODD et voir l'effet sur le schéma généré et 
 
 # Modification du modèle de contenu
 
-Continuons de personnaliser le schéma feather... 
+Continuons de personnaliser le schéma feather...
 
 * La plupart des modèles de contenu s'exprime avec un macro, qui fait référence à des classes
 
 * Regardez par ex la spécification de l'élément `&lt;s&gt;` dans notre petit schéma
 
-* Le macro macro.phraseSeq définit un modèle permettant de texte ou des éléments des classes model.gLike, model.phrase et model.global 
+* Le macro macro.phraseSeq définit un modèle permettant de texte ou des éléments des classes model.gLike, model.phrase et model.global
 
 * Suivez l’hiérarchie des déclarations et vous constaterez que la plupart de ces classes sont vides dans notre petit schéma
 
@@ -362,15 +367,15 @@ Nous souhaitons simplifier cela&nbsp;: donc nous allons changer le `&lt;content&
 
 # Changement du modèle de contenu
 
-Ajouter dans votre ODD&nbsp;: 
+Ajouter dans votre ODD&nbsp;:
 ```xml
-<elementSpec  ident="s" mode="change">
-<content>         
-  <alternate maxOccurs="unbounded">
-  <elementRef key="w"></elementRef>
-  <elementRef key="mw"></elementRef>
-</alternate>
-</content>
+<elementSpec ident="s" mode="change">
+  <content>
+    <alternate maxOccurs="unbounded">
+      <elementRef key="w"/>
+      <elementRef key="mw"/>
+    </alternate>
+  </content>
 </elementSpec>
 ```
 
@@ -386,7 +391,7 @@ Attention&nbsp;: un changement de modèle de contenu risque de mettre en cause n
 
 # Exercice final
 
-S’il vous reste du temps, vous êtes invité à considérer 
+S’il vous reste du temps, vous êtes invité à considérer
 * comment ajouter `&lt;pc&gt;` pour les séquences de ponctuation
 
 * comment modifier le ODD pour supprimer `&lt;title&gt;`, sauf dans le `&lt;titleStmt&gt;` où il est obligatoire
